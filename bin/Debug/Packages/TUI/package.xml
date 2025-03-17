@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Package Date="07/04/2024 12:00:44" Tags="Cli Editor" Name="TUI" Version="1.1.1+507fd903" Architecture="AnyCPU" OS="Windows,Linux,Macos" xmlns="http://opentap.io/schemas/package">
+  <Hash>DA39A3EE5E6B4B0D3255BFEF95601890AFD80709</Hash>
+  <Description>The OpenTAP TUI is a textual based user interface that can be used from a terminal. It gives you a graphical way to create OpenTAP test plans (.TapPlan). As well, as editing OpenTAP settings.
+
+It supports running in almost every terminal including in Docker containers.
+
+<Status>Active Development</Status><Links><Link Description="Go to the GitHub repository" Name="GitHub Repository" Url="https://github.com/StefanHolst/opentap-tui" /><Link Description="Go to the documentation" Name="Documentation" Url="https://stefanholst.github.io/opentap-tui/" /></Links></Description>
+  <Dependencies>
+    <PackageDependency Package="OpenTAP" Version="^9.18.3+fc9e60e0" />
+  </Dependencies>
+  <Owner>Stefan Holst</Owner>
+  <SourceUrl>https://github.com/StefanHolst/opentap-tui</SourceUrl>
+  <Files>
+    <File Path="Packages/TUI/OpenTap.Tui.dll">
+      <Plugins>
+        <Plugin Type="OpenTap.Tui.KeyEventSerializer" BaseType="Serializer">
+          <Name>KeyEventSerializer</Name>
+          <Order>-10000</Order>
+          <Browsable>true</Browsable>
+          <Description></Description>
+          <Collapsed>false</Collapsed>
+          <Groups />
+        </Plugin>
+        <Plugin Type="OpenTap.Tui.TUI" BaseType="ICliAction">
+          <Name>tui</Name>
+          <Order>-10000</Order>
+          <Browsable>true</Browsable>
+          <Description>View, edit and run test plans using TUI.</Description>
+          <Collapsed>false</Collapsed>
+          <Groups />
+        </Plugin>
+        <Plugin Type="OpenTap.Tui.TuiPm" BaseType="ICliAction">
+          <Name>tui-pm</Name>
+          <Order>-10000</Order>
+          <Browsable>true</Browsable>
+          <Description>Open package manager using TUI. (Experimental)</Description>
+          <Collapsed>false</Collapsed>
+          <Groups />
+        </Plugin>
+        <Plugin Type="OpenTap.Tui.TuiResults" BaseType="ICliAction">
+          <Name>tui-results</Name>
+          <Order>-10000</Order>
+          <Browsable>true</Browsable>
+          <Description>Open TUI results viewer. (Experimental)</Description>
+          <Collapsed>false</Collapsed>
+          <Groups />
+        </Plugin>
+        <Plugin Type="OpenTap.Tui.TuiSettings" BaseType="Component Settings">
+          <Name>TUI Settings</Name>
+          <Order>-10000</Order>
+          <Browsable>true</Browsable>
+          <Description />
+          <Collapsed>false</Collapsed>
+          <Groups />
+        </Plugin>
+        <Plugin Type="OpenTap.Tui.Annotations.IResultColumnAnnotator" BaseType="IAnnotator">
+          <Name>IResultColumnAnnotator</Name>
+          <Order>-10000</Order>
+          <Browsable>true</Browsable>
+          <Description></Description>
+          <Collapsed>false</Collapsed>
+          <Groups />
+        </Plugin>
+        <Plugin Type="OpenTap.Tui.Annotations.KeyEventAnnotator" BaseType="IAnnotator">
+          <Name>KeyEventAnnotator</Name>
+          <Order>-10000</Order>
+          <Browsable>true</Browsable>
+          <Description></Description>
+          <Collapsed>false</Collapsed>
+          <Groups />
+        </Plugin>
+      </Plugins>
+      <Hash>2E0591028FF119823357E94D160CA39355198C1F</Hash>
+    </File>
+    <File Path="Packages/TUI/Terminal.Gui.dll">
+      <Hash>9E3E99C927E226AA69EE1C203547234C58A10107</Hash>
+    </File>
+    <File Path="Packages/TUI/icon.png">
+      <PackageIcon></PackageIcon>
+      <Hash>654F31A766F266A4B9A3F248CB73BCBD3151367E</Hash>
+    </File>
+    <File Path="Dependencies/NStack.1.0.7.0/NStack.dll">
+      <Hash>8CA888E418ADC29868AB970A7E2258FF709AD2A0</Hash>
+    </File>
+    <File Path="Dependencies/System.Management.4.0.0.0/System.Management.dll">
+      <Hash>CC2572AABAE9FDAD0AB9EBE04764EC885946EA9F</Hash>
+    </File>
+    <File Path="Dependencies/System.CodeDom.7.0.0.0/System.CodeDom.dll">
+      <Hash>2D2EF2A7541E60D7534742418DD49D07C1A1C675</Hash>
+    </File>
+  </Files>
+</Package>

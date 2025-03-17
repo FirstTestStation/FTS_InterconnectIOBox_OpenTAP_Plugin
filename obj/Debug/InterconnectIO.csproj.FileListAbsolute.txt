@@ -1,0 +1,11 @@
+C:\Station_de_test\FTS_Selftest\FTS_Selftest\bin\Debug\InterconnectIO.dll
+C:\Station_de_test\FTS_Selftest\FTS_Selftest\bin\Debug\InterconnectIO.pdb
+C:\Station_de_test\FTS_Selftest\FTS_Selftest\bin\Debug\OpenTap.dll
+C:\Station_de_test\FTS_Selftest\FTS_Selftest\bin\Debug\System.Security.Principal.Windows.dll
+C:\Station_de_test\FTS_Selftest\FTS_Selftest\obj\Debug\InterconnectIO.csproj.AssemblyReference.cache
+C:\Station_de_test\FTS_Selftest\FTS_Selftest\obj\Debug\InterconnectIO.GeneratedMSBuildEditorConfig.editorconfig
+C:\Station_de_test\FTS_Selftest\FTS_Selftest\obj\Debug\InterconnectIO.csproj.CoreCompileInputs.cache
+C:\Station_de_test\FTS_Selftest\FTS_Selftest\obj\Debug\InterconnectIO.sourcelink.json
+C:\Station_de_test\FTS_Selftest\FTS_Selftest\obj\Debug\Intercon.E78673AE.Up2Date
+C:\Station_de_test\FTS_Selftest\FTS_Selftest\obj\Debug\InterconnectIO.dll
+C:\Station_de_test\FTS_Selftest\FTS_Selftest\obj\Debug\InterconnectIO.pdb

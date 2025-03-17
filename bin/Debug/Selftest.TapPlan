@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TestPlan type="OpenTap.TestPlan">
+  <Steps>
+    <TestStep type="InterconnectIOBox.RelayAction" Id="e76d161f-f9c3-40fa-b4ab-90185a914451">
+      <IO_Instrument Source="OpenTap.InstrumentSettings">InterconnectIO</IO_Instrument>
+      <RelayLPR1>NoAction</RelayLPR1>
+      <RelayLPR2>NoAction</RelayLPR2>
+      <RelayHPR1>NoAction</RelayHPR1>
+      <RelaySSR1>NoAction</RelaySSR1>
+      <Relay5VDUT>Close_And_Read</Relay5VDUT>
+      <OWire_Dut Source="OpenTap.DutSettings">FTS_DUT</OWire_Dut>
+      <Name Metadata="Step Name">Isolated Relay Control</Name>
+      <ChildTestSteps />
+    </TestStep>
+    <TestStep type="InterconnectIOBox.ItcCfg" Id="f4a0c818-a817-4e2f-bdef-bf186c68f5df">
+      <IO_Instrument Source="OpenTap.InstrumentSettings">InterconnectIO</IO_Instrument>
+      <ItcAct>Write_read</ItcAct>
+      <Enable>true</Enable>
+      <Disable>false</Disable>
+      <Baud>100000</Baud>
+      <Address>32</Address>
+      <SelectD>_8</SelectD>
+      <OWire_Dut Source="OpenTap.DutSettings">FTS_DUT</OWire_Dut>
+      <Name Metadata="Step Name">I2C Config</Name>
+      <ChildTestSteps />
+    </TestStep>
+    <TestStep type="InterconnectIOBox.Selftest_com" Id="4dc93b56-045a-4d36-b0ee-385d15c14316">
+      <IO_Instrument Source="OpenTap.InstrumentSettings">InterconnectIO</IO_Instrument>
+      <Validate>false</Validate>
+      <Sversion>
+        <Value>1</Value>
+        <IsEnabled>false</IsEnabled>
+      </Sversion>
+      <Status>
+        <Value>0</Value>
+        <IsEnabled>false</IsEnabled>
+      </Status>
+      <EnPwm>false</EnPwm>
+      <DiPwm>false</DiPwm>
+      <frequency>
+        <Value>10</Value>
+        <IsEnabled>false</IsEnabled>
+      </frequency>
+      <Enable>false</Enable>
+      <Disable>false</Disable>
+      <SelectB>_38400</SelectB>
+      <SelectP>None</SelectP>
+      <SelectD>_8</SelectD>
+      <SelectS>_1</SelectS>
+      <SelectH>OFF</SelectH>
+      <GetSer>
+        <Value>0</Value>
+        <IsEnabled>false</IsEnabled>
+      </GetSer>
+      <EnSPI>false</EnSPI>
+      <DiSPI>false</DiSPI>
+      <SelectM>Mode0_CPOL0_CPHA0</SelectM>
+      <SelectSD>_8</SelectSD>
+      <GetSpi>
+        <Value>0</Value>
+        <IsEnabled>false</IsEnabled>
+      </GetSpi>
+      <OWire_Dut Source="OpenTap.DutSettings">FTS_DUT</OWire_Dut>
+      <Name Metadata="Step Name">Selftest COM command</Name>
+      <ChildTestSteps />
+    </TestStep>
+  </Steps>
+  <Package.Dependencies>
+    <Package Name="OpenTAP" Version="^9.27.0+11e5348d" />
+  </Package.Dependencies>
+</TestPlan>

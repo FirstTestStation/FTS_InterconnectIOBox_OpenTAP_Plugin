@@ -1,0 +1,11 @@
+C:\Station_de_test\FTS_Selftest\FTS_Selftest\bin\Debug\FTS_Selftest.dll
+C:\Station_de_test\FTS_Selftest\FTS_Selftest\bin\Debug\FTS_Selftest.pdb
+C:\Station_de_test\FTS_Selftest\FTS_Selftest\bin\Debug\OpenTap.dll
+C:\Station_de_test\FTS_Selftest\FTS_Selftest\bin\Debug\System.Security.Principal.Windows.dll
+C:\Station_de_test\FTS_Selftest\FTS_Selftest\obj\Debug\FTS_Selftest.csproj.AssemblyReference.cache
+C:\Station_de_test\FTS_Selftest\FTS_Selftest\obj\Debug\FTS_Selftest.GeneratedMSBuildEditorConfig.editorconfig
+C:\Station_de_test\FTS_Selftest\FTS_Selftest\obj\Debug\FTS_Selftest.csproj.CoreCompileInputs.cache
+C:\Station_de_test\FTS_Selftest\FTS_Selftest\obj\Debug\FTS_Self.3427FB2E.Up2Date
+C:\Station_de_test\FTS_Selftest\FTS_Selftest\obj\Debug\FTS_Selftest.dll
+C:\Station_de_test\FTS_Selftest\FTS_Selftest\obj\Debug\FTS_Selftest.pdb
+C:\Station_de_test\FTS_Selftest\FTS_Selftest\obj\Debug\FTS_Selftest.sourcelink.json

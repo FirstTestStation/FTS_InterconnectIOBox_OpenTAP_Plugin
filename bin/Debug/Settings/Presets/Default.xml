@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ListOfSettingsGroup type="System.Collections.Generic.List`1[[Keysight.OpenTap.Wpf.ViewPreset+SettingsGroup, Keysight.OpenTap.Wpf, Version=9.27.0.0, Culture=neutral, PublicKeyToken=null]]">
+  <SettingsGroup>
+    <Name>Keysight.OpenTap.Wpf.GuiControlsSettings</Name>
+    <Settings>
+      <SettingsTuple>
+        <Name>MainWindowHeight</Name>
+        <Value type="System.Double">768</Value>
+      </SettingsTuple>
+      <SettingsTuple>
+        <Name>MainWindowWidth</Name>
+        <Value type="System.Double">1024</Value>
+      </SettingsTuple>
+      <SettingsTuple>
+        <Name>MainWindowTop</Name>
+        <Value type="System.Double">0</Value>
+      </SettingsTuple>
+      <SettingsTuple>
+        <Name>MainWindowLeft</Name>
+        <Value type="System.Double">0</Value>
+      </SettingsTuple>
+      <SettingsTuple>
+        <Name>MainWindowState</Name>
+        <Value type="Keysight.OpenTap.Wpf.TapWindowState">Normal</Value>
+      </SettingsTuple>
+      <SettingsTuple>
+        <Name>TestPlanGridColumnDetails</Name>
+        <Value type="System.String"></Value>
+      </SettingsTuple>
+      <SettingsTuple>
+        <Name>TestPlanColumnState2</Name>
+        <Value type="System.Collections.Generic.List`1[[System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <ColumnState type="Keysight.OpenTap.Gui.ColumnState">
+            <Name>Duration</Name>
+            <IsVisible>true</IsVisible>
+            <Priority>0</Priority>
+            <OriginalPriority>0</OriginalPriority>
+            <Width />
+            <ManuallyConfigured>true</ManuallyConfigured>
+          </ColumnState>
+          <ColumnState type="Keysight.OpenTap.Gui.ColumnState">
+            <Name>Flow</Name>
+            <IsVisible>true</IsVisible>
+            <Priority>0.01</Priority>
+            <OriginalPriority>0.01</OriginalPriority>
+            <Width />
+            <ManuallyConfigured>true</ManuallyConfigured>
+          </ColumnState>
+          <ColumnState type="Keysight.OpenTap.Gui.ColumnState">
+            <Name>Verdict</Name>
+            <IsVisible>true</IsVisible>
+            <Priority>-99</Priority>
+            <OriginalPriority>-99</OriginalPriority>
+            <Width />
+            <ManuallyConfigured>true</ManuallyConfigured>
+          </ColumnState>
+          <ColumnState type="Keysight.OpenTap.Gui.ColumnState">
+            <Name></Name>
+            <IsVisible>true</IsVisible>
+            <Priority>-101</Priority>
+            <OriginalPriority>-101</OriginalPriority>
+            <Width />
+            <ManuallyConfigured>true</ManuallyConfigured>
+          </ColumnState>
+          <ColumnState type="Keysight.OpenTap.Gui.ColumnState">
+            <Name>Name</Name>
+            <IsVisible>true</IsVisible>
+            <Priority>-100</Priority>
+            <OriginalPriority>-100</OriginalPriority>
+            <Width />
+            <ManuallyConfigured>true</ManuallyConfigured>
+          </ColumnState>
+          <ColumnState type="Keysight.OpenTap.Gui.ColumnState">
+            <Name>Type</Name>
+            <IsVisible>true</IsVisible>
+            <Priority>1</Priority>
+            <OriginalPriority>1</OriginalPriority>
+            <Width />
+            <ManuallyConfigured>true</ManuallyConfigured>
+          </ColumnState>
+        </Value>
+      </SettingsTuple>
+    </Settings>
+  </SettingsGroup>
+  <SettingsGroup>
+    <Name>Keysight.OpenTap.Wpf.EditorSettings</Name>
+    <Settings>
+      <SettingsTuple>
+        <Name>ViewDebug</Name>
+        <Value type="System.Boolean">false</Value>
+      </SettingsTuple>
+      <SettingsTuple>
+        <Name>ViewMessages</Name>
+        <Value type="System.Boolean">true</Value>
+      </SettingsTuple>
+      <SettingsTuple>
+        <Name>ViewWarnings</Name>
+        <Value type="System.Boolean">true</Value>
+      </SettingsTuple>
+      <SettingsTuple>
+        <Name>ViewErrors</Name>
+        <Value type="System.Boolean">true</Value>
+      </SettingsTuple>
+      <SettingsTuple>
+        <Name>ColorTheme</Name>
+        <Value type="Keysight.OpenTap.Wpf.Themes.TapSkins+Theme">OsTheme</Value>
+      </SettingsTuple>
+      <SettingsTuple>
+        <Name>ResultPopup</Name>
+        <Value type="System.Boolean">false</Value>
+      </SettingsTuple>
+      <SettingsTuple>
+        <Name>ClearLog</Name>
+        <Value type="System.Boolean">true</Value>
+      </SettingsTuple>
+      <SettingsTuple>
+        <Name>ShowGuiLog</Name>
+        <Value type="System.Boolean">true</Value>
+      </SettingsTuple>
+      <SettingsTuple>
+        <Name>FocusMode</Name>
+        <Value type="System.Boolean">false</Value>
+      </SettingsTuple>
+    </Settings>
+  </SettingsGroup>
+  <SettingsGroup>
+    <Name>Keysight.OpenTap.Gui.PanelSettings</Name>
+    <Settings>
+      <SettingsTuple>
+        <Name>Layout</Name>
+        <Value type="System.String">
+          <Base64>PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjxMYXlvdXRSb290Pg0KICA8Um9vdFBhbmVsIE9yaWVudGF0aW9uPSJWZXJ0aWNhbCI+DQogICAgPExheW91dFBhbmVsIE9yaWVudGF0aW9uPSJIb3Jpem9udGFsIiBEb2NrSGVpZ2h0PSIyLjQqIiBEb2NrTWluV2lkdGg9IjEwMCIgRG9ja01pbkhlaWdodD0iMTAwIj4NCiAgICAgIDxMYXlvdXRBbmNob3JhYmxlUGFuZSBEb2NrV2lkdGg9IjIuNyoiIERvY2tNaW5XaWR0aD0iMTAwIiBEb2NrTWluSGVpZ2h0PSIxMDAiPg0KICAgICAgICA8TGF5b3V0QW5jaG9yYWJsZSBBdXRvSGlkZU1pbldpZHRoPSIxMDAiIEF1dG9IaWRlTWluSGVpZ2h0PSIxMDAiIElzU2VsZWN0ZWQ9IlRydWUiIENvbnRlbnRJZD0iS2V5c2lnaHQuT3BlblRhcC5HdWkuVGVzdFBsYW5QbHVnaW4iIC8+DQogICAgICA8L0xheW91dEFuY2hvcmFibGVQYW5lPg0KICAgICAgPExheW91dEFuY2hvcmFibGVQYW5lIERvY2tNaW5XaWR0aD0iMTAwIiBEb2NrTWluSGVpZ2h0PSIxMDAiPg0KICAgICAgICA8TGF5b3V0QW5jaG9yYWJsZSBBdXRvSGlkZU1pbldpZHRoPSIxMDAiIEF1dG9IaWRlTWluSGVpZ2h0PSIxMDAiIElzU2VsZWN0ZWQ9IlRydWUiIENvbnRlbnRJZD0iS2V5c2lnaHQuT3BlblRhcC5HdWkuU3RlcFNldHRpbmdzUGx1Z2luIiAvPg0KICAgICAgPC9MYXlvdXRBbmNob3JhYmxlUGFuZT4NCiAgICA8L0xheW91dFBhbmVsPg0KICAgIDxMYXlvdXRBbmNob3JhYmxlUGFuZSBEb2NrTWluV2lkdGg9IjEwMCIgRG9ja01pbkhlaWdodD0iMTAwIj4NCiAgICAgIDxMYXlvdXRBbmNob3JhYmxlIEF1dG9IaWRlTWluV2lkdGg9IjEwMCIgQXV0b0hpZGVNaW5IZWlnaHQ9IjEwMCIgSXNTZWxlY3RlZD0iVHJ1ZSIgQ29udGVudElkPSJLZXlzaWdodC5PcGVuVGFwLkd1aS5Mb2dQYW5lbFBsdWdpbiIgLz4NCiAgICA8L0xheW91dEFuY2hvcmFibGVQYW5lPg0KICA8L1Jvb3RQYW5lbD4NCiAgPFRvcFNpZGUgLz4NCiAgPFJpZ2h0U2lkZSAvPg0KICA8TGVmdFNpZGUgLz4NCiAgPEJvdHRvbVNpZGUgLz4NCiAgPEZsb2F0aW5nV2luZG93cyAvPg0KICA8SGlkZGVuIC8+DQo8L0xheW91dFJvb3Q+</Base64>
+        </Value>
+      </SettingsTuple>
+    </Settings>
+  </SettingsGroup>
+  <Package.Dependencies>
+    <Package Name="WPF Controls" Version="^9.27.0+f0e134d7" />
+    <Package Name="OpenTAP" Version="^9.27.0+11e5348d" />
+  </Package.Dependencies>
+</ListOfSettingsGroup>

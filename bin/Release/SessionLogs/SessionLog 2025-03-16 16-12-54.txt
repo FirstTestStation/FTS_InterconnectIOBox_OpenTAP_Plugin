@@ -1,0 +1,53 @@
+﻿2025-03-16 16:12:54.369383 ; Session        ; Debug       ; Session log loaded as 'C:\Station_de_test\OpenTAP_IOBox\OpenTAP_IOBox\bin\Release\SessionLogs\tap 2025-03-16 16-12-54.txt'. [1.30 ms]
+2025-03-16 16:12:54.385516 ; Session        ; Debug       ; Running '.\tap  package create "C:\Station_de_test\OpenTAP_IObox\OpenTAP_IOBox\\package.xml" --install' in 'C:\Station_de_test\OpenTAP_IOBox\OpenTAP_IOBox\bin\Release'.
+2025-03-16 16:12:54.401231 ; AssemblyFinder ; Debug       ; Found 8/29 assembly files. [5.62 ms]
+2025-03-16 16:12:54.433071 ; Resolver       ; Debug       ; Found match for System.Collections.Immutable, Version=1.2.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a in C:\Station_de_test\OpenTAP_IOBox\OpenTAP_IOBox\bin\Release\Dependencies\System.Collections.Immutable.1.2.3.0\System.Collections.Immutable.dll
+2025-03-16 16:12:54.449005 ; Resolver       ; Debug       ; Found match for System.Reflection.Metadata, Version=1.4.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a in C:\Station_de_test\OpenTAP_IOBox\OpenTAP_IOBox\bin\Release\Dependencies\System.Reflection.Metadata.1.4.3.0\System.Reflection.Metadata.dll
+2025-03-16 16:12:54.528298 ; Searcher       ; Debug       ; Ordered 7 assemblies according to references. [86.6 ms]
+2025-03-16 16:12:54.570170 ; PluginManager  ; Debug       ; Found 4 plugin assemblies containing 226 plugin types. [133 ms]
+2025-03-16 16:12:54.570170 ; PluginManager  ; Debug       ; Found version 9.27.0+11e5348d  of OpenTap.dll
+2025-03-16 16:12:54.570170 ; PluginManager  ; Debug       ; Found version 0.0.0            of InterconnectIOBox.dll
+2025-03-16 16:12:54.570170 ; PluginManager  ; Debug       ; Found version 9.27.0+11e5348d  of OpenTap.Package.dll
+2025-03-16 16:12:54.570170 ; PluginManager  ; Debug       ; Found version 9.27.0+11e5348d  of OpenTap.Plugins.BasicSteps.dll
+2025-03-16 16:12:54.570170 ; PluginManager  ; Debug       ; Searched 8 Assemblies. [135 ms]
+2025-03-16 16:12:54.575703 ; AssemblyData   ; Debug       ; Loaded OpenTap. [258 us]
+2025-03-16 16:12:54.607107 ; Settings       ; Debug       ; No settings file exists for EngineSettings. A new instance with default values has been created. [5.79 ms]
+2025-03-16 16:12:54.623187 ; Session        ; Debug       ; Session log loaded as 'C:\Station_de_test\OpenTAP_IOBox\OpenTAP_IOBox\bin\Release\SessionLogs\SessionLog 2025-03-16 16-12-54.txt'. [1.66 ms]
+2025-03-16 16:12:54.623187 ; AssemblyData   ; Debug       ; Loaded OpenTap.Package. [2.28 ms]
+2025-03-16 16:12:54.639161 ; SystemInfo     ; Debug       ; Microsoft Windows 10.0.26100 X64
+2025-03-16 16:12:54.639161 ; SystemInfo     ; Debug       ; .NET Framework 4.8.9290.0
+2025-03-16 16:12:54.639161 ; SystemInfo     ; Debug       ; OpenTAP Engine 9.27.0+11e5348d X64
+2025-03-16 16:12:54.639161 ; AssemblyData   ; Debug       ; Loaded OpenTap.Plugins.BasicSteps. [2.22 ms]
+2025-03-16 16:12:54.681215 ; AssemblyData   ; Debug       ; Loaded mscorlib. [100 ns]
+2025-03-16 16:12:54.702521 ; CLI            ; Debug       ; Executing CLI action: package \ create
+2025-03-16 16:12:54.718495 ; VariableExpander ; Debug       ; Initialized variable expander:
+2025-03-16 16:12:54.718495 ; Resolver       ; Debug       ; Found match for LibGit2Sharp, Version=0.27.0.0, Culture=neutral, PublicKeyToken=7cbde695407f0333 in C:\Station_de_test\OpenTAP_IOBox\OpenTAP_IOBox\bin\Release\Dependencies\LibGit2Sharp.0.27.0.0\LibGit2Sharp.dll
+2025-03-16 16:12:54.750143 ; Installation   ; Debug       ; OpenTAP                  - 9.27.0+11e5348d
+2025-03-16 16:12:54.750143 ; Installation   ; Debug       ; PathWave License Manager - 2.7.0+398d3a87
+2025-03-16 16:12:54.797416 ; GitVersion     ; Warning     ; Did not find any .gitversion file.
+2025-03-16 16:12:54.797416 ; GitVersion     ; Debug       ; Using configuration from 
+2025-03-16 16:12:54.813071 ; GitVersion     ; Debug       ; Determined beta branch to be 'main' by looking at the HEAD of the remote 'origin'.
+2025-03-16 16:12:54.844644 ; GitVersion     ; Debug       ; Found 0 commits since branchout from beta branch in commit c65eee64.
+2025-03-16 16:12:54.844644 ; GitVersion     ; Debug       ; Found 9 commits since last version bump in commit 96b27041.
+2025-03-16 16:12:54.844644 ; GitVersionExpander ; Information ; Package GitVersion is 0.0.1-beta.9+c65eee64
+2025-03-16 16:12:54.844644 ; XML Expander   ; Debug       ; Expanded '$(GitVersion)' -> '0.0.1-beta.9+c65eee64'
+2025-03-16 16:12:54.844644 ; Package        ; Debug       ; Package preprocessing completed. [131 ms]
+2025-03-16 16:12:54.844644 ; Resolver       ; Debug       ; Found match for DotNet.Glob, Version=3.0.1.0, Culture=neutral, PublicKeyToken=b68cc888b4f632d1 in C:\Station_de_test\OpenTAP_IOBox\OpenTAP_IOBox\bin\Release\Dependencies\DotNet.Glob.3.0.1.0\DotNet.Glob.dll
+2025-03-16 16:12:54.860674 ; Searcher       ; Debug       ; Ordered 29 assemblies according to references. [5.55 ms]
+2025-03-16 16:12:54.908328 ; Package        ; Information ; Satisfying assembly reference to OpenTap by adding dependency on package OpenTAP
+2025-03-16 16:12:54.908328 ; Package        ; Information ; Adding dependency on package 'OpenTAP' version 9.27.0+11e5348d
+2025-03-16 16:12:54.924192 ; Package        ; Debug       ; Using temporary folder at 'C:\Users\Daniel\AppData\Local\Temp\nix4imn3.j3p'
+2025-03-16 16:12:54.924192 ; Package        ; Debug       ; Updating version info for 'InterconnectIOBox.dll' [884 us]
+2025-03-16 16:12:54.924192 ; Resolver       ; Debug       ; Found match for Mono.Cecil, Version=0.10.1.0, Culture=neutral, PublicKeyToken=50cebf1cceb9d05e in C:\Station_de_test\OpenTAP_IOBox\OpenTAP_IOBox\bin\Release\Dependencies\Mono.Cecil.0.10.1.0\Mono.Cecil.dll
+2025-03-16 16:12:55.177360 ; Package        ; Information ; Updated assembly version info using Mono method. [253 ms]
+2025-03-16 16:12:55.177360 ; Package        ; Debug       ; Available custom actions for 'create' stage. (2 actions: OpenTap.Package.IncludePackageDependencies, OpenTap.Package.FileHashPackageAction)
+2025-03-16 16:12:55.177360 ; Package        ; Information ; Package action IncludePackageDependencies completed [1.98 ms]
+2025-03-16 16:12:55.193172 ; Package        ; Information ; Package action FileHashPackageAction completed [16.8 ms]
+2025-03-16 16:12:55.193172 ; Package        ; Information ; Creating OpenTAP package.
+2025-03-16 16:12:55.209249 ; Package        ; Debug       ; Compressed 'C:\Users\Daniel\AppData\Local\Temp\nix4imn3.j3p\Versioned\InterconnectIOBox.dll' [14.1 ms]
+2025-03-16 16:12:55.256936 ; Package        ; Debug       ; Verifying package integrity...
+2025-03-16 16:12:55.288707 ; Package        ; Debug       ; Verified metadata integrity. [18.9 ms]
+2025-03-16 16:12:55.288707 ; Package        ; Debug       ; Verified archive integrity. [19.8 ms]
+2025-03-16 16:12:55.288707 ; PackageAction  ; Information ; OpenTAP plugin package 'OpenTAP_IOBox.0.0.1-beta.9+c65eee64.TapPackage' containing 'OpenTAP_IOBox' successfully created.
+2025-03-16 16:12:55.288707 ; PackageAction  ; Information ; Installed 'OpenTAP_IOBox' (C:\Station_de_test\OpenTAP_IOBox\OpenTAP_IOBox\bin\Release\Packages\OpenTAP_IOBox\package.xml)
+2025-03-16 16:12:55.288707 ; CLI            ; Debug       ; CLI action returned exit code: 0 [582 ms]

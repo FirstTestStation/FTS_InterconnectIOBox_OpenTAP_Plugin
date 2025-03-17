@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TestPlan type="OpenTap.TestPlan">
+  <Steps>
+    <TestStep type="InterconnectIOBox.Manual" Id="6dbe70db-e1ae-4b8c-acf3-2435f6a82e27">
+      <IO_Instrument Source="OpenTap.InstrumentSettings">InterconnectIO</IO_Instrument>
+      <WCommand>*A</WCommand>
+      <WQuery />
+      <Num>false</Num>
+      <Str>false</Str>
+      <Eanswer />
+      <LowL>0</LowL>
+      <HighL>0</HighL>
+      <OWire_Dut Source="OpenTap.DutSettings">FTS_DUT</OWire_Dut>
+      <Name Metadata="Step Name">Manual Command</Name>
+      <ChildTestSteps />
+    </TestStep>
+    <TestStep type="InterconnectIOBox.Manual" Id="987710ce-d1f0-486b-8752-23fcf22a152f">
+      <IO_Instrument Source="OpenTap.InstrumentSettings">InterconnectIO</IO_Instrument>
+      <WCommand>ROUT:CLOS</WCommand>
+      <WQuery />
+      <Num>false</Num>
+      <Str>false</Str>
+      <Eanswer />
+      <LowL>0</LowL>
+      <HighL>0</HighL>
+      <OWire_Dut Source="OpenTap.DutSettings">FTS_DUT</OWire_Dut>
+      <Name Metadata="Step Name">Manual Command (1)</Name>
+      <ChildTestSteps />
+    </TestStep>
+    <TestStep type="InterconnectIOBox.SysErr" Id="0113aac7-7612-41b0-971c-7572e42e9546">
+      <IO_Instrument Source="OpenTap.InstrumentSettings">InterconnectIO</IO_Instrument>
+      <EnableCnt>true</EnableCnt>
+      <expectedCount>2</expectedCount>
+      <EnableLast>false</EnableLast>
+      <EnableAll>true</EnableAll>
+      <OWire_Dut Source="OpenTap.DutSettings">FTS_DUT</OWire_Dut>
+      <Name Metadata="Step Name">System Error</Name>
+      <ChildTestSteps />
+    </TestStep>
+  </Steps>
+  <Package.Dependencies>
+    <Package Name="OpenTAP" Version="^9.27.0+11e5348d" />
+  </Package.Dependencies>
+</TestPlan>

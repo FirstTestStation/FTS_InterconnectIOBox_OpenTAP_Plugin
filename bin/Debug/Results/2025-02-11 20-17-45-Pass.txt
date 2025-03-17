@@ -1,0 +1,14 @@
+00:00:00.000000 ; TestPlan       ; Information ; Starting TestPlan 'Untitled' on 02/11/2025 20:17:45, 1 of 1 TestSteps enabled.
+00:00:00.002998 ; TestPlan       ; Debug       ; Saved Test Plan XML [2.50 ms]
+00:00:00.003998 ; Log            ; Information ; Resource "Log" opened. [21.0 us]
+00:00:00.004996 ; CSV            ; Information ; Resource "CSV" opened. [4.09 us]
+00:00:00.048506 ; TestPlan       ; Debug       ; "test 10.1" PrePlanRun completed. [40.7 us]
+00:00:00.048506 ; TestPlan       ; Debug       ; PrePlanRun Methods completed [88.4 us]
+00:00:00.048506 ; TestPlan       ; Information ; "test 10.1" started.
+00:00:00.048506 ; TestPlan       ; Information ; "test 10.1" completed with verdict 'Pass'. [139 us]
+00:00:00.048506 ; TestPlan       ; Debug       ; Test step runs finished. [296 us]
+00:00:00.048506 ; TestPlan       ; Debug       ; "test 10.1" PostPlanRun completed. [7.30 us]
+00:00:00.048506 ; Summary        ; Information ; ------- Summary of test plan started 02/11/2025 20:17:45 -------
+00:00:00.048506 ; Summary        ; Information ;  test 10.1                                         139 us   Pass   
+00:00:00.048506 ; Summary        ; Information ; ----------------------------------------------------------------
+00:00:00.048506 ; Summary        ; Information ; -------- Test plan completed successfully in  47.8 ms   --------

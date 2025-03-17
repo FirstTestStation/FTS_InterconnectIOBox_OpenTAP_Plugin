@@ -1,0 +1,32 @@
+﻿2025-03-16 16:11:48.993869 ; Session        ; Debug       ; Session log loaded as 'C:\Station_de_test\OpenTAP_IOBox\OpenTAP_IOBox\bin\Release\SessionLogs\tap 2025-03-16 16-11-48.txt'. [1.85 ms]
+2025-03-16 16:11:49.009665 ; Session        ; Debug       ; Running '.\tap  package create "C:\Station_de_test\OpenTAP_IObox\OpenTAP_IOBox\\package.xml" --install' in 'C:\Station_de_test\OpenTAP_IOBox\OpenTAP_IOBox\bin\Release'.
+2025-03-16 16:11:49.041450 ; AssemblyFinder ; Debug       ; Found 7/28 assembly files. [6.70 ms]
+2025-03-16 16:11:49.057445 ; Resolver       ; Debug       ; Found match for System.Collections.Immutable, Version=1.2.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a in C:\Station_de_test\OpenTAP_IOBox\OpenTAP_IOBox\bin\Release\Dependencies\System.Collections.Immutable.1.2.3.0\System.Collections.Immutable.dll
+2025-03-16 16:11:49.073441 ; Resolver       ; Debug       ; Found match for System.Reflection.Metadata, Version=1.4.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a in C:\Station_de_test\OpenTAP_IOBox\OpenTAP_IOBox\bin\Release\Dependencies\System.Reflection.Metadata.1.4.3.0\System.Reflection.Metadata.dll
+2025-03-16 16:11:49.168818 ; Searcher       ; Debug       ; Ordered 7 assemblies according to references. [96.2 ms]
+2025-03-16 16:11:49.216707 ; PluginManager  ; Debug       ; Found 4 plugin assemblies containing 226 plugin types. [146 ms]
+2025-03-16 16:11:49.216707 ; PluginManager  ; Debug       ; Found version 9.27.0+11e5348d  of OpenTap.dll
+2025-03-16 16:11:49.216707 ; PluginManager  ; Debug       ; Found version 0.0.0            of InterconnectIOBox.dll
+2025-03-16 16:11:49.216707 ; PluginManager  ; Debug       ; Found version 9.27.0+11e5348d  of OpenTap.Package.dll
+2025-03-16 16:11:49.216707 ; PluginManager  ; Debug       ; Found version 9.27.0+11e5348d  of OpenTap.Plugins.BasicSteps.dll
+2025-03-16 16:11:49.216707 ; PluginManager  ; Debug       ; Searched 7 Assemblies. [148 ms]
+2025-03-16 16:11:49.232659 ; AssemblyData   ; Debug       ; Loaded OpenTap. [274 us]
+2025-03-16 16:11:49.248517 ; Settings       ; Debug       ; No settings file exists for EngineSettings. A new instance with default values has been created. [5.53 ms]
+2025-03-16 16:11:49.264427 ; Session        ; Debug       ; Session log loaded as 'C:\Station_de_test\OpenTAP_IOBox\OpenTAP_IOBox\bin\Release\SessionLogs\SessionLog 2025-03-16 16-11-48.txt'. [1.81 ms]
+2025-03-16 16:11:49.280089 ; SystemInfo     ; Debug       ; Microsoft Windows 10.0.26100 X64
+2025-03-16 16:11:49.280089 ; SystemInfo     ; Debug       ; .NET Framework 4.8.9290.0
+2025-03-16 16:11:49.280089 ; SystemInfo     ; Debug       ; OpenTAP Engine 9.27.0+11e5348d X64
+2025-03-16 16:11:49.280089 ; AssemblyData   ; Debug       ; Loaded OpenTap.Package. [2.64 ms]
+2025-03-16 16:11:49.295967 ; AssemblyData   ; Debug       ; Loaded OpenTap.Plugins.BasicSteps. [2.53 ms]
+2025-03-16 16:11:49.359416 ; AssemblyData   ; Debug       ; Loaded mscorlib. [600 ns]
+2025-03-16 16:11:49.466878 ; Installation   ; Debug       ; OpenTAP                  - 9.27.0+11e5348d
+2025-03-16 16:11:49.466878 ; Installation   ; Debug       ; PathWave License Manager - 2.7.0+398d3a87
+2025-03-16 16:11:51.284784 ; CLI            ; Debug       ; Executing CLI action: package \ create
+2025-03-16 16:11:51.294115 ; VariableExpander ; Debug       ; Initialized variable expander:
+2025-03-16 16:11:51.303130 ; Package        ; Debug       ; Package preprocessing completed. [11.6 ms]
+2025-03-16 16:11:51.306326 ; Resolver       ; Debug       ; Found match for DotNet.Glob, Version=3.0.1.0, Culture=neutral, PublicKeyToken=b68cc888b4f632d1 in C:\Station_de_test\OpenTAP_IOBox\OpenTAP_IOBox\bin\Release\Dependencies\DotNet.Glob.3.0.1.0\DotNet.Glob.dll
+2025-03-16 16:11:51.323840 ; Searcher       ; Debug       ; Ordered 29 assemblies according to references. [6.77 ms]
+2025-03-16 16:11:51.377059 ; Package        ; Information ; Satisfying assembly reference to OpenTap by adding dependency on package OpenTAP
+2025-03-16 16:11:51.377059 ; Package        ; Information ; Adding dependency on package 'OpenTAP' version 9.27.0+11e5348d
+2025-03-16 16:11:51.380058 ; PackageAction  ; Error       ; The specified version '$0.1.0-alpha' is not a valid semantic version. See https://semver.org
+2025-03-16 16:11:51.380058 ; CLI            ; Debug       ; CLI action returned exit code: 31 [94.7 ms]

@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PackageManagerGuiSettings type="Keysight.OpenTap.Package.Gui.PackageManagerGuiSettings">
+  <PackageManagerWindowSize>
+    <Width>1024</Width>
+    <Height>768</Height>
+  </PackageManagerWindowSize>
+  <UpdaterWindowSize>
+    <Width>900</Width>
+    <Height>600</Height>
+  </UpdaterWindowSize>
+  <PropGridCategories />
+  <PropGridCategoryStates />
+  <Package.Dependencies />
+</PackageManagerGuiSettings>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Package InfoLink="http://www.keysight.com/find/TAP" Date="11/22/2024 14:08:19" Name="SQLite and PostgreSQL" Version="9.6.0+558afbf4" Architecture="x64" OS="Windows" xmlns="http://opentap.io/schemas/package">
+  <Hash>CutNe9hXyMnC7-ce-bTwOE8KH0w</Hash>
+  <Description>This package contains two result listeners that make it possible to connect to an SQLite or PostgreSQL database. SQLite is a self-contained, high-reliability, embedded SQL database that is represented by a single file (SqliteDatabase.TapResults) in the installation directory. For larger data sets or remote collection and sharing of data, a more standard database like PostgreSQL is recommended. The PostgreSQL plugin lets you specify a connection to a local or remote PostgreSQL database server (PostgreSQL is free and open source).
+
+Note that the Run Explorer and Results Viewer applications leverage the SQLite or PostgreSQL plugins to data mine and visualize the measurement data.
+      For Linux support using Sqlite, install the local flavor of 'libsqlite' using apt-get on Ubuntu or similar commands. 
+    <Status>Released</Status><Organisation>Keysight Technologies</Organisation></Description>
+  <Dependencies>
+    <PackageDependency Package="OpenTAP" Version="^9.4.2+5ce8e52c" />
+  </Dependencies>
+  <Files>
+    <File Path="Packages/SQLite and PostgreSQL/Keysight.OpenTap.Plugins.ResultListener.SqlDatabase.dll">
+      <IgnoreDependency>netstandard</IgnoreDependency>
+      <Hash>52F74E4F0F183986B62453E7E123817F860C5D31</Hash>
+    </File>
+    <File Path="Packages/SQLite and PostgreSQL/Keysight.OpenTap.Plugins.ResultListener.SQLite.dll">
+      <Plugins>
+        <Plugin Type="Keysight.OpenTap.Plugins.ResultListeners.SQLiteDatabase" BaseType="Result Listener | IResultStore">
+          <Name>SQLite</Name>
+          <Order>-10000</Order>
+          <Browsable>true</Browsable>
+          <Description>Save results in a SQLite database.</Description>
+          <Collapsed>false</Collapsed>
+          <Groups>
+            <String>Database</String>
+          </Groups>
+        </Plugin>
+      </Plugins>
+      <Hash>38AE162393872DDF9168F6166C8B6B57C480647C</Hash>
+    </File>
+    <File Path="Packages/SQLite and PostgreSQL/Keysight.OpenTap.Plugins.ResultListener.PostgreSQL.dll">
+      <Plugins>
+        <Plugin Type="Keysight.OpenTap.Plugins.ResultListeners.PostgreSQLDatabase" BaseType="Result Listener | IResultStore">
+          <Name>PostgreSQL</Name>
+          <Order>-10000</Order>
+          <Browsable>true</Browsable>
+          <Description>Save results in a PostgreSQL database.</Description>
+          <Collapsed>false</Collapsed>
+          <Groups>
+            <String>Database</String>
+          </Groups>
+        </Plugin>
+      </Plugins>
+      <Hash>AA0AD85584CD8FBAD670C9F95A981978D3C5FE25</Hash>
+    </File>
+    <File Path="x64/SQLite.Interop.dll">
+      <Hash>2AE49E823B26E734F8829E079B3258CFE585FCD5</Hash>
+    </File>
+    <File Path="Dependencies/System.Data.SQLite.1.0.112.0/System.Data.SQLite.dll">
+      <Hash>71A2351FE18B46A7AE8E0BE172EF609086AEF02A</Hash>
+    </File>
+    <File Path="Dependencies/System.Data.DataSetExtensions.4.0.0.0/System.Data.DataSetExtensions.dll">
+      <Hash>4E5ADEDCD5A09F8B8A7AE0A42AD539A4F6788067</Hash>
+    </File>
+    <File Path="Dependencies/Npgsql.5.0.18.0/Npgsql.dll">
+      <Hash>F85AAC20FB9BC40C024B61BD9E264B466C538372</Hash>
+    </File>
+    <File Path="Dependencies/System.Threading.Channels.4.0.2.0/System.Threading.Channels.dll">
+      <Hash>F3849714D8969F72282C386C7F2CD9695A02D907</Hash>
+    </File>
+  </Files>
+</Package>

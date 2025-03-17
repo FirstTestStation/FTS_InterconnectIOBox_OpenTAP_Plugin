@@ -1,0 +1,15 @@
+{
+  "profiles": {
+    "Debug Editor": {
+      "commandName": "Executable",
+      "executablePath": "./Editor.exe",
+      "dotnetRunMessages": true
+    },
+    "Debug TUI": {
+      "commandName": "Executable",
+      "executablePath": "./tap.exe",
+      "commandLineArgs": "tui",
+      "dotnetRunMessages": true
+    }
+  }
+}

@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Package Date="09/12/2024 08:45:57" Name="OSIntegration" Version="1.4.3+0968b4c4" Architecture="AnyCPU" OS="Windows" xmlns="http://opentap.io/schemas/package">
+  <Hash>XAsb3b9Bs-uL339tXxpDVtGvsvA</Hash>
+  <Description>This package makes it possible to create Windows file associations and Start Menu items if specified by the plugin.
+    <Status>Released</Status><Organisation>Keysight Technologies</Organisation></Description>
+  <Dependencies>
+    <PackageDependency Package="OpenTAP" Version="^9.5.0+45ab79bc" />
+  </Dependencies>
+  <Owner>Keysight Technologies, Inc.</Owner>
+  <Files>
+    <File Path="Packages/OSIntegration/OpenTap.OSIntegration.Windows.dll">
+      <Plugins>
+        <Plugin Type="OSIntegration.Windows.StartMenuItemData" BaseType="ICustomPackageData">
+          <Name>StartMenuEntry</Name>
+          <Order>-10000</Order>
+          <Browsable>true</Browsable>
+          <Description />
+          <Collapsed>false</Collapsed>
+          <Groups />
+        </Plugin>
+        <Plugin Type="OSIntegration.Windows.FileAssociationData" BaseType="ICustomPackageData">
+          <Name>FileAssociation</Name>
+          <Order>-10000</Order>
+          <Browsable>true</Browsable>
+          <Description />
+          <Collapsed>false</Collapsed>
+          <Groups />
+        </Plugin>
+        <Plugin Type="OSIntegration.Windows.OSIntegrationInstallAction" BaseType="ICustomPackageAction">
+          <Name>OSIntegrationInstallAction</Name>
+          <Order>-10000</Order>
+          <Browsable>true</Browsable>
+          <Description></Description>
+          <Collapsed>false</Collapsed>
+          <Groups />
+        </Plugin>
+        <Plugin Type="OSIntegration.Windows.OSIntegrationUninstallAction" BaseType="ICustomPackageAction">
+          <Name>OSIntegrationUninstallAction</Name>
+          <Order>-10000</Order>
+          <Browsable>true</Browsable>
+          <Description></Description>
+          <Collapsed>false</Collapsed>
+          <Groups />
+        </Plugin>
+        <Plugin Type="OSIntegration.Windows.FirewallRule" BaseType="ICliAction">
+          <Name>firewall</Name>
+          <Order>-10000</Order>
+          <Browsable>false</Browsable>
+          <Description />
+          <Collapsed>false</Collapsed>
+          <Groups />
+        </Plugin>
+        <Plugin Type="OSIntegration.Windows.IconTool" BaseType="ICliAction">
+          <Name>icons</Name>
+          <Order>-10000</Order>
+          <Browsable>false</Browsable>
+          <Description />
+          <Collapsed>false</Collapsed>
+          <Groups />
+        </Plugin>
+        <Plugin Type="OSIntegration.Windows.SingleFileAssociation" BaseType="ICliAction">
+          <Name>assoc</Name>
+          <Order>-10000</Order>
+          <Browsable>false</Browsable>
+          <Description>Sets up or removes a file association.</Description>
+          <Collapsed>false</Collapsed>
+          <Groups />
+        </Plugin>
+        <Plugin Type="OSIntegration.Windows.FileAssociation" BaseType="ICliAction">
+          <Name>associations</Name>
+          <Order>-10000</Order>
+          <Browsable>false</Browsable>
+          <Description />
+          <Collapsed>false</Collapsed>
+          <Groups />
+        </Plugin>
+        <Plugin Type="OSIntegration.Windows.ElevateActions" BaseType="ICliAction">
+          <Name>elevated</Name>
+          <Order>-10000</Order>
+          <Browsable>false</Browsable>
+          <Description />
+          <Collapsed>false</Collapsed>
+          <Groups />
+        </Plugin>
+        <Plugin Type="OSIntegration.Windows.LaunchAction" BaseType="ICliAction">
+          <Name>launch</Name>
+          <Order>-10000</Order>
+          <Browsable>false</Browsable>
+          <Description>Launch OpenTap package/packages or test plan as separate processes.</Description>
+          <Collapsed>false</Collapsed>
+          <Groups />
+        </Plugin>
+        <Plugin Type="OSIntegration.Windows.ListInstallationsAction" BaseType="ICliAction">
+          <Name>list</Name>
+          <Order>-10000</Order>
+          <Browsable>false</Browsable>
+          <Description>Lists registered installations.</Description>
+          <Collapsed>false</Collapsed>
+          <Groups>
+            <String>path</String>
+          </Groups>
+        </Plugin>
+        <Plugin Type="OSIntegration.Windows.RegisterInstallationAction" BaseType="ICliAction">
+          <Name>register</Name>
+          <Order>-10000</Order>
+          <Browsable>false</Browsable>
+          <Description>Registers an OpenTAP installation in a given directory.</Description>
+          <Collapsed>false</Collapsed>
+          <Groups>
+            <String>path</String>
+          </Groups>
+        </Plugin>
+        <Plugin Type="OSIntegration.Windows.UnregisterInstallationAction" BaseType="ICliAction">
+          <Name>unregister</Name>
+          <Order>-10000</Order>
+          <Browsable>false</Browsable>
+          <Description>Unregisters an OpenTAP installation in a given directory.</Description>
+          <Collapsed>false</Collapsed>
+          <Groups>
+            <String>path</String>
+          </Groups>
+        </Plugin>
+      </Plugins>
+      <Hash>8EA17EE4A601DF97A7A4B9F1F01C891D36927766</Hash>
+    </File>
+  </Files>
+  <PackageActionExtensions>
+    <ActionStep ExeFile="tap.exe" ExpectedExitCodes="0" Quiet="false" Optional="false" Arguments="path register" ActionName="install"></ActionStep>
+    <ActionStep ExeFile="tap.exe" ExpectedExitCodes="0" Quiet="false" Optional="false" Arguments="path unregister" ActionName="uninstall"></ActionStep>
+  </PackageActionExtensions>
+</Package>

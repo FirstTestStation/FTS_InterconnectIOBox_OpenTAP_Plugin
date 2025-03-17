@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EditorSettings type="Keysight.OpenTap.Wpf.EditorSettings">
+  <ShowWelcomeScreen>false</ShowWelcomeScreen>
+  <CheckForUpdates>false</CheckForUpdates>
+  <LogVisibility>ViewErrors, ViewWarnings, ViewMessages</LogVisibility>
+  <ColorTheme>OsTheme</ColorTheme>
+  <ResultPopup>false</ResultPopup>
+  <ClearLog>true</ClearLog>
+  <ShowQuitConfirmation>true</ShowQuitConfirmation>
+  <ShowSaveBeforeExit>true</ShowSaveBeforeExit>
+  <ShowGuiLog>true</ShowGuiLog>
+  <EnsureUniqueStepName>true</EnsureUniqueStepName>
+  <KeepPanelsInFront>true</KeepPanelsInFront>
+  <ShowBrokenPackagesWindow>true</ShowBrokenPackagesWindow>
+  <EstimationWindowLength>10</EstimationWindowLength>
+  <LogPanelBufferSize>20000</LogPanelBufferSize>
+  <ShowCodeLinksInLog>false</ShowCodeLinksInLog>
+  <ShowPropertyInTooltip>false</ShowPropertyInTooltip>
+  <AutoAttachDebugger>true</AutoAttachDebugger>
+  <FocusMode>false</FocusMode>
+  <FocusModeDontAskMeAgain>false</FocusModeDontAskMeAgain>
+  <Package.Dependencies>
+    <Package Name="WPF Controls" Version="^9.27.0+f0e134d7" />
+    <Package Name="OpenTAP" Version="^9.27.0+11e5348d" />
+  </Package.Dependencies>
+</EditorSettings>

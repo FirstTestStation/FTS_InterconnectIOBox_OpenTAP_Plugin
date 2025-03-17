@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ResultSettings type="OpenTap.ResultSettings">
+  <CsvResultListener type="Keysight.OpenTap.Plugins.Csv.CsvResultListener" Source="">
+    <Separator>Comma</Separator>
+    <FilePath>Report/&lt;ResultName&gt;-&lt;Date&gt;-&lt;Verdict&gt;.csv</FilePath>
+    <IncludeParameters>false</IncludeParameters>
+    <IncludeByteOrderMark>false</IncludeByteOrderMark>
+    <MaximumFileSize>
+      <Value>10000</Value>
+      <IsEnabled>false</IsEnabled>
+    </MaximumFileSize>
+    <WriteResultImmediatly>false</WriteResultImmediatly>
+    <IsEnabled>true</IsEnabled>
+    <Name>CSV</Name>
+  </CsvResultListener>
+  <SQLiteDatabase type="Keysight.OpenTap.Plugins.ResultListeners.SQLiteDatabase" Source="">
+    <FilePath>SqliteDatabase.TapResults</FilePath>
+    <IsEnabled>false</IsEnabled>
+    <Name>SQLite</Name>
+  </SQLiteDatabase>
+  <Package.Dependencies>
+    <Package Name="OpenTAP" Version="^9.27.0+11e5348d" />
+    <Package Name="CSV" Version="^9.14.0+7676a2a2" />
+    <Package Name="SQLite and PostgreSQL" Version="^9.6.0+558afbf4" />
+  </Package.Dependencies>
+</ResultSettings>

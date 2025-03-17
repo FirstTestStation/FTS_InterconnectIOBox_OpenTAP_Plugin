@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MyComponentSettings type="InterconnectIOBox.MyComponentSettings">
+  <ExampleSetting>true</ExampleSetting>
+  <Package.Dependencies>
+    <Package Name="OpenTAP" Version="^9.27.0+11e5348d" />
+  </Package.Dependencies>
+</MyComponentSettings>

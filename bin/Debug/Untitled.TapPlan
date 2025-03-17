@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TestPlan type="OpenTap.TestPlan">
+  <Steps>
+    <TestStep type="InterconnectIOBox.RelayAction" Id="ced3de97-ef08-4099-9404-412178f00aa2">
+      <IO_Instrument Source="OpenTap.InstrumentSettings">InterconnectIO</IO_Instrument>
+      <RelayLPR1>NoAction</RelayLPR1>
+      <RelayLPR2>NoAction</RelayLPR2>
+      <RelayHPR1>NoAction</RelayHPR1>
+      <RelaySSR1>NoAction</RelaySSR1>
+      <Relay5VDUT>Close_And_Read</Relay5VDUT>
+      <OWire_Dut Source="OpenTap.DutSettings">FTS_DUT</OWire_Dut>
+      <Name Metadata="Step Name">Isolated Relay Control</Name>
+      <ChildTestSteps />
+    </TestStep>
+    <TestStep type="InterconnectIOBox.SpiCfg" Id="9bd88008-16ae-41fe-9fb0-be054bd0556b">
+      <IO_Instrument Source="OpenTap.InstrumentSettings">InterconnectIO</IO_Instrument>
+      <SpiAct>Write_read</SpiAct>
+      <Enable>true</Enable>
+      <Disable>false</Disable>
+      <Baud>100000</Baud>
+      <SelectM>Mode4_CS1_CPOL0_CPHA0</SelectM>
+      <SelectCs>_5</SelectCs>
+      <SelectD>_8</SelectD>
+      <OWire_Dut Source="OpenTap.DutSettings">FTS_DUT</OWire_Dut>
+      <Name Metadata="Step Name">SPI Config</Name>
+      <ChildTestSteps />
+    </TestStep>
+    <TestStep type="InterconnectIOBox.SpiCom" Id="213d40ae-c64b-4706-a4ca-aa0c3d1c5fb1">
+      <IO_Instrument Source="OpenTap.InstrumentSettings">InterconnectIO</IO_Instrument>
+      <SPIAct>read_test</SPIAct>
+      <wdata />
+      <rdata />
+      <ldata>1</ldata>
+      <OWire_Dut Source="OpenTap.DutSettings">FTS_DUT</OWire_Dut>
+      <Name Metadata="Step Name">SPI Data Write/Read</Name>
+      <ChildTestSteps />
+    </TestStep>
+  </Steps>
+  <Package.Dependencies>
+    <Package Name="OpenTAP" Version="^9.27.0+11e5348d" />
+  </Package.Dependencies>
+</TestPlan>

@@ -1,0 +1,15 @@
+00:00:00.000000 ; TestPlan       ; Information ; Starting TestPlan 'testreport' on 02/11/2025 19:43:11, 2 of 2 TestSteps enabled.
+00:00:00.001000 ; CSV            ; Information ; Resource "CSV" opened. [17.9 us]
+00:00:00.001000 ; Log            ; Information ; Resource "Log" opened. [177 us]
+00:00:00.002002 ; TestPlan       ; Debug       ; Saved Test Plan XML [1.70 ms]
+00:00:00.024000 ; TestPlan       ; Debug       ; PrePlanRun Methods completed [23.0 us]
+00:00:00.024000 ; TestPlan       ; Information ; "10.1  TestData" started.
+00:00:00.025000 ; TestPlan       ; Information ; "10.1  TestData" completed. [112 us]
+00:00:00.025000 ; TestPlan       ; Information ; "10.2 CheclkTestData " started.
+00:00:00.025000 ; TestPlan       ; Information ; "10.2 CheclkTestData " completed. [41.3 us]
+00:00:00.025000 ; TestPlan       ; Debug       ; Test step runs finished. [291 us]
+00:00:00.025000 ; Summary        ; Information ; ----- Summary of test plan started 02/11/2025 19:43:11 -----
+00:00:00.025000 ; Summary        ; Information ;  10.1  TestData                                    112 us          
+00:00:00.025000 ; Summary        ; Information ;  10.2 CheclkTestData                              41.3 us          
+00:00:00.025000 ; Summary        ; Information ; ------------------------------------------------------------
+00:00:00.025000 ; Summary        ; Information ; ------ Test plan completed successfully in  24.1 ms   ------

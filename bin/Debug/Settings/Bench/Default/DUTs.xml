@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DutSettings type="OpenTap.DutSettings">
+  <FTS_DUT type="InterconnectIOBox.FTS_DUT" Source="">
+    <Enable1WireJ1>true</Enable1WireJ1>
+    <Enable1WireJ2>false</Enable1WireJ2>
+    <ProductName>FTS_Selftest</ProductName>
+    <PartNumber>500-1010-021</PartNumber>
+    <Serial>000001</Serial>
+    <I2CSelfadd>32</I2CSelfadd>
+    <ID Metadata="ID">500-1020</ID>
+    <Comment Metadata="Comment" />
+    <Name>FTS_DUT</Name>
+  </FTS_DUT>
+  <Package.Dependencies>
+    <Package Name="OpenTAP" Version="^9.27.0+11e5348d" />
+  </Package.Dependencies>
+</DutSettings>

@@ -1,0 +1,2 @@
+// avoid loading Keysight.Ccl.Licensing.Api version lower than 5.5.1.81
+// 5.5.1.81 or newer should be used.

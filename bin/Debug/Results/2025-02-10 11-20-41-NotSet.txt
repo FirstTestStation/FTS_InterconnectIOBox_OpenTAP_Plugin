@@ -1,0 +1,14 @@
+00:00:00.000000 ; TestPlan       ; Information ; Starting TestPlan 'Untitled' on 02/10/2025 11:20:41, 1 of 1 TestSteps enabled.
+00:00:00.061510 ; TestPlan       ; Debug       ; Saved Test Plan XML [1.66 ms]
+00:00:00.068511 ; Settings       ; Debug       ; No settings file exists for TestPlanRunPackageParameterMonitor. A new instance with default values has been created. [146 us]
+00:00:00.134317 ; CSV            ; Information ; Resource "CSV" opened. [7.68 ms]
+00:00:00.135316 ; Log            ; Information ; Resource "Log" opened. [8.15 ms]
+00:00:00.167947 ; TestPlan       ; Debug       ; PrePlanRun Methods completed [3.23 ms]
+00:00:00.180945 ; TestPlan       ; Information ; "CSV Logger Step" started.
+00:00:00.194946 ; TestStep       ; Information ; Published result: 1 - Pass
+00:00:00.201946 ; TestPlan       ; Information ; "CSV Logger Step" completed. [18.5 ms]
+00:00:00.203951 ; TestPlan       ; Debug       ; Test step runs finished. [35.3 ms]
+00:00:00.215946 ; Summary        ; Information ; ----- Summary of test plan started 02/10/2025 11:20:41 -----
+00:00:00.217948 ; Summary        ; Information ;  CSV Logger Step                                  18.5 ms          
+00:00:00.218946 ; Summary        ; Information ; ------------------------------------------------------------
+00:00:00.218946 ; Summary        ; Information ; ------ Test plan completed successfully in   138 ms   ------

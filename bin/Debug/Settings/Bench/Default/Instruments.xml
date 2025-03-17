@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<InstrumentSettings type="OpenTap.InstrumentSettings">
+  <InterconnectIO type="InterconnectIOBox.InterconnectIO" Source="">
+    <VisaAddress>ASRL1::INSTR</VisaAddress>
+    <IoTimeout>2000</IoTimeout>
+    <FinegrainedLock>false</FinegrainedLock>
+    <Lock>false</Lock>
+    <LockRetries>5</LockRetries>
+    <LockHoldoff>0.1</LockHoldoff>
+    <QueryErrorAfterCommand>true</QueryErrorAfterCommand>
+    <SendClearOnConnect>true</SendClearOnConnect>
+    <VerboseLoggingEnabled>true</VerboseLoggingEnabled>
+    <SendIDNOnConnect>true</SendIDNOnConnect>
+    <SendCLSOnConnect>true</SendCLSOnConnect>
+    <Name>InterconnectIO</Name>
+  </InterconnectIO>
+  <Package.Dependencies>
+    <Package Name="OpenTAP" Version="^9.27.0+11e5348d" />
+  </Package.Dependencies>
+</InstrumentSettings>

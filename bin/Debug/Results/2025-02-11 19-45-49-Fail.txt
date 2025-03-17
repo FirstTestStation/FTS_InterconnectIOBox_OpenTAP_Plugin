@@ -1,0 +1,13 @@
+00:00:00.000000 ; TestPlan       ; Information ; Starting TestPlan 'Selftest' on 02/11/2025 19:45:49, 1 of 1 TestSteps enabled.
+00:00:00.050507 ; TestPlan       ; Debug       ; Saved Test Plan XML [1.23 ms]
+00:00:00.056507 ; Settings       ; Debug       ; No settings file exists for TestPlanRunPackageParameterMonitor. A new instance with default values has been created. [145 us]
+00:00:00.103507 ; Log            ; Information ; Resource "Log" opened. [3.26 ms]
+00:00:00.103507 ; CSV            ; Information ; Resource "CSV" opened. [3.25 ms]
+00:00:00.182190 ; TestPlan       ; Debug       ; PrePlanRun Methods completed [3.41 ms]
+00:00:00.192192 ; TestPlan       ; Information ; "10.1 test#1" started.
+00:00:00.216188 ; TestPlan       ; Information ; "10.1 test#1" completed with verdict 'Fail'. [22.3 ms]
+00:00:00.218190 ; TestPlan       ; Debug       ; Test step runs finished. [35.9 ms]
+00:00:00.230193 ; Summary        ; Information ; ------- Summary of test plan started 02/11/2025 19:45:49 -------
+00:00:00.232193 ; Summary        ; Information ;  10.1 test#1                                      22.3 ms   Fail   
+00:00:00.233193 ; Summary        ; Information ; ----------------------------------------------------------------
+00:00:00.233193 ; Summary        ; Information ; ----- Test plan completed with verdict Fail in   163 ms   ------

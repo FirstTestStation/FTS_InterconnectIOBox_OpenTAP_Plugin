@@ -1,0 +1,13 @@
+00:00:00.000000 ; TestPlan       ; Information ; Starting TestPlan 'Untitled' on 02/11/2025 19:33:18, 1 of 1 TestSteps enabled.
+00:00:00.049516 ; TestPlan       ; Debug       ; Saved Test Plan XML [1.75 ms]
+00:00:00.055518 ; Settings       ; Debug       ; No settings file exists for TestPlanRunPackageParameterMonitor. A new instance with default values has been created. [139 us]
+00:00:00.114518 ; CSV            ; Information ; Resource "CSV" opened. [2.05 ms]
+00:00:00.114518 ; Log            ; Information ; Resource "Log" opened. [3.82 ms]
+00:00:00.144027 ; TestPlan       ; Debug       ; PrePlanRun Methods completed [3.23 ms]
+00:00:00.155024 ; TestPlan       ; Information ; "Results with Custom Class" started.
+00:00:00.179025 ; TestPlan       ; Information ; "Results with Custom Class" completed. [23.2 ms]
+00:00:00.181025 ; TestPlan       ; Debug       ; Test step runs finished. [36.6 ms]
+00:00:00.192027 ; Summary        ; Information ; ----- Summary of test plan started 02/11/2025 19:33:18 -----
+00:00:00.194025 ; Summary        ; Information ;  Results with Custom Class                        23.2 ms          
+00:00:00.195025 ; Summary        ; Information ; ------------------------------------------------------------
+00:00:00.195025 ; Summary        ; Information ; ------ Test plan completed successfully in   128 ms   ------

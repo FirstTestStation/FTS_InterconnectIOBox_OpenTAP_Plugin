@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Package InfoLink="http://www.keysight.com/find/TAP" Date="09/13/2024 12:02:10" Name="CSV" Version="9.14.0+7676a2a2" Architecture="AnyCPU" OS="Windows,Linux,Macos" xmlns="http://opentap.io/schemas/package">
+  <Hash>OonpZ8Qa3B6RczlwY1PO50uIn9A</Hash>
+  <Description>This plugin package contains a result listener that allows for results to be output in a CSV format. CSV is a common data exchange format that is widely supported by consumer, business, and scientific applications. It is basically plain text saved in a tabular format and the settings let you configure which separator to use: comma, semicolon or tabular.</Description>
+  <Dependencies>
+    <PackageDependency Package="OpenTAP" Version="^9.22.0" />
+  </Dependencies>
+  <Owner>Keysight Technologies, Inc.</Owner>
+  <Files>
+    <File Path="Packages/CSV/Csv.dll">
+      <Plugins>
+        <Plugin Type="Keysight.OpenTap.Plugins.Csv.CsvResultListener" BaseType="Result Listener">
+          <Name>CSV</Name>
+          <Order>-10000</Order>
+          <Browsable>true</Browsable>
+          <Description>Save results to one or more CSV files. Allows splitting the file(s) based on a maximum file size.</Description>
+          <Collapsed>false</Collapsed>
+          <Groups>
+            <String>Text</String>
+          </Groups>
+        </Plugin>
+        <Plugin Type="Keysight.OpenTap.Plugins.Csv.CsvSweep" BaseType="Test Step">
+          <Name>CSV Sweep</Name>
+          <Order>-10000</Order>
+          <Browsable>true</Browsable>
+          <Description>Sweeps the parameters based on a CSV file.</Description>
+          <Collapsed>false</Collapsed>
+          <Groups>
+            <String>Flow Control</String>
+          </Groups>
+        </Plugin>
+        <Plugin Type="Keysight.OpenTap.Plugins.Csv.ExternalTestPlanParameterCsvFileHandler" BaseType="External Parameter Import | External Parameter Export">
+          <Name>Comma Separated Values</Name>
+          <Order>-10001</Order>
+          <Browsable>true</Browsable>
+          <Description />
+          <Collapsed>false</Collapsed>
+          <Groups />
+        </Plugin>
+        <Plugin Type="Keysight.OpenTap.Plugins.Csv.SweepValueCsvFileHandler" BaseType="Table Export | Table Import">
+          <Name>Comma Separated Values</Name>
+          <Order>-10001</Order>
+          <Browsable>true</Browsable>
+          <Description />
+          <Collapsed>false</Collapsed>
+          <Groups />
+        </Plugin>
+      </Plugins>
+      <Hash>B8D69B205E5D51A255B82696E2F1CA95F54C6D22</Hash>
+    </File>
+    <File Path="Dependencies/netstandard.2.0.0.0/netstandard.dll">
+      <Hash>2A9110892B7AB0B2EB20CD737414F69D26C77317</Hash>
+    </File>
+  </Files>
+</Package>
