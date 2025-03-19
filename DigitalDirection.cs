@@ -29,10 +29,10 @@ namespace InterconnectIOBox
         [Display("Configuration Action:", Group: "Cfg Control",Order: 0.1, Description: "Action to perform on selected ports, read data will be published.")]
         public DigFct Selectedfct { get; set; }
 
-        [Display("Port0 I/O Byte Cfg:", Group: "Port I/O Read/Write Cfg using Byte value", Order: 2, Collapsed: true, Description: "Set/Read Port0 direction using decimal, hexadecimal, or binary values.(0: Input, 1: Output)")]
+        [Display("Port0 I/O Byte Cfg:", Group: "Port I/O Direction Read/Write using Byte value", Order: 2, Collapsed: true, Description: "Set/Read Port0 direction using decimal, hexadecimal, or binary values.(0: Input, 1: Output)")]
         public Enabled<byte> P0Byte { get; set; }
 
-        [Display("Port1 I/O Byte Cfg:", Group: "Port I/O Read/Write Cfg using Byte value", Order: 2.1, Collapsed: true, Description: "Set/Read Port1 direction using decimal, hexadecimal, or binary values.(0: Input, 1: Output)")]
+        [Display("Port1 I/O Byte Cfg:", Group: "Port I/O Direction Read/Write using Byte value", Order: 2.1, Collapsed: true, Description: "Set/Read Port1 direction using decimal, hexadecimal, or binary values.(0: Input, 1: Output)")]
         public Enabled<byte> P1Byte { get; set; }
 
         public enum BitDir

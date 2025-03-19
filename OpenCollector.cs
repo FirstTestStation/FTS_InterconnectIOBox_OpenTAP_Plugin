@@ -76,6 +76,7 @@ namespace InterconnectIOBox
         {
             Log.Info("Executing relay actions...");
 
+            UpgradeVerdict(Verdict.Pass);  // default value in case of write only
             HandleOC("OC1", OC1, OC1r);
             HandleOC("OC2", OC2, OC2r);
             HandleOC("OC3", OC3, OC3r);

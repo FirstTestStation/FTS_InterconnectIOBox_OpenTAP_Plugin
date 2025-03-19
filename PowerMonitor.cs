@@ -8,7 +8,9 @@ namespace InterconnectIOBox
     public abstract class PwrMonitor : ResultTestStep
     {
 
+
         #region Settings
+
         public InterconnectIO IO_Instrument { get; set; }
 
         public enum PwrSource
@@ -46,6 +48,9 @@ namespace InterconnectIOBox
 
     public class ReadPWR : PwrMonitor
     {
+        [Output]
+        [Display("Measure:")]
+        public string Measure { get; private set; }
         public ReadPWR()
         {
             // ToDo: Set default values for properties / settings.
@@ -82,6 +87,7 @@ namespace InterconnectIOBox
                     command = $"ANA:PWR:SHUNT?";
                     lname = "0.1 Ohm Shunt Voltage";
                     name = "Shunt Voltage";
+                    unit = "mV";
                     Log.Info("Reading from ADC1...");
                     break;
                 case PwrSource.Current_mA:
@@ -117,6 +123,8 @@ namespace InterconnectIOBox
             // Determine verdict as a string ("PASS" or "FAIL")
             string verdictStr = (rvalue >= LowerLimit && rvalue <= UpperLimit) ? "PASS" : "FAIL";
             UpgradeVerdict(verdictStr == "PASS" ? Verdict.Pass : Verdict.Fail);
+
+            Measure = $"{rvalue:F3} {unit}";  // Output measure with 3 decimal places
 
             var result = new TestResult<double>
             {
@@ -173,7 +181,7 @@ namespace InterconnectIOBox
                 Log.Info($"Calibration failed. Expected: {ExpectedValue} mA between Low: {llimit} and High: {ulimit}, Actual: {rvalue} mA");
             }
 
-
+            Name = $"Current Calibration at {rvalue}";
 
             var result = new TestResult<double>
             {

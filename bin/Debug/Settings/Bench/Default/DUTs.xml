@@ -6,8 +6,8 @@
     <ProductName>FTS_Selftest</ProductName>
     <PartNumber>500-1010-021</PartNumber>
     <Serial>000001</Serial>
-    <I2CSelfadd>32</I2CSelfadd>
-    <ID Metadata="ID">500-1020</ID>
+    <I2CSelftestaddress>32</I2CSelftestaddress>
+    <ID Metadata="ID">500-1010</ID>
     <Comment Metadata="Comment" />
     <Name>FTS_DUT</Name>
   </FTS_DUT>

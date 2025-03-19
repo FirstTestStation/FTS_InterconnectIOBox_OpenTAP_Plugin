@@ -9,7 +9,10 @@ namespace InterconnectIOBox
     {
 
         #region Settings
+
+
         public InterconnectIO IO_Instrument { get; set; }
+
 
         public enum AdcSource
         {
@@ -36,8 +39,14 @@ namespace InterconnectIOBox
         " The Pico Master has two ADC inputs, ADC0 and ADC1, each supporting a voltage range of 0 to 3V DC. Additionally, VSYS measures the voltage at the Pico Master's VSYS pin, which is expected to be 5V." +
         " The internal temperature sensor provides a reading in Celsius, representing the Pico Master's internal temperature")]
 
+
+
     public class ReadADC : ADCReadVolt
     {
+        [Output]
+        [Display("Measure:")]
+        public string Measure { get; private set; }
+
         public ReadADC()
         {
             // ToDo: Set default values for properties / settings.
@@ -113,6 +122,9 @@ namespace InterconnectIOBox
                 UpgradeVerdict(Verdict.Fail);
                 test = "FAIL";
             }
+
+            Measure = $"{vvalue:F3} {unit}";  // Output measure with 3 decimal places
+
             // Publish final result
             var result = new TestResult<double>
             {

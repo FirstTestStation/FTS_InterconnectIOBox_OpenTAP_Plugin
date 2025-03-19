@@ -21,8 +21,8 @@ namespace InterconnectIOBox
         #endregion
 
         [Output]
-        [Display("Serial_Data_Read:")]
-        public string SerReadData { get; private set; }
+        [Display("Measure:")]
+        public string Measure { get; private set; }
 
         public InterconnectIO IO_Instrument { get; set; }
         public enum Action
@@ -144,7 +144,7 @@ namespace InterconnectIOBox
             if (test == "PASS") UpgradeVerdict(Verdict.Pass);
             else UpgradeVerdict(Verdict.Fail);
 
-            SerReadData = readP;
+            Measure = readP;
 
             if (SerialAct != Action.read_only) // if publish required
             {

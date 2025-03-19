@@ -23,8 +23,8 @@ namespace InterconnectIOBox
         #endregion
 
         [Output]
-        [Display("I2C_Data_Read:")]
-        public string ItcReadData { get; private set; }
+        [Display("Measure:")]
+        public string Measure { get; private set; }
 
 
         public InterconnectIO IO_Instrument { get; set; }
@@ -202,7 +202,7 @@ namespace InterconnectIOBox
                 if (test == "PASS") UpgradeVerdict(Verdict.Pass);
                 else UpgradeVerdict(Verdict.Fail);
 
-                ItcReadData = response;
+                Measure = response;
 
                 if (I2CAct != Action.read_only) // if publish required
                 {
@@ -253,7 +253,7 @@ namespace InterconnectIOBox
             if (test == "PASS") UpgradeVerdict(Verdict.Pass);
             else UpgradeVerdict(Verdict.Fail);
 
-            ItcReadData = readP.ToString();
+            Measure = readP.ToString();
 
             if (I2CAct != Action.read_only) // if publish required
             {

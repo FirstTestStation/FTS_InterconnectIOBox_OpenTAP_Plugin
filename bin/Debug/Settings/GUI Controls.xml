@@ -130,7 +130,10 @@
   <MainWindowTop>130</MainWindowTop>
   <MainWindowLeft>2096</MainWindowLeft>
   <MainWindowState>Normal</MainWindowState>
-  <RecentTestPlans />
+  <RecentTestPlans>
+    <String>C:\Program Files\OpenTAP\Selftest.TapPlan</String>
+    <String>C:\Station_de_test\FTS_InterconnectIOBox\FTS_InterconnectIOBox\bin\Debug\Selftest.TapPlan</String>
+  </RecentTestPlans>
   <TestPlanGridColumnDetails></TestPlanGridColumnDetails>
   <TestPlanColumnState />
   <TestPlanColumnState2>
@@ -171,7 +174,7 @@
       <IsVisible>true</IsVisible>
       <Priority>-100</Priority>
       <OriginalPriority>-100</OriginalPriority>
-      <Width />
+      <Width type="System.Int32">271</Width>
       <ManuallyConfigured>true</ManuallyConfigured>
     </ColumnState>
     <ColumnState type="Keysight.OpenTap.Gui.ColumnState">
@@ -180,6 +183,14 @@
       <Priority>1</Priority>
       <OriginalPriority>1</OriginalPriority>
       <Width />
+      <ManuallyConfigured>true</ManuallyConfigured>
+    </ColumnState>
+    <ColumnState type="Keysight.OpenTap.Gui.ColumnState">
+      <Name>Measure:</Name>
+      <IsVisible>true</IsVisible>
+      <Priority>-99.001</Priority>
+      <OriginalPriority>0</OriginalPriority>
+      <Width type="System.Int32">82</Width>
       <ManuallyConfigured>true</ManuallyConfigured>
     </ColumnState>
   </TestPlanColumnState2>
@@ -223,6 +234,13 @@
       <Value>
         <Width>850</Width>
         <Height>572</Height>
+      </Value>
+    </KeyValuePairOfString>
+    <KeyValuePairOfString>
+      <Key>Keysight.OpenTap.Gui.PlanLoadedWithErrorsQuestion</Key>
+      <Value>
+        <Width>395</Width>
+        <Height>180</Height>
       </Value>
     </KeyValuePairOfString>
   </UserInputSizes>

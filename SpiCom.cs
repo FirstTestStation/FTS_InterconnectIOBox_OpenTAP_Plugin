@@ -23,8 +23,8 @@ namespace InterconnectIOBox
         #endregion
 
         [Output]
-        [Display("SPI_Data_Read:")]
-        public string SpiReadData { get; private set; }
+        [Display("Measure:")]
+        public string Measure { get; private set; }
 
 
         public InterconnectIO IO_Instrument { get; set; }
@@ -203,7 +203,7 @@ namespace InterconnectIOBox
                 if (test == "PASS") UpgradeVerdict(Verdict.Pass);
                 else UpgradeVerdict(Verdict.Fail);
 
-                SpiReadData = response;
+                Measure = response;
 
                 if (SPIAct != Action.read_only) // if publish required
                 {
@@ -254,7 +254,7 @@ namespace InterconnectIOBox
             if (test == "PASS") UpgradeVerdict(Verdict.Pass);
             else UpgradeVerdict(Verdict.Fail);
 
-            SpiReadData = readP.ToString();
+            Measure = readP.ToString();
 
             if (SPIAct != Action.read_only) // if publish required
             {

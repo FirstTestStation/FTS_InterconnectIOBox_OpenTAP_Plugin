@@ -1,0 +1,2 @@
+Name,StepDuration,PlanName,ResultType,ProductName,ProductNumber,SerialNumber,StepName,Parameter,Value,LowerLimit,UpperLimit,Units,Status
+System Version,0.1492138,Untitled,FTS_Selftest_000001,FTS_Selftest,500-1020,000001,System Version,System Version,'1999.0,'1999.0,'1999.0,string,PASS

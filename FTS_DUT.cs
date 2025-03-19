@@ -14,6 +14,7 @@ namespace InterconnectIOBox
     public class FTS_DUT : Dut
     {
 
+
         [Display("1-Wire device present on J1", Order: 1, Group: "DUT Information from 1-Wire", Description: "Get DUT information from 1-wire connected on J1.")]
         public bool Enable1WireJ1 { get; set; }
 

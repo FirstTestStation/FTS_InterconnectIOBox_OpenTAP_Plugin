@@ -200,7 +200,7 @@ namespace InterconnectIOBox
         public override void Run()
         {
             string command = "";
-
+            UpgradeVerdict(Verdict.Pass);  // Default Verdict
 
             if (RedLedOn)
             {
@@ -389,9 +389,6 @@ namespace InterconnectIOBox
 
         [Display("System", Order: 1, Group: "Version Check", Description: "System Version expected to set verdict = Pass. Empty Check version will report System version only")]
         public string SystemV { get; set; }
-
-        [Browsable(false)]
-        public new FTS_DUT OWire_Dut { get; set; }
 
         #endregion
 

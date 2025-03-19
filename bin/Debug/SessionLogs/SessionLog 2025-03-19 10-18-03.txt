@@ -1,0 +1,642 @@
+﻿2025-03-19 10:18:02.199377 ; Session        ; Debug       ; Session log loaded as 'C:\Station_de_test\FTS_InterconnectIOBox\FTS_InterconnectIOBox\bin\Debug\SessionLogs\Editor 2025-03-19 10-18-01.txt'. [1.48 ms]
+2025-03-19 10:18:02.219017 ; Session        ; Debug       ; Running '"C:\Station_de_test\FTS_InterconnectIOBox\FTS_InterconnectIOBox\bin\Debug\Editor.exe" ' in 'C:\Station_de_test\FTS_InterconnectIOBox\FTS_InterconnectIOBox\bin\Debug'.
+2025-03-19 10:18:02.351336 ; AssemblyFinder ; Debug       ; Found 21/63 assembly files. [14.9 ms]
+2025-03-19 10:18:02.367670 ; Resolver       ; Debug       ; Found match for Keysight.OpenTap.Wpf, Version=9.27.0.0, Culture=neutral, PublicKeyToken=null in C:\Station_de_test\FTS_InterconnectIOBox\FTS_InterconnectIOBox\bin\Debug\Packages\WPF Controls\Keysight.OpenTap.Wpf.dll
+2025-03-19 10:18:02.367670 ; Resolver       ; Debug       ; Found match for System.Collections.Immutable, Version=1.2.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a in C:\Station_de_test\FTS_InterconnectIOBox\FTS_InterconnectIOBox\bin\Debug\Dependencies\System.Collections.Immutable.1.2.3.0\System.Collections.Immutable.dll
+2025-03-19 10:18:02.551455 ; AssemblyFinder ; Debug       ; Found 21/63 assembly files. [13.1 ms]
+2025-03-19 10:18:02.582545 ; Resolver       ; Debug       ; Found match for System.Reflection.Metadata, Version=1.4.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a in C:\Station_de_test\FTS_InterconnectIOBox\FTS_InterconnectIOBox\bin\Debug\Dependencies\System.Reflection.Metadata.1.4.3.0\System.Reflection.Metadata.dll
+2025-03-19 10:18:02.697639 ; Searcher       ; Debug       ; Ordered 19 assemblies according to references. [129 ms]
+2025-03-19 10:18:02.761664 ; PluginManager  ; Debug       ; Found 14 plugin assemblies containing 304 plugin types. [196 ms]
+2025-03-19 10:18:02.761664 ; PluginManager  ; Debug       ; Found version 9.27.0+11e5348d  of OpenTap.dll
+2025-03-19 10:18:02.761664 ; PluginManager  ; Debug       ; Found version 9.27.0+11e5348d  of OpenTap.Package.dll
+2025-03-19 10:18:02.761664 ; PluginManager  ; Debug       ; Found version 1.5.1+16a9625a.16a9625af16be37b607c78294dd086bd05fdd1c1 of Keysight.OpenTap.Licensing.dll
+2025-03-19 10:18:02.761664 ; PluginManager  ; Debug       ; Found version 9.27.0+11e5348d  of OpenTap.Plugins.BasicSteps.dll
+2025-03-19 10:18:02.761664 ; PluginManager  ; Debug       ; Found version 9.27.0+f0e134d7.f0e134d7c967fbd3949acf3affed360905d1398e of Keysight.OpenTap.Wpf.dll
+2025-03-19 10:18:02.761664 ; PluginManager  ; Debug       ; Found version 9.27.0+f0e134d7.f0e134d7c967fbd3949acf3affed360905d1398e of PackageManager.exe
+2025-03-19 10:18:02.761664 ; PluginManager  ; Debug       ; Found version 9.27.0+f0e134d7.f0e134d7c967fbd3949acf3affed360905d1398e of Editor.exe
+2025-03-19 10:18:02.761664 ; PluginManager  ; Debug       ; Found version 0.0.0            of InterconnectIOBox.dll
+2025-03-19 10:18:02.761664 ; PluginManager  ; Debug       ; Found version 9.14.0+7676a2a2  of Csv.dll
+2025-03-19 10:18:02.761664 ; PluginManager  ; Debug       ; Found version 1.4.3+0968b4c4   of OpenTap.OSIntegration.Windows.dll
+2025-03-19 10:18:02.761664 ; PluginManager  ; Debug       ; Found version 9.6.0+558afbf4.558afbf44f139d4cc5acf537e8c72ed4c5efb9cc of Keysight.OpenTap.Plugins.ResultListener.SqlDatabase.dll
+2025-03-19 10:18:02.761664 ; PluginManager  ; Debug       ; Found version 9.6.0+558afbf4.558afbf44f139d4cc5acf537e8c72ed4c5efb9cc of Keysight.OpenTap.Plugins.ResultListener.PostgreSQL.dll
+2025-03-19 10:18:02.761664 ; PluginManager  ; Debug       ; Found version 9.6.0+558afbf4.558afbf44f139d4cc5acf537e8c72ed4c5efb9cc of Keysight.OpenTap.Plugins.ResultListener.SQLite.dll
+2025-03-19 10:18:02.761664 ; PluginManager  ; Debug       ; Found version 1.1.1+507fd903   of OpenTap.Tui.dll
+2025-03-19 10:18:02.761664 ; PluginManager  ; Debug       ; Searched 21 Assemblies. [199 ms]
+2025-03-19 10:18:02.780979 ; AssemblyData   ; Debug       ; Loaded OpenTap. [419 us]
+2025-03-19 10:18:02.821074 ; AssemblyData   ; Debug       ; Loaded OpenTap.Plugins.BasicSteps. [9.30 ms]
+2025-03-19 10:18:02.821074 ; AssemblyData   ; Debug       ; Loaded OpenTap.Package. [12.0 ms]
+2025-03-19 10:18:02.826406 ; AssemblyData   ; Debug       ; Loaded OpenTap.Tui. [17.2 ms]
+2025-03-19 10:18:02.838965 ; AssemblyData   ; Debug       ; Loaded Keysight.OpenTap.Wpf. [211 us]
+2025-03-19 10:18:02.856234 ; SystemInfo     ; Debug       ; Microsoft Windows 10.0.26100 X64
+2025-03-19 10:18:02.856234 ; SystemInfo     ; Debug       ; .NET Framework 4.8.9290.0
+2025-03-19 10:18:02.856234 ; SystemInfo     ; Debug       ; OpenTAP Engine 9.27.0+11e5348d X64
+2025-03-19 10:18:02.856234 ; AssemblyData   ; Debug       ; Loaded OpenTap.OSIntegration.Windows. [8.78 ms]
+2025-03-19 10:18:02.914367 ; AssemblyData   ; Debug       ; Loaded mscorlib. [800 ns]
+2025-03-19 10:18:03.072941 ; Installation   ; Debug       ; CSV                      - 9.14.0+7676a2a2
+2025-03-19 10:18:03.072941 ; Installation   ; Debug       ; Editor                   - 9.27.0+f0e134d7
+2025-03-19 10:18:03.072941 ; Installation   ; Debug       ; Keysight Licensing       - 1.5.1+16a9625a
+2025-03-19 10:18:03.072941 ; Installation   ; Debug       ; OpenTAP                  - 9.27.0+11e5348d
+2025-03-19 10:18:03.072941 ; Installation   ; Debug       ; OSIntegration            - 1.4.3+0968b4c4
+2025-03-19 10:18:03.072941 ; Installation   ; Debug       ; SQLite and PostgreSQL    - 9.6.0+558afbf4
+2025-03-19 10:18:03.072941 ; Installation   ; Debug       ; TUI                      - 1.1.1+507fd903
+2025-03-19 10:18:03.072941 ; Installation   ; Debug       ; WPF Controls             - 9.27.0+f0e134d7
+2025-03-19 10:18:03.072941 ; Installation   ; Debug       ; PathWave License Manager - 2.7.0+398d3a87
+2025-03-19 10:18:03.088599 ; Settings       ; Debug       ; EditorSettings loaded from C:\Station_de_test\FTS_InterconnectIOBox\FTS_InterconnectIOBox\bin\Debug\Settings\Editor.xml [538 ms]
+2025-03-19 10:18:03.088599 ; Resolver       ; Debug       ; Found match for MahApps.Metro, Version=1.3.0.0, Culture=neutral, PublicKeyToken=f4fb5a3c4d1e5b4f in C:\Station_de_test\FTS_InterconnectIOBox\FTS_InterconnectIOBox\bin\Debug\Dependencies\MahApps.Metro.1.3.0.0\MahApps.Metro.dll
+2025-03-19 10:18:03.115621 ; Resolver       ; Debug       ; Found match for Keysight.Ccl.Wsl, Version=6.6.0.0, Culture=neutral, PublicKeyToken=55333af07c70062e in C:\Station_de_test\FTS_InterconnectIOBox\FTS_InterconnectIOBox\bin\Debug\Dependencies\Keysight.Ccl.Wsl.6.6.0.0\Keysight.Ccl.Wsl.dll
+2025-03-19 10:18:03.265242 ; Resolver       ; Debug       ; Found match for Keysight.OpenTap.Wpf, Version=9.27.0, Culture=neutral in C:\Station_de_test\FTS_InterconnectIOBox\FTS_InterconnectIOBox\bin\Debug\Packages\WPF Controls\Keysight.OpenTap.Wpf.dll
+2025-03-19 10:18:03.267250 ; GUI            ; Debug       ; Loaded OsTheme Theme. [15.3 ms]
+2025-03-19 10:18:03.310438 ; Resolver       ; Debug       ; Found match for AvalonDock, Version=4.72.1.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4 in C:\Station_de_test\FTS_InterconnectIOBox\FTS_InterconnectIOBox\bin\Debug\Dependencies\AvalonDock.4.72.1.0\AvalonDock.dll
+2025-03-19 10:18:03.547004 ; AssemblyData   ; Debug       ; Loaded System.Core. [700 ns]
+2025-03-19 10:18:03.547004 ; Settings       ; Debug       ; GuiControlsSettings loaded from C:\Station_de_test\FTS_InterconnectIOBox\FTS_InterconnectIOBox\bin\Debug\Settings\GUI Controls.xml [139 ms]
+2025-03-19 10:18:03.547004 ; Main           ; Debug       ; Window initial dimensions: 1359px, 835px.
+2025-03-19 10:18:03.578324 ; Main           ; Debug       ; Trying to attach debugger.
+2025-03-19 10:18:03.616189 ; Settings       ; Debug       ; EngineSettings loaded from C:\Station_de_test\FTS_InterconnectIOBox\FTS_InterconnectIOBox\bin\Debug\Settings\Engine.xml [29.1 ms]
+2025-03-19 10:18:03.631780 ; Resolver       ; Debug       ; Found match for Keysight.OpenTap.Licensing, Version=1.5.1.0, Culture=neutral, PublicKeyToken=null in C:\Station_de_test\FTS_InterconnectIOBox\FTS_InterconnectIOBox\bin\Debug\Packages\Keysight Licensing\Keysight.OpenTap.Licensing.dll
+2025-03-19 10:18:03.644109 ; Session        ; Debug       ; Session log loaded as 'SessionLogs\SessionLog 2025-03-19 10-18-03.txt'. [1.88 ms]
+2025-03-19 10:18:04.060741 ; AssemblyData   ; Debug       ; Loaded Editor. [60.7 us]
+2025-03-19 10:18:04.061981 ; Settings       ; Debug       ; PanelSettings loaded from C:\Station_de_test\FTS_InterconnectIOBox\FTS_InterconnectIOBox\bin\Debug\Settings\GUI Panels.xml [1.73 ms]
+2025-03-19 10:18:04.082057 ; Main           ; Debug       ; GUI initialized. [494 ms]
+2025-03-19 10:18:04.082057 ; Main           ; Debug       ; Docking manager initialized. [237 us]
+2025-03-19 10:18:04.082884 ; OpenTAP        ; Information ; OpenTAP version '9.27.0+11e5348d' 64-bit initialized 03/19/2025 [2.71 s]
+2025-03-19 10:18:04.082884 ; Resolver       ; Debug       ; Found match for Keysight.OpenTap.Licensing, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null in C:\Station_de_test\FTS_InterconnectIOBox\FTS_InterconnectIOBox\bin\Debug\Packages\Keysight Licensing\Keysight.OpenTap.Licensing.dll
+2025-03-19 10:18:04.125751 ; Resolver       ; Debug       ; Found match for Keysight.Kal.Licensing.Api, Version=7.4.0.790, Culture=neutral, PublicKeyToken=55333af07c70062e in C:\Station_de_test\FTS_InterconnectIOBox\FTS_InterconnectIOBox\bin\Debug\Dependencies\Keysight.Kal.Licensing.Api.4.5.0\Keysight.Kal.Licensing.Api.dll
+2025-03-19 10:18:04.141142 ; Settings       ; Debug       ; ConnectionSettings loaded from C:\Station_de_test\FTS_InterconnectIOBox\FTS_InterconnectIOBox\bin\Debug\Settings\Bench\Default\Connections.xml [2.90 ms]
+2025-03-19 10:18:04.183595 ; AssemblyData   ; Debug       ; Loaded InterconnectIOBox. [44.0 ms]
+2025-03-19 10:18:04.183595 ; Settings       ; Debug       ; DutSettings loaded from C:\Station_de_test\FTS_InterconnectIOBox\FTS_InterconnectIOBox\bin\Debug\Settings\Bench\Default\DUTs.xml [51.7 ms]
+2025-03-19 10:18:04.183595 ; KAL            ; Debug       ; KAL signature verified. [61.6 ms]
+2025-03-19 10:18:04.262312 ; Visa           ; Debug       ; Using IVisaProvider: OpenTap.VisaLibraryLoader
+2025-03-19 10:18:04.272427 ; KAL            ; Debug       ; Initialized [137 ms]
+2025-03-19 10:18:04.278170 ; KAL Process    ; Debug       ; Initialized [144 ms]
+2025-03-19 10:18:04.318640 ; KAL            ; Debug       ; MultipleErrors: There were 2 errors:-----> -1: No licenses found.A license file was not found at the path listed below. To request a license for Keysight products you have purchased visit www.keysight.com/find/softwaremanager (entitlement certificate required).Feature:       TAP_EngineFilename:      C:\ProgramData\Keysight\Licensing\Licenses\Other\*.licLicense path:  C:\ProgramData\Keysight\Licensing\Licenses\Other\*.lic;FlexNet Licensing error: -1,359.  System Error: 2 "The system cannot find the file specified."-----> -5: The feature could not be found.This happens when the feature is not licensed/not borrowed for this particular application, or the license has expired.Feature:       TAP_EngineLicense path:  C:\ProgramData\Keysight\Licensing\Licenses\Server\default.lic;FlexNet Licensing error: -5,412.
+2025-03-19 10:18:04.321762 ; Settings       ; Debug       ; InstrumentSettings loaded from C:\Station_de_test\FTS_InterconnectIOBox\FTS_InterconnectIOBox\bin\Debug\Settings\Bench\Default\Instruments.xml [128 ms]
+2025-03-19 10:18:04.332611 ; AssemblyData   ; Debug       ; Loaded Csv. [8.84 ms]
+2025-03-19 10:18:04.343894 ; KAL Process    ; Debug       ; MultipleErrors: There were 2 errors:-----> -1: No licenses found.A license file was not found at the path listed below. To request a license for Keysight products you have purchased visit www.keysight.com/find/softwaremanager (entitlement certificate required).Feature:       TAP_EngineFilename:      C:\ProgramData\Keysight\Licensing\Licenses\Other\*.licLicense path:  C:\ProgramData\Keysight\Licensing\Licenses\Other\*.lic;FlexNet Licensing error: -1,359.  System Error: 2 "The system cannot find the file specified."-----> -5: The feature could not be found.This happens when the feature is not licensed/not borrowed for this particular application, or the license has expired.Feature:       TAP_EngineLicense path:  C:\ProgramData\Keysight\Licensing\Licenses\Server\default.lic;FlexNet Licensing error: -5,412.
+2025-03-19 10:18:04.372404 ; KAL            ; Debug       ; MultipleErrors: There were 2 errors:-----> -1: No licenses found.A license file was not found at the path listed below. To request a license for Keysight products you have purchased visit www.keysight.com/find/softwaremanager (entitlement certificate required).Feature:       TAP_EditorFilename:      C:\ProgramData\Keysight\Licensing\Licenses\Other\*.licLicense path:  C:\ProgramData\Keysight\Licensing\Licenses\Other\*.lic;FlexNet Licensing error: -1,359.  System Error: 2 "The system cannot find the file specified."-----> -5: The feature could not be found.This happens when the feature is not licensed/not borrowed for this particular application, or the license has expired.Feature:       TAP_EditorLicense path:  C:\ProgramData\Keysight\Licensing\Licenses\Server\default.lic;FlexNet Licensing error: -5,412.
+2025-03-19 10:18:04.372404 ; AssemblyData   ; Debug       ; Loaded Keysight.OpenTap.Plugins.ResultListener.SQLite. [34.6 ms]
+2025-03-19 10:18:04.388277 ; KAL            ; Debug       ; MultipleErrors: There were 2 errors:-----> -1: No licenses found.A license file was not found at the path listed below. To request a license for Keysight products you have purchased visit www.keysight.com/find/softwaremanager (entitlement certificate required).Feature:       KS8400AFilename:      C:\ProgramData\Keysight\Licensing\Licenses\Other\*.licLicense path:  C:\ProgramData\Keysight\Licensing\Licenses\Other\*.lic;FlexNet Licensing error: -1,359.  System Error: 2 "The system cannot find the file specified."-----> -5: The feature could not be found.This happens when the feature is not licensed/not borrowed for this particular application, or the license has expired.Feature:       KS8400ALicense path:  C:\ProgramData\Keysight\Licensing\Licenses\Server\default.lic;FlexNet Licensing error: -5,412.
+2025-03-19 10:18:04.424660 ; KAL            ; Debug       ; MultipleErrors: There were 2 errors:-----> -1: No licenses found.A license file was not found at the path listed below. To request a license for Keysight products you have purchased visit www.keysight.com/find/softwaremanager (entitlement certificate required).Feature:       KS8000AFilename:      C:\ProgramData\Keysight\Licensing\Licenses\Other\*.licLicense path:  C:\ProgramData\Keysight\Licensing\Licenses\Other\*.lic;FlexNet Licensing error: -1,359.  System Error: 2 "The system cannot find the file specified."-----> -5: The feature could not be found.This happens when the feature is not licensed/not borrowed for this particular application, or the license has expired.Feature:       KS8000ALicense path:  C:\ProgramData\Keysight\Licensing\Licenses\Server\default.lic;FlexNet Licensing error: -5,412.
+2025-03-19 10:18:04.427655 ; Settings       ; Debug       ; ResultSettings loaded from C:\Station_de_test\FTS_InterconnectIOBox\FTS_InterconnectIOBox\bin\Debug\Settings\Results.xml [105 ms]
+2025-03-19 10:18:04.436113 ; Resolver       ; Debug       ; Found match for NStack, Version=1.0.7.0, Culture=neutral, PublicKeyToken=null in C:\Station_de_test\FTS_InterconnectIOBox\FTS_InterconnectIOBox\bin\Debug\Dependencies\NStack.1.0.7.0\NStack.dll
+2025-03-19 10:18:04.436113 ; KAL Process    ; Debug       ; MultipleErrors: There were 2 errors:-----> -1: No licenses found.A license file was not found at the path listed below. To request a license for Keysight products you have purchased visit www.keysight.com/find/softwaremanager (entitlement certificate required).Feature:       TAP_EditorFilename:      C:\ProgramData\Keysight\Licensing\Licenses\Other\*.licLicense path:  C:\ProgramData\Keysight\Licensing\Licenses\Other\*.lic;FlexNet Licensing error: -1,359.  System Error: 2 "The system cannot find the file specified."-----> -5: The feature could not be found.This happens when the feature is not licensed/not borrowed for this particular application, or the license has expired.Feature:       TAP_EditorLicense path:  C:\ProgramData\Keysight\Licensing\Licenses\Server\default.lic;FlexNet Licensing error: -5,412.
+2025-03-19 10:18:04.451925 ; AssemblyData   ; Debug       ; Loaded Terminal.Gui. [245 us]
+2025-03-19 10:18:04.454923 ; KAL Process    ; Debug       ; MultipleErrors: There were 2 errors:-----> -1: No licenses found.A license file was not found at the path listed below. To request a license for Keysight products you have purchased visit www.keysight.com/find/softwaremanager (entitlement certificate required).Feature:       KS8400AFilename:      C:\ProgramData\Keysight\Licensing\Licenses\Other\*.licLicense path:  C:\ProgramData\Keysight\Licensing\Licenses\Other\*.lic;FlexNet Licensing error: -1,359.  System Error: 2 "The system cannot find the file specified."-----> -5: The feature could not be found.This happens when the feature is not licensed/not borrowed for this particular application, or the license has expired.Feature:       KS8400ALicense path:  C:\ProgramData\Keysight\Licensing\Licenses\Server\default.lic;FlexNet Licensing error: -5,412.
+2025-03-19 10:18:04.461922 ; Settings       ; Debug       ; TuiSettings loaded from C:\Station_de_test\FTS_InterconnectIOBox\FTS_InterconnectIOBox\bin\Debug\Settings\TUI Settings.xml [33.7 ms]
+2025-03-19 10:18:04.466926 ; KAL Process    ; Debug       ; MultipleErrors: There were 2 errors:-----> -1: No licenses found.A license file was not found at the path listed below. To request a license for Keysight products you have purchased visit www.keysight.com/find/softwaremanager (entitlement certificate required).Feature:       KS8000AFilename:      C:\ProgramData\Keysight\Licensing\Licenses\Other\*.licLicense path:  C:\ProgramData\Keysight\Licensing\Licenses\Other\*.lic;FlexNet Licensing error: -1,359.  System Error: 2 "The system cannot find the file specified."-----> -5: The feature could not be found.This happens when the feature is not licensed/not borrowed for this particular application, or the license has expired.Feature:       KS8000ALicense path:  C:\ProgramData\Keysight\Licensing\Licenses\Server\default.lic;FlexNet Licensing error: -5,412.
+2025-03-19 10:18:04.469929 ; Resolver       ; Debug       ; Found match for System.IdentityModel.Tokens.Jwt, Version=6.16.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35 in C:\Station_de_test\FTS_InterconnectIOBox\FTS_InterconnectIOBox\bin\Debug\Dependencies\System.IdentityModel.Tokens.Jwt.6.16.0.0\System.IdentityModel.Tokens.Jwt.dll
+2025-03-19 10:18:04.480925 ; Resolver       ; Debug       ; Found match for Microsoft.IdentityModel.Tokens, Version=6.16.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35 in C:\Station_de_test\FTS_InterconnectIOBox\FTS_InterconnectIOBox\bin\Debug\Dependencies\Microsoft.IdentityModel.Tokens.6.20.0.0\Microsoft.IdentityModel.Tokens.dll
+2025-03-19 10:18:04.669402 ; Resolver       ; Debug       ; Found match for Microsoft.IdentityModel.Logging, Version=6.16.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35 in C:\Station_de_test\FTS_InterconnectIOBox\FTS_InterconnectIOBox\bin\Debug\Dependencies\Microsoft.IdentityModel.Logging.6.20.0.0\Microsoft.IdentityModel.Logging.dll
+2025-03-19 10:18:04.680403 ; Resolver       ; Debug       ; Found match for Microsoft.IdentityModel.JsonWebTokens, Version=6.16.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35 in C:\Station_de_test\FTS_InterconnectIOBox\FTS_InterconnectIOBox\bin\Debug\Dependencies\Microsoft.IdentityModel.JsonWebTokens.6.16.0.0\Microsoft.IdentityModel.JsonWebTokens.dll
+2025-03-19 10:18:04.697404 ; Resolver       ; Debug       ; Found match for Microsoft.IdentityModel.Abstractions, Version=6.20.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35 in C:\Station_de_test\FTS_InterconnectIOBox\FTS_InterconnectIOBox\bin\Debug\Dependencies\Microsoft.IdentityModel.Abstractions.6.20.0.0\Microsoft.IdentityModel.Abstractions.dll
+2025-03-19 10:18:04.932746 ; WTL            ; Debug       ; License found TAP_Editor
+2025-03-19 10:18:04.938261 ; License        ; Debug       ; License resolved: KS8400A|TAP_Engine|TAP_Editor|KS8000A [824 ms]
+2025-03-19 10:18:05.610059 ; Main           ; Debug       ; Application startup finished. [4.24 s]
+2025-03-19 10:18:05.687229 ; WTL            ; Debug       ; License found TAP_Editor
+2025-03-19 10:18:05.687229 ; License        ; Debug       ; License resolved: TAP_Editor|KS8400A [2.04 ms]
+2025-03-19 10:18:11.312520 ; AssemblyData   ; Debug       ; Loaded PackageManager. [494 us]
+2025-03-19 10:18:50.811497 ; Main           ; Debug       ; Loaded Test plan C:\Station_de_test\FTS_InterconnectIOBox\FTS_InterconnectIOBox\bin\Debug\Selftest.TapPlan [953 ms]
+2025-03-19 10:19:20.332704 ; Serializer     ; Error       ; Package 'OpenTAP' version ^9.27.1+49587562 is required to load 'TestPlan' and the installed version (9.27.0+11e5348d) is not compatible.
+2025-03-19 10:19:20.332704 ; Serializer     ; Error       ; Package 'FTS_InterconnectIOBox' is required to load, but it is not installed.
+2025-03-19 10:19:20.445507 ; Serializer     ; Error       ; XML Line 2: Package 'OpenTAP' version ^9.27.1+49587562 is required to load 'TestPlan' and the installed version (9.27.0+11e5348d) is not compatible.
+2025-03-19 10:19:20.446509 ; Serializer     ; Error       ; XML Line 2: Package 'FTS_InterconnectIOBox' is required to load, but it is not installed.
+2025-03-19 10:19:24.609708 ; Main           ; Debug       ; Loaded Test plan C:\Program Files\OpenTAP\Selftest.TapPlan [4.29 s]
+2025-03-19 10:19:37.231395 ; TestPlan       ; Information ; -----------------------------------------------------------------
+2025-03-19 10:19:37.265398 ; TestPlan       ; Information ; Starting TestPlan 'Selftest' on 03/19/2025 10:19:37, 19 of 121 TestSteps enabled.
+2025-03-19 10:19:37.323918 ; Settings       ; Debug       ; No settings file exists for TestPlanRunPackageParameterMonitor. A new instance with default values has been created. [139 us]
+2025-03-19 10:19:37.375922 ; TestPlan       ; Debug       ; Saved Test Plan XML [61.9 ms]
+2025-03-19 10:19:37.391918 ; CSV            ; Information ; Resource "CSV" opened. [5.52 ms]
+2025-03-19 10:19:37.392917 ; FTS_DUT        ; Information ; Open FTS_DUT.
+2025-03-19 10:19:37.392917 ; FTS_DUT        ; Information ; 1-Wire J1 enabled.
+2025-03-19 10:19:37.392917 ; FTS_DUT        ; Information ; Resource "FTS_DUT" opened. [6.64 ms]
+2025-03-19 10:19:37.393919 ; InterconnectIO ; Debug       ; Connecting to 'ASRL1::INSTR'
+2025-03-19 10:19:37.455430 ; InterconnectIO ; Debug       ; SCPI >> *IDN? [11.2 ms]
+2025-03-19 10:19:37.455430 ; InterconnectIO ; Debug       ; SCPI << FirstTestStation,InterconnectIO,2022A,1.0
+2025-03-19 10:19:37.455430 ; InterconnectIO ; Information ; Now connected to: FirstTestStation,InterconnectIO,2022A,1.0
+2025-03-19 10:19:37.457430 ; InterconnectIO ; Debug       ; SCPI >> *CLS [154 us]
+2025-03-19 10:19:37.556939 ; InterconnectIO ; Debug       ; SCPI >> *OPC? [99.4 ms]
+2025-03-19 10:19:37.556939 ; InterconnectIO ; Debug       ; SCPI << 1
+2025-03-19 10:19:37.657356 ; InterconnectIO ; Information ; Resource "InterconnectIO (ASRL1::INSTR)" opened. [271 ms]
+2025-03-19 10:19:37.671361 ; TestPlan       ; Debug       ; "1-Wire DUT read" PrePlanRun completed. [1.69 ms]
+2025-03-19 10:19:37.672361 ; TestPlan       ; Debug       ; "Ressource Initialization \ Pico Slaves Disable/Enable" PrePlanRun completed. [67.8 us]
+2025-03-19 10:19:37.672361 ; TestPlan       ; Debug       ; "Ressource Initialization \ Error Led" PrePlanRun completed. [215 us]
+2025-03-19 10:19:37.672361 ; TestPlan       ; Debug       ; "Ressource Initialization \ Port0: Output, Port1:Input" PrePlanRun completed. [64.6 us]
+2025-03-19 10:19:37.672361 ; TestPlan       ; Debug       ; "Ressource Initialization \ Port0 Clear" PrePlanRun completed. [54.5 us]
+2025-03-19 10:19:37.672361 ; TestPlan       ; Debug       ; "Ressource Initialization \ Init GPIO Direction " PrePlanRun completed. [63.3 us]
+2025-03-19 10:19:37.672361 ; TestPlan       ; Debug       ; "Ressource Initialization \ Set GPIO = 0" PrePlanRun completed. [74.5 us]
+2025-03-19 10:19:37.672361 ; TestStep       ; Information ; Preparing to execute open collector actions...
+2025-03-19 10:19:37.672361 ; TestPlan       ; Debug       ; "Ressource Initialization \ Init OC = Open" PrePlanRun completed. [109 us]
+2025-03-19 10:19:37.672361 ; TestPlan       ; Debug       ; "Ressource Initialization \ Setup I2C for talk to Selftest" PrePlanRun completed. [55.6 us]
+2025-03-19 10:19:37.672361 ; TestStep       ; Information ; Preparing to execute relay actions...
+2025-03-19 10:19:37.672361 ; TestPlan       ; Debug       ; "Close relay 5V_PWR" PrePlanRun completed. [1.02 ms]
+2025-03-19 10:19:37.672361 ; TestPlan       ; Debug       ; "Test 1.1: 5VDC Check with ADC0" PrePlanRun completed. [79.6 us]
+2025-03-19 10:19:37.672361 ; TestPlan       ; Debug       ; "Bank1 - Bank2 Relays Test \ Close K7,K8,K14" PrePlanRun completed. [5.20 us]
+2025-03-19 10:19:37.672361 ; TestPlan       ; Debug       ; "Bank1 - Bank2 Relays Test \ Close BK1-CH0, Close BK2-CH0" PrePlanRun completed. [112 us]
+2025-03-19 10:19:37.672361 ; TestStep       ; Information ; Preparing to execute open collector actions...
+2025-03-19 10:19:37.672361 ; TestPlan       ; Debug       ; "Bank1 - Bank2 Relays Test \ Close K12 (PS8)" PrePlanRun completed. [12.2 us]
+2025-03-19 10:19:37.673361 ; TestPlan       ; Debug       ; "Bank1 - Bank2 Relays Test \ Test 10.0 Relay BK1-BK2 CH0-H Close Test, read I(mA)" PrePlanRun completed. [98.7 us]
+2025-03-19 10:19:37.673361 ; TestPlan       ; Debug       ; PrePlanRun Methods completed [4.97 ms]
+2025-03-19 10:19:37.684357 ; TestPlan       ; Information ; "1-Wire DUT read" started.
+2025-03-19 10:19:37.689356 ; TestStep       ; Information ; Sending SCPI command: COM:OWIRE:READ? 1
+2025-03-19 10:19:38.045882 ; InterconnectIO ; Debug       ; SCPI >> COM:OWIRE:READ? 1 [356 ms]
+2025-03-19 10:19:38.045882 ; InterconnectIO ; Debug       ; SCPI << "[ 2D4CE282200000CC, FTS_Selftest, 500-1010-021, 000001, J1 ] [ 2DC1C38220000059, FTS_Selftest, 500-1010-021, 000001, J2 ]"
+2025-03-19 10:19:38.047883 ; TestStep       ; Information ; 1-Wire received response: "[ 2D4CE282200000CC, FTS_Selftest, 500-1010-021, 000001, J1 ] [ 2DC1C38220000059, FTS_Selftest, 500-1010-021, 000001, J2 ]"
+2025-03-19 10:19:38.047883 ; TestStep       ; Information ; Serialnumber: 000001
+2025-03-19 10:19:38.047883 ; TestStep       ; Information ; 1-Wire Data: "[ 2D4CE282200000CC, FTS_Selftest, 500-1010-021, 000001, J1 ] [ 2DC1C38220000059, FTS_Selftest, 500-1010-021, 000001, J2 ]"
+2025-03-19 10:19:38.047883 ; TestStep       ; Error       ; 1-Wire Board partnumber is not valid for: J1 - does not contains BoardID: 500-1020
+2025-03-19 10:19:38.066884 ; TestPlan       ; Information ; "1-Wire DUT read" completed with verdict 'Fail'. [378 ms]
+2025-03-19 10:19:38.067883 ; TestPlan       ; Information ; "Ressource Initialization" started.
+2025-03-19 10:19:38.071886 ; TestPlan       ; Information ; "Ressource Initialization \ Pico Slaves Disable/Enable" started.
+2025-03-19 10:19:38.078881 ; TestStep       ; Information ; Setting Pico Slaves OFF...
+2025-03-19 10:19:38.080884 ; InterconnectIO ; Debug       ; SCPI >> SYSTEM:SLAVES OFF [1.34 ms]
+2025-03-19 10:19:38.247915 ; InterconnectIO ; Debug       ; SCPI >> *OPC? [167 ms]
+2025-03-19 10:19:38.247915 ; InterconnectIO ; Debug       ; SCPI << 1
+2025-03-19 10:19:38.399972 ; TestStep       ; Information ; Setting Pico Slaves ON...
+2025-03-19 10:19:38.400972 ; InterconnectIO ; Debug       ; SCPI >> SYSTEM:SLAVES ON [1.27 ms]
+2025-03-19 10:19:38.559998 ; InterconnectIO ; Debug       ; SCPI >> *OPC? [159 ms]
+2025-03-19 10:19:38.559998 ; InterconnectIO ; Debug       ; SCPI << 1
+2025-03-19 10:19:38.610990 ; TestPlan       ; Information ; "Ressource Initialization \ Pico Slaves Disable/Enable" completed. [539 ms]
+2025-03-19 10:19:38.610990 ; TestPlan       ; Information ; "Ressource Initialization \ Error Led" started.
+2025-03-19 10:19:38.611992 ; TestStep       ; Information ; Setting Error Red Led OFF...
+2025-03-19 10:19:38.613991 ; InterconnectIO ; Debug       ; SCPI >> SYSTEM:LED:ERROR OFF [1.31 ms]
+2025-03-19 10:19:38.812448 ; InterconnectIO ; Debug       ; SCPI >> *OPC? [198 ms]
+2025-03-19 10:19:38.812448 ; InterconnectIO ; Debug       ; SCPI << 1
+2025-03-19 10:19:38.865956 ; TestPlan       ; Information ; "Ressource Initialization \ Error Led" completed with verdict 'Pass'. [255 ms]
+2025-03-19 10:19:38.866958 ; TestPlan       ; Information ; "Ressource Initialization \ Port0: Output, Port1:Input" started.
+2025-03-19 10:19:38.868957 ; TestStep       ; Information ; Sending SCPI command: DIGITAL:DIRECTION:PORT0 255
+2025-03-19 10:19:38.869956 ; InterconnectIO ; Debug       ; SCPI >> DIGITAL:DIRECTION:PORT0 255 [1.30 ms]
+2025-03-19 10:19:39.065424 ; InterconnectIO ; Debug       ; SCPI >> *OPC? [195 ms]
+2025-03-19 10:19:39.065424 ; InterconnectIO ; Debug       ; SCPI << 1
+2025-03-19 10:19:39.115932 ; TestStep       ; Information ; Sending SCPI command: DIGITAL:DIRECTION:PORT1 0
+2025-03-19 10:19:39.116955 ; InterconnectIO ; Debug       ; SCPI >> DIGITAL:DIRECTION:PORT1 0 [1.25 ms]
+2025-03-19 10:19:39.317977 ; InterconnectIO ; Debug       ; SCPI >> *OPC? [201 ms]
+2025-03-19 10:19:39.318980 ; InterconnectIO ; Debug       ; SCPI << 1
+2025-03-19 10:19:39.368976 ; TestPlan       ; Information ; "Ressource Initialization \ Port0: Output, Port1:Input" completed with verdict 'Pass'. [502 ms]
+2025-03-19 10:19:39.369981 ; TestPlan       ; Information ; "Ressource Initialization \ Port0 Clear" started.
+2025-03-19 10:19:39.370978 ; TestStep       ; Information ; Sending SCPI command: DIGITAL:OUT:PORT0 0
+2025-03-19 10:19:39.372046 ; InterconnectIO ; Debug       ; SCPI >> DIGITAL:OUT:PORT0 0 [1.24 ms]
+2025-03-19 10:19:39.571076 ; InterconnectIO ; Debug       ; SCPI >> *OPC? [199 ms]
+2025-03-19 10:19:39.571076 ; InterconnectIO ; Debug       ; SCPI << 1
+2025-03-19 10:19:39.622077 ; TestPlan       ; Information ; "Ressource Initialization \ Port0 Clear" completed with verdict 'Pass'. [252 ms]
+2025-03-19 10:19:39.623081 ; TestPlan       ; Information ; "Ressource Initialization \ Init GPIO Direction " started.
+2025-03-19 10:19:39.629601 ; TestStep       ; Information ; Sending SCPI command: GPIO:DIRECTION:DEVICE0:GP0 1
+2025-03-19 10:19:39.632598 ; InterconnectIO ; Debug       ; SCPI >> GPIO:DIRECTION:DEVICE0:GP0 1 [2.53 ms]
+2025-03-19 10:19:39.824109 ; InterconnectIO ; Debug       ; SCPI >> *OPC? [191 ms]
+2025-03-19 10:19:39.824109 ; InterconnectIO ; Debug       ; SCPI << 1
+2025-03-19 10:19:39.874620 ; TestStep       ; Information ; Sending SCPI command: GPIO:DIRECTION:DEVICE0:GP1 1
+2025-03-19 10:19:39.876962 ; InterconnectIO ; Debug       ; SCPI >> GPIO:DIRECTION:DEVICE0:GP1 1 [2.47 ms]
+2025-03-19 10:19:40.075980 ; InterconnectIO ; Debug       ; SCPI >> *OPC? [199 ms]
+2025-03-19 10:19:40.075980 ; InterconnectIO ; Debug       ; SCPI << 1
+2025-03-19 10:19:40.125980 ; TestStep       ; Information ; Sending SCPI command: GPIO:DIRECTION:DEVICE1:GP8 1
+2025-03-19 10:19:40.128492 ; InterconnectIO ; Debug       ; SCPI >> GPIO:DIRECTION:DEVICE1:GP8 1 [2.48 ms]
+2025-03-19 10:19:40.328619 ; InterconnectIO ; Debug       ; SCPI >> *OPC? [200 ms]
+2025-03-19 10:19:40.328619 ; InterconnectIO ; Debug       ; SCPI << 1
+2025-03-19 10:19:40.379619 ; TestStep       ; Information ; Sending SCPI command: GPIO:DIRECTION:DEVICE1:GP9 1
+2025-03-19 10:19:40.381619 ; InterconnectIO ; Debug       ; SCPI >> GPIO:DIRECTION:DEVICE1:GP9 1 [2.48 ms]
+2025-03-19 10:19:40.583015 ; InterconnectIO ; Debug       ; SCPI >> *OPC? [201 ms]
+2025-03-19 10:19:40.584019 ; InterconnectIO ; Debug       ; SCPI << 1
+2025-03-19 10:19:40.632596 ; TestStep       ; Information ; Sending SCPI command: GPIO:DIRECTION:DEVICE1:GP18 1
+2025-03-19 10:19:40.635595 ; InterconnectIO ; Debug       ; SCPI >> GPIO:DIRECTION:DEVICE1:GP18 1 [2.47 ms]
+2025-03-19 10:19:40.834777 ; InterconnectIO ; Debug       ; SCPI >> *OPC? [200 ms]
+2025-03-19 10:19:40.834777 ; InterconnectIO ; Debug       ; SCPI << 1
+2025-03-19 10:19:40.885777 ; TestStep       ; Information ; Sending SCPI command: GPIO:DIRECTION:DEVICE1:GP19 0
+2025-03-19 10:19:40.887778 ; InterconnectIO ; Debug       ; SCPI >> GPIO:DIRECTION:DEVICE1:GP19 0 [2.45 ms]
+2025-03-19 10:19:41.087935 ; InterconnectIO ; Debug       ; SCPI >> *OPC? [200 ms]
+2025-03-19 10:19:41.087935 ; InterconnectIO ; Debug       ; SCPI << 1
+2025-03-19 10:19:41.138935 ; TestPlan       ; Information ; "Ressource Initialization \ Init GPIO Direction " completed with verdict 'Pass'. [1.51 s]
+2025-03-19 10:19:41.139936 ; TestPlan       ; Information ; "Ressource Initialization \ Set GPIO = 0" started.
+2025-03-19 10:19:41.142935 ; TestStep       ; Information ; Sending SCPI command for M1IO0: GPIO:OUT:DEVICE0:GP0 0
+2025-03-19 10:19:41.144298 ; InterconnectIO ; Debug       ; SCPI >> GPIO:OUT:DEVICE0:GP0 0 [1.26 ms]
+2025-03-19 10:19:41.340438 ; InterconnectIO ; Debug       ; SCPI >> *OPC? [196 ms]
+2025-03-19 10:19:41.340438 ; InterconnectIO ; Debug       ; SCPI << 1
+2025-03-19 10:19:41.391025 ; TestStep       ; Information ; Sending SCPI command for M1IO1: GPIO:OUT:DEVICE0:GP1 0
+2025-03-19 10:19:41.392429 ; InterconnectIO ; Debug       ; SCPI >> GPIO:OUT:DEVICE0:GP1 0 [1.26 ms]
+2025-03-19 10:19:41.592790 ; InterconnectIO ; Debug       ; SCPI >> *OPC? [200 ms]
+2025-03-19 10:19:41.592790 ; InterconnectIO ; Debug       ; SCPI << 1
+2025-03-19 10:19:41.642903 ; TestStep       ; Information ; Sending SCPI command for S1IO8: GPIO:OUT:DEVICE1:GP8 0
+2025-03-19 10:19:41.644160 ; InterconnectIO ; Debug       ; SCPI >> GPIO:OUT:DEVICE1:GP8 0 [1.26 ms]
+2025-03-19 10:19:41.845510 ; InterconnectIO ; Debug       ; SCPI >> *OPC? [201 ms]
+2025-03-19 10:19:41.845510 ; InterconnectIO ; Debug       ; SCPI << 1
+2025-03-19 10:19:41.896511 ; TestStep       ; Information ; Sending SCPI command for S1IO9: GPIO:OUT:DEVICE1:GP9 0
+2025-03-19 10:19:41.897697 ; InterconnectIO ; Debug       ; SCPI >> GPIO:OUT:DEVICE1:GP9 0 [1.26 ms]
+2025-03-19 10:19:42.098886 ; InterconnectIO ; Debug       ; SCPI >> *OPC? [201 ms]
+2025-03-19 10:19:42.098886 ; InterconnectIO ; Debug       ; SCPI << 1
+2025-03-19 10:19:42.149464 ; TestStep       ; Information ; Sending SCPI command for FLAG: GPIO:OUT:DEVICE1:GP18 0
+2025-03-19 10:19:42.150464 ; InterconnectIO ; Debug       ; SCPI >> GPIO:OUT:DEVICE1:GP18 0 [1.26 ms]
+2025-03-19 10:19:42.351480 ; InterconnectIO ; Debug       ; SCPI >> *OPC? [201 ms]
+2025-03-19 10:19:42.351480 ; InterconnectIO ; Debug       ; SCPI << 1
+2025-03-19 10:19:42.403069 ; TestPlan       ; Information ; "Ressource Initialization \ Set GPIO = 0" completed with verdict 'Pass'. [1.26 s]
+2025-03-19 10:19:42.403069 ; TestPlan       ; Information ; "Ressource Initialization \ Init OC = Open" started.
+2025-03-19 10:19:42.403069 ; TestStep       ; Information ; Executing relay actions...
+2025-03-19 10:19:42.404069 ; TestStep       ; Information ; Opening transistor OC1
+2025-03-19 10:19:42.404069 ; TestStep       ; Information ; Sending SCPI command: ROUTE:OPEN:OC OC1
+2025-03-19 10:19:42.405188 ; InterconnectIO ; Debug       ; SCPI >> ROUTE:OPEN:OC OC1 [1.26 ms]
+2025-03-19 10:19:42.605161 ; InterconnectIO ; Debug       ; SCPI >> *OPC? [199 ms]
+2025-03-19 10:19:42.605161 ; InterconnectIO ; Debug       ; SCPI << 1
+2025-03-19 10:19:42.656162 ; TestStep       ; Information ; Opening transistor OC2
+2025-03-19 10:19:42.656162 ; TestStep       ; Information ; Sending SCPI command: ROUTE:OPEN:OC OC2
+2025-03-19 10:19:42.657161 ; InterconnectIO ; Debug       ; SCPI >> ROUTE:OPEN:OC OC2 [1.25 ms]
+2025-03-19 10:19:42.858293 ; InterconnectIO ; Debug       ; SCPI >> *OPC? [201 ms]
+2025-03-19 10:19:42.858293 ; InterconnectIO ; Debug       ; SCPI << 1
+2025-03-19 10:19:42.908856 ; TestStep       ; Information ; Opening transistor OC3
+2025-03-19 10:19:42.908856 ; TestStep       ; Information ; Sending SCPI command: ROUTE:OPEN:OC OC3
+2025-03-19 10:19:42.910116 ; InterconnectIO ; Debug       ; SCPI >> ROUTE:OPEN:OC OC3 [1.25 ms]
+2025-03-19 10:19:43.111701 ; InterconnectIO ; Debug       ; SCPI >> *OPC? [201 ms]
+2025-03-19 10:19:43.111701 ; InterconnectIO ; Debug       ; SCPI << 1
+2025-03-19 10:19:43.162366 ; TestPlan       ; Information ; "Ressource Initialization \ Init OC = Open" completed with verdict 'Pass'. [759 ms]
+2025-03-19 10:19:43.162366 ; TestPlan       ; Information ; "Ressource Initialization \ Setup I2C for talk to Selftest" started.
+2025-03-19 10:19:43.163367 ; TestStep       ; Information ; I2C Communication Enabled
+2025-03-19 10:19:43.163367 ; TestStep       ; Information ; Sending SCPI command: COM:INITIALIZE:ENABLE I2C
+2025-03-19 10:19:43.165371 ; InterconnectIO ; Debug       ; SCPI >> COM:INITIALIZE:ENABLE I2C [1.30 ms]
+2025-03-19 10:19:43.364485 ; InterconnectIO ; Debug       ; SCPI >> *OPC? [199 ms]
+2025-03-19 10:19:43.364485 ; InterconnectIO ; Debug       ; SCPI << 1
+2025-03-19 10:19:43.414482 ; TestStep       ; Information ; I2C Communication Parameters
+2025-03-19 10:19:43.415483 ; TestStep       ; Information ; Sending SCPI command: COM:I2C:BAUDRATE 100000
+2025-03-19 10:19:43.416483 ; InterconnectIO ; Debug       ; SCPI >> COM:I2C:BAUDRATE 100000 [1.29 ms]
+2025-03-19 10:19:43.616645 ; InterconnectIO ; Debug       ; SCPI >> *OPC? [200 ms]
+2025-03-19 10:19:43.616645 ; InterconnectIO ; Debug       ; SCPI << 1
+2025-03-19 10:19:43.667644 ; TestStep       ; Information ; Sending SCPI command: COM:I2C:DATABITS 8
+2025-03-19 10:19:43.668952 ; InterconnectIO ; Debug       ; SCPI >> COM:I2C:DATABITS 8 [1.25 ms]
+2025-03-19 10:19:43.869792 ; InterconnectIO ; Debug       ; SCPI >> *OPC? [201 ms]
+2025-03-19 10:19:43.869792 ; InterconnectIO ; Debug       ; SCPI << 1
+2025-03-19 10:19:43.920412 ; TestStep       ; Information ; Sending SCPI command: COM:I2C:ADDRESS 32
+2025-03-19 10:19:43.921412 ; InterconnectIO ; Debug       ; SCPI >> COM:I2C:ADDRESS 32 [1.24 ms]
+2025-03-19 10:19:44.122531 ; InterconnectIO ; Debug       ; SCPI >> *OPC? [201 ms]
+2025-03-19 10:19:44.122531 ; InterconnectIO ; Debug       ; SCPI << 1
+2025-03-19 10:19:44.173531 ; TestPlan       ; Information ; "Ressource Initialization \ Setup I2C for talk to Selftest" completed with verdict 'Pass'. [1.01 s]
+2025-03-19 10:19:44.173531 ; TestPlan       ; Information ; "Ressource Initialization \ Delay  to complete initialization" started.
+2025-03-19 10:19:44.424332 ; TestPlan       ; Information ; "Ressource Initialization \ Delay  to complete initialization" completed. [250 ms]
+2025-03-19 10:19:44.425333 ; TestPlan       ; Information ; "Ressource Initialization" completed with verdict 'Pass'. [6.35 s]
+2025-03-19 10:19:44.426335 ; TestPlan       ; Information ; "Close relay 5V_PWR" started.
+2025-03-19 10:19:44.426335 ; TestStep       ; Information ; Executing relay actions...
+2025-03-19 10:19:44.426335 ; TestStep       ; Information ; Closing relay 5V_DUT
+2025-03-19 10:19:44.426335 ; TestStep       ; Information ; Sending SCPI command: SYSTEM:OUTPUT ON
+2025-03-19 10:19:44.428173 ; InterconnectIO ; Debug       ; SCPI >> SYSTEM:OUTPUT ON [1.29 ms]
+2025-03-19 10:19:44.585322 ; InterconnectIO ; Debug       ; SCPI >> *OPC? [156 ms]
+2025-03-19 10:19:44.585322 ; InterconnectIO ; Debug       ; SCPI << 1
+2025-03-19 10:19:44.787034 ; InterconnectIO ; Debug       ; SCPI >> SYSTEM:OUTPUT? [151 ms]
+2025-03-19 10:19:44.787034 ; InterconnectIO ; Debug       ; SCPI << 1
+2025-03-19 10:19:44.787034 ; TestStep       ; Information ; Relay 5V_DUT responded with: 1
+2025-03-19 10:19:44.789032 ; TestPlan       ; Information ; "Close relay 5V_PWR" completed with verdict 'Pass'. [363 ms]
+2025-03-19 10:19:44.789032 ; TestPlan       ; Information ; "Delay" started.
+2025-03-19 10:19:45.042661 ; TestPlan       ; Information ; "Delay" completed. [253 ms]
+2025-03-19 10:19:45.042661 ; TestPlan       ; Information ; "Test 1.1: 5VDC Check with ADC0" started.
+2025-03-19 10:19:45.042661 ; TestStep       ; Information ; Selected ADC Source: ADC0
+2025-03-19 10:19:45.042661 ; TestStep       ; Information ; Reading from ADC0...
+2025-03-19 10:19:45.042661 ; TestStep       ; Information ; Sending SCPI command: ANA:ADC0:VOLT?
+2025-03-19 10:19:45.150500 ; InterconnectIO ; Debug       ; SCPI >> ANA:ADC0:VOLT? [106 ms]
+2025-03-19 10:19:45.150500 ; InterconnectIO ; Debug       ; SCPI << 2.55762
+2025-03-19 10:19:45.150500 ; TestStep       ; Information ; ADC0 read: 2.55762 Volt. Limits are set to: > 2.35 and < 2.65
+2025-03-19 10:19:45.150500 ; TestPlan       ; Information ; "Test 1.1: 5VDC Check with ADC0" completed with verdict 'Pass'. [107 ms]
+2025-03-19 10:19:45.150500 ; TestPlan       ; Information ; "Bank1 - Bank2 Relays Test" started.
+2025-03-19 10:19:45.150500 ; TestPlan       ; Information ; "Bank1 - Bank2 Relays Test \ Close K7,K8,K14" started.
+2025-03-19 10:19:45.150500 ; TestStep       ; Information ; Sending SCPI command: DIGITAL:OUT:PORT0 11
+2025-03-19 10:19:45.151722 ; InterconnectIO ; Debug       ; SCPI >> DIGITAL:OUT:PORT0 11 [1.25 ms]
+2025-03-19 10:19:45.352888 ; InterconnectIO ; Debug       ; SCPI >> *OPC? [201 ms]
+2025-03-19 10:19:45.352888 ; InterconnectIO ; Debug       ; SCPI << 1
+2025-03-19 10:19:45.556048 ; InterconnectIO ; Debug       ; SCPI >> DIGITAL:IN:PORT0? [152 ms]
+2025-03-19 10:19:45.556048 ; InterconnectIO ; Debug       ; SCPI << 11
+2025-03-19 10:19:45.556048 ; TestStep       ; Information ; Sending SCPI command: DIGITAL:IN:PORT0?, Answer: 11
+2025-03-19 10:19:45.556048 ; TestStep       ; Information ; Port0 Input value match as 11
+2025-03-19 10:19:45.556048 ; TestPlan       ; Information ; "Bank1 - Bank2 Relays Test \ Close K7,K8,K14" completed with verdict 'Pass'. [405 ms]
+2025-03-19 10:19:45.556048 ; TestPlan       ; Information ; "Bank1 - Bank2 Relays Test \ Close BK1-CH0, Close BK2-CH0" started.
+2025-03-19 10:19:45.557053 ; TestStep       ; Information ; Sending SCPI command: ROUTE:CLOSE:EXCLUSIVE (@100,200)
+2025-03-19 10:19:45.559077 ; InterconnectIO ; Debug       ; SCPI >> ROUTE:CLOSE:EXCLUSIVE (@100,200) [2.48 ms]
+2025-03-19 10:19:45.763228 ; InterconnectIO ; Debug       ; SCPI >> *OPC? [204 ms]
+2025-03-19 10:19:45.763228 ; InterconnectIO ; Debug       ; SCPI << 1
+2025-03-19 10:19:45.814228 ; TestPlan       ; Information ; "Bank1 - Bank2 Relays Test \ Close BK1-CH0, Close BK2-CH0" completed with verdict 'Pass'. [257 ms]
+2025-03-19 10:19:45.814228 ; TestPlan       ; Information ; "Bank1 - Bank2 Relays Test \ Close K12 (PS8)" started.
+2025-03-19 10:19:45.814228 ; TestStep       ; Information ; Executing relay actions...
+2025-03-19 10:19:45.814228 ; TestStep       ; Information ; Driving transistor OC3
+2025-03-19 10:19:45.814228 ; TestStep       ; Information ; Sending SCPI command: ROUTE:CLOSE:OC OC3
+2025-03-19 10:19:45.815230 ; InterconnectIO ; Debug       ; SCPI >> ROUTE:CLOSE:OC OC3 [1.26 ms]
+2025-03-19 10:19:46.016353 ; InterconnectIO ; Debug       ; SCPI >> *OPC? [201 ms]
+2025-03-19 10:19:46.016353 ; InterconnectIO ; Debug       ; SCPI << 1
+2025-03-19 10:19:46.067353 ; TestPlan       ; Information ; "Bank1 - Bank2 Relays Test \ Close K12 (PS8)" completed with verdict 'Pass'. [253 ms]
+2025-03-19 10:19:46.067353 ; TestPlan       ; Information ; "Bank1 - Bank2 Relays Test \ Test 10.0 Relay BK1-BK2 CH0-H Close Test, read I(mA)" started.
+2025-03-19 10:19:46.068353 ; TestStep       ; Information ; Selected PWR Function: Current_mA
+2025-03-19 10:19:46.068353 ; TestStep       ; Information ; Reading current in mA
+2025-03-19 10:19:46.068353 ; TestStep       ; Information ; Sending SCPI command: ANA:PWR:Ima?
+2025-03-19 10:19:46.220783 ; InterconnectIO ; Debug       ; SCPI >> ANA:PWR:Ima? [152 ms]
+2025-03-19 10:19:46.220783 ; InterconnectIO ; Debug       ; SCPI << 63.0000
+2025-03-19 10:19:46.220783 ; TestStep       ; Information ; 0-2000 mA Current read read: 63.0000 mA. Limits are set to: >= 45 and <= 70
+2025-03-19 10:19:46.220783 ; TestPlan       ; Information ; "Bank1 - Bank2 Relays Test \ Test 10.0 Relay BK1-BK2 CH0-H Close Test, read I(mA)" completed with verdict 'Pass'. [153 ms]
+2025-03-19 10:19:46.220783 ; TestPlan       ; Information ; "Bank1 - Bank2 Relays Test" completed with verdict 'Pass'. [1.07 s]
+2025-03-19 10:19:46.220783 ; TestPlan       ; Debug       ; Test step runs finished. [8.54 s]
+2025-03-19 10:19:46.222174 ; TestPlan       ; Debug       ; "Bank1 - Bank2 Relays Test \ Test 10.0 Relay BK1-BK2 CH0-H Close Test, read I(mA)" PostPlanRun completed. [110 us]
+2025-03-19 10:19:46.222174 ; TestStep       ; Information ; Open Collector actions completed.
+2025-03-19 10:19:46.222174 ; TestPlan       ; Debug       ; "Bank1 - Bank2 Relays Test \ Close K12 (PS8)" PostPlanRun completed. [85.2 us]
+2025-03-19 10:19:46.222174 ; TestPlan       ; Debug       ; "Bank1 - Bank2 Relays Test \ Close BK1-CH0, Close BK2-CH0" PostPlanRun completed. [45.9 us]
+2025-03-19 10:19:46.222174 ; TestPlan       ; Debug       ; "Bank1 - Bank2 Relays Test \ Close K7,K8,K14" PostPlanRun completed. [44.6 us]
+2025-03-19 10:19:46.222174 ; TestPlan       ; Debug       ; "Test 1.1: 5VDC Check with ADC0" PostPlanRun completed. [39.5 us]
+2025-03-19 10:19:46.223179 ; TestStep       ; Information ; Relay actions completed.
+2025-03-19 10:19:46.223179 ; TestPlan       ; Debug       ; "Close relay 5V_PWR" PostPlanRun completed. [75.9 us]
+2025-03-19 10:19:46.223179 ; TestPlan       ; Debug       ; "Ressource Initialization \ Setup I2C for talk to Selftest" PostPlanRun completed. [46.0 us]
+2025-03-19 10:19:46.223179 ; TestStep       ; Information ; Open Collector actions completed.
+2025-03-19 10:19:46.223179 ; TestPlan       ; Debug       ; "Ressource Initialization \ Init OC = Open" PostPlanRun completed. [11.3 us]
+2025-03-19 10:19:46.223179 ; TestPlan       ; Debug       ; "Ressource Initialization \ Set GPIO = 0" PostPlanRun completed. [41.6 us]
+2025-03-19 10:19:46.223179 ; TestPlan       ; Debug       ; "Ressource Initialization \ Init GPIO Direction " PostPlanRun completed. [39.9 us]
+2025-03-19 10:19:46.223179 ; TestPlan       ; Debug       ; "Ressource Initialization \ Port0 Clear" PostPlanRun completed. [8.69 us]
+2025-03-19 10:19:46.223179 ; TestPlan       ; Debug       ; "Ressource Initialization \ Port0: Output, Port1:Input" PostPlanRun completed. [40.6 us]
+2025-03-19 10:19:46.223179 ; TestPlan       ; Debug       ; "Ressource Initialization \ Error Led" PostPlanRun completed. [38.1 us]
+2025-03-19 10:19:46.223179 ; TestPlan       ; Debug       ; "Ressource Initialization \ Pico Slaves Disable/Enable" PostPlanRun completed. [38.1 us]
+2025-03-19 10:19:46.223179 ; TestPlan       ; Debug       ; "1-Wire DUT read" PostPlanRun completed. [36.6 us]
+2025-03-19 10:19:46.233178 ; Summary        ; Information ; -------- Summary of test plan started 03/19/2025 10:19:37 --------
+2025-03-19 10:19:46.236178 ; Summary        ; Information ;  1-Wire DUT read                                     378 ms   Fail   
+2025-03-19 10:19:46.236178 ; Summary        ; Information ;  Ressource Initialization                           6.35 s    Pass   
+2025-03-19 10:19:46.236178 ; Summary        ; Information ;    Pico Slaves Disable/Enable                        539 ms          
+2025-03-19 10:19:46.236178 ; Summary        ; Information ;    Error Led                                         255 ms   Pass   
+2025-03-19 10:19:46.236178 ; Summary        ; Information ;    Port0: Output, Port1:Input                        502 ms   Pass   
+2025-03-19 10:19:46.236178 ; Summary        ; Information ;    Port0 Clear                                       252 ms   Pass   
+2025-03-19 10:19:46.236178 ; Summary        ; Information ;    Init GPIO Direction                              1.51 s    Pass   
+2025-03-19 10:19:46.236178 ; Summary        ; Information ;    Set GPIO = 0                                     1.26 s    Pass   
+2025-03-19 10:19:46.236178 ; Summary        ; Information ;    Init OC = Open                                    759 ms   Pass   
+2025-03-19 10:19:46.236178 ; Summary        ; Information ;    Setup I2C for talk to Selftest                   1.01 s    Pass   
+2025-03-19 10:19:46.236178 ; Summary        ; Information ;    Delay  to complete initialization                 250 ms          
+2025-03-19 10:19:46.236178 ; Summary        ; Information ;  Close relay 5V_PWR                                  363 ms   Pass   
+2025-03-19 10:19:46.236178 ; Summary        ; Information ;  Delay                                               253 ms          
+2025-03-19 10:19:46.236178 ; Summary        ; Information ;  Test 1.1: 5VDC Check with ADC0                      107 ms   Pass   
+2025-03-19 10:19:46.236178 ; Summary        ; Information ;  Bank1 - Bank2 Relays Test                          1.07 s    Pass   
+2025-03-19 10:19:46.236178 ; Summary        ; Information ;    Close K7,K8,K14                                   405 ms   Pass   
+2025-03-19 10:19:46.236178 ; Summary        ; Information ;    Close BK1-CH0, Close BK2-CH0                      257 ms   Pass   
+2025-03-19 10:19:46.236178 ; Summary        ; Information ;    Close K12 (PS8)                                   253 ms   Pass   
+2025-03-19 10:19:46.236178 ; Summary        ; Information ;    Test 10.0 Relay BK1-BK2 CH0-H Close Test, read I(mA)       153 ms   Pass   
+2025-03-19 10:19:46.236178 ; Summary        ; Information ; ------------------------------------------------------------------
+2025-03-19 10:19:46.236178 ; Summary        ; Information ; ------ Test plan completed with verdict Fail in  8.90 s    -------
+2025-03-19 10:19:46.256178 ; CSV            ; Debug       ; OnTestPlanRunCompleted for CSV. [16.9 ms]
+2025-03-19 10:19:46.257180 ; Summary        ; Information ; -------------------- 1 artifacts registered. ---------------------
+2025-03-19 10:19:46.258180 ; Summary        ; Information ;  - C:\Station_de_test\FTS_InterconnectIOBox\FTS_InterconnectIOBox\bin\Debug\Report\FTS_Selftest_000001-2025-03-19 10-19-37-Fail.csv  [915 B]
+2025-03-19 10:19:46.262180 ; CSV            ; Information ; Resource "CSV" closed. [172 us]
+2025-03-19 10:19:46.264180 ; FTS_DUT        ; Information ; Closing FTS_DUT.
+2025-03-19 10:19:46.264180 ; FTS_DUT        ; Information ; Resource "FTS_DUT" closed. [146 us]
+2025-03-19 10:19:46.268182 ; InterconnectIO ; Information ; Resource "InterconnectIO (ASRL1::INSTR)" closed. [6.11 ms]
+2025-03-19 10:21:25.253835 ; TestPlan       ; Information ; -----------------------------------------------------------------
+2025-03-19 10:21:25.253835 ; TestPlan       ; Information ; Starting TestPlan 'Selftest' on 03/19/2025 10:21:25, 19 of 121 TestSteps enabled.
+2025-03-19 10:21:25.254835 ; FTS_DUT        ; Information ; Open FTS_DUT.
+2025-03-19 10:21:25.254835 ; FTS_DUT        ; Information ; 1-Wire J1 enabled.
+2025-03-19 10:21:25.254835 ; InterconnectIO ; Debug       ; Connecting to 'ASRL1::INSTR'
+2025-03-19 10:21:25.254835 ; FTS_DUT        ; Information ; Resource "FTS_DUT" opened. [131 us]
+2025-03-19 10:21:25.254835 ; CSV            ; Information ; Resource "CSV" opened. [131 us]
+2025-03-19 10:21:25.282834 ; InterconnectIO ; Debug       ; SCPI >> *IDN? [13.6 ms]
+2025-03-19 10:21:25.282834 ; InterconnectIO ; Debug       ; SCPI << FirstTestStation,InterconnectIO,2022A,1.0
+2025-03-19 10:21:25.282834 ; InterconnectIO ; Information ; Now connected to: FirstTestStation,InterconnectIO,2022A,1.0
+2025-03-19 10:21:25.282834 ; InterconnectIO ; Debug       ; SCPI >> *CLS [126 us]
+2025-03-19 10:21:25.321348 ; TestPlan       ; Debug       ; Saved Test Plan XML [66.7 ms]
+2025-03-19 10:21:25.383347 ; InterconnectIO ; Debug       ; SCPI >> *OPC? [100 ms]
+2025-03-19 10:21:25.384347 ; InterconnectIO ; Debug       ; SCPI << 1
+2025-03-19 10:21:25.484862 ; InterconnectIO ; Information ; Resource "InterconnectIO (ASRL1::INSTR)" opened. [229 ms]
+2025-03-19 10:21:25.487863 ; TestPlan       ; Debug       ; "1-Wire DUT read" PrePlanRun completed. [34.0 us]
+2025-03-19 10:21:25.487863 ; TestPlan       ; Debug       ; "Ressource Initialization \ Pico Slaves Disable/Enable" PrePlanRun completed. [11.1 us]
+2025-03-19 10:21:25.487863 ; TestPlan       ; Debug       ; "Ressource Initialization \ Error Led" PrePlanRun completed. [13.3 us]
+2025-03-19 10:21:25.487863 ; TestPlan       ; Debug       ; "Ressource Initialization \ Port0: Output, Port1:Input" PrePlanRun completed. [13.7 us]
+2025-03-19 10:21:25.487863 ; TestPlan       ; Debug       ; "Ressource Initialization \ Port0 Clear" PrePlanRun completed. [6.00 us]
+2025-03-19 10:21:25.487863 ; TestPlan       ; Debug       ; "Ressource Initialization \ Init GPIO Direction " PrePlanRun completed. [17.6 us]
+2025-03-19 10:21:25.487863 ; TestPlan       ; Debug       ; "Ressource Initialization \ Set GPIO = 0" PrePlanRun completed. [7.20 us]
+2025-03-19 10:21:25.487863 ; TestStep       ; Information ; Preparing to execute open collector actions...
+2025-03-19 10:21:25.487863 ; TestPlan       ; Debug       ; "Ressource Initialization \ Init OC = Open" PrePlanRun completed. [12.0 us]
+2025-03-19 10:21:25.487863 ; TestPlan       ; Debug       ; "Ressource Initialization \ Setup I2C for talk to Selftest" PrePlanRun completed. [11.6 us]
+2025-03-19 10:21:25.487863 ; TestStep       ; Information ; Preparing to execute relay actions...
+2025-03-19 10:21:25.487863 ; TestPlan       ; Debug       ; "Close relay 5V_PWR" PrePlanRun completed. [125 us]
+2025-03-19 10:21:25.487863 ; TestPlan       ; Debug       ; "Test 1.1: 5VDC Check with ADC0" PrePlanRun completed. [14.0 us]
+2025-03-19 10:21:25.487863 ; TestPlan       ; Debug       ; "Bank1 - Bank2 Relays Test \ Close K7,K8,K14" PrePlanRun completed. [3.90 us]
+2025-03-19 10:21:25.487863 ; TestPlan       ; Debug       ; "Bank1 - Bank2 Relays Test \ Close BK1-CH0, Close BK2-CH0" PrePlanRun completed. [11.5 us]
+2025-03-19 10:21:25.487863 ; TestStep       ; Information ; Preparing to execute open collector actions...
+2025-03-19 10:21:25.487863 ; TestPlan       ; Debug       ; "Bank1 - Bank2 Relays Test \ Close K12 (PS8)" PrePlanRun completed. [6.00 us]
+2025-03-19 10:21:25.487863 ; TestPlan       ; Debug       ; "Bank1 - Bank2 Relays Test \ Test 10.0 Relay BK1-BK2 CH0-H Close Test" PrePlanRun completed. [13.8 us]
+2025-03-19 10:21:25.487863 ; TestPlan       ; Debug       ; PrePlanRun Methods completed [234 us]
+2025-03-19 10:21:25.487863 ; TestPlan       ; Information ; "1-Wire DUT read" started.
+2025-03-19 10:21:25.487863 ; TestStep       ; Information ; Sending SCPI command: COM:OWIRE:READ? 1
+2025-03-19 10:21:25.873341 ; InterconnectIO ; Debug       ; SCPI >> COM:OWIRE:READ? 1 [385 ms]
+2025-03-19 10:21:25.873341 ; InterconnectIO ; Debug       ; SCPI << "[ 2D4CE282200000CC, FTS_Selftest, 500-1010-021, 000001, J1 ] [ 2DC1C38220000059, FTS_Selftest, 500-1010-021, 000001, J2 ]"
+2025-03-19 10:21:25.873341 ; TestStep       ; Information ; 1-Wire received response: "[ 2D4CE282200000CC, FTS_Selftest, 500-1010-021, 000001, J1 ] [ 2DC1C38220000059, FTS_Selftest, 500-1010-021, 000001, J2 ]"
+2025-03-19 10:21:25.873341 ; TestStep       ; Information ; Serialnumber: 000001
+2025-03-19 10:21:25.873341 ; TestStep       ; Information ; 1-Wire Data: "[ 2D4CE282200000CC, FTS_Selftest, 500-1010-021, 000001, J1 ] [ 2DC1C38220000059, FTS_Selftest, 500-1010-021, 000001, J2 ]"
+2025-03-19 10:21:25.873341 ; TestStep       ; Error       ; 1-Wire Board partnumber is not valid for: J1 - does not contains BoardID: 500-1020
+2025-03-19 10:21:25.873341 ; TestPlan       ; Information ; "1-Wire DUT read" completed with verdict 'Fail'. [385 ms]
+2025-03-19 10:21:25.873341 ; TestPlan       ; Information ; "Ressource Initialization" started.
+2025-03-19 10:21:25.873341 ; TestPlan       ; Information ; "Ressource Initialization \ Pico Slaves Disable/Enable" started.
+2025-03-19 10:21:25.873341 ; TestStep       ; Information ; Setting Pico Slaves OFF...
+2025-03-19 10:21:25.875342 ; InterconnectIO ; Debug       ; SCPI >> SYSTEM:SLAVES OFF [1.25 ms]
+2025-03-19 10:21:26.074848 ; InterconnectIO ; Debug       ; SCPI >> *OPC? [200 ms]
+2025-03-19 10:21:26.074848 ; InterconnectIO ; Debug       ; SCPI << 1
+2025-03-19 10:21:26.225373 ; TestStep       ; Information ; Setting Pico Slaves ON...
+2025-03-19 10:21:26.227383 ; InterconnectIO ; Debug       ; SCPI >> SYSTEM:SLAVES ON [1.27 ms]
+2025-03-19 10:21:26.386897 ; InterconnectIO ; Debug       ; SCPI >> *OPC? [160 ms]
+2025-03-19 10:21:26.386897 ; InterconnectIO ; Debug       ; SCPI << 1
+2025-03-19 10:21:26.438414 ; TestPlan       ; Information ; "Ressource Initialization \ Pico Slaves Disable/Enable" completed. [564 ms]
+2025-03-19 10:21:26.438414 ; TestPlan       ; Information ; "Ressource Initialization \ Error Led" started.
+2025-03-19 10:21:26.438414 ; TestStep       ; Information ; Setting Error Red Led OFF...
+2025-03-19 10:21:26.439444 ; InterconnectIO ; Debug       ; SCPI >> SYSTEM:LED:ERROR OFF [1.25 ms]
+2025-03-19 10:21:26.639465 ; InterconnectIO ; Debug       ; SCPI >> *OPC? [199 ms]
+2025-03-19 10:21:26.639465 ; InterconnectIO ; Debug       ; SCPI << 1
+2025-03-19 10:21:26.690466 ; TestPlan       ; Information ; "Ressource Initialization \ Error Led" completed with verdict 'Pass'. [251 ms]
+2025-03-19 10:21:26.690466 ; TestPlan       ; Information ; "Ressource Initialization \ Port0: Output, Port1:Input" started.
+2025-03-19 10:21:26.690466 ; TestStep       ; Information ; Sending SCPI command: DIGITAL:DIRECTION:PORT0 255
+2025-03-19 10:21:26.691557 ; InterconnectIO ; Debug       ; SCPI >> DIGITAL:DIRECTION:PORT0 255 [1.26 ms]
+2025-03-19 10:21:26.892578 ; InterconnectIO ; Debug       ; SCPI >> *OPC? [200 ms]
+2025-03-19 10:21:26.892578 ; InterconnectIO ; Debug       ; SCPI << 1
+2025-03-19 10:21:26.942578 ; TestStep       ; Information ; Sending SCPI command: DIGITAL:DIRECTION:PORT1 0
+2025-03-19 10:21:26.944181 ; InterconnectIO ; Debug       ; SCPI >> DIGITAL:DIRECTION:PORT1 0 [1.26 ms]
+2025-03-19 10:21:27.145208 ; InterconnectIO ; Debug       ; SCPI >> *OPC? [201 ms]
+2025-03-19 10:21:27.145208 ; InterconnectIO ; Debug       ; SCPI << 1
+2025-03-19 10:21:27.195714 ; TestPlan       ; Information ; "Ressource Initialization \ Port0: Output, Port1:Input" completed with verdict 'Pass'. [505 ms]
+2025-03-19 10:21:27.196714 ; TestPlan       ; Information ; "Ressource Initialization \ Port0 Clear" started.
+2025-03-19 10:21:27.196714 ; TestStep       ; Information ; Sending SCPI command: DIGITAL:OUT:PORT0 0
+2025-03-19 10:21:27.197713 ; InterconnectIO ; Debug       ; SCPI >> DIGITAL:OUT:PORT0 0 [1.26 ms]
+2025-03-19 10:21:27.398232 ; InterconnectIO ; Debug       ; SCPI >> *OPC? [200 ms]
+2025-03-19 10:21:27.398232 ; InterconnectIO ; Debug       ; SCPI << 1
+2025-03-19 10:21:27.448744 ; TestPlan       ; Information ; "Ressource Initialization \ Port0 Clear" completed with verdict 'Pass'. [252 ms]
+2025-03-19 10:21:27.449745 ; TestPlan       ; Information ; "Ressource Initialization \ Init GPIO Direction " started.
+2025-03-19 10:21:27.449745 ; TestStep       ; Information ; Sending SCPI command: GPIO:DIRECTION:DEVICE0:GP0 1
+2025-03-19 10:21:27.452028 ; InterconnectIO ; Debug       ; SCPI >> GPIO:DIRECTION:DEVICE0:GP0 1 [2.62 ms]
+2025-03-19 10:21:27.651052 ; InterconnectIO ; Debug       ; SCPI >> *OPC? [198 ms]
+2025-03-19 10:21:27.651052 ; InterconnectIO ; Debug       ; SCPI << 1
+2025-03-19 10:21:27.701051 ; TestStep       ; Information ; Sending SCPI command: GPIO:DIRECTION:DEVICE0:GP1 1
+2025-03-19 10:21:27.704052 ; InterconnectIO ; Debug       ; SCPI >> GPIO:DIRECTION:DEVICE0:GP1 1 [2.50 ms]
+2025-03-19 10:21:27.903067 ; InterconnectIO ; Debug       ; SCPI >> *OPC? [199 ms]
+2025-03-19 10:21:27.903067 ; InterconnectIO ; Debug       ; SCPI << 1
+2025-03-19 10:21:27.953068 ; TestStep       ; Information ; Sending SCPI command: GPIO:DIRECTION:DEVICE1:GP8 1
+2025-03-19 10:21:27.955834 ; InterconnectIO ; Debug       ; SCPI >> GPIO:DIRECTION:DEVICE1:GP8 1 [2.46 ms]
+2025-03-19 10:21:28.155346 ; InterconnectIO ; Debug       ; SCPI >> *OPC? [200 ms]
+2025-03-19 10:21:28.155346 ; InterconnectIO ; Debug       ; SCPI << 1
+2025-03-19 10:21:28.205854 ; TestStep       ; Information ; Sending SCPI command: GPIO:DIRECTION:DEVICE1:GP9 1
+2025-03-19 10:21:28.208740 ; InterconnectIO ; Debug       ; SCPI >> GPIO:DIRECTION:DEVICE1:GP9 1 [2.45 ms]
+2025-03-19 10:21:28.408757 ; InterconnectIO ; Debug       ; SCPI >> *OPC? [200 ms]
+2025-03-19 10:21:28.408757 ; InterconnectIO ; Debug       ; SCPI << 1
+2025-03-19 10:21:28.459757 ; TestStep       ; Information ; Sending SCPI command: GPIO:DIRECTION:DEVICE1:GP18 1
+2025-03-19 10:21:28.462097 ; InterconnectIO ; Debug       ; SCPI >> GPIO:DIRECTION:DEVICE1:GP18 1 [2.47 ms]
+2025-03-19 10:21:28.662122 ; InterconnectIO ; Debug       ; SCPI >> *OPC? [200 ms]
+2025-03-19 10:21:28.662122 ; InterconnectIO ; Debug       ; SCPI << 1
+2025-03-19 10:21:28.712125 ; TestStep       ; Information ; Sending SCPI command: GPIO:DIRECTION:DEVICE1:GP19 0
+2025-03-19 10:21:28.715126 ; InterconnectIO ; Debug       ; SCPI >> GPIO:DIRECTION:DEVICE1:GP19 0 [2.50 ms]
+2025-03-19 10:21:28.915506 ; InterconnectIO ; Debug       ; SCPI >> *OPC? [199 ms]
+2025-03-19 10:21:28.915506 ; InterconnectIO ; Debug       ; SCPI << 1
+2025-03-19 10:21:28.968012 ; TestPlan       ; Information ; "Ressource Initialization \ Init GPIO Direction " completed with verdict 'Pass'. [1.51 s]
+2025-03-19 10:21:28.968012 ; TestPlan       ; Information ; "Ressource Initialization \ Set GPIO = 0" started.
+2025-03-19 10:21:28.968012 ; TestStep       ; Information ; Sending SCPI command for M1IO0: GPIO:OUT:DEVICE0:GP0 0
+2025-03-19 10:21:28.970014 ; InterconnectIO ; Debug       ; SCPI >> GPIO:OUT:DEVICE0:GP0 0 [1.27 ms]
+2025-03-19 10:21:29.167519 ; InterconnectIO ; Debug       ; SCPI >> *OPC? [197 ms]
+2025-03-19 10:21:29.167519 ; InterconnectIO ; Debug       ; SCPI << 1
+2025-03-19 10:21:29.218027 ; TestStep       ; Information ; Sending SCPI command for M1IO1: GPIO:OUT:DEVICE0:GP1 0
+2025-03-19 10:21:29.219027 ; InterconnectIO ; Debug       ; SCPI >> GPIO:OUT:DEVICE0:GP1 0 [1.35 ms]
+2025-03-19 10:21:29.420051 ; InterconnectIO ; Debug       ; SCPI >> *OPC? [200 ms]
+2025-03-19 10:21:29.420051 ; InterconnectIO ; Debug       ; SCPI << 1
+2025-03-19 10:21:29.470050 ; TestStep       ; Information ; Sending SCPI command for S1IO8: GPIO:OUT:DEVICE1:GP8 0
+2025-03-19 10:21:29.471050 ; InterconnectIO ; Debug       ; SCPI >> GPIO:OUT:DEVICE1:GP8 0 [1.27 ms]
+2025-03-19 10:21:29.672138 ; InterconnectIO ; Debug       ; SCPI >> *OPC? [201 ms]
+2025-03-19 10:21:29.672138 ; InterconnectIO ; Debug       ; SCPI << 1
+2025-03-19 10:21:29.722647 ; TestStep       ; Information ; Sending SCPI command for S1IO9: GPIO:OUT:DEVICE1:GP9 0
+2025-03-19 10:21:29.724650 ; InterconnectIO ; Debug       ; SCPI >> GPIO:OUT:DEVICE1:GP9 0 [1.26 ms]
+2025-03-19 10:21:29.925654 ; InterconnectIO ; Debug       ; SCPI >> *OPC? [201 ms]
+2025-03-19 10:21:29.925654 ; InterconnectIO ; Debug       ; SCPI << 1
+2025-03-19 10:21:29.976158 ; TestStep       ; Information ; Sending SCPI command for FLAG: GPIO:OUT:DEVICE1:GP18 0
+2025-03-19 10:21:29.977160 ; InterconnectIO ; Debug       ; SCPI >> GPIO:OUT:DEVICE1:GP18 0 [1.26 ms]
+2025-03-19 10:21:30.179183 ; InterconnectIO ; Debug       ; SCPI >> *OPC? [201 ms]
+2025-03-19 10:21:30.179183 ; InterconnectIO ; Debug       ; SCPI << 1
+2025-03-19 10:21:30.229183 ; TestPlan       ; Information ; "Ressource Initialization \ Set GPIO = 0" completed with verdict 'Pass'. [1.26 s]
+2025-03-19 10:21:30.230183 ; TestPlan       ; Information ; "Ressource Initialization \ Init OC = Open" started.
+2025-03-19 10:21:30.230183 ; TestStep       ; Information ; Executing relay actions...
+2025-03-19 10:21:30.230183 ; TestStep       ; Information ; Opening transistor OC1
+2025-03-19 10:21:30.230183 ; TestStep       ; Information ; Sending SCPI command: ROUTE:OPEN:OC OC1
+2025-03-19 10:21:30.231184 ; InterconnectIO ; Debug       ; SCPI >> ROUTE:OPEN:OC OC1 [1.25 ms]
+2025-03-19 10:21:30.432208 ; InterconnectIO ; Debug       ; SCPI >> *OPC? [200 ms]
+2025-03-19 10:21:30.432208 ; InterconnectIO ; Debug       ; SCPI << 1
+2025-03-19 10:21:30.482207 ; TestStep       ; Information ; Opening transistor OC2
+2025-03-19 10:21:30.482207 ; TestStep       ; Information ; Sending SCPI command: ROUTE:OPEN:OC OC2
+2025-03-19 10:21:30.484209 ; InterconnectIO ; Debug       ; SCPI >> ROUTE:OPEN:OC OC2 [1.25 ms]
+2025-03-19 10:21:30.685223 ; InterconnectIO ; Debug       ; SCPI >> *OPC? [201 ms]
+2025-03-19 10:21:30.685223 ; InterconnectIO ; Debug       ; SCPI << 1
+2025-03-19 10:21:30.735741 ; TestStep       ; Information ; Opening transistor OC3
+2025-03-19 10:21:30.735741 ; TestStep       ; Information ; Sending SCPI command: ROUTE:OPEN:OC OC3
+2025-03-19 10:21:30.736760 ; InterconnectIO ; Debug       ; SCPI >> ROUTE:OPEN:OC OC3 [1.24 ms]
+2025-03-19 10:21:30.937778 ; InterconnectIO ; Debug       ; SCPI >> *OPC? [201 ms]
+2025-03-19 10:21:30.938778 ; InterconnectIO ; Debug       ; SCPI << 1
+2025-03-19 10:21:30.988782 ; TestPlan       ; Information ; "Ressource Initialization \ Init OC = Open" completed with verdict 'Pass'. [759 ms]
+2025-03-19 10:21:30.988782 ; TestPlan       ; Information ; "Ressource Initialization \ Setup I2C for talk to Selftest" started.
+2025-03-19 10:21:30.988782 ; TestStep       ; Information ; I2C Communication Enabled
+2025-03-19 10:21:30.988782 ; TestStep       ; Information ; Sending SCPI command: COM:INITIALIZE:ENABLE I2C
+2025-03-19 10:21:30.990780 ; InterconnectIO ; Debug       ; SCPI >> COM:INITIALIZE:ENABLE I2C [1.28 ms]
+2025-03-19 10:21:31.190790 ; InterconnectIO ; Debug       ; SCPI >> *OPC? [200 ms]
+2025-03-19 10:21:31.190790 ; InterconnectIO ; Debug       ; SCPI << 1
+2025-03-19 10:21:31.240791 ; TestStep       ; Information ; I2C Communication Parameters
+2025-03-19 10:21:31.240791 ; TestStep       ; Information ; Sending SCPI command: COM:I2C:BAUDRATE 100000
+2025-03-19 10:21:31.242558 ; InterconnectIO ; Debug       ; SCPI >> COM:I2C:BAUDRATE 100000 [1.26 ms]
+2025-03-19 10:21:31.443581 ; InterconnectIO ; Debug       ; SCPI >> *OPC? [201 ms]
+2025-03-19 10:21:31.443581 ; InterconnectIO ; Debug       ; SCPI << 1
+2025-03-19 10:21:31.494089 ; TestStep       ; Information ; Sending SCPI command: COM:I2C:DATABITS 8
+2025-03-19 10:21:31.495090 ; InterconnectIO ; Debug       ; SCPI >> COM:I2C:DATABITS 8 [1.25 ms]
+2025-03-19 10:21:31.696606 ; InterconnectIO ; Debug       ; SCPI >> *OPC? [201 ms]
+2025-03-19 10:21:31.696606 ; InterconnectIO ; Debug       ; SCPI << 1
+2025-03-19 10:21:31.747116 ; TestStep       ; Information ; Sending SCPI command: COM:I2C:ADDRESS 32
+2025-03-19 10:21:31.748115 ; InterconnectIO ; Debug       ; SCPI >> COM:I2C:ADDRESS 32 [1.25 ms]
+2025-03-19 10:21:31.949138 ; InterconnectIO ; Debug       ; SCPI >> *OPC? [201 ms]
+2025-03-19 10:21:31.949138 ; InterconnectIO ; Debug       ; SCPI << 1
+2025-03-19 10:21:32.000139 ; TestPlan       ; Information ; "Ressource Initialization \ Setup I2C for talk to Selftest" completed with verdict 'Pass'. [1.01 s]
+2025-03-19 10:21:32.000139 ; TestPlan       ; Information ; "Ressource Initialization \ Delay  to complete initialization" started.
+2025-03-19 10:21:32.250842 ; TestPlan       ; Information ; "Ressource Initialization \ Delay  to complete initialization" completed. [250 ms]
+2025-03-19 10:21:32.250842 ; TestPlan       ; Information ; "Ressource Initialization" completed with verdict 'Pass'. [6.37 s]
+2025-03-19 10:21:32.250842 ; TestPlan       ; Information ; "Close relay 5V_PWR" started.
+2025-03-19 10:21:32.250842 ; TestStep       ; Information ; Executing relay actions...
+2025-03-19 10:21:32.250842 ; TestStep       ; Information ; Closing relay 5V_DUT
+2025-03-19 10:21:32.250842 ; TestStep       ; Information ; Sending SCPI command: SYSTEM:OUTPUT ON
+2025-03-19 10:21:32.251909 ; InterconnectIO ; Debug       ; SCPI >> SYSTEM:OUTPUT ON [1.26 ms]
+2025-03-19 10:21:32.411931 ; InterconnectIO ; Debug       ; SCPI >> *OPC? [159 ms]
+2025-03-19 10:21:32.411931 ; InterconnectIO ; Debug       ; SCPI << 1
+2025-03-19 10:21:32.613947 ; InterconnectIO ; Debug       ; SCPI >> SYSTEM:OUTPUT? [151 ms]
+2025-03-19 10:21:32.613947 ; InterconnectIO ; Debug       ; SCPI << 1
+2025-03-19 10:21:32.613947 ; TestStep       ; Information ; Relay 5V_DUT responded with: 1
+2025-03-19 10:21:32.613947 ; TestPlan       ; Information ; "Close relay 5V_PWR" completed with verdict 'Pass'. [363 ms]
+2025-03-19 10:21:32.613947 ; TestPlan       ; Information ; "Delay" started.
+2025-03-19 10:21:32.864513 ; TestPlan       ; Information ; "Delay" completed. [250 ms]
+2025-03-19 10:21:32.864513 ; TestPlan       ; Information ; "Test 1.1: 5VDC Check with ADC0" started.
+2025-03-19 10:21:32.864513 ; TestStep       ; Information ; Selected ADC Source: ADC0
+2025-03-19 10:21:32.864513 ; TestStep       ; Information ; Reading from ADC0...
+2025-03-19 10:21:32.864513 ; TestStep       ; Information ; Sending SCPI command: ANA:ADC0:VOLT?
+2025-03-19 10:21:32.977019 ; InterconnectIO ; Debug       ; SCPI >> ANA:ADC0:VOLT? [112 ms]
+2025-03-19 10:21:32.977019 ; InterconnectIO ; Debug       ; SCPI << 2.56128
+2025-03-19 10:21:32.977019 ; TestStep       ; Information ; ADC0 read: 2.56128 Volt. Limits are set to: > 2.35 and < 2.65
+2025-03-19 10:21:32.977019 ; TestPlan       ; Information ; "Test 1.1: 5VDC Check with ADC0" completed with verdict 'Pass'. [112 ms]
+2025-03-19 10:21:32.977019 ; TestPlan       ; Information ; "Bank1 - Bank2 Relays Test" started.
+2025-03-19 10:21:32.977019 ; TestPlan       ; Information ; "Bank1 - Bank2 Relays Test \ Close K7,K8,K14" started.
+2025-03-19 10:21:32.977019 ; TestStep       ; Information ; Sending SCPI command: DIGITAL:OUT:PORT0 11
+2025-03-19 10:21:32.978018 ; InterconnectIO ; Debug       ; SCPI >> DIGITAL:OUT:PORT0 11 [1.27 ms]
+2025-03-19 10:21:33.180036 ; InterconnectIO ; Debug       ; SCPI >> *OPC? [201 ms]
+2025-03-19 10:21:33.180036 ; InterconnectIO ; Debug       ; SCPI << 1
+2025-03-19 10:21:33.383051 ; InterconnectIO ; Debug       ; SCPI >> DIGITAL:IN:PORT0? [152 ms]
+2025-03-19 10:21:33.383051 ; InterconnectIO ; Debug       ; SCPI << 11
+2025-03-19 10:21:33.383051 ; TestStep       ; Information ; Sending SCPI command: DIGITAL:IN:PORT0?, Answer: 11
+2025-03-19 10:21:33.383051 ; TestStep       ; Information ; Port0 Input value match as 11
+2025-03-19 10:21:33.383051 ; TestPlan       ; Information ; "Bank1 - Bank2 Relays Test \ Close K7,K8,K14" completed with verdict 'Pass'. [405 ms]
+2025-03-19 10:21:33.383051 ; TestPlan       ; Information ; "Bank1 - Bank2 Relays Test \ Close BK1-CH0, Close BK2-CH0" started.
+2025-03-19 10:21:33.383051 ; TestStep       ; Information ; Sending SCPI command: ROUTE:CLOSE:EXCLUSIVE (@100,200)
+2025-03-19 10:21:33.385492 ; InterconnectIO ; Debug       ; SCPI >> ROUTE:CLOSE:EXCLUSIVE (@100,200) [2.48 ms]
+2025-03-19 10:21:33.590510 ; InterconnectIO ; Debug       ; SCPI >> *OPC? [204 ms]
+2025-03-19 10:21:33.590510 ; InterconnectIO ; Debug       ; SCPI << 1
+2025-03-19 10:21:33.640510 ; TestPlan       ; Information ; "Bank1 - Bank2 Relays Test \ Close BK1-CH0, Close BK2-CH0" completed with verdict 'Pass'. [257 ms]
+2025-03-19 10:21:33.640510 ; TestPlan       ; Information ; "Bank1 - Bank2 Relays Test \ Close K12 (PS8)" started.
+2025-03-19 10:21:33.640510 ; TestStep       ; Information ; Executing relay actions...
+2025-03-19 10:21:33.640510 ; TestStep       ; Information ; Driving transistor OC3
+2025-03-19 10:21:33.640510 ; TestStep       ; Information ; Sending SCPI command: ROUTE:CLOSE:OC OC3
+2025-03-19 10:21:33.642511 ; InterconnectIO ; Debug       ; SCPI >> ROUTE:CLOSE:OC OC3 [1.24 ms]
+2025-03-19 10:21:33.843635 ; InterconnectIO ; Debug       ; SCPI >> *OPC? [201 ms]
+2025-03-19 10:21:33.843635 ; InterconnectIO ; Debug       ; SCPI << 1
+2025-03-19 10:21:33.893637 ; TestPlan       ; Information ; "Bank1 - Bank2 Relays Test \ Close K12 (PS8)" completed with verdict 'Pass'. [253 ms]
+2025-03-19 10:21:33.893637 ; TestPlan       ; Information ; "Bank1 - Bank2 Relays Test \ Test 10.0 Relay BK1-BK2 CH0-H Close Test" started.
+2025-03-19 10:21:33.893637 ; TestStep       ; Information ; Selected PWR Function: Current_mA
+2025-03-19 10:21:33.893637 ; TestStep       ; Information ; Reading current in mA
+2025-03-19 10:21:33.893637 ; TestStep       ; Information ; Sending SCPI command: ANA:PWR:Ima?
+2025-03-19 10:21:34.046653 ; InterconnectIO ; Debug       ; SCPI >> ANA:PWR:Ima? [152 ms]
+2025-03-19 10:21:34.046653 ; InterconnectIO ; Debug       ; SCPI << 63.0000
+2025-03-19 10:21:34.046653 ; TestStep       ; Information ; 0-2000 mA Current read read: 63.0000 mA. Limits are set to: >= 45 and <= 70
+2025-03-19 10:21:34.047653 ; TestPlan       ; Information ; "Bank1 - Bank2 Relays Test \ Test 10.0 Relay BK1-BK2 CH0-H Close Test" completed with verdict 'Pass'. [153 ms]
+2025-03-19 10:21:34.047653 ; TestPlan       ; Information ; "Bank1 - Bank2 Relays Test" completed with verdict 'Pass'. [1.07 s]
+2025-03-19 10:21:34.047653 ; TestPlan       ; Debug       ; Test step runs finished. [8.56 s]
+2025-03-19 10:21:34.047653 ; TestPlan       ; Debug       ; "Bank1 - Bank2 Relays Test \ Test 10.0 Relay BK1-BK2 CH0-H Close Test" PostPlanRun completed. [19.6 us]
+2025-03-19 10:21:34.047653 ; TestStep       ; Information ; Open Collector actions completed.
+2025-03-19 10:21:34.047653 ; TestPlan       ; Debug       ; "Bank1 - Bank2 Relays Test \ Close K12 (PS8)" PostPlanRun completed. [4.40 us]
+2025-03-19 10:21:34.047653 ; TestPlan       ; Debug       ; "Bank1 - Bank2 Relays Test \ Close BK1-CH0, Close BK2-CH0" PostPlanRun completed. [5.90 us]
+2025-03-19 10:21:34.047653 ; TestPlan       ; Debug       ; "Bank1 - Bank2 Relays Test \ Close K7,K8,K14" PostPlanRun completed. [3.30 us]
+2025-03-19 10:21:34.047653 ; TestPlan       ; Debug       ; "Test 1.1: 5VDC Check with ADC0" PostPlanRun completed. [4.00 us]
+2025-03-19 10:21:34.047653 ; TestStep       ; Information ; Relay actions completed.
+2025-03-19 10:21:34.047653 ; TestPlan       ; Debug       ; "Close relay 5V_PWR" PostPlanRun completed. [9.69 us]
+2025-03-19 10:21:34.047653 ; TestPlan       ; Debug       ; "Ressource Initialization \ Setup I2C for talk to Selftest" PostPlanRun completed. [9.50 us]
+2025-03-19 10:21:34.047653 ; TestStep       ; Information ; Open Collector actions completed.
+2025-03-19 10:21:34.047653 ; TestPlan       ; Debug       ; "Ressource Initialization \ Init OC = Open" PostPlanRun completed. [3.00 us]
+2025-03-19 10:21:34.047653 ; TestPlan       ; Debug       ; "Ressource Initialization \ Set GPIO = 0" PostPlanRun completed. [4.30 us]
+2025-03-19 10:21:34.047653 ; TestPlan       ; Debug       ; "Ressource Initialization \ Init GPIO Direction " PostPlanRun completed. [6.60 us]
+2025-03-19 10:21:34.047653 ; TestPlan       ; Debug       ; "Ressource Initialization \ Port0 Clear" PostPlanRun completed. [4.30 us]
+2025-03-19 10:21:34.047653 ; TestPlan       ; Debug       ; "Ressource Initialization \ Port0: Output, Port1:Input" PostPlanRun completed. [5.70 us]
+2025-03-19 10:21:34.047653 ; TestPlan       ; Debug       ; "Ressource Initialization \ Error Led" PostPlanRun completed. [6.10 us]
+2025-03-19 10:21:34.047653 ; TestPlan       ; Debug       ; "Ressource Initialization \ Pico Slaves Disable/Enable" PostPlanRun completed. [6.70 us]
+2025-03-19 10:21:34.047653 ; TestPlan       ; Debug       ; "1-Wire DUT read" PostPlanRun completed. [2.90 us]
+2025-03-19 10:21:34.047653 ; Summary        ; Information ; -------- Summary of test plan started 03/19/2025 10:21:25 --------
+2025-03-19 10:21:34.047653 ; Summary        ; Information ;  1-Wire DUT read                                     385 ms   Fail   
+2025-03-19 10:21:34.047653 ; Summary        ; Information ;  Ressource Initialization                           6.37 s    Pass   
+2025-03-19 10:21:34.047653 ; Summary        ; Information ;    Pico Slaves Disable/Enable                        564 ms          
+2025-03-19 10:21:34.047653 ; Summary        ; Information ;    Error Led                                         251 ms   Pass   
+2025-03-19 10:21:34.047653 ; Summary        ; Information ;    Port0: Output, Port1:Input                        505 ms   Pass   
+2025-03-19 10:21:34.047653 ; Summary        ; Information ;    Port0 Clear                                       252 ms   Pass   
+2025-03-19 10:21:34.047653 ; Summary        ; Information ;    Init GPIO Direction                              1.51 s    Pass   
+2025-03-19 10:21:34.047653 ; Summary        ; Information ;    Set GPIO = 0                                     1.26 s    Pass   
+2025-03-19 10:21:34.047653 ; Summary        ; Information ;    Init OC = Open                                    759 ms   Pass   
+2025-03-19 10:21:34.047653 ; Summary        ; Information ;    Setup I2C for talk to Selftest                   1.01 s    Pass   
+2025-03-19 10:21:34.047653 ; Summary        ; Information ;    Delay  to complete initialization                 250 ms          
+2025-03-19 10:21:34.047653 ; Summary        ; Information ;  Close relay 5V_PWR                                  363 ms   Pass   
+2025-03-19 10:21:34.047653 ; Summary        ; Information ;  Delay                                               250 ms          
+2025-03-19 10:21:34.047653 ; Summary        ; Information ;  Test 1.1: 5VDC Check with ADC0                      112 ms   Pass   
+2025-03-19 10:21:34.047653 ; Summary        ; Information ;  Bank1 - Bank2 Relays Test                          1.07 s    Pass   
+2025-03-19 10:21:34.047653 ; Summary        ; Information ;    Close K7,K8,K14                                   405 ms   Pass   
+2025-03-19 10:21:34.047653 ; Summary        ; Information ;    Close BK1-CH0, Close BK2-CH0                      257 ms   Pass   
+2025-03-19 10:21:34.047653 ; Summary        ; Information ;    Close K12 (PS8)                                   253 ms   Pass   
+2025-03-19 10:21:34.047653 ; Summary        ; Information ;    Test 10.0 Relay BK1-BK2 CH0-H Close Test          153 ms   Pass   
+2025-03-19 10:21:34.047653 ; Summary        ; Information ; ------------------------------------------------------------------
+2025-03-19 10:21:34.047653 ; Summary        ; Information ; ------ Test plan completed with verdict Fail in  8.79 s    -------
+2025-03-19 10:21:34.050654 ; CSV            ; Debug       ; OnTestPlanRunCompleted for CSV. [2.73 ms]
+2025-03-19 10:21:34.050654 ; Summary        ; Information ; -------------------- 1 artifacts registered. ---------------------
+2025-03-19 10:21:34.050654 ; Summary        ; Information ;  - C:\Station_de_test\FTS_InterconnectIOBox\FTS_InterconnectIOBox\bin\Debug\Report\FTS_Selftest_000001-2025-03-19 10-21-25-Fail.csv  [886 B]
+2025-03-19 10:21:34.050654 ; FTS_DUT        ; Information ; Closing FTS_DUT.
+2025-03-19 10:21:34.050654 ; CSV            ; Information ; Resource "CSV" closed. [22.4 us]
+2025-03-19 10:21:34.050654 ; FTS_DUT        ; Information ; Resource "FTS_DUT" closed. [26.1 us]
+2025-03-19 10:21:34.053654 ; InterconnectIO ; Information ; Resource "InterconnectIO (ASRL1::INSTR)" closed. [3.14 ms]
+2025-03-19 10:21:53.364362 ; Settings       ; Debug       ; Saved GuiControlsSettings to C:\Station_de_test\FTS_InterconnectIOBox\FTS_InterconnectIOBox\bin\Debug\Settings\GUI Controls.xml [14.2 ms]
+2025-03-19 10:21:53.372365 ; Settings       ; Debug       ; Saved PanelSettings to C:\Station_de_test\FTS_InterconnectIOBox\FTS_InterconnectIOBox\bin\Debug\Settings\GUI Panels.xml [1.55 ms]
+2025-03-19 10:21:53.376362 ; Settings       ; Debug       ; Saved EditorSettings to C:\Station_de_test\FTS_InterconnectIOBox\FTS_InterconnectIOBox\bin\Debug\Settings\Editor.xml [3.59 ms]
