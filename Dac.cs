@@ -15,11 +15,22 @@ namespace InterconnectIOBox
         #endregion
         public InterconnectIO IO_Instrument { get; set; }
 
-        [Display("DAC Set default Voltage", Group: "Voltage")]
+        public enum Act
+        {
+            Write_only,
+            Write_publish
+        }
+
+
+        [Display("Action to Execute:", Group: "DAC Write", Order: 0.1, Description: "DAC write only or DAC write and publish.")]
+        public Act SelectedAct { get; set; }
+
+
+        [Display("DAC Set default Voltage", Group: "Voltage", Order: 1.0)]
         [Description("Set voltage value as power up default")]
         public bool Vdefault { get; set; }
 
-        [Display("DAC Set Output", Group: "Voltage")]
+        [Display("DAC Set Output", Group: "Voltage", Order: 1.1)]
         [Description("Set voltage value")]
         [Unit("V")]
         public double SetVolt { get; set; }
@@ -38,10 +49,13 @@ namespace InterconnectIOBox
         public override void Run()
         {
 
+            string strname = "DAC SetVolt";
+
             if (SetVolt < 0)
             {
                 Log.Warning("Invalid low voltage value: " + SetVolt + " Minimum voltage of 0V is used");
                 SetVolt = 0;
+
             }
             else if (SetVolt > 3.3)
             {
@@ -58,23 +72,30 @@ namespace InterconnectIOBox
             {
                 IO_Instrument.ScpiCommand("ANA:DAC:SAVE " + SetVolt); // write voltage value on DAC
                 Log.Info("DAC Save default voltage value: " + SetVolt + "V");
+                strname = "DAC SetDefault";
+
+
             }
 
             UpgradeVerdict(Verdict.Pass);
-            // Publish final result
-            var result = new TestResult<double>
+
+
+            if (SelectedAct == Act.Write_publish)            // Publish final result
             {
-                ParamName = "DAC SetVolt:",
-                StepName = Name,
-                Value = SetVolt,
-                LowerLimit = SetVolt,
-                UpperLimit = SetVolt,
-                Verdict ="PASS",
-                Units = "Volts"
-            };
 
-            PublishResult(result);
+                var result = new TestResult<double>
+                {
+                    ParamName = strname,
+                    StepName = Name,
+                    Value = SetVolt,
+                    LowerLimit = SetVolt,
+                    UpperLimit = SetVolt,
+                    Verdict = "PASS",
+                    Units = "Volts"
+                };
 
+                PublishResult(result);
+            }
         }
 
         public override void PostPlanRun()

@@ -47,6 +47,10 @@ namespace InterconnectIOBox
         [Display("Measure:")]
         public string Measure { get; private set; }
 
+ 
+
+
+
         public ReadADC()
         {
             // ToDo: Set default values for properties / settings.
@@ -108,11 +112,11 @@ namespace InterconnectIOBox
             // Use ScpiQuery to read back from the device.
             string value = IO_Instrument.ScpiQuery<string>(command);
 
-            double vvalue = double.Parse(value);
+            double adc_value = double.Parse(value);
 
             Log.Info($"{name} read: " + value + " " + unit + ". Limits are set to: > " + LowerLimit + " and < " + UpperLimit);
 
-            if (vvalue >= LowerLimit && vvalue <= UpperLimit)
+            if (adc_value >= LowerLimit && adc_value <= UpperLimit)
             {
                 UpgradeVerdict(Verdict.Pass);
                 test ="PASS";
@@ -123,14 +127,18 @@ namespace InterconnectIOBox
                 test = "FAIL";
             }
 
-            Measure = $"{vvalue:F3} {unit}";  // Output measure with 3 decimal places
+
+
+
+
+            Measure = $"{adc_value:F3} {unit}";  // Output measure with 3 decimal places
 
             // Publish final result
             var result = new TestResult<double>
             {
                 ParamName = name,
                 StepName = Name,
-                Value = vvalue,
+                Value = adc_value,
                 LowerLimit = LowerLimit,
                 UpperLimit = UpperLimit,
                 Verdict = test,

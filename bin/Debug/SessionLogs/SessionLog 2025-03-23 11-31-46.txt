@@ -1,0 +1,468 @@
+﻿2025-03-23 11:31:45.236647 ; Session        ; Debug       ; Session log loaded as 'C:\Station_de_test\FTS_InterconnectIOBox\FTS_InterconnectIOBox\bin\Debug\SessionLogs\Editor 2025-03-23 11-31-44.txt'. [1.94 ms]
+2025-03-23 11:31:45.249693 ; Session        ; Debug       ; Deleting log file: C:\Station_de_test\FTS_InterconnectIOBox\FTS_InterconnectIOBox\bin\Debug\SessionLogs\SessionLog 2025-03-19 10-52-22.txt
+2025-03-23 11:31:45.258327 ; Session        ; Debug       ; Running '"C:\Station_de_test\FTS_InterconnectIOBox\FTS_InterconnectIOBox\bin\Debug\Editor.exe" ' in 'C:\Station_de_test\FTS_InterconnectIOBox\FTS_InterconnectIOBox\bin\Debug'.
+2025-03-23 11:31:45.328042 ; AssemblyFinder ; Debug       ; Found 21/63 assembly files. [12.7 ms]
+2025-03-23 11:31:45.341041 ; Resolver       ; Debug       ; Found match for Keysight.OpenTap.Wpf, Version=9.27.0.0, Culture=neutral, PublicKeyToken=null in C:\Station_de_test\FTS_InterconnectIOBox\FTS_InterconnectIOBox\bin\Debug\Packages\WPF Controls\Keysight.OpenTap.Wpf.dll
+2025-03-23 11:31:45.341041 ; Resolver       ; Debug       ; Found match for System.Collections.Immutable, Version=1.2.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a in C:\Station_de_test\FTS_InterconnectIOBox\FTS_InterconnectIOBox\bin\Debug\Dependencies\System.Collections.Immutable.1.2.3.0\System.Collections.Immutable.dll
+2025-03-23 11:31:45.526070 ; AssemblyFinder ; Debug       ; Found 21/63 assembly files. [14.7 ms]
+2025-03-23 11:31:45.542070 ; Resolver       ; Debug       ; Found match for System.Reflection.Metadata, Version=1.4.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a in C:\Station_de_test\FTS_InterconnectIOBox\FTS_InterconnectIOBox\bin\Debug\Dependencies\System.Reflection.Metadata.1.4.3.0\System.Reflection.Metadata.dll
+2025-03-23 11:31:45.666099 ; Searcher       ; Debug       ; Ordered 19 assemblies according to references. [134 ms]
+2025-03-23 11:31:45.748099 ; PluginManager  ; Debug       ; Found 14 plugin assemblies containing 303 plugin types. [218 ms]
+2025-03-23 11:31:45.749098 ; PluginManager  ; Debug       ; Found version 9.27.0+11e5348d  of OpenTap.dll
+2025-03-23 11:31:45.749098 ; PluginManager  ; Debug       ; Found version 9.27.0+11e5348d  of OpenTap.Package.dll
+2025-03-23 11:31:45.749098 ; PluginManager  ; Debug       ; Found version 1.5.1+16a9625a.16a9625af16be37b607c78294dd086bd05fdd1c1 of Keysight.OpenTap.Licensing.dll
+2025-03-23 11:31:45.749098 ; PluginManager  ; Debug       ; Found version 9.27.0+11e5348d  of OpenTap.Plugins.BasicSteps.dll
+2025-03-23 11:31:45.749098 ; PluginManager  ; Debug       ; Found version 9.27.0+f0e134d7.f0e134d7c967fbd3949acf3affed360905d1398e of Keysight.OpenTap.Wpf.dll
+2025-03-23 11:31:45.749098 ; PluginManager  ; Debug       ; Found version 9.27.0+f0e134d7.f0e134d7c967fbd3949acf3affed360905d1398e of PackageManager.exe
+2025-03-23 11:31:45.749098 ; PluginManager  ; Debug       ; Found version 9.27.0+f0e134d7.f0e134d7c967fbd3949acf3affed360905d1398e of Editor.exe
+2025-03-23 11:31:45.749098 ; PluginManager  ; Debug       ; Found version 0.0.0            of InterconnectIOBox.dll
+2025-03-23 11:31:45.749098 ; PluginManager  ; Debug       ; Found version 9.14.0+7676a2a2  of Csv.dll
+2025-03-23 11:31:45.749098 ; PluginManager  ; Debug       ; Found version 1.4.3+0968b4c4   of OpenTap.OSIntegration.Windows.dll
+2025-03-23 11:31:45.749098 ; PluginManager  ; Debug       ; Found version 9.6.0+558afbf4.558afbf44f139d4cc5acf537e8c72ed4c5efb9cc of Keysight.OpenTap.Plugins.ResultListener.SqlDatabase.dll
+2025-03-23 11:31:45.749098 ; PluginManager  ; Debug       ; Found version 9.6.0+558afbf4.558afbf44f139d4cc5acf537e8c72ed4c5efb9cc of Keysight.OpenTap.Plugins.ResultListener.PostgreSQL.dll
+2025-03-23 11:31:45.749098 ; PluginManager  ; Debug       ; Found version 9.6.0+558afbf4.558afbf44f139d4cc5acf537e8c72ed4c5efb9cc of Keysight.OpenTap.Plugins.ResultListener.SQLite.dll
+2025-03-23 11:31:45.749098 ; PluginManager  ; Debug       ; Found version 1.1.1+507fd903   of OpenTap.Tui.dll
+2025-03-23 11:31:45.749098 ; PluginManager  ; Debug       ; Searched 21 Assemblies. [221 ms]
+2025-03-23 11:31:45.769605 ; AssemblyData   ; Debug       ; Loaded OpenTap. [751 us]
+2025-03-23 11:31:45.770613 ; AssemblyData   ; Debug       ; Loaded OpenTap. [285 us]
+2025-03-23 11:31:45.875120 ; AssemblyData   ; Debug       ; Loaded OpenTap.Package. [105 ms]
+2025-03-23 11:31:45.875120 ; AssemblyData   ; Debug       ; Loaded OpenTap.Plugins.BasicSteps. [94.3 ms]
+2025-03-23 11:31:45.878128 ; AssemblyData   ; Debug       ; Loaded OpenTap.Tui. [54.3 ms]
+2025-03-23 11:31:45.889128 ; AssemblyData   ; Debug       ; Loaded Keysight.OpenTap.Wpf. [1.31 ms]
+2025-03-23 11:31:45.906132 ; AssemblyData   ; Debug       ; Loaded OpenTap.OSIntegration.Windows. [7.97 ms]
+2025-03-23 11:31:45.910132 ; SystemInfo     ; Debug       ; Microsoft Windows 10.0.26100 X64
+2025-03-23 11:31:45.910132 ; SystemInfo     ; Debug       ; .NET Framework 4.8.9290.0
+2025-03-23 11:31:45.910132 ; SystemInfo     ; Debug       ; OpenTAP Engine 9.27.0+11e5348d X64
+2025-03-23 11:31:45.966128 ; AssemblyData   ; Debug       ; Loaded mscorlib. [600 ns]
+2025-03-23 11:31:46.114160 ; Installation   ; Debug       ; CSV                      - 9.14.0+7676a2a2
+2025-03-23 11:31:46.114160 ; Installation   ; Debug       ; Editor                   - 9.27.0+f0e134d7
+2025-03-23 11:31:46.114160 ; Installation   ; Debug       ; Keysight Licensing       - 1.5.1+16a9625a
+2025-03-23 11:31:46.114160 ; Installation   ; Debug       ; OpenTAP                  - 9.27.0+11e5348d
+2025-03-23 11:31:46.114160 ; Installation   ; Debug       ; OSIntegration            - 1.4.3+0968b4c4
+2025-03-23 11:31:46.114160 ; Installation   ; Debug       ; SQLite and PostgreSQL    - 9.6.0+558afbf4
+2025-03-23 11:31:46.114160 ; Installation   ; Debug       ; TUI                      - 1.1.1+507fd903
+2025-03-23 11:31:46.114160 ; Installation   ; Debug       ; WPF Controls             - 9.27.0+f0e134d7
+2025-03-23 11:31:46.114160 ; Installation   ; Debug       ; PathWave License Manager - 2.7.0+398d3a87
+2025-03-23 11:31:46.125161 ; Settings       ; Debug       ; EditorSettings loaded from C:\Station_de_test\FTS_InterconnectIOBox\FTS_InterconnectIOBox\bin\Debug\Settings\Editor.xml [607 ms]
+2025-03-23 11:31:46.127159 ; Resolver       ; Debug       ; Found match for MahApps.Metro, Version=1.3.0.0, Culture=neutral, PublicKeyToken=f4fb5a3c4d1e5b4f in C:\Station_de_test\FTS_InterconnectIOBox\FTS_InterconnectIOBox\bin\Debug\Dependencies\MahApps.Metro.1.3.0.0\MahApps.Metro.dll
+2025-03-23 11:31:46.135160 ; Resolver       ; Debug       ; Found match for Keysight.Ccl.Wsl, Version=6.6.0.0, Culture=neutral, PublicKeyToken=55333af07c70062e in C:\Station_de_test\FTS_InterconnectIOBox\FTS_InterconnectIOBox\bin\Debug\Dependencies\Keysight.Ccl.Wsl.6.6.0.0\Keysight.Ccl.Wsl.dll
+2025-03-23 11:31:46.277723 ; Resolver       ; Debug       ; Found match for Keysight.OpenTap.Wpf, Version=9.27.0, Culture=neutral in C:\Station_de_test\FTS_InterconnectIOBox\FTS_InterconnectIOBox\bin\Debug\Packages\WPF Controls\Keysight.OpenTap.Wpf.dll
+2025-03-23 11:31:46.279724 ; GUI            ; Debug       ; Loaded OsTheme Theme. [15.4 ms]
+2025-03-23 11:31:46.320243 ; Resolver       ; Debug       ; Found match for AvalonDock, Version=4.72.1.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4 in C:\Station_de_test\FTS_InterconnectIOBox\FTS_InterconnectIOBox\bin\Debug\Dependencies\AvalonDock.4.72.1.0\AvalonDock.dll
+2025-03-23 11:31:46.493671 ; AssemblyData   ; Debug       ; Loaded System.Core. [500 ns]
+2025-03-23 11:31:46.500668 ; Settings       ; Debug       ; GuiControlsSettings loaded from C:\Station_de_test\FTS_InterconnectIOBox\FTS_InterconnectIOBox\bin\Debug\Settings\GUI Controls.xml [97.4 ms]
+2025-03-23 11:31:46.501671 ; Main           ; Debug       ; Window initial dimensions: 1359px, 835px.
+2025-03-23 11:31:46.502669 ; Main           ; Debug       ; Trying to attach debugger.
+2025-03-23 11:31:46.532183 ; Settings       ; Debug       ; EngineSettings loaded from C:\Station_de_test\FTS_InterconnectIOBox\FTS_InterconnectIOBox\bin\Debug\Settings\Engine.xml [28.0 ms]
+2025-03-23 11:31:46.540183 ; Resolver       ; Debug       ; Found match for Keysight.OpenTap.Licensing, Version=1.5.1.0, Culture=neutral, PublicKeyToken=null in C:\Station_de_test\FTS_InterconnectIOBox\FTS_InterconnectIOBox\bin\Debug\Packages\Keysight Licensing\Keysight.OpenTap.Licensing.dll
+2025-03-23 11:31:46.555183 ; Session        ; Debug       ; Session log loaded as 'SessionLogs\SessionLog 2025-03-23 11-31-46.txt'. [2.21 ms]
+2025-03-23 11:31:46.865359 ; AssemblyData   ; Debug       ; Loaded Editor. [25.6 us]
+2025-03-23 11:31:46.866360 ; Settings       ; Debug       ; PanelSettings loaded from C:\Station_de_test\FTS_InterconnectIOBox\FTS_InterconnectIOBox\bin\Debug\Settings\GUI Panels.xml [1.23 ms]
+2025-03-23 11:31:46.882364 ; Main           ; Debug       ; GUI initialized. [378 ms]
+2025-03-23 11:31:46.882364 ; Main           ; Debug       ; Docking manager initialized. [175 us]
+2025-03-23 11:31:46.885364 ; OpenTAP        ; Information ; OpenTAP version '9.27.0+11e5348d' 64-bit initialized 03/23/2025 [2.18 s]
+2025-03-23 11:31:46.889361 ; Resolver       ; Debug       ; Found match for Keysight.OpenTap.Licensing, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null in C:\Station_de_test\FTS_InterconnectIOBox\FTS_InterconnectIOBox\bin\Debug\Packages\Keysight Licensing\Keysight.OpenTap.Licensing.dll
+2025-03-23 11:31:46.919360 ; Resolver       ; Debug       ; Found match for Keysight.Kal.Licensing.Api, Version=7.4.0.790, Culture=neutral, PublicKeyToken=55333af07c70062e in C:\Station_de_test\FTS_InterconnectIOBox\FTS_InterconnectIOBox\bin\Debug\Dependencies\Keysight.Kal.Licensing.Api.4.5.0\Keysight.Kal.Licensing.Api.dll
+2025-03-23 11:31:46.930868 ; Settings       ; Debug       ; ConnectionSettings loaded from C:\Station_de_test\FTS_InterconnectIOBox\FTS_InterconnectIOBox\bin\Debug\Settings\Bench\Default\Connections.xml [2.21 ms]
+2025-03-23 11:31:46.944874 ; AssemblyData   ; Debug       ; Loaded InterconnectIOBox. [8.65 ms]
+2025-03-23 11:31:46.948873 ; Settings       ; Debug       ; DutSettings loaded from C:\Station_de_test\FTS_InterconnectIOBox\FTS_InterconnectIOBox\bin\Debug\Settings\Bench\Default\DUTs.xml [17.9 ms]
+2025-03-23 11:31:46.958873 ; KAL            ; Debug       ; KAL signature verified. [28.8 ms]
+2025-03-23 11:31:46.971874 ; Visa           ; Debug       ; Using IVisaProvider: OpenTap.VisaLibraryLoader
+2025-03-23 11:31:46.985879 ; Settings       ; Debug       ; InstrumentSettings loaded from C:\Station_de_test\FTS_InterconnectIOBox\FTS_InterconnectIOBox\bin\Debug\Settings\Bench\Default\Instruments.xml [36.3 ms]
+2025-03-23 11:31:46.992874 ; KAL            ; Debug       ; Initialized [64.3 ms]
+2025-03-23 11:31:46.992874 ; AssemblyData   ; Debug       ; Loaded Csv. [6.58 ms]
+2025-03-23 11:31:46.998875 ; KAL Process    ; Debug       ; Initialized [71.7 ms]
+2025-03-23 11:31:47.008875 ; AssemblyData   ; Debug       ; Loaded Keysight.OpenTap.Plugins.ResultListener.SQLite. [7.31 ms]
+2025-03-23 11:31:47.045385 ; KAL            ; Debug       ; MultipleErrors: There were 2 errors:-----> -1: No licenses found.A license file was not found at the path listed below. To request a license for Keysight products you have purchased visit www.keysight.com/find/softwaremanager (entitlement certificate required).Feature:       TAP_EngineFilename:      C:\ProgramData\Keysight\Licensing\Licenses\Other\*.licLicense path:  C:\ProgramData\Keysight\Licensing\Licenses\Other\*.lic;FlexNet Licensing error: -1,359.  System Error: 2 "The system cannot find the file specified."-----> -5: The feature could not be found.This happens when the feature is not licensed/not borrowed for this particular application, or the license has expired.Feature:       TAP_EngineLicense path:  C:\ProgramData\Keysight\Licensing\Licenses\Server\default.lic;FlexNet Licensing error: -5,412.
+2025-03-23 11:31:47.059384 ; Settings       ; Debug       ; ResultSettings loaded from C:\Station_de_test\FTS_InterconnectIOBox\FTS_InterconnectIOBox\bin\Debug\Settings\Results.xml [73.7 ms]
+2025-03-23 11:31:47.064385 ; KAL Process    ; Debug       ; MultipleErrors: There were 2 errors:-----> -1: No licenses found.A license file was not found at the path listed below. To request a license for Keysight products you have purchased visit www.keysight.com/find/softwaremanager (entitlement certificate required).Feature:       TAP_EngineFilename:      C:\ProgramData\Keysight\Licensing\Licenses\Other\*.licLicense path:  C:\ProgramData\Keysight\Licensing\Licenses\Other\*.lic;FlexNet Licensing error: -1,359.  System Error: 2 "The system cannot find the file specified."-----> -5: The feature could not be found.This happens when the feature is not licensed/not borrowed for this particular application, or the license has expired.Feature:       TAP_EngineLicense path:  C:\ProgramData\Keysight\Licensing\Licenses\Server\default.lic;FlexNet Licensing error: -5,412.
+2025-03-23 11:31:47.066386 ; Resolver       ; Debug       ; Found match for NStack, Version=1.0.7.0, Culture=neutral, PublicKeyToken=null in C:\Station_de_test\FTS_InterconnectIOBox\FTS_InterconnectIOBox\bin\Debug\Dependencies\NStack.1.0.7.0\NStack.dll
+2025-03-23 11:31:47.079385 ; AssemblyData   ; Debug       ; Loaded Terminal.Gui. [227 us]
+2025-03-23 11:31:47.086386 ; KAL            ; Debug       ; MultipleErrors: There were 2 errors:-----> -1: No licenses found.A license file was not found at the path listed below. To request a license for Keysight products you have purchased visit www.keysight.com/find/softwaremanager (entitlement certificate required).Feature:       TAP_EditorFilename:      C:\ProgramData\Keysight\Licensing\Licenses\Other\*.licLicense path:  C:\ProgramData\Keysight\Licensing\Licenses\Other\*.lic;FlexNet Licensing error: -1,359.  System Error: 2 "The system cannot find the file specified."-----> -5: The feature could not be found.This happens when the feature is not licensed/not borrowed for this particular application, or the license has expired.Feature:       TAP_EditorLicense path:  C:\ProgramData\Keysight\Licensing\Licenses\Server\default.lic;FlexNet Licensing error: -5,412.
+2025-03-23 11:31:47.090385 ; Settings       ; Debug       ; TuiSettings loaded from C:\Station_de_test\FTS_InterconnectIOBox\FTS_InterconnectIOBox\bin\Debug\Settings\TUI Settings.xml [31.2 ms]
+2025-03-23 11:31:47.099387 ; KAL Process    ; Debug       ; MultipleErrors: There were 2 errors:-----> -1: No licenses found.A license file was not found at the path listed below. To request a license for Keysight products you have purchased visit www.keysight.com/find/softwaremanager (entitlement certificate required).Feature:       TAP_EditorFilename:      C:\ProgramData\Keysight\Licensing\Licenses\Other\*.licLicense path:  C:\ProgramData\Keysight\Licensing\Licenses\Other\*.lic;FlexNet Licensing error: -1,359.  System Error: 2 "The system cannot find the file specified."-----> -5: The feature could not be found.This happens when the feature is not licensed/not borrowed for this particular application, or the license has expired.Feature:       TAP_EditorLicense path:  C:\ProgramData\Keysight\Licensing\Licenses\Server\default.lic;FlexNet Licensing error: -5,412.
+2025-03-23 11:31:47.118388 ; KAL            ; Debug       ; MultipleErrors: There were 2 errors:-----> -1: No licenses found.A license file was not found at the path listed below. To request a license for Keysight products you have purchased visit www.keysight.com/find/softwaremanager (entitlement certificate required).Feature:       KS8400AFilename:      C:\ProgramData\Keysight\Licensing\Licenses\Other\*.licLicense path:  C:\ProgramData\Keysight\Licensing\Licenses\Other\*.lic;FlexNet Licensing error: -1,359.  System Error: 2 "The system cannot find the file specified."-----> -5: The feature could not be found.This happens when the feature is not licensed/not borrowed for this particular application, or the license has expired.Feature:       KS8400ALicense path:  C:\ProgramData\Keysight\Licensing\Licenses\Server\default.lic;FlexNet Licensing error: -5,412.
+2025-03-23 11:31:47.130385 ; KAL Process    ; Debug       ; MultipleErrors: There were 2 errors:-----> -1: No licenses found.A license file was not found at the path listed below. To request a license for Keysight products you have purchased visit www.keysight.com/find/softwaremanager (entitlement certificate required).Feature:       KS8400AFilename:      C:\ProgramData\Keysight\Licensing\Licenses\Other\*.licLicense path:  C:\ProgramData\Keysight\Licensing\Licenses\Other\*.lic;FlexNet Licensing error: -1,359.  System Error: 2 "The system cannot find the file specified."-----> -5: The feature could not be found.This happens when the feature is not licensed/not borrowed for this particular application, or the license has expired.Feature:       KS8400ALicense path:  C:\ProgramData\Keysight\Licensing\Licenses\Server\default.lic;FlexNet Licensing error: -5,412.
+2025-03-23 11:31:47.149900 ; KAL            ; Debug       ; MultipleErrors: There were 2 errors:-----> -1: No licenses found.A license file was not found at the path listed below. To request a license for Keysight products you have purchased visit www.keysight.com/find/softwaremanager (entitlement certificate required).Feature:       KS8000AFilename:      C:\ProgramData\Keysight\Licensing\Licenses\Other\*.licLicense path:  C:\ProgramData\Keysight\Licensing\Licenses\Other\*.lic;FlexNet Licensing error: -1,359.  System Error: 2 "The system cannot find the file specified."-----> -5: The feature could not be found.This happens when the feature is not licensed/not borrowed for this particular application, or the license has expired.Feature:       KS8000ALicense path:  C:\ProgramData\Keysight\Licensing\Licenses\Server\default.lic;FlexNet Licensing error: -5,412.
+2025-03-23 11:31:47.162902 ; KAL Process    ; Debug       ; MultipleErrors: There were 2 errors:-----> -1: No licenses found.A license file was not found at the path listed below. To request a license for Keysight products you have purchased visit www.keysight.com/find/softwaremanager (entitlement certificate required).Feature:       KS8000AFilename:      C:\ProgramData\Keysight\Licensing\Licenses\Other\*.licLicense path:  C:\ProgramData\Keysight\Licensing\Licenses\Other\*.lic;FlexNet Licensing error: -1,359.  System Error: 2 "The system cannot find the file specified."-----> -5: The feature could not be found.This happens when the feature is not licensed/not borrowed for this particular application, or the license has expired.Feature:       KS8000ALicense path:  C:\ProgramData\Keysight\Licensing\Licenses\Server\default.lic;FlexNet Licensing error: -5,412.
+2025-03-23 11:31:47.165898 ; Resolver       ; Debug       ; Found match for System.IdentityModel.Tokens.Jwt, Version=6.16.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35 in C:\Station_de_test\FTS_InterconnectIOBox\FTS_InterconnectIOBox\bin\Debug\Dependencies\System.IdentityModel.Tokens.Jwt.6.16.0.0\System.IdentityModel.Tokens.Jwt.dll
+2025-03-23 11:31:47.173898 ; Resolver       ; Debug       ; Found match for Microsoft.IdentityModel.Tokens, Version=6.16.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35 in C:\Station_de_test\FTS_InterconnectIOBox\FTS_InterconnectIOBox\bin\Debug\Dependencies\Microsoft.IdentityModel.Tokens.6.20.0.0\Microsoft.IdentityModel.Tokens.dll
+2025-03-23 11:31:47.357858 ; Resolver       ; Debug       ; Found match for Microsoft.IdentityModel.Logging, Version=6.16.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35 in C:\Station_de_test\FTS_InterconnectIOBox\FTS_InterconnectIOBox\bin\Debug\Dependencies\Microsoft.IdentityModel.Logging.6.20.0.0\Microsoft.IdentityModel.Logging.dll
+2025-03-23 11:31:47.366972 ; Resolver       ; Debug       ; Found match for Microsoft.IdentityModel.JsonWebTokens, Version=6.16.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35 in C:\Station_de_test\FTS_InterconnectIOBox\FTS_InterconnectIOBox\bin\Debug\Dependencies\Microsoft.IdentityModel.JsonWebTokens.6.16.0.0\Microsoft.IdentityModel.JsonWebTokens.dll
+2025-03-23 11:31:47.388969 ; Resolver       ; Debug       ; Found match for Microsoft.IdentityModel.Abstractions, Version=6.20.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35 in C:\Station_de_test\FTS_InterconnectIOBox\FTS_InterconnectIOBox\bin\Debug\Dependencies\Microsoft.IdentityModel.Abstractions.6.20.0.0\Microsoft.IdentityModel.Abstractions.dll
+2025-03-23 11:31:47.604600 ; WTL            ; Debug       ; License found TAP_Editor
+2025-03-23 11:31:47.610598 ; License        ; Debug       ; License resolved: KS8400A|TAP_Engine|TAP_Editor|KS8000A [701 ms]
+2025-03-23 11:31:48.185156 ; Main           ; Debug       ; Application startup finished. [3.48 s]
+2025-03-23 11:31:48.256676 ; WTL            ; Debug       ; License found TAP_Editor
+2025-03-23 11:31:48.256676 ; License        ; Debug       ; License resolved: TAP_Editor|KS8400A [1.34 ms]
+2025-03-23 11:31:55.416314 ; AssemblyData   ; Debug       ; Loaded PackageManager. [516 us]
+2025-03-23 11:32:16.223773 ; TestPlan       ; Information ; -----------------------------------------------------------------
+2025-03-23 11:32:16.247285 ; TestPlan       ; Information ; Starting TestPlan 'Untitled' on 03/23/2025 11:32:16, 2 of 2 TestSteps enabled.
+2025-03-23 11:32:16.297286 ; TestPlan       ; Debug       ; Saved Test Plan XML [1.61 ms]
+2025-03-23 11:32:16.303287 ; Settings       ; Debug       ; No settings file exists for TestPlanRunPackageParameterMonitor. A new instance with default values has been created. [144 us]
+2025-03-23 11:32:16.358804 ; CSV            ; Information ; Resource "CSV" opened. [2.95 ms]
+2025-03-23 11:32:16.358804 ; FTS_DUT        ; Information ; Open FTS_DUT.
+2025-03-23 11:32:16.358804 ; FTS_DUT        ; Information ; 1-Wire J1 enabled.
+2025-03-23 11:32:16.358804 ; FTS_DUT        ; Information ; Resource "FTS_DUT" opened. [3.55 ms]
+2025-03-23 11:32:16.359803 ; InterconnectIO ; Debug       ; Connecting to 'ASRL1::INSTR'
+2025-03-23 11:32:16.405804 ; InterconnectIO ; Debug       ; SCPI >> *IDN? [14.3 ms]
+2025-03-23 11:32:16.405804 ; InterconnectIO ; Debug       ; SCPI << FirstTestStation,InterconnectIO,2022A,1.0
+2025-03-23 11:32:16.405804 ; InterconnectIO ; Information ; Now connected to: FirstTestStation,InterconnectIO,2022A,1.0
+2025-03-23 11:32:16.406808 ; InterconnectIO ; Debug       ; SCPI >> *CLS [195 us]
+2025-03-23 11:32:16.506315 ; InterconnectIO ; Debug       ; SCPI >> *OPC? [99.3 ms]
+2025-03-23 11:32:16.506315 ; InterconnectIO ; Debug       ; SCPI << 1
+2025-03-23 11:32:16.607825 ; InterconnectIO ; Information ; Resource "InterconnectIO (ASRL1::INSTR)" opened. [254 ms]
+2025-03-23 11:32:16.624823 ; TestPlan       ; Debug       ; "SPI Config" PrePlanRun completed. [2.39 ms]
+2025-03-23 11:32:16.624823 ; TestPlan       ; Debug       ; "Selftest COM command" PrePlanRun completed. [415 us]
+2025-03-23 11:32:16.624823 ; TestPlan       ; Debug       ; PrePlanRun Methods completed [5.85 ms]
+2025-03-23 11:32:16.637826 ; TestPlan       ; Information ; "SPI Config" started.
+2025-03-23 11:32:16.641827 ; TestStep       ; Information ; SPI Communication Parameters
+2025-03-23 11:32:16.642827 ; TestStep       ; Information ; Sending SCPI command: COM:SPI:BAUDRATE 100000
+2025-03-23 11:32:16.643824 ; InterconnectIO ; Debug       ; SCPI >> COM:SPI:BAUDRATE 100000 [1.35 ms]
+2025-03-23 11:32:16.811475 ; InterconnectIO ; Debug       ; SCPI >> *OPC? [166 ms]
+2025-03-23 11:32:16.811475 ; InterconnectIO ; Debug       ; SCPI << 1
+2025-03-23 11:32:17.015669 ; InterconnectIO ; Debug       ; SCPI >> COM:SPI:BAUDRATE? [152 ms]
+2025-03-23 11:32:17.015669 ; InterconnectIO ; Debug       ; SCPI << 100000
+2025-03-23 11:32:17.016672 ; TestStep       ; Information ; Sending SCPI command: COM:SPI:BAUDRATE?, Answer: 100000
+2025-03-23 11:32:17.027671 ; TestStep       ; Information ; Sending SCPI command: COM:SPI:MODE 0
+2025-03-23 11:32:17.029671 ; InterconnectIO ; Debug       ; SCPI >> COM:SPI:MODE 0 [1.26 ms]
+2025-03-23 11:32:17.218686 ; InterconnectIO ; Debug       ; SCPI >> *OPC? [189 ms]
+2025-03-23 11:32:17.219685 ; InterconnectIO ; Debug       ; SCPI << 1
+2025-03-23 11:32:17.422711 ; InterconnectIO ; Debug       ; SCPI >> COM:SPI:MODE? [153 ms]
+2025-03-23 11:32:17.422711 ; InterconnectIO ; Debug       ; SCPI << 0
+2025-03-23 11:32:17.422711 ; TestStep       ; Information ; Sending SCPI command: COM:SPI:MODE?, Answer: 0
+2025-03-23 11:32:17.423712 ; TestStep       ; Information ; Sending SCPI command: COM:SPI:DATABITS 8
+2025-03-23 11:32:17.425711 ; InterconnectIO ; Debug       ; SCPI >> COM:SPI:DATABITS 8 [1.25 ms]
+2025-03-23 11:32:17.626721 ; InterconnectIO ; Debug       ; SCPI >> *OPC? [200 ms]
+2025-03-23 11:32:17.626721 ; InterconnectIO ; Debug       ; SCPI << 1
+2025-03-23 11:32:17.830235 ; InterconnectIO ; Debug       ; SCPI >> COM:SPI:DATABITS? [153 ms]
+2025-03-23 11:32:17.830235 ; InterconnectIO ; Debug       ; SCPI << 8
+2025-03-23 11:32:17.830235 ; TestStep       ; Information ; Sending SCPI command: COM:SPI:DATABITS?, Answer: 8
+2025-03-23 11:32:17.830235 ; TestStep       ; Information ; Sending SCPI command: COM:SPI:CS 5
+2025-03-23 11:32:17.830235 ; InterconnectIO ; Debug       ; SCPI >> COM:SPI:CS 5 [153 us]
+2025-03-23 11:32:18.032999 ; InterconnectIO ; Debug       ; SCPI >> *OPC? [202 ms]
+2025-03-23 11:32:18.032999 ; InterconnectIO ; Debug       ; SCPI << 1
+2025-03-23 11:32:18.237023 ; InterconnectIO ; Debug       ; SCPI >> COM:SPI:CS? [153 ms]
+2025-03-23 11:32:18.237023 ; InterconnectIO ; Debug       ; SCPI << 5
+2025-03-23 11:32:18.237023 ; TestStep       ; Information ; Sending SCPI command: COM:SPI:CS?, Answer: 5
+2025-03-23 11:32:18.237023 ; TestStep       ; Information ; SPI Communication Enabled
+2025-03-23 11:32:18.237023 ; TestStep       ; Information ; Sending SCPI command: COM:INITIALIZE:ENABLE SPI
+2025-03-23 11:32:18.239023 ; InterconnectIO ; Debug       ; SCPI >> COM:INITIALIZE:ENABLE SPI [1.30 ms]
+2025-03-23 11:32:18.441041 ; InterconnectIO ; Debug       ; SCPI >> *OPC? [201 ms]
+2025-03-23 11:32:18.441041 ; InterconnectIO ; Debug       ; SCPI << 1
+2025-03-23 11:32:18.644584 ; InterconnectIO ; Debug       ; SCPI >> COM:INITIALIZE:STATUS? SPI [153 ms]
+2025-03-23 11:32:18.644584 ; InterconnectIO ; Debug       ; SCPI << 1
+2025-03-23 11:32:18.644584 ; TestStep       ; Information ; Sending SCPI command: COM:INITIALIZE:STATUS? SPI, Answer: 1
+2025-03-23 11:32:18.650584 ; TestPlan       ; Information ; "SPI Config" completed with verdict 'Pass'. [2.00 s]
+2025-03-23 11:32:18.651586 ; TestPlan       ; Information ; "Selftest COM command" started.
+2025-03-23 11:32:18.653584 ; TestStep       ; Information ; Sending Write SCPI command: COM:I2C:WRITE 113, 17
+2025-03-23 11:32:18.654585 ; InterconnectIO ; Debug       ; SCPI >> COM:I2C:WRITE 113, 17 [1.29 ms]
+2025-03-23 11:32:18.848884 ; InterconnectIO ; Debug       ; SCPI >> *OPC? [193 ms]
+2025-03-23 11:32:18.848884 ; InterconnectIO ; Debug       ; SCPI << 1
+2025-03-23 11:32:18.899386 ; TestStep       ; Information ; Sending Write SCPI command: COM:I2C:WRITE 111, 1
+2025-03-23 11:32:18.901391 ; InterconnectIO ; Debug       ; SCPI >> COM:I2C:WRITE 111, 1 [1.29 ms]
+2025-03-23 11:32:19.103905 ; InterconnectIO ; Debug       ; SCPI >> *OPC? [202 ms]
+2025-03-23 11:32:19.103905 ; InterconnectIO ; Debug       ; SCPI << 1
+2025-03-23 11:32:19.154413 ; TestPlan       ; Information ; "Selftest COM command" completed with verdict 'Pass'. [503 ms]
+2025-03-23 11:32:19.155413 ; TestPlan       ; Debug       ; Test step runs finished. [2.52 s]
+2025-03-23 11:32:19.157413 ; TestPlan       ; Debug       ; "Selftest COM command" PostPlanRun completed. [113 us]
+2025-03-23 11:32:19.157413 ; TestPlan       ; Debug       ; "SPI Config" PostPlanRun completed. [53.2 us]
+2025-03-23 11:32:19.166413 ; Summary        ; Information ; ------- Summary of test plan started 03/23/2025 11:32:16 -------
+2025-03-23 11:32:19.169414 ; Summary        ; Information ;  SPI Config                                       2.00 s    Pass   
+2025-03-23 11:32:19.169414 ; Summary        ; Information ;  Selftest COM command                              503 ms   Pass   
+2025-03-23 11:32:19.169414 ; Summary        ; Information ; ----------------------------------------------------------------
+2025-03-23 11:32:19.169414 ; Summary        ; Information ; -------- Test plan completed successfully in  2.85 s    --------
+2025-03-23 11:32:19.189413 ; CSV            ; Debug       ; OnTestPlanRunCompleted for CSV. [17.0 ms]
+2025-03-23 11:32:19.190414 ; Summary        ; Information ; ------------------- 1 artifacts registered. --------------------
+2025-03-23 11:32:19.190414 ; Summary        ; Information ;  - C:\Station_de_test\FTS_InterconnectIOBox\FTS_InterconnectIOBox\bin\Debug\Report\FTS_Selftest_000001-2025-03-23 11-32-16-Pass.csv  [759 B]
+2025-03-23 11:32:19.194413 ; CSV            ; Information ; Resource "CSV" closed. [335 us]
+2025-03-23 11:32:19.194413 ; FTS_DUT        ; Information ; Closing FTS_DUT.
+2025-03-23 11:32:19.194413 ; FTS_DUT        ; Information ; Resource "FTS_DUT" closed. [186 us]
+2025-03-23 11:32:19.197423 ; InterconnectIO ; Information ; Resource "InterconnectIO (ASRL1::INSTR)" closed. [3.71 ms]
+2025-03-23 11:33:13.100795 ; TestPlan       ; Information ; -----------------------------------------------------------------
+2025-03-23 11:33:13.101795 ; TestPlan       ; Information ; Starting TestPlan 'Untitled' on 03/23/2025 11:33:13, 1 of 1 TestSteps enabled.
+2025-03-23 11:33:13.101795 ; InterconnectIO ; Debug       ; Connecting to 'ASRL1::INSTR'
+2025-03-23 11:33:13.101795 ; FTS_DUT        ; Information ; Open FTS_DUT.
+2025-03-23 11:33:13.101795 ; FTS_DUT        ; Information ; 1-Wire J1 enabled.
+2025-03-23 11:33:13.101795 ; FTS_DUT        ; Information ; Resource "FTS_DUT" opened. [22.0 us]
+2025-03-23 11:33:13.101795 ; CSV            ; Information ; Resource "CSV" opened. [17.0 us]
+2025-03-23 11:33:13.103796 ; TestPlan       ; Debug       ; Saved Test Plan XML [2.39 ms]
+2025-03-23 11:33:13.122795 ; InterconnectIO ; Debug       ; SCPI >> *IDN? [6.60 ms]
+2025-03-23 11:33:13.122795 ; InterconnectIO ; Debug       ; SCPI << FirstTestStation,InterconnectIO,2022A,1.0
+2025-03-23 11:33:13.122795 ; InterconnectIO ; Information ; Now connected to: FirstTestStation,InterconnectIO,2022A,1.0
+2025-03-23 11:33:13.123795 ; InterconnectIO ; Debug       ; SCPI >> *CLS [148 us]
+2025-03-23 11:33:13.224308 ; InterconnectIO ; Debug       ; SCPI >> *OPC? [101 ms]
+2025-03-23 11:33:13.224308 ; InterconnectIO ; Debug       ; SCPI << 1
+2025-03-23 11:33:13.325819 ; InterconnectIO ; Information ; Resource "InterconnectIO (ASRL1::INSTR)" opened. [223 ms]
+2025-03-23 11:33:13.328821 ; TestPlan       ; Debug       ; "SPI Data Write/Read" PrePlanRun completed. [205 us]
+2025-03-23 11:33:13.328821 ; TestPlan       ; Debug       ; PrePlanRun Methods completed [239 us]
+2025-03-23 11:33:13.328821 ; TestPlan       ; Information ; "SPI Data Write/Read" started.
+2025-03-23 11:33:13.330820 ; TestStep       ; Information ; SPI Communication Transfer
+2025-03-23 11:33:13.480326 ; InterconnectIO ; Debug       ; SCPI >> COM:SPI:READ:LEN1? #HAB [149 ms]
+2025-03-23 11:33:13.480326 ; InterconnectIO ; Debug       ; SCPI << 0
+2025-03-23 11:33:13.480326 ; TestStep       ; Information ; Sending SCPI command: COM:SPI:READ:LEN1? #HAB, Answer: 0
+2025-03-23 11:33:13.480326 ; TestStep       ; Warning     ; Invalid SPI string response: 0, expected: 
+2025-03-23 11:33:13.481327 ; TestPlan       ; Information ; "SPI Data Write/Read" completed with verdict 'Fail'. [152 ms]
+2025-03-23 11:33:13.481327 ; TestPlan       ; Debug       ; Test step runs finished. [152 ms]
+2025-03-23 11:33:13.481327 ; TestPlan       ; Debug       ; "SPI Data Write/Read" PostPlanRun completed. [58.5 us]
+2025-03-23 11:33:13.481327 ; Summary        ; Information ; ------- Summary of test plan started 03/23/2025 11:33:13 -------
+2025-03-23 11:33:13.481327 ; Summary        ; Information ;  SPI Data Write/Read                               152 ms   Fail   
+2025-03-23 11:33:13.481327 ; Summary        ; Information ; ----------------------------------------------------------------
+2025-03-23 11:33:13.481327 ; Summary        ; Information ; ----- Test plan completed with verdict Fail in   379 ms   ------
+2025-03-23 11:33:13.485328 ; CSV            ; Debug       ; OnTestPlanRunCompleted for CSV. [3.01 ms]
+2025-03-23 11:33:13.485328 ; Summary        ; Information ; ------------------- 1 artifacts registered. --------------------
+2025-03-23 11:33:13.485328 ; Summary        ; Information ;  - C:\Station_de_test\FTS_InterconnectIOBox\FTS_InterconnectIOBox\bin\Debug\Report\FTS_Selftest_000001-2025-03-23 11-33-13-Fail.csv  [280 B]
+2025-03-23 11:33:13.486327 ; FTS_DUT        ; Information ; Closing FTS_DUT.
+2025-03-23 11:33:13.486327 ; FTS_DUT        ; Information ; Resource "FTS_DUT" closed. [32.0 us]
+2025-03-23 11:33:13.486327 ; CSV            ; Information ; Resource "CSV" closed. [37.2 us]
+2025-03-23 11:33:13.488328 ; InterconnectIO ; Information ; Resource "InterconnectIO (ASRL1::INSTR)" closed. [2.63 ms]
+2025-03-23 11:33:18.601703 ; TestPlan       ; Information ; -----------------------------------------------------------------
+2025-03-23 11:33:18.601703 ; TestPlan       ; Information ; Starting TestPlan 'Untitled' on 03/23/2025 11:33:18, 1 of 1 TestSteps enabled.
+2025-03-23 11:33:18.602702 ; InterconnectIO ; Debug       ; Connecting to 'ASRL1::INSTR'
+2025-03-23 11:33:18.603706 ; FTS_DUT        ; Information ; Open FTS_DUT.
+2025-03-23 11:33:18.603706 ; FTS_DUT        ; Information ; 1-Wire J1 enabled.
+2025-03-23 11:33:18.603706 ; CSV            ; Information ; Resource "CSV" opened. [130 us]
+2025-03-23 11:33:18.603706 ; FTS_DUT        ; Information ; Resource "FTS_DUT" opened. [132 us]
+2025-03-23 11:33:18.628712 ; TestPlan       ; Debug       ; Saved Test Plan XML [25.8 ms]
+2025-03-23 11:33:18.652228 ; InterconnectIO ; Debug       ; SCPI >> *IDN? [15.1 ms]
+2025-03-23 11:33:18.652228 ; InterconnectIO ; Debug       ; SCPI << FirstTestStation,InterconnectIO,2022A,1.0
+2025-03-23 11:33:18.652228 ; InterconnectIO ; Information ; Now connected to: FirstTestStation,InterconnectIO,2022A,1.0
+2025-03-23 11:33:18.653224 ; InterconnectIO ; Debug       ; SCPI >> *CLS [318 us]
+2025-03-23 11:33:18.745224 ; InterconnectIO ; Debug       ; SCPI >> *OPC? [93.1 ms]
+2025-03-23 11:33:18.745224 ; InterconnectIO ; Debug       ; SCPI << 1
+2025-03-23 11:33:18.847318 ; InterconnectIO ; Information ; Resource "InterconnectIO (ASRL1::INSTR)" opened. [244 ms]
+2025-03-23 11:33:18.848319 ; TestPlan       ; Debug       ; "SPI Data Write/Read (1)" PrePlanRun completed. [36.8 us]
+2025-03-23 11:33:18.848319 ; TestPlan       ; Debug       ; PrePlanRun Methods completed [66.0 us]
+2025-03-23 11:33:18.848319 ; TestPlan       ; Information ; "SPI Data Write/Read (1)" started.
+2025-03-23 11:33:18.848319 ; TestStep       ; Information ; SPI Communication Transfer
+2025-03-23 11:33:19.001593 ; InterconnectIO ; Debug       ; SCPI >> COM:SPI:READ:LEN1? #H1 [153 ms]
+2025-03-23 11:33:19.001593 ; InterconnectIO ; Debug       ; SCPI << 0
+2025-03-23 11:33:19.001593 ; TestStep       ; Information ; Sending SCPI command: COM:SPI:READ:LEN1? #H1, Answer: 0
+2025-03-23 11:33:19.001593 ; TestStep       ; Warning     ; Invalid SPI string response: 0, expected: 
+2025-03-23 11:33:19.002594 ; TestPlan       ; Information ; "SPI Data Write/Read (1)" completed with verdict 'Fail'. [153 ms]
+2025-03-23 11:33:19.002594 ; TestPlan       ; Debug       ; Test step runs finished. [153 ms]
+2025-03-23 11:33:19.002594 ; TestPlan       ; Debug       ; "SPI Data Write/Read (1)" PostPlanRun completed. [26.6 us]
+2025-03-23 11:33:19.002594 ; Summary        ; Information ; ------- Summary of test plan started 03/23/2025 11:33:18 -------
+2025-03-23 11:33:19.002594 ; Summary        ; Information ;  SPI Data Write/Read (1)                           153 ms   Fail   
+2025-03-23 11:33:19.002594 ; Summary        ; Information ; ----------------------------------------------------------------
+2025-03-23 11:33:19.002594 ; Summary        ; Information ; ----- Test plan completed with verdict Fail in   399 ms   ------
+2025-03-23 11:33:19.006595 ; CSV            ; Debug       ; OnTestPlanRunCompleted for CSV. [3.22 ms]
+2025-03-23 11:33:19.006595 ; Summary        ; Information ; ------------------- 1 artifacts registered. --------------------
+2025-03-23 11:33:19.006595 ; Summary        ; Information ;  - C:\Station_de_test\FTS_InterconnectIOBox\FTS_InterconnectIOBox\bin\Debug\Report\FTS_Selftest_000001-2025-03-23 11-33-18-Fail.csv  [288 B]
+2025-03-23 11:33:19.006595 ; FTS_DUT        ; Information ; Closing FTS_DUT.
+2025-03-23 11:33:19.006595 ; FTS_DUT        ; Information ; Resource "FTS_DUT" closed. [29.7 us]
+2025-03-23 11:33:19.006595 ; CSV            ; Information ; Resource "CSV" closed. [14.4 us]
+2025-03-23 11:33:19.009594 ; InterconnectIO ; Information ; Resource "InterconnectIO (ASRL1::INSTR)" closed. [3.01 ms]
+2025-03-23 11:34:05.431895 ; TestPlan       ; Information ; -----------------------------------------------------------------
+2025-03-23 11:34:05.432901 ; TestPlan       ; Information ; Starting TestPlan 'Untitled' on 03/23/2025 11:34:05, 1 of 1 TestSteps enabled.
+2025-03-23 11:34:05.432901 ; FTS_DUT        ; Information ; Open FTS_DUT.
+2025-03-23 11:34:05.432901 ; InterconnectIO ; Debug       ; Connecting to 'ASRL1::INSTR'
+2025-03-23 11:34:05.432901 ; FTS_DUT        ; Information ; 1-Wire J1 enabled.
+2025-03-23 11:34:05.433901 ; CSV            ; Information ; Resource "CSV" opened. [132 us]
+2025-03-23 11:34:05.433901 ; FTS_DUT        ; Information ; Resource "FTS_DUT" opened. [27.1 us]
+2025-03-23 11:34:05.435896 ; TestPlan       ; Debug       ; Saved Test Plan XML [2.90 ms]
+2025-03-23 11:34:05.459198 ; InterconnectIO ; Debug       ; SCPI >> *IDN? [11.8 ms]
+2025-03-23 11:34:05.459198 ; InterconnectIO ; Debug       ; SCPI << FirstTestStation,InterconnectIO,2022A,1.0
+2025-03-23 11:34:05.459198 ; InterconnectIO ; Information ; Now connected to: FirstTestStation,InterconnectIO,2022A,1.0
+2025-03-23 11:34:05.460197 ; InterconnectIO ; Debug       ; SCPI >> *CLS [135 us]
+2025-03-23 11:34:05.560712 ; InterconnectIO ; Debug       ; SCPI >> *OPC? [100 ms]
+2025-03-23 11:34:05.560712 ; InterconnectIO ; Debug       ; SCPI << 1
+2025-03-23 11:34:05.662162 ; InterconnectIO ; Information ; Resource "InterconnectIO (ASRL1::INSTR)" opened. [229 ms]
+2025-03-23 11:34:05.665165 ; TestPlan       ; Debug       ; "SPI Data Write/Read (1)" PrePlanRun completed. [21.5 us]
+2025-03-23 11:34:05.665165 ; TestPlan       ; Debug       ; PrePlanRun Methods completed [49.0 us]
+2025-03-23 11:34:05.665165 ; TestPlan       ; Information ; "SPI Data Write/Read (1)" started.
+2025-03-23 11:34:05.665165 ; TestStep       ; Information ; SPI Communication Transfer
+2025-03-23 11:34:05.817020 ; InterconnectIO ; Debug       ; SCPI >> COM:SPI:READ:LEN1? #H1 [151 ms]
+2025-03-23 11:34:05.817020 ; InterconnectIO ; Debug       ; SCPI << 0
+2025-03-23 11:34:05.817020 ; TestStep       ; Information ; Sending SCPI command: COM:SPI:READ:LEN1? #H1, Answer: 0
+2025-03-23 11:34:05.817020 ; TestStep       ; Warning     ; Invalid SPI string response: 0, expected: 
+2025-03-23 11:34:05.817020 ; TestPlan       ; Information ; "SPI Data Write/Read (1)" completed with verdict 'Fail'. [151 ms]
+2025-03-23 11:34:05.817020 ; TestPlan       ; Debug       ; Test step runs finished. [152 ms]
+2025-03-23 11:34:05.817020 ; TestPlan       ; Debug       ; "SPI Data Write/Read (1)" PostPlanRun completed. [14.7 us]
+2025-03-23 11:34:05.817020 ; Summary        ; Information ; ------- Summary of test plan started 03/23/2025 11:34:05 -------
+2025-03-23 11:34:05.817020 ; Summary        ; Information ;  SPI Data Write/Read (1)                           151 ms   Fail   
+2025-03-23 11:34:05.817020 ; Summary        ; Information ; ----------------------------------------------------------------
+2025-03-23 11:34:05.817020 ; Summary        ; Information ; ----- Test plan completed with verdict Fail in   383 ms   ------
+2025-03-23 11:34:05.821025 ; CSV            ; Debug       ; OnTestPlanRunCompleted for CSV. [3.14 ms]
+2025-03-23 11:34:05.821025 ; Summary        ; Information ; ------------------- 1 artifacts registered. --------------------
+2025-03-23 11:34:05.821025 ; Summary        ; Information ;  - C:\Station_de_test\FTS_InterconnectIOBox\FTS_InterconnectIOBox\bin\Debug\Report\FTS_Selftest_000001-2025-03-23 11-34-05-Fail.csv  [288 B]
+2025-03-23 11:34:05.821025 ; FTS_DUT        ; Information ; Closing FTS_DUT.
+2025-03-23 11:34:05.821025 ; FTS_DUT        ; Information ; Resource "FTS_DUT" closed. [23.3 us]
+2025-03-23 11:34:05.822021 ; CSV            ; Information ; Resource "CSV" closed. [115 us]
+2025-03-23 11:34:05.825023 ; InterconnectIO ; Information ; Resource "InterconnectIO (ASRL1::INSTR)" closed. [3.89 ms]
+2025-03-23 11:34:29.011470 ; TestPlan       ; Information ; -----------------------------------------------------------------
+2025-03-23 11:34:29.011470 ; TestPlan       ; Information ; Starting TestPlan 'Untitled' on 03/23/2025 11:34:29, 1 of 1 TestSteps enabled.
+2025-03-23 11:34:29.012470 ; FTS_DUT        ; Information ; Open FTS_DUT.
+2025-03-23 11:34:29.012470 ; FTS_DUT        ; Information ; 1-Wire J1 enabled.
+2025-03-23 11:34:29.012470 ; InterconnectIO ; Debug       ; Connecting to 'ASRL1::INSTR'
+2025-03-23 11:34:29.012470 ; FTS_DUT        ; Information ; Resource "FTS_DUT" opened. [15.5 us]
+2025-03-23 11:34:29.012470 ; CSV            ; Information ; Resource "CSV" opened. [104 us]
+2025-03-23 11:34:29.021470 ; TestPlan       ; Debug       ; Saved Test Plan XML [9.34 ms]
+2025-03-23 11:34:29.032473 ; InterconnectIO ; Debug       ; SCPI >> *IDN? [6.64 ms]
+2025-03-23 11:34:29.032473 ; InterconnectIO ; Debug       ; SCPI << FirstTestStation,InterconnectIO,2022A,1.0
+2025-03-23 11:34:29.032473 ; InterconnectIO ; Information ; Now connected to: FirstTestStation,InterconnectIO,2022A,1.0
+2025-03-23 11:34:29.032473 ; InterconnectIO ; Debug       ; SCPI >> *CLS [117 us]
+2025-03-23 11:34:29.133978 ; InterconnectIO ; Debug       ; SCPI >> *OPC? [101 ms]
+2025-03-23 11:34:29.133978 ; InterconnectIO ; Debug       ; SCPI << 1
+2025-03-23 11:34:29.235488 ; InterconnectIO ; Information ; Resource "InterconnectIO (ASRL1::INSTR)" opened. [222 ms]
+2025-03-23 11:34:29.238489 ; TestPlan       ; Debug       ; "SPI Data Write/Read (1)" PrePlanRun completed. [24.9 us]
+2025-03-23 11:34:29.238489 ; TestPlan       ; Debug       ; PrePlanRun Methods completed [61.1 us]
+2025-03-23 11:34:29.239487 ; TestPlan       ; Information ; "SPI Data Write/Read (1)" started.
+2025-03-23 11:34:29.239487 ; TestStep       ; Information ; SPI Communication Transfer
+2025-03-23 11:34:29.389503 ; InterconnectIO ; Debug       ; SCPI >> COM:SPI:READ:LEN1? #H1 [150 ms]
+2025-03-23 11:34:29.389503 ; InterconnectIO ; Debug       ; SCPI << 0
+2025-03-23 11:34:29.389503 ; TestStep       ; Information ; Sending SCPI command: COM:SPI:READ:LEN1? #H1, Answer: 0
+2025-03-23 11:34:29.389503 ; TestStep       ; Warning     ; Invalid SPI string response: 0, expected: 
+2025-03-23 11:34:29.389503 ; TestPlan       ; Information ; "SPI Data Write/Read (1)" completed with verdict 'Fail'. [150 ms]
+2025-03-23 11:34:29.389503 ; TestPlan       ; Debug       ; Test step runs finished. [150 ms]
+2025-03-23 11:34:29.389503 ; TestPlan       ; Debug       ; "SPI Data Write/Read (1)" PostPlanRun completed. [11.2 us]
+2025-03-23 11:34:29.389503 ; Summary        ; Information ; ------- Summary of test plan started 03/23/2025 11:34:29 -------
+2025-03-23 11:34:29.389503 ; Summary        ; Information ;  SPI Data Write/Read (1)                           150 ms   Fail   
+2025-03-23 11:34:29.389503 ; Summary        ; Information ; ----------------------------------------------------------------
+2025-03-23 11:34:29.389503 ; Summary        ; Information ; ----- Test plan completed with verdict Fail in   377 ms   ------
+2025-03-23 11:34:29.393503 ; CSV            ; Debug       ; OnTestPlanRunCompleted for CSV. [2.76 ms]
+2025-03-23 11:34:29.393503 ; Summary        ; Information ; ------------------- 1 artifacts registered. --------------------
+2025-03-23 11:34:29.393503 ; Summary        ; Information ;  - C:\Station_de_test\FTS_InterconnectIOBox\FTS_InterconnectIOBox\bin\Debug\Report\FTS_Selftest_000001-2025-03-23 11-34-29-Fail.csv  [288 B]
+2025-03-23 11:34:29.393503 ; FTS_DUT        ; Information ; Closing FTS_DUT.
+2025-03-23 11:34:29.393503 ; FTS_DUT        ; Information ; Resource "FTS_DUT" closed. [21.9 us]
+2025-03-23 11:34:29.393503 ; CSV            ; Information ; Resource "CSV" closed. [14.2 us]
+2025-03-23 11:34:29.396506 ; InterconnectIO ; Information ; Resource "InterconnectIO (ASRL1::INSTR)" closed. [2.75 ms]
+2025-03-23 11:35:40.554264 ; TestPlan       ; Information ; -----------------------------------------------------------------
+2025-03-23 11:35:40.555267 ; TestPlan       ; Information ; Starting TestPlan 'Untitled' on 03/23/2025 11:35:40, 1 of 1 TestSteps enabled.
+2025-03-23 11:35:40.555267 ; CSV            ; Information ; Resource "CSV" opened. [9.90 us]
+2025-03-23 11:35:40.555267 ; InterconnectIO ; Debug       ; Connecting to 'ASRL1::INSTR'
+2025-03-23 11:35:40.555267 ; FTS_DUT        ; Information ; Open FTS_DUT.
+2025-03-23 11:35:40.555267 ; FTS_DUT        ; Information ; 1-Wire J1 enabled.
+2025-03-23 11:35:40.555267 ; FTS_DUT        ; Information ; Resource "FTS_DUT" opened. [180 us]
+2025-03-23 11:35:40.558267 ; TestPlan       ; Debug       ; Saved Test Plan XML [2.41 ms]
+2025-03-23 11:35:40.579266 ; InterconnectIO ; Debug       ; SCPI >> *IDN? [9.62 ms]
+2025-03-23 11:35:40.579266 ; InterconnectIO ; Debug       ; SCPI << FirstTestStation,InterconnectIO,2022A,1.0
+2025-03-23 11:35:40.579266 ; InterconnectIO ; Information ; Now connected to: FirstTestStation,InterconnectIO,2022A,1.0
+2025-03-23 11:35:40.579266 ; InterconnectIO ; Debug       ; SCPI >> *CLS [105 us]
+2025-03-23 11:35:40.681040 ; InterconnectIO ; Debug       ; SCPI >> *OPC? [101 ms]
+2025-03-23 11:35:40.681040 ; InterconnectIO ; Debug       ; SCPI << 1
+2025-03-23 11:35:40.782604 ; InterconnectIO ; Information ; Resource "InterconnectIO (ASRL1::INSTR)" opened. [226 ms]
+2025-03-23 11:35:40.787603 ; TestPlan       ; Debug       ; "SPI Data Write/Read (1)" PrePlanRun completed. [28.8 us]
+2025-03-23 11:35:40.787603 ; TestPlan       ; Debug       ; PrePlanRun Methods completed [72.1 us]
+2025-03-23 11:35:40.787603 ; TestPlan       ; Information ; "SPI Data Write/Read (1)" started.
+2025-03-23 11:35:40.787603 ; TestStep       ; Information ; SPI Communication Transfer
+2025-03-23 11:35:40.936180 ; InterconnectIO ; Debug       ; SCPI >> COM:SPI:READ:LEN1? #H1 [148 ms]
+2025-03-23 11:35:40.936180 ; InterconnectIO ; Debug       ; SCPI << 0
+2025-03-23 11:35:40.936180 ; TestStep       ; Information ; Sending SCPI command: COM:SPI:READ:LEN1? #H1, Answer: 0
+2025-03-23 11:35:40.936180 ; TestStep       ; Warning     ; Invalid SPI string response: 0, expected: 
+2025-03-23 11:35:40.936180 ; TestPlan       ; Information ; "SPI Data Write/Read (1)" completed with verdict 'Fail'. [149 ms]
+2025-03-23 11:35:40.936180 ; TestPlan       ; Debug       ; Test step runs finished. [149 ms]
+2025-03-23 11:35:40.936180 ; TestPlan       ; Debug       ; "SPI Data Write/Read (1)" PostPlanRun completed. [7.60 us]
+2025-03-23 11:35:40.936180 ; Summary        ; Information ; ------- Summary of test plan started 03/23/2025 11:35:40 -------
+2025-03-23 11:35:40.936180 ; Summary        ; Information ;  SPI Data Write/Read (1)                           149 ms   Fail   
+2025-03-23 11:35:40.936180 ; Summary        ; Information ; ----------------------------------------------------------------
+2025-03-23 11:35:40.936180 ; Summary        ; Information ; ----- Test plan completed with verdict Fail in   381 ms   ------
+2025-03-23 11:35:40.940181 ; CSV            ; Debug       ; OnTestPlanRunCompleted for CSV. [2.67 ms]
+2025-03-23 11:35:40.940181 ; Summary        ; Information ; ------------------- 1 artifacts registered. --------------------
+2025-03-23 11:35:40.940181 ; Summary        ; Information ;  - C:\Station_de_test\FTS_InterconnectIOBox\FTS_InterconnectIOBox\bin\Debug\Report\FTS_Selftest_000001-2025-03-23 11-35-40-Fail.csv  [288 B]
+2025-03-23 11:35:40.940181 ; FTS_DUT        ; Information ; Closing FTS_DUT.
+2025-03-23 11:35:40.940181 ; FTS_DUT        ; Information ; Resource "FTS_DUT" closed. [15.2 us]
+2025-03-23 11:35:40.941187 ; CSV            ; Information ; Resource "CSV" closed. [15.8 us]
+2025-03-23 11:35:40.963471 ; InterconnectIO ; Information ; Resource "InterconnectIO (ASRL1::INSTR)" closed. [23.0 ms]
+2025-03-23 11:37:45.076134 ; TestPlan       ; Information ; -----------------------------------------------------------------
+2025-03-23 11:37:45.076134 ; TestPlan       ; Information ; Starting TestPlan 'Untitled' on 03/23/2025 11:37:45, 4 of 6 TestSteps enabled.
+2025-03-23 11:37:45.077134 ; FTS_DUT        ; Information ; Open FTS_DUT.
+2025-03-23 11:37:45.077134 ; InterconnectIO ; Debug       ; Connecting to 'ASRL1::INSTR'
+2025-03-23 11:37:45.077134 ; CSV            ; Information ; Resource "CSV" opened. [12.7 us]
+2025-03-23 11:37:45.077134 ; FTS_DUT        ; Information ; 1-Wire J1 enabled.
+2025-03-23 11:37:45.077134 ; FTS_DUT        ; Information ; Resource "FTS_DUT" opened. [31.9 us]
+2025-03-23 11:37:45.080134 ; TestPlan       ; Debug       ; Saved Test Plan XML [2.79 ms]
+2025-03-23 11:37:45.100135 ; InterconnectIO ; Debug       ; SCPI >> *IDN? [8.50 ms]
+2025-03-23 11:37:45.100135 ; InterconnectIO ; Debug       ; SCPI << FirstTestStation,InterconnectIO,2022A,1.0
+2025-03-23 11:37:45.100135 ; InterconnectIO ; Information ; Now connected to: FirstTestStation,InterconnectIO,2022A,1.0
+2025-03-23 11:37:45.100135 ; InterconnectIO ; Debug       ; SCPI >> *CLS [97.7 us]
+2025-03-23 11:37:45.201646 ; InterconnectIO ; Debug       ; SCPI >> *OPC? [101 ms]
+2025-03-23 11:37:45.201646 ; InterconnectIO ; Debug       ; SCPI << 1
+2025-03-23 11:37:45.303159 ; InterconnectIO ; Information ; Resource "InterconnectIO (ASRL1::INSTR)" opened. [225 ms]
+2025-03-23 11:37:45.305160 ; TestPlan       ; Debug       ; "SPI Config" PrePlanRun completed. [36.4 us]
+2025-03-23 11:37:45.305160 ; TestPlan       ; Debug       ; "Selftest COM command" PrePlanRun completed. [26.0 us]
+2025-03-23 11:37:45.305160 ; TestPlan       ; Debug       ; "Manual Command" PrePlanRun completed. [171 us]
+2025-03-23 11:37:45.305160 ; TestPlan       ; Debug       ; "Manual Command (1)" PrePlanRun completed. [14.4 us]
+2025-03-23 11:37:45.305160 ; TestPlan       ; Debug       ; PrePlanRun Methods completed [265 us]
+2025-03-23 11:37:45.306161 ; TestPlan       ; Information ; "SPI Config" started.
+2025-03-23 11:37:45.306161 ; TestStep       ; Information ; SPI Communication Parameters
+2025-03-23 11:37:45.306161 ; TestStep       ; Information ; Sending SCPI command: COM:SPI:BAUDRATE 100000
+2025-03-23 11:37:45.307159 ; InterconnectIO ; Debug       ; SCPI >> COM:SPI:BAUDRATE 100000 [1.28 ms]
+2025-03-23 11:37:45.506179 ; InterconnectIO ; Debug       ; SCPI >> *OPC? [198 ms]
+2025-03-23 11:37:45.506179 ; InterconnectIO ; Debug       ; SCPI << 1
+2025-03-23 11:37:45.710196 ; InterconnectIO ; Debug       ; SCPI >> COM:SPI:BAUDRATE? [153 ms]
+2025-03-23 11:37:45.710196 ; InterconnectIO ; Debug       ; SCPI << 100000
+2025-03-23 11:37:45.710196 ; TestStep       ; Information ; Sending SCPI command: COM:SPI:BAUDRATE?, Answer: 100000
+2025-03-23 11:37:45.710196 ; TestStep       ; Information ; Sending SCPI command: COM:SPI:MODE 0
+2025-03-23 11:37:45.711196 ; InterconnectIO ; Debug       ; SCPI >> COM:SPI:MODE 0 [1.24 ms]
+2025-03-23 11:37:45.913809 ; InterconnectIO ; Debug       ; SCPI >> *OPC? [202 ms]
+2025-03-23 11:37:45.913809 ; InterconnectIO ; Debug       ; SCPI << 1
+2025-03-23 11:37:46.118204 ; InterconnectIO ; Debug       ; SCPI >> COM:SPI:MODE? [152 ms]
+2025-03-23 11:37:46.118204 ; InterconnectIO ; Debug       ; SCPI << 0
+2025-03-23 11:37:46.118204 ; TestStep       ; Information ; Sending SCPI command: COM:SPI:MODE?, Answer: 0
+2025-03-23 11:37:46.118204 ; TestStep       ; Information ; Sending SCPI command: COM:SPI:DATABITS 8
+2025-03-23 11:37:46.119592 ; InterconnectIO ; Debug       ; SCPI >> COM:SPI:DATABITS 8 [1.27 ms]
+2025-03-23 11:37:46.320614 ; InterconnectIO ; Debug       ; SCPI >> *OPC? [201 ms]
+2025-03-23 11:37:46.320614 ; InterconnectIO ; Debug       ; SCPI << 1
+2025-03-23 11:37:46.524249 ; InterconnectIO ; Debug       ; SCPI >> COM:SPI:DATABITS? [153 ms]
+2025-03-23 11:37:46.524249 ; InterconnectIO ; Debug       ; SCPI << 8
+2025-03-23 11:37:46.524249 ; TestStep       ; Information ; Sending SCPI command: COM:SPI:DATABITS?, Answer: 8
+2025-03-23 11:37:46.524249 ; TestStep       ; Information ; Sending SCPI command: COM:SPI:CS 5
+2025-03-23 11:37:46.525756 ; InterconnectIO ; Debug       ; SCPI >> COM:SPI:CS 5 [176 us]
+2025-03-23 11:37:46.727983 ; InterconnectIO ; Debug       ; SCPI >> *OPC? [202 ms]
+2025-03-23 11:37:46.727983 ; InterconnectIO ; Debug       ; SCPI << 1
+2025-03-23 11:37:46.932452 ; InterconnectIO ; Debug       ; SCPI >> COM:SPI:CS? [153 ms]
+2025-03-23 11:37:46.932452 ; InterconnectIO ; Debug       ; SCPI << 5
+2025-03-23 11:37:46.932452 ; TestStep       ; Information ; Sending SCPI command: COM:SPI:CS?, Answer: 5
+2025-03-23 11:37:46.932452 ; TestStep       ; Information ; SPI Communication Enabled
+2025-03-23 11:37:46.932452 ; TestStep       ; Information ; Sending SCPI command: COM:INITIALIZE:ENABLE SPI
+2025-03-23 11:37:46.933451 ; InterconnectIO ; Debug       ; SCPI >> COM:INITIALIZE:ENABLE SPI [1.31 ms]
+2025-03-23 11:37:47.135394 ; InterconnectIO ; Debug       ; SCPI >> *OPC? [201 ms]
+2025-03-23 11:37:47.135394 ; InterconnectIO ; Debug       ; SCPI << 1
+2025-03-23 11:37:47.339719 ; InterconnectIO ; Debug       ; SCPI >> COM:INITIALIZE:STATUS? SPI [153 ms]
+2025-03-23 11:37:47.339719 ; InterconnectIO ; Debug       ; SCPI << 1
+2025-03-23 11:37:47.339719 ; TestStep       ; Information ; Sending SCPI command: COM:INITIALIZE:STATUS? SPI, Answer: 1
+2025-03-23 11:37:47.339719 ; TestPlan       ; Information ; "SPI Config" completed with verdict 'Pass'. [2.03 s]
+2025-03-23 11:37:47.339719 ; TestPlan       ; Information ; "Selftest COM command" started.
+2025-03-23 11:37:47.339719 ; TestStep       ; Information ; Sending Write SCPI command: COM:I2C:WRITE 113, 17
+2025-03-23 11:37:47.340719 ; InterconnectIO ; Debug       ; SCPI >> COM:I2C:WRITE 113, 17 [1.25 ms]
+2025-03-23 11:37:47.543740 ; InterconnectIO ; Debug       ; SCPI >> *OPC? [202 ms]
+2025-03-23 11:37:47.543740 ; InterconnectIO ; Debug       ; SCPI << 1
+2025-03-23 11:37:47.594578 ; TestStep       ; Information ; Sending Write SCPI command: COM:I2C:WRITE 111, 1
+2025-03-23 11:37:47.595578 ; InterconnectIO ; Debug       ; SCPI >> COM:I2C:WRITE 111, 1 [1.28 ms]
+2025-03-23 11:37:47.799328 ; InterconnectIO ; Debug       ; SCPI >> *OPC? [203 ms]
+2025-03-23 11:37:47.799328 ; InterconnectIO ; Debug       ; SCPI << 1
+2025-03-23 11:37:47.850409 ; TestPlan       ; Information ; "Selftest COM command" completed with verdict 'Pass'. [510 ms]
+2025-03-23 11:37:47.850409 ; TestPlan       ; Information ; "Manual Command" started.
+2025-03-23 11:37:48.004425 ; InterconnectIO ; Debug       ; SCPI >> COM:SPI:READ:LEN1? #HA5 [152 ms]
+2025-03-23 11:37:48.004425 ; InterconnectIO ; Debug       ; SCPI << 0
+2025-03-23 11:37:48.004425 ; TestStep       ; Information ; Sending SCPI query: COM:SPI:READ:LEN1? #HA5, Response: 0
+2025-03-23 11:37:48.004425 ; TestPlan       ; Information ; "Manual Command" completed. [154 ms]
+2025-03-23 11:37:48.004425 ; TestPlan       ; Information ; "Manual Command (1)" started.
+2025-03-23 11:37:48.158769 ; InterconnectIO ; Debug       ; SCPI >> COM:SPI:READ:LEN1? #H1 [154 ms]
+2025-03-23 11:37:48.158769 ; InterconnectIO ; Debug       ; SCPI << 0
+2025-03-23 11:37:48.158769 ; TestStep       ; Information ; Sending SCPI query: COM:SPI:READ:LEN1? #H1, Response: 0
+2025-03-23 11:37:48.158769 ; TestPlan       ; Information ; "Manual Command (1)" completed. [154 ms]
+2025-03-23 11:37:48.158769 ; TestPlan       ; Debug       ; Test step runs finished. [2.85 s]
+2025-03-23 11:37:48.158769 ; TestPlan       ; Debug       ; "Manual Command (1)" PostPlanRun completed. [239 us]
+2025-03-23 11:37:48.158769 ; TestPlan       ; Debug       ; "Manual Command" PostPlanRun completed. [12.7 us]
+2025-03-23 11:37:48.158769 ; TestPlan       ; Debug       ; "Selftest COM command" PostPlanRun completed. [10.5 us]
+2025-03-23 11:37:48.158769 ; TestPlan       ; Debug       ; "SPI Config" PostPlanRun completed. [6.20 us]
+2025-03-23 11:37:48.158769 ; Summary        ; Information ; ------- Summary of test plan started 03/23/2025 11:37:45 -------
+2025-03-23 11:37:48.158769 ; Summary        ; Information ;  SPI Config                                       2.03 s    Pass   
+2025-03-23 11:37:48.158769 ; Summary        ; Information ;  Selftest COM command                              510 ms   Pass   
+2025-03-23 11:37:48.158769 ; Summary        ; Information ;  Manual Command                                    154 ms          
+2025-03-23 11:37:48.158769 ; Summary        ; Information ;  Manual Command (1)                                154 ms          
+2025-03-23 11:37:48.158769 ; Summary        ; Information ; ----------------------------------------------------------------
+2025-03-23 11:37:48.158769 ; Summary        ; Information ; -------- Test plan completed successfully in  3.08 s    --------
+2025-03-23 11:37:48.162772 ; CSV            ; Debug       ; OnTestPlanRunCompleted for CSV. [3.26 ms]
+2025-03-23 11:37:48.162772 ; Summary        ; Information ; ------------------- 1 artifacts registered. --------------------
+2025-03-23 11:37:48.162772 ; Summary        ; Information ;  - C:\Station_de_test\FTS_InterconnectIOBox\FTS_InterconnectIOBox\bin\Debug\Report\FTS_Selftest_000001-2025-03-23 11-37-45-Pass.csv  [759 B]
+2025-03-23 11:37:48.162772 ; FTS_DUT        ; Information ; Closing FTS_DUT.
+2025-03-23 11:37:48.162772 ; FTS_DUT        ; Information ; Resource "FTS_DUT" closed. [17.3 us]
+2025-03-23 11:37:48.162772 ; CSV            ; Information ; Resource "CSV" closed. [14.8 us]
+2025-03-23 11:37:48.167767 ; InterconnectIO ; Information ; Resource "InterconnectIO (ASRL1::INSTR)" closed. [4.79 ms]
+2025-03-23 11:39:22.697827 ; Main           ; Information ; Saved test plan to C:\Station_de_test\FTS_InterconnectIOBox\FTS_InterconnectIOBox\bin\Debug\SPI.TapPlan [3.92 ms]
+2025-03-23 11:39:32.353667 ; Settings       ; Debug       ; Saved GuiControlsSettings to C:\Station_de_test\FTS_InterconnectIOBox\FTS_InterconnectIOBox\bin\Debug\Settings\GUI Controls.xml [14.5 ms]
+2025-03-23 11:39:32.362670 ; Settings       ; Debug       ; Saved PanelSettings to C:\Station_de_test\FTS_InterconnectIOBox\FTS_InterconnectIOBox\bin\Debug\Settings\GUI Panels.xml [1.72 ms]
+2025-03-23 11:39:32.366670 ; Settings       ; Debug       ; Saved EditorSettings to C:\Station_de_test\FTS_InterconnectIOBox\FTS_InterconnectIOBox\bin\Debug\Settings\Editor.xml [4.27 ms]

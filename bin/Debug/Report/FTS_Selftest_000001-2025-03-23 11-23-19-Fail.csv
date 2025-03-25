@@ -1,0 +1,2 @@
+Name,StepDuration,PlanName,ResultType,ProductName,ProductNumber,SerialNumber,StepName,Parameter,Value,LowerLimit,UpperLimit,Units,Status
+SPI Data Write/Read,0.1514991,Untitled,FTS_Selftest_000001,FTS_Selftest,500-1010,000001,SPI Data Write/Read,SPI String Data:,0,,,strcmp,FAIL

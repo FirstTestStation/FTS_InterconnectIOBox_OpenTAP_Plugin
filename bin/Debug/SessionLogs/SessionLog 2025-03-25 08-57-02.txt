@@ -1,0 +1,118 @@
+﻿2025-03-25 08:57:00.994575 ; Session        ; Debug       ; Session log loaded as 'C:\Station_de_test\FTS_InterconnectIOBox\FTS_InterconnectIOBox\bin\Debug\SessionLogs\Editor 2025-03-25 08-57-00.txt'. [1.82 ms]
+2025-03-25 08:57:01.022981 ; Session        ; Debug       ; Deleting log file: C:\Station_de_test\FTS_InterconnectIOBox\FTS_InterconnectIOBox\bin\Debug\SessionLogs\SessionLog 2025-03-22 14-15-07.txt
+2025-03-25 08:57:01.025994 ; Session        ; Debug       ; Running '"C:\Station_de_test\FTS_InterconnectIOBox\FTS_InterconnectIOBox\bin\Debug\Editor.exe" ' in 'C:\Station_de_test\FTS_InterconnectIOBox\FTS_InterconnectIOBox\bin\Debug'.
+2025-03-25 08:57:01.105459 ; AssemblyFinder ; Debug       ; Found 21/63 assembly files. [14.9 ms]
+2025-03-25 08:57:01.121516 ; Resolver       ; Debug       ; Found match for System.Collections.Immutable, Version=1.2.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a in C:\Station_de_test\FTS_InterconnectIOBox\FTS_InterconnectIOBox\bin\Debug\Dependencies\System.Collections.Immutable.1.2.3.0\System.Collections.Immutable.dll
+2025-03-25 08:57:01.121516 ; Resolver       ; Debug       ; Found match for Keysight.OpenTap.Wpf, Version=9.27.0.0, Culture=neutral, PublicKeyToken=null in C:\Station_de_test\FTS_InterconnectIOBox\FTS_InterconnectIOBox\bin\Debug\Packages\WPF Controls\Keysight.OpenTap.Wpf.dll
+2025-03-25 08:57:01.326463 ; AssemblyFinder ; Debug       ; Found 21/63 assembly files. [13.0 ms]
+2025-03-25 08:57:01.342401 ; Resolver       ; Debug       ; Found match for System.Reflection.Metadata, Version=1.4.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a in C:\Station_de_test\FTS_InterconnectIOBox\FTS_InterconnectIOBox\bin\Debug\Dependencies\System.Reflection.Metadata.1.4.3.0\System.Reflection.Metadata.dll
+2025-03-25 08:57:01.464674 ; Searcher       ; Debug       ; Ordered 19 assemblies according to references. [126 ms]
+2025-03-25 08:57:01.537416 ; PluginManager  ; Debug       ; Found 14 plugin assemblies containing 304 plugin types. [201 ms]
+2025-03-25 08:57:01.539432 ; PluginManager  ; Debug       ; Found version 9.27.0+11e5348d  of OpenTap.dll
+2025-03-25 08:57:01.539432 ; PluginManager  ; Debug       ; Found version 9.27.0+11e5348d  of OpenTap.Package.dll
+2025-03-25 08:57:01.539432 ; PluginManager  ; Debug       ; Found version 1.5.1+16a9625a.16a9625af16be37b607c78294dd086bd05fdd1c1 of Keysight.OpenTap.Licensing.dll
+2025-03-25 08:57:01.539432 ; PluginManager  ; Debug       ; Found version 9.27.0+11e5348d  of OpenTap.Plugins.BasicSteps.dll
+2025-03-25 08:57:01.539432 ; PluginManager  ; Debug       ; Found version 9.27.0+f0e134d7.f0e134d7c967fbd3949acf3affed360905d1398e of Keysight.OpenTap.Wpf.dll
+2025-03-25 08:57:01.539432 ; PluginManager  ; Debug       ; Found version 9.27.0+f0e134d7.f0e134d7c967fbd3949acf3affed360905d1398e of PackageManager.exe
+2025-03-25 08:57:01.539432 ; PluginManager  ; Debug       ; Found version 9.27.0+f0e134d7.f0e134d7c967fbd3949acf3affed360905d1398e of Editor.exe
+2025-03-25 08:57:01.539432 ; PluginManager  ; Debug       ; Found version 0.0.0            of InterconnectIOBox.dll
+2025-03-25 08:57:01.539432 ; PluginManager  ; Debug       ; Found version 9.14.0+7676a2a2  of Csv.dll
+2025-03-25 08:57:01.539432 ; PluginManager  ; Debug       ; Found version 1.4.3+0968b4c4   of OpenTap.OSIntegration.Windows.dll
+2025-03-25 08:57:01.539432 ; PluginManager  ; Debug       ; Found version 9.6.0+558afbf4.558afbf44f139d4cc5acf537e8c72ed4c5efb9cc of Keysight.OpenTap.Plugins.ResultListener.SqlDatabase.dll
+2025-03-25 08:57:01.539432 ; PluginManager  ; Debug       ; Found version 9.6.0+558afbf4.558afbf44f139d4cc5acf537e8c72ed4c5efb9cc of Keysight.OpenTap.Plugins.ResultListener.PostgreSQL.dll
+2025-03-25 08:57:01.539432 ; PluginManager  ; Debug       ; Found version 9.6.0+558afbf4.558afbf44f139d4cc5acf537e8c72ed4c5efb9cc of Keysight.OpenTap.Plugins.ResultListener.SQLite.dll
+2025-03-25 08:57:01.539432 ; PluginManager  ; Debug       ; Found version 1.1.1+507fd903   of OpenTap.Tui.dll
+2025-03-25 08:57:01.539432 ; PluginManager  ; Debug       ; Searched 21 Assemblies. [203 ms]
+2025-03-25 08:57:01.579846 ; AssemblyData   ; Debug       ; Loaded OpenTap. [1.48 ms]
+2025-03-25 08:57:01.579846 ; AssemblyData   ; Debug       ; Loaded OpenTap. [1.58 ms]
+2025-03-25 08:57:01.658708 ; AssemblyData   ; Debug       ; Loaded OpenTap.Plugins.BasicSteps. [78.0 ms]
+2025-03-25 08:57:01.663176 ; AssemblyData   ; Debug       ; Loaded OpenTap.Package. [80.0 ms]
+2025-03-25 08:57:01.663176 ; AssemblyData   ; Debug       ; Loaded OpenTap.Tui. [19.0 ms]
+2025-03-25 08:57:01.674504 ; AssemblyData   ; Debug       ; Loaded Keysight.OpenTap.Wpf. [186 us]
+2025-03-25 08:57:01.700025 ; AssemblyData   ; Debug       ; Loaded OpenTap.OSIntegration.Windows. [9.06 ms]
+2025-03-25 08:57:01.700025 ; SystemInfo     ; Debug       ; Microsoft Windows 10.0.26100 X64
+2025-03-25 08:57:01.700025 ; SystemInfo     ; Debug       ; .NET Framework 4.8.9290.0
+2025-03-25 08:57:01.700025 ; SystemInfo     ; Debug       ; OpenTAP Engine 9.27.0+11e5348d X64
+2025-03-25 08:57:01.768483 ; AssemblyData   ; Debug       ; Loaded mscorlib. [900 ns]
+2025-03-25 08:57:01.929429 ; Installation   ; Debug       ; CSV                      - 9.14.0+7676a2a2
+2025-03-25 08:57:01.929429 ; Installation   ; Debug       ; Editor                   - 9.27.0+f0e134d7
+2025-03-25 08:57:01.929429 ; Installation   ; Debug       ; Keysight Licensing       - 1.5.1+16a9625a
+2025-03-25 08:57:01.929429 ; Installation   ; Debug       ; OpenTAP                  - 9.27.0+11e5348d
+2025-03-25 08:57:01.929429 ; Installation   ; Debug       ; OSIntegration            - 1.4.3+0968b4c4
+2025-03-25 08:57:01.929429 ; Installation   ; Debug       ; SQLite and PostgreSQL    - 9.6.0+558afbf4
+2025-03-25 08:57:01.929429 ; Installation   ; Debug       ; TUI                      - 1.1.1+507fd903
+2025-03-25 08:57:01.929429 ; Installation   ; Debug       ; WPF Controls             - 9.27.0+f0e134d7
+2025-03-25 08:57:01.929429 ; Installation   ; Debug       ; PathWave License Manager - 2.7.0+398d3a87
+2025-03-25 08:57:01.942986 ; Settings       ; Debug       ; EditorSettings loaded from C:\Station_de_test\FTS_InterconnectIOBox\FTS_InterconnectIOBox\bin\Debug\Settings\Editor.xml [617 ms]
+2025-03-25 08:57:01.942986 ; Resolver       ; Debug       ; Found match for MahApps.Metro, Version=1.3.0.0, Culture=neutral, PublicKeyToken=f4fb5a3c4d1e5b4f in C:\Station_de_test\FTS_InterconnectIOBox\FTS_InterconnectIOBox\bin\Debug\Dependencies\MahApps.Metro.1.3.0.0\MahApps.Metro.dll
+2025-03-25 08:57:01.952697 ; Resolver       ; Debug       ; Found match for Keysight.Ccl.Wsl, Version=6.6.0.0, Culture=neutral, PublicKeyToken=55333af07c70062e in C:\Station_de_test\FTS_InterconnectIOBox\FTS_InterconnectIOBox\bin\Debug\Dependencies\Keysight.Ccl.Wsl.6.6.0.0\Keysight.Ccl.Wsl.dll
+2025-03-25 08:57:02.079297 ; Resolver       ; Debug       ; Found match for Keysight.OpenTap.Wpf, Version=9.27.0, Culture=neutral in C:\Station_de_test\FTS_InterconnectIOBox\FTS_InterconnectIOBox\bin\Debug\Packages\WPF Controls\Keysight.OpenTap.Wpf.dll
+2025-03-25 08:57:02.081297 ; GUI            ; Debug       ; Loaded OsTheme Theme. [16.0 ms]
+2025-03-25 08:57:02.120015 ; Resolver       ; Debug       ; Found match for AvalonDock, Version=4.72.1.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4 in C:\Station_de_test\FTS_InterconnectIOBox\FTS_InterconnectIOBox\bin\Debug\Dependencies\AvalonDock.4.72.1.0\AvalonDock.dll
+2025-03-25 08:57:02.303667 ; AssemblyData   ; Debug       ; Loaded System.Core. [600 ns]
+2025-03-25 08:57:02.303667 ; Settings       ; Debug       ; GuiControlsSettings loaded from C:\Station_de_test\FTS_InterconnectIOBox\FTS_InterconnectIOBox\bin\Debug\Settings\GUI Controls.xml [105 ms]
+2025-03-25 08:57:02.303667 ; Main           ; Debug       ; Window initial dimensions: 1359px, 835px.
+2025-03-25 08:57:02.303667 ; Main           ; Debug       ; Trying to attach debugger.
+2025-03-25 08:57:02.338367 ; Settings       ; Debug       ; EngineSettings loaded from C:\Station_de_test\FTS_InterconnectIOBox\FTS_InterconnectIOBox\bin\Debug\Settings\Engine.xml [26.9 ms]
+2025-03-25 08:57:02.342383 ; Resolver       ; Debug       ; Found match for Keysight.OpenTap.Licensing, Version=1.5.1.0, Culture=neutral, PublicKeyToken=null in C:\Station_de_test\FTS_InterconnectIOBox\FTS_InterconnectIOBox\bin\Debug\Packages\Keysight Licensing\Keysight.OpenTap.Licensing.dll
+2025-03-25 08:57:02.362759 ; Session        ; Debug       ; Session log loaded as 'SessionLogs\SessionLog 2025-03-25 08-57-02.txt'. [1.86 ms]
+2025-03-25 08:57:02.651926 ; AssemblyData   ; Debug       ; Loaded Editor. [32.0 us]
+2025-03-25 08:57:02.651926 ; Settings       ; Debug       ; PanelSettings loaded from C:\Station_de_test\FTS_InterconnectIOBox\FTS_InterconnectIOBox\bin\Debug\Settings\GUI Panels.xml [1.24 ms]
+2025-03-25 08:57:02.676364 ; Main           ; Debug       ; GUI initialized. [365 ms]
+2025-03-25 08:57:02.676364 ; Main           ; Debug       ; Docking manager initialized. [193 us]
+2025-03-25 08:57:02.680564 ; OpenTAP        ; Information ; OpenTAP version '9.27.0+11e5348d' 64-bit initialized 03/25/2025 [2.11 s]
+2025-03-25 08:57:02.682562 ; Resolver       ; Debug       ; Found match for Keysight.OpenTap.Licensing, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null in C:\Station_de_test\FTS_InterconnectIOBox\FTS_InterconnectIOBox\bin\Debug\Packages\Keysight Licensing\Keysight.OpenTap.Licensing.dll
+2025-03-25 08:57:02.702211 ; Resolver       ; Debug       ; Found match for Keysight.Kal.Licensing.Api, Version=7.4.0.790, Culture=neutral, PublicKeyToken=55333af07c70062e in C:\Station_de_test\FTS_InterconnectIOBox\FTS_InterconnectIOBox\bin\Debug\Dependencies\Keysight.Kal.Licensing.Api.4.5.0\Keysight.Kal.Licensing.Api.dll
+2025-03-25 08:57:02.727495 ; Settings       ; Debug       ; ConnectionSettings loaded from C:\Station_de_test\FTS_InterconnectIOBox\FTS_InterconnectIOBox\bin\Debug\Settings\Bench\Default\Connections.xml [2.58 ms]
+2025-03-25 08:57:02.736251 ; AssemblyData   ; Debug       ; Loaded InterconnectIOBox. [9.99 ms]
+2025-03-25 08:57:02.744134 ; Settings       ; Debug       ; DutSettings loaded from C:\Station_de_test\FTS_InterconnectIOBox\FTS_InterconnectIOBox\bin\Debug\Settings\Bench\Default\DUTs.xml [16.8 ms]
+2025-03-25 08:57:02.749376 ; KAL            ; Debug       ; KAL signature verified. [27.9 ms]
+2025-03-25 08:57:02.765281 ; Visa           ; Debug       ; Using IVisaProvider: OpenTap.VisaLibraryLoader
+2025-03-25 08:57:02.765281 ; KAL            ; Debug       ; Initialized [56.8 ms]
+2025-03-25 08:57:02.780958 ; Settings       ; Debug       ; InstrumentSettings loaded from C:\Station_de_test\FTS_InterconnectIOBox\FTS_InterconnectIOBox\bin\Debug\Settings\Bench\Default\Instruments.xml [37.3 ms]
+2025-03-25 08:57:02.784974 ; KAL Process    ; Debug       ; Initialized [64.1 ms]
+2025-03-25 08:57:02.788985 ; AssemblyData   ; Debug       ; Loaded Csv. [7.74 ms]
+2025-03-25 08:57:02.796747 ; AssemblyData   ; Debug       ; Loaded Keysight.OpenTap.Plugins.ResultListener.SQLite. [7.44 ms]
+2025-03-25 08:57:02.844147 ; KAL            ; Debug       ; MultipleErrors: There were 2 errors:-----> -1: No licenses found.A license file was not found at the path listed below. To request a license for Keysight products you have purchased visit www.keysight.com/find/softwaremanager (entitlement certificate required).Feature:       TAP_EngineFilename:      C:\ProgramData\Keysight\Licensing\Licenses\Other\*.licLicense path:  C:\ProgramData\Keysight\Licensing\Licenses\Other\*.lic;FlexNet Licensing error: -1,359.  System Error: 2 "The system cannot find the file specified."-----> -5: The feature could not be found.This happens when the feature is not licensed/not borrowed for this particular application, or the license has expired.Feature:       TAP_EngineLicense path:  C:\ProgramData\Keysight\Licensing\Licenses\Server\default.lic;FlexNet Licensing error: -5,412.
+2025-03-25 08:57:02.860120 ; Settings       ; Debug       ; ResultSettings loaded from C:\Station_de_test\FTS_InterconnectIOBox\FTS_InterconnectIOBox\bin\Debug\Settings\Results.xml [79.2 ms]
+2025-03-25 08:57:02.860120 ; KAL Process    ; Debug       ; MultipleErrors: There were 2 errors:-----> -1: No licenses found.A license file was not found at the path listed below. To request a license for Keysight products you have purchased visit www.keysight.com/find/softwaremanager (entitlement certificate required).Feature:       TAP_EngineFilename:      C:\ProgramData\Keysight\Licensing\Licenses\Other\*.licLicense path:  C:\ProgramData\Keysight\Licensing\Licenses\Other\*.lic;FlexNet Licensing error: -1,359.  System Error: 2 "The system cannot find the file specified."-----> -5: The feature could not be found.This happens when the feature is not licensed/not borrowed for this particular application, or the license has expired.Feature:       TAP_EngineLicense path:  C:\ProgramData\Keysight\Licensing\Licenses\Server\default.lic;FlexNet Licensing error: -5,412.
+2025-03-25 08:57:02.860120 ; Resolver       ; Debug       ; Found match for NStack, Version=1.0.7.0, Culture=neutral, PublicKeyToken=null in C:\Station_de_test\FTS_InterconnectIOBox\FTS_InterconnectIOBox\bin\Debug\Dependencies\NStack.1.0.7.0\NStack.dll
+2025-03-25 08:57:02.878018 ; AssemblyData   ; Debug       ; Loaded Terminal.Gui. [231 us]
+2025-03-25 08:57:02.878018 ; KAL            ; Debug       ; MultipleErrors: There were 2 errors:-----> -1: No licenses found.A license file was not found at the path listed below. To request a license for Keysight products you have purchased visit www.keysight.com/find/softwaremanager (entitlement certificate required).Feature:       TAP_EditorFilename:      C:\ProgramData\Keysight\Licensing\Licenses\Other\*.licLicense path:  C:\ProgramData\Keysight\Licensing\Licenses\Other\*.lic;FlexNet Licensing error: -1,359.  System Error: 2 "The system cannot find the file specified."-----> -5: The feature could not be found.This happens when the feature is not licensed/not borrowed for this particular application, or the license has expired.Feature:       TAP_EditorLicense path:  C:\ProgramData\Keysight\Licensing\Licenses\Server\default.lic;FlexNet Licensing error: -5,412.
+2025-03-25 08:57:02.887506 ; Settings       ; Debug       ; TuiSettings loaded from C:\Station_de_test\FTS_InterconnectIOBox\FTS_InterconnectIOBox\bin\Debug\Settings\TUI Settings.xml [27.6 ms]
+2025-03-25 08:57:02.892029 ; KAL Process    ; Debug       ; MultipleErrors: There were 2 errors:-----> -1: No licenses found.A license file was not found at the path listed below. To request a license for Keysight products you have purchased visit www.keysight.com/find/softwaremanager (entitlement certificate required).Feature:       TAP_EditorFilename:      C:\ProgramData\Keysight\Licensing\Licenses\Other\*.licLicense path:  C:\ProgramData\Keysight\Licensing\Licenses\Other\*.lic;FlexNet Licensing error: -1,359.  System Error: 2 "The system cannot find the file specified."-----> -5: The feature could not be found.This happens when the feature is not licensed/not borrowed for this particular application, or the license has expired.Feature:       TAP_EditorLicense path:  C:\ProgramData\Keysight\Licensing\Licenses\Server\default.lic;FlexNet Licensing error: -5,412.
+2025-03-25 08:57:02.908136 ; KAL            ; Debug       ; MultipleErrors: There were 2 errors:-----> -1: No licenses found.A license file was not found at the path listed below. To request a license for Keysight products you have purchased visit www.keysight.com/find/softwaremanager (entitlement certificate required).Feature:       KS8400AFilename:      C:\ProgramData\Keysight\Licensing\Licenses\Other\*.licLicense path:  C:\ProgramData\Keysight\Licensing\Licenses\Other\*.lic;FlexNet Licensing error: -1,359.  System Error: 2 "The system cannot find the file specified."-----> -5: The feature could not be found.This happens when the feature is not licensed/not borrowed for this particular application, or the license has expired.Feature:       KS8400ALicense path:  C:\ProgramData\Keysight\Licensing\Licenses\Server\default.lic;FlexNet Licensing error: -5,412.
+2025-03-25 08:57:02.912728 ; KAL Process    ; Debug       ; MultipleErrors: There were 2 errors:-----> -1: No licenses found.A license file was not found at the path listed below. To request a license for Keysight products you have purchased visit www.keysight.com/find/softwaremanager (entitlement certificate required).Feature:       KS8400AFilename:      C:\ProgramData\Keysight\Licensing\Licenses\Other\*.licLicense path:  C:\ProgramData\Keysight\Licensing\Licenses\Other\*.lic;FlexNet Licensing error: -1,359.  System Error: 2 "The system cannot find the file specified."-----> -5: The feature could not be found.This happens when the feature is not licensed/not borrowed for this particular application, or the license has expired.Feature:       KS8400ALicense path:  C:\ProgramData\Keysight\Licensing\Licenses\Server\default.lic;FlexNet Licensing error: -5,412.
+2025-03-25 08:57:02.929757 ; KAL            ; Debug       ; MultipleErrors: There were 2 errors:-----> -1: No licenses found.A license file was not found at the path listed below. To request a license for Keysight products you have purchased visit www.keysight.com/find/softwaremanager (entitlement certificate required).Feature:       KS8000AFilename:      C:\ProgramData\Keysight\Licensing\Licenses\Other\*.licLicense path:  C:\ProgramData\Keysight\Licensing\Licenses\Other\*.lic;FlexNet Licensing error: -1,359.  System Error: 2 "The system cannot find the file specified."-----> -5: The feature could not be found.This happens when the feature is not licensed/not borrowed for this particular application, or the license has expired.Feature:       KS8000ALicense path:  C:\ProgramData\Keysight\Licensing\Licenses\Server\default.lic;FlexNet Licensing error: -5,412.
+2025-03-25 08:57:02.955744 ; KAL Process    ; Debug       ; MultipleErrors: There were 2 errors:-----> -1: No licenses found.A license file was not found at the path listed below. To request a license for Keysight products you have purchased visit www.keysight.com/find/softwaremanager (entitlement certificate required).Feature:       KS8000AFilename:      C:\ProgramData\Keysight\Licensing\Licenses\Other\*.licLicense path:  C:\ProgramData\Keysight\Licensing\Licenses\Other\*.lic;FlexNet Licensing error: -1,359.  System Error: 2 "The system cannot find the file specified."-----> -5: The feature could not be found.This happens when the feature is not licensed/not borrowed for this particular application, or the license has expired.Feature:       KS8000ALicense path:  C:\ProgramData\Keysight\Licensing\Licenses\Server\default.lic;FlexNet Licensing error: -5,412.
+2025-03-25 08:57:02.955744 ; Resolver       ; Debug       ; Found match for System.IdentityModel.Tokens.Jwt, Version=6.16.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35 in C:\Station_de_test\FTS_InterconnectIOBox\FTS_InterconnectIOBox\bin\Debug\Dependencies\System.IdentityModel.Tokens.Jwt.6.16.0.0\System.IdentityModel.Tokens.Jwt.dll
+2025-03-25 08:57:02.961159 ; Resolver       ; Debug       ; Found match for Microsoft.IdentityModel.Tokens, Version=6.16.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35 in C:\Station_de_test\FTS_InterconnectIOBox\FTS_InterconnectIOBox\bin\Debug\Dependencies\Microsoft.IdentityModel.Tokens.6.20.0.0\Microsoft.IdentityModel.Tokens.dll
+2025-03-25 08:57:03.118144 ; Resolver       ; Debug       ; Found match for Microsoft.IdentityModel.Logging, Version=6.16.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35 in C:\Station_de_test\FTS_InterconnectIOBox\FTS_InterconnectIOBox\bin\Debug\Dependencies\Microsoft.IdentityModel.Logging.6.20.0.0\Microsoft.IdentityModel.Logging.dll
+2025-03-25 08:57:03.127143 ; Resolver       ; Debug       ; Found match for Microsoft.IdentityModel.JsonWebTokens, Version=6.16.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35 in C:\Station_de_test\FTS_InterconnectIOBox\FTS_InterconnectIOBox\bin\Debug\Dependencies\Microsoft.IdentityModel.JsonWebTokens.6.16.0.0\Microsoft.IdentityModel.JsonWebTokens.dll
+2025-03-25 08:57:03.187671 ; Resolver       ; Debug       ; Found match for Microsoft.IdentityModel.Abstractions, Version=6.20.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35 in C:\Station_de_test\FTS_InterconnectIOBox\FTS_InterconnectIOBox\bin\Debug\Dependencies\Microsoft.IdentityModel.Abstractions.6.20.0.0\Microsoft.IdentityModel.Abstractions.dll
+2025-03-25 08:57:03.385183 ; WTL            ; Debug       ; License found TAP_Editor
+2025-03-25 08:57:03.391184 ; License        ; Debug       ; License resolved: KS8400A|TAP_Engine|TAP_Editor|KS8000A [690 ms]
+2025-03-25 08:57:03.841473 ; Main           ; Debug       ; Application startup finished. [3.27 s]
+2025-03-25 08:57:03.931877 ; WTL            ; Debug       ; License found TAP_Editor
+2025-03-25 08:57:03.931877 ; License        ; Debug       ; License resolved: TAP_Editor|KS8400A [1.48 ms]
+2025-03-25 08:57:12.390828 ; AssemblyData   ; Debug       ; Loaded PackageManager. [568 us]
+2025-03-25 08:57:16.981641 ; TestPlan       ; Information ; -----------------------------------------------------------------
+2025-03-25 08:57:16.999636 ; TestPlan       ; Information ; Starting TestPlan 'Untitled' on 03/25/2025 08:57:16, 1 of 1 TestSteps enabled.
+2025-03-25 08:57:17.054155 ; TestPlan       ; Debug       ; Saved Test Plan XML [1.45 ms]
+2025-03-25 08:57:17.061149 ; Settings       ; Debug       ; No settings file exists for TestPlanRunPackageParameterMonitor. A new instance with default values has been created. [141 us]
+2025-03-25 08:57:17.112152 ; CSV            ; Information ; Resource "CSV" opened. [1.40 ms]
+2025-03-25 08:57:17.113150 ; FTS_DUT        ; Information ; Open FTS_DUT.
+2025-03-25 08:57:17.113150 ; FTS_DUT        ; Information ; 1-Wire J1 enabled.
+2025-03-25 08:57:17.113150 ; FTS_DUT        ; Information ; Resource "FTS_DUT" opened. [1.98 ms]
+2025-03-25 08:57:17.114151 ; InterconnectIO ; Debug       ; Connecting to 'ASRL1::INSTR'
+2025-03-25 08:57:17.156665 ; InterconnectIO ; Debug       ; SCPI >> *IDN? [12.0 ms]
+2025-03-25 08:57:17.156665 ; InterconnectIO ; Debug       ; SCPI << FirstTestStation,InterconnectIO,2022A,1.0
+2025-03-25 08:57:17.156665 ; InterconnectIO ; Information ; Now connected to: FirstTestStation,InterconnectIO,2022A,1.0
+2025-03-25 08:57:17.158668 ; InterconnectIO ; Debug       ; SCPI >> *CLS [165 us]
+2025-03-25 08:57:17.257598 ; InterconnectIO ; Debug       ; SCPI >> *OPC? [99.1 ms]
+2025-03-25 08:57:17.257598 ; InterconnectIO ; Debug       ; SCPI << 1
+2025-03-25 08:57:17.359006 ; InterconnectIO ; Information ; Resource "InterconnectIO (ASRL1::INSTR)" opened. [249 ms]
+2025-03-25 08:57:17.380009 ; TestPlan       ; Debug       ; "1-Wire Check" PrePlanRun completed. [2.63 ms]
+2025-03-25 08:57:17.380009 ; TestPlan       ; Debug       ; PrePlanRun Methods completed [4.99 ms]
+2025-03-25 08:57:17.391007 ; TestPlan       ; Information ; "1-Wire Check" started.
+2025-03-25 08:57:17.395010 ; TestStep       ; Information ; Sending SCPI command: COM:OWIRE:CHECK? 1

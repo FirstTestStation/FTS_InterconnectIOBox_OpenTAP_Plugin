@@ -181,8 +181,6 @@ namespace InterconnectIOBox
                 Log.Info($"Calibration failed. Expected: {ExpectedValue} mA between Low: {llimit} and High: {ulimit}, Actual: {rvalue} mA");
             }
 
-            Name = $"Current Calibration at {rvalue}";
-
             var result = new TestResult<double>
             {
                 ParamName = "CurrentCAL",

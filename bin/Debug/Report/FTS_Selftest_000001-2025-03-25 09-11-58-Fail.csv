@@ -1,0 +1,4 @@
+Name,StepDuration,PlanName,ResultType,ProductName,ProductNumber,SerialNumber,StepName,Parameter,Value,LowerLimit,UpperLimit,Units,Status
+1-Wire Check,1.0531295,Untitled,FTS_Selftest_000001,FTS_Selftest,500-1010,000001,1-Wire Check,Number of 1-Wire,0,3,3,digcmp,FAIL
+1-Wire Check,1.0531295,Untitled,FTS_Selftest_000001,FTS_Selftest,500-1010,000001,1-Wire Check,1-Wire Check data,"""""",VALID,VALID,strcmp,FAIL
+1-Wire Check,1.0531295,Untitled,FTS_Selftest_000001,FTS_Selftest,500-1010,000001,1-Wire Check,1-Wire Check data,"""""",NEXT,NEXT,strcmp,FAIL

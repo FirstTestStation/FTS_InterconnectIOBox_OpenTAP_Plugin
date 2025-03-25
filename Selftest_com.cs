@@ -199,7 +199,7 @@ namespace InterconnectIOBox
         }
         private bool _DiSPI;
 
-        /* // Not valid for a slave SPI.  Slave do not control the clock
+         // Not valid for a slave SPI.  Slave do not control the clock
         public enum Speed : byte
         {
             _100KHz = 1,
@@ -212,10 +212,10 @@ namespace InterconnectIOBox
         }
 
 
-        [Display("SPI Speed:", Group: SPI, Order: 2, Description: "Set Clock frequency to use on SPI communication")]
+        [Display("SPI Speed:", Group: SPI, Order: 4.1, Description: "Set Clock frequency to use on SPI communication")]
         [EnabledIf("EnSPI", true, Flags = false)]
         public Speed SelectSpeed { get; set; } = Speed._100KHz;
-        */
+   
 
 
 
@@ -322,7 +322,10 @@ namespace InterconnectIOBox
             if (EnSPI == true)  // Set SPI protocol
             {
                 byte vespi = (EnSPI == true) ? (byte)1 : (byte)0;
-                byte value = (byte)(((byte)SelectD << 3 | (byte)SelectSD << 2 | (byte)SelectM << 1) | (byte)vespi << 0); // Build protocol value
+
+
+                byte value = (byte)((byte)SelectSpeed << 4 | (byte)SelectSD << 3 | (byte)SelectM << 1 | (byte)vespi << 0); // Build protocol value
+
                 CommandExecute("Spicfg", value, true, Validate);
                 //GetSpi.Value = value;
             }
@@ -333,7 +336,7 @@ namespace InterconnectIOBox
             }
             if (DiSPI == true)
             {
-                CommandExecute("DiSPI", 0, true, false);
+                CommandExecute("DisSPI", 1, true, false);
             }
 
             if (GetSpi.IsEnabled == true)

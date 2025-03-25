@@ -134,6 +134,17 @@ namespace InterconnectIOBox
 
         public override void Run()
         {
+            // Process Spi Parameters before enabling 
+            if (Enable)
+            {
+                Log.Info("SPI Communication Parameters");
+                ConfigureSpiParam("Baudrate", SpiAct);
+                ConfigureSpiParam("Mode", SpiAct);
+                ConfigureSpiParam("Databits", SpiAct);
+                ConfigureSpiParam("ChipSelect", SpiAct);
+
+            }
+
             string test = "";
             if (Enable)
             {
@@ -211,16 +222,6 @@ namespace InterconnectIOBox
 
             }
 
-            // Process Spi Parameters
-            if(Enable)
-            {
-                Log.Info("SPI Communication Parameters");
-                ConfigureSpiParam("Baudrate", SpiAct);
-                ConfigureSpiParam("Mode", SpiAct);
-                ConfigureSpiParam("Databits", SpiAct);
-                ConfigureSpiParam("ChipSelect", SpiAct);
-               
-            }
         }
 
 

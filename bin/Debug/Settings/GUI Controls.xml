@@ -127,10 +127,11 @@
   </PropGridCategoryStates>
   <MainWindowHeight>835</MainWindowHeight>
   <MainWindowWidth>1359</MainWindowWidth>
-  <MainWindowTop>130</MainWindowTop>
-  <MainWindowLeft>2096</MainWindowLeft>
-  <MainWindowState>Normal</MainWindowState>
+  <MainWindowTop>102</MainWindowTop>
+  <MainWindowLeft>429</MainWindowLeft>
+  <MainWindowState>Maximized</MainWindowState>
   <RecentTestPlans>
+    <String>C:\Station_de_test\FTS_InterconnectIOBox\FTS_InterconnectIOBox\bin\Debug\SPI.TapPlan</String>
     <String>C:\Program Files\OpenTAP\Selftest.TapPlan</String>
     <String>C:\Station_de_test\FTS_InterconnectIOBox\FTS_InterconnectIOBox\bin\Debug\Selftest.TapPlan</String>
   </RecentTestPlans>

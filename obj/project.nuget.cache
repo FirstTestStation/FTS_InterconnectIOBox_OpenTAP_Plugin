@@ -1,11 +1,9 @@
 {
   "version": 2,
-  "dgSpecHash": "2maUGTUqoMQ=",
+  "dgSpecHash": "kaXdrOh02Xc=",
   "success": true,
   "projectFilePath": "C:\\Station_de_test\\FTS_InterconnectIOBox\\FTS_InterconnectIOBox\\InterconnectIOBox.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Daniel\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
-    "C:\\Users\\Daniel\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
     "C:\\Users\\Daniel\\.nuget\\packages\\opentap\\9.27.0\\opentap.9.27.0.nupkg.sha512"
   ],
   "logs": []

@@ -8,7 +8,601 @@
     <Width>900</Width>
     <Height>600</Height>
   </UpdaterWindowSize>
-  <PropGridCategories />
-  <PropGridCategoryStates />
+  <PropGridCategories>
+    <String>package/Keysight Instrument Basic Control</String>
+    <String>package/Generators, Sources, Power Products</String>
+    <String>package/Power Supplies</String>
+    <String>package/E3632 DC Power Supply(1.4v2)</String>
+    <String>package/66000 Modular Power System(A.00.07v2)</String>
+    <String>package/663xx Power Supplies(A.03.01v5)</String>
+    <String>package/66xx GPIB DC Power Supplies(v4)</String>
+    <String>package/66xxx Power Supplies(A.02.04v5)</String>
+    <String>package/68xx AC Power supplies(1.0.0v3)</String>
+    <String>package/68xx AC Power supplies(A.00.08v2)</String>
+    <String>package/AC6800 Series Basic AC Sources(A.01.00.0067v2)</String>
+    <String>package/AC6800 Series Basic AC Sources(A.01.00.0067v3)</String>
+    <String>package/APS - Advanced Power System(A.01.13v6)</String>
+    <String>package/APS - Advanced Power System(A.01.13v7)</String>
+    <String>package/B296x Low Noise Power Source(1.0v1)</String>
+    <String>package/E3610XA Power supplies(1.0.0_1.00v3)</String>
+    <String>package/E3610XB Power supplies(1.0.0_1.00v9)</String>
+    <String>package/E36200 Series Power Supplies(1.0.0_1.0.2_1.00v2)</String>
+    <String>package/E3631 DC Power Supply(2.1v3)</String>
+    <String>package/E3631xA series Power supplies(1.0.4_1.0.0_1.04v3)</String>
+    <String>package/E363x DC Power Supplies(1.7v2)</String>
+    <String>package/E364x Dual Output DC Power Supplies(1.7v3)</String>
+    <String>package/E364x Single Output DC Power Supplies(1.8v3)</String>
+    <String>package/E4360 Solar Array Simulators(A.01.02v4)</String>
+    <String>package/N5700 Power Supplies(A.04.00v5)</String>
+    <String>package/N6700C Power Supplies(E.02.01.3173v2)</String>
+    <String>package/N6700 Power Supplies(C.02.18v8)</String>
+    <String>package/N6700 Power Supplies(D.00.03v5)</String>
+    <String>package/N6700 Power Supplies(D.01.06v3)</String>
+    <String>package/N6700 Power Supplies(v6)</String>
+    <String>package/N6705C Power Supplies(E.02.01.3173v2)</String>
+    <String>package/N8700 Power Supplies(A.04.00v5)</String>
+    <String>package/N8900 Series Autoranging System DC Power Supply(v2)</String>
+    <String>package/RP7900 Regenerative Power System(B.01.02v2)</String>
+    <String>package/U3606B Multimeter DC Power Supply(3.09_3.00_3.04v1)</String>
+    <String>package/U3606 Multimeter DC Power Supply(v3)</String>
+    <String>package/Waveform and Function Generators</String>
+    <String>package/33210 Function Arb Generators(1.04v4)</String>
+    <String>package/33220 Function Arb Generators(1.08v4)</String>
+    <String>package/33220 Function Arb Generators(2.07v4)</String>
+    <String>package/33250 Function Arb Generators(2.04v4)</String>
+    <String>package/33500B or 33600A Series Function  or  Arbitrary Waveform Generators(2.09v8)</String>
+    <String>package/33500 Series Function  or  Arbitrary Waveform Generators(1.12v1)</String>
+    <String>package/81180 Arbitrary Waveform Generator(1.58v3)</String>
+    <String>package/DC Electronic Loads</String>
+    <String>package/6060 Series Single Input Electronic Loads(A.04.00v3)</String>
+    <String>package/N33xx DC Electronic Loads(A.00.08v2)</String>
+    <String>package/Data Generators</String>
+    <String>package/81130 Pulse Data Generator(01.12.00v2)</String>
+    <String>package/81130 Pulse Data Generator(01.12.00v4)</String>
+    <String>package/81130 Pulse Data Generator(01.12.00v5)</String>
+    <String>package/81150 Pulse Function Arbitrary Noise Generator(2.0.7.0v3)</String>
+    <String>package/81160 Pulse Function Arbitrary Noise Generator(1.0v3)</String>
+    <String>package/Pulse Generator Products</String>
+    <String>package/8113x Pulse Generators(2.9.3v5)</String>
+    <String>package/M8190 Arbitrary Waveform Generator(3.1.0.0v2)</String>
+    <String>package/Source Measure Unit</String>
+    <String>package/B2900 Series Precision Source  or  Measure Unit(1.0v2)</String>
+    <String>package/Signal Generators</String>
+    <String>package/ESG Signal Generators(C.05.71v5)</String>
+    <String>package/ESG Signal Generators(C.05.71v6)</String>
+    <String>package/MXG Signal Generators(A.01.44v16)</String>
+    <String>package/MXG Signal Generators(A.01.44v18)</String>
+    <String>package/MXG Signal Generators(A.01.44v19)</String>
+    <String>package/MXG Signal Generators(A.01.44v20)</String>
+    <String>package/MXG Signal Generators(A.01.44v21)</String>
+    <String>package/MXG Signal Generators(A.01.80v4)</String>
+    <String>package/MXG Signal Generators(A.01.80v5)</String>
+    <String>package/PSG Signal Generators(C.05.71v5)</String>
+    <String>package/PSG Signal Generators(C.06.24v6)</String>
+    <String>package/PSG Signal Generators(C.06.24v7)</String>
+    <String>package/UXG Agile Signal Generator(A.01.16v3)</String>
+    <String>package/UXG Agile Signal Generator(A.01.60v4)</String>
+    <String>package/X-Series Signal Generators(B.01.40v2)</String>
+    <String>package/X-Series Signal Generators(B.01.55v2)</String>
+    <String>package/X-Series Signal Generators(B.01.55v3)</String>
+    <String>package/Common Commands</String>
+    <String>package/Additional Products</String>
+    <String>package/RF and Microwave Test Accessories</String>
+    <String>package/11713 Attenuator Switch Drivers(0.19_11_41v1)</String>
+    <String>package/11713 Attenuator Switch Drivers(A.01.07v3)</String>
+    <String>package/J7201x Attenuation Control Unit(0.22_17_6v1)</String>
+    <String>package/Photonic Test and Measurement Products</String>
+    <String>package/816x Lightwave Measurement Systems(5.25v3)</String>
+    <String>package/N77xx Series Optical Instruments(1.3v2)</String>
+    <String>package/Oscilloscopes, Analyzers, Meters</String>
+    <String>package/Digital Multimeters(DMM)</String>
+    <String>package/34401 Digital Multimeters(11v2)</String>
+    <String>package/34401 Digital Multimeters(11v3)</String>
+    <String>package/34405 Digital Multimeters(1.46_3.11v4)</String>
+    <String>package/34410 Digital Multimeters(2.35v5)</String>
+    <String>package/34450 Digital Multimeters(00.60_00.66v1)</String>
+    <String>package/34450 Digital Multimeters(00.60_00.66v2)</String>
+    <String>package/3446x Series Digital Multimeters(1.08v1)</String>
+    <String>package/3446x Series Digital Multimeters(2.08v1)</String>
+    <String>package/L4411 Digital Multimeters(2.35v5)</String>
+    <String>package/Power Analyzers</String>
+    <String>package/8990B Peak Power Analyzer(1.2.3.0v1)</String>
+    <String>package/8990B Peak Power Analyzer(1.2.6.1v2)</String>
+    <String>package/N6705 DC Power Analyzers(C.00.09v5)</String>
+    <String>package/N6705 DC Power Analyzers(D.00.03v5)</String>
+    <String>package/N6705 DC Power Analyzers(D.01.06v3)</String>
+    <String>package/N6705 DC Power Analyzers(v6)</String>
+    <String>package/Parameter + Device Analyzers, Curve Tracer</String>
+    <String>package/B2200A Low Leakage Switch Mainframe(A.01.04v2)</String>
+    <String>package/E5250 Low Leakage Switch Mainframe(A.01.03v1)</String>
+    <String>package/Picoammeters, Electrometers</String>
+    <String>package/B2980A Series Femto  or  Picoammeters and Electrometers  or  High Resistance Meters(2.1.1645.5880v1)</String>
+    <String>package/Device Current Waveform Analyzers</String>
+    <String>package/CX3300 Series of Device Current Waveform Analyzers(1.3v4)</String>
+    <String>package/CX3300 Series of Device Current Waveform Analyzers(2.0v6)</String>
+    <String>package/Oscilloscopes</String>
+    <String>package/DSO-X 3000T and DSO-X 4000A(4.05v2)</String>
+    <String>package/Infiniium 90000 (A or Q or X) Series Oscilloscopes(04.60.0016v1)</String>
+    <String>package/Infiniium 90000 (A or X) Series Oscilloscopes(03.50.0011v1)</String>
+    <String>package/Infiniium 90000 (Q or X) Series Oscilloscopes(04.00.0004v3)</String>
+    <String>package/Infiniium 90000 Series Oscilloscopes(02.10.0008v4)</String>
+    <String>package/Infiniium 90000 Series Oscilloscopes(03.22.0004v2)</String>
+    <String>package/Infiniium 90000 Series Oscilloscopes(3.10v2)</String>
+    <String>package/Infiniium 9000A Series Oscilloscopes(03.22.0004v2)</String>
+    <String>package/Infiniium 9000A Series Oscilloscopes(03.50.0011v1)</String>
+    <String>package/Infiniium 9000A Series Oscilloscopes(3.10v3)</String>
+    <String>package/Infiniium 9000A Series Oscilloscopes(3.10v4)</String>
+    <String>package/Infiniium (A or H or Q or S or V or X or Z) Series Oscilloscopes(6.10v2)</String>
+    <String>package/Infiniium (A or H or Q or S or X or Z) Series Oscilloscopes(05.20v1)</String>
+    <String>package/Infiniium (A or H or Q or S or X or Z) Series Oscilloscopes(05.20v4)</String>
+    <String>package/Infiniium (A or H or Q or S or X or Z) Series Oscilloscopes(05.20v5)</String>
+    <String>package/Infiniium DCA 86100 Oscilloscopes(A.10.60v1)</String>
+    <String>package/InfiniiVision 1000 X-Series Oscilloscopes(1.01v2)</String>
+    <String>package/InfiniiVision 1000 X-Series Oscilloscopes(2.00v1)</String>
+    <String>package/InfiniiVision 1200 X-Series and EDUX1052AG Oscilloscopes(2.10.2019111333v3)</String>
+    <String>package/InfiniiVision 2000 X-Series Oscilloscopes(01.20v3)</String>
+    <String>package/InfiniiVision 2000 X-Series Oscilloscopes(02.00v3)</String>
+    <String>package/InfiniiVision 2000 X-Series Oscilloscopes(02.10v2)</String>
+    <String>package/InfiniiVision 2000 X-Series Oscilloscopes(02.35v1)</String>
+    <String>package/InfiniiVision 3000T X-Series Oscilloscopes(7.11v1)</String>
+    <String>package/InfiniiVision 3000T X-Series Oscilloscopes(7.31v2)</String>
+    <String>package/InfiniiVision 3000 X-Series Oscilloscopes(01.20v3)</String>
+    <String>package/InfiniiVision 3000 X-Series Oscilloscopes(02.00v2)</String>
+    <String>package/InfiniiVision 3000 X-Series Oscilloscopes(02.10v3)</String>
+    <String>package/InfiniiVision 3000 X-Series Oscilloscopes(02.35v3)</String>
+    <String>package/InfiniiVision 4000 X-Series Oscilloscopes(03.11v1)</String>
+    <String>package/InfiniiVision 4000 X-Series Oscilloscopes(03.11v3)</String>
+    <String>package/InfiniiVision 4000 X-Series Oscilloscopes(04.05v6)</String>
+    <String>package/InfiniiVision 4000 X-Series Oscilloscopes(7.11v8)</String>
+    <String>package/InfiniiVision 4000 X-Series Oscilloscopes(7.31v1)</String>
+    <String>package/InfiniiVision 5000 Series Oscilloscopes(06.10.0001v5)</String>
+    <String>package/InfiniiVision 6000 Series Oscilloscopes(06.10.0001v4)</String>
+    <String>package/InfiniiVision 6000 Series Oscilloscopes(06.10.0001v5)</String>
+    <String>package/InfiniiVision 6000 X-Series Oscilloscopes(6.10v1)</String>
+    <String>package/InfiniiVision 6000 X-Series Oscilloscopes(7.31v1)</String>
+    <String>package/InfiniiVision 7000A Series Oscilloscopes(06.10.0001v4)</String>
+    <String>package/InfiniiVision 7000B Series Oscilloscopes(06.10.0001v4)</String>
+    <String>package/InfiniiVision P9241,42,43A USB Oscilloscopes(7.21v3)</String>
+    <String>package/InfiniiVision P9241,42,43A USB Oscilloscopes(7.31v4)</String>
+    <String>package/InfiniVision M9241,42,43A PXIe Oscilloscopes(7.31v2)</String>
+    <String>package/InfiniVision M9241 or 42 or 43A PXIe Oscilloscopes(7.10v1)</String>
+    <String>package/N8900A Infiniium Offline(5.52.0004v1)</String>
+    <String>package/Power Meters + Power Sensors</String>
+    <String>package/E441x EPM-P Series Power Meters(A1.05.01v1)</String>
+    <String>package/E441x EPM-P Series Power Meters(A1.05.01v2)</String>
+    <String>package/E441x EPM Series Power Meters(v2)</String>
+    <String>package/N191x EPM Series Power Meters(A.01.03v2)</String>
+    <String>package/N191x P-Series Peak Power Meters(A.05.04v2)</String>
+    <String>package/N191x P-Series Peak Power Meters(A.05.04v3)</String>
+    <String>package/N191x P-Series Peak Power Meters(A.05.09v3)</String>
+    <String>package/N432 Thermistor Power Meter(A.01.00v2)</String>
+    <String>package/U2000 Series USB Average Power Sensors(A1.03.01v4)</String>
+    <String>package/U2020 X-Series USB Peak and Average Power Sensors(A.03.00v2)</String>
+    <String>package/U2020 X-Series USB Peak and Average Power Sensors(A.03.00v3)</String>
+    <String>package/U2040XA series Peak and Average power sensors(A.02.02v4)</String>
+    <String>package/U2040XA series Peak and Average power sensors(A.02.06v1)</String>
+    <String>package/U8480 series USB thermocouple average power sensor(A.01.01v3)</String>
+    <String>package/LCR Meters + Impedance Measurement Products</String>
+    <String>package/E4980 Precision LCR Meters(A.02.20v3)</String>
+    <String>package/E4980 Precision LCR Meters(A.05.00v1)</String>
+    <String>package/E4981 Capacitance Meters(A.01.10v2)</String>
+    <String>package/E4982 LCR Meter(A.01.00v3)</String>
+    <String>package/E4990A Impedance Analyzer(A.01.03v1)</String>
+    <String>package/E4990A Impedance Analyzer(A.02.20v1)</String>
+    <String>package/E4991B Impedance Analyzer(A.01.00v1)</String>
+    <String>package/E4991B Impedance Analyzer(A.01.16v1)</String>
+    <String>package/Spectrum Analyzers(Signal Analyzers)</String>
+    <String>package/E5052 Signal Source Analyzers(A.03.22v5)</String>
+    <String>package/U8903B Audio Analyzer(3.4.1704.2092v4)</String>
+    <String>package/X-Series Signal Analyzer 5G NR Commands(v1)</String>
+    <String>package/X-Series Signal Analyzer 5G NR Commands(v2)</String>
+    <String>package/X-Series Signal Analyzers Analog Demod Commands(v2)</String>
+    <String>package/X-Series Signal Analyzers GSM or EDGE Commands(v3)</String>
+    <String>package/X-Series Signal Analyzers IQ Analyzer Commands(v2)</String>
+    <String>package/X-Series Signal Analyzers LTE FDD Commands(A.06.06v4)</String>
+    <String>package/X-Series Signal Analyzers LTE FDD Commands(A.08.03v1)</String>
+    <String>package/X-Series Signal Analyzers LTE FDD Commands(A.08.03v2)</String>
+    <String>package/X-Series Signal Analyzers LTE FDD Commands [eMTC and NB-IoT](v2)</String>
+    <String>package/X-Series Signal Analyzers LTE FDD Commands(v3)</String>
+    <String>package/X-Series Signal Analyzers LTE TDD Commands(v2)</String>
+    <String>package/X-Series Signal Analyzers Noise Figure Commands(A.06.06v2)</String>
+    <String>package/X-Series Signal Analyzers Noise Figure Commands(A.08.03v1)</String>
+    <String>package/X-Series Signal Analyzers Noise Figure Commands(A.08.03v2)</String>
+    <String>package/X-Series Signal Analyzers Noise Figure Commands(v3)</String>
+    <String>package/X-Series Signal Analyzers Phase Noise Commands(A.06.06v2)</String>
+    <String>package/X-Series Signal Analyzers Phase Noise Commands(A.08.03v1)</String>
+    <String>package/X-Series Signal Analyzers Phase Noise Commands(A.08.03v2)</String>
+    <String>package/X-Series Signal Analyzers Phase Noise Commands(v2)</String>
+    <String>package/X-Series signal Analyzers Radio Test Commands(M.20.38v2)</String>
+    <String>package/X-Series Signal Analyzers Spectrum Analyzer Commands(A.06.06v5)</String>
+    <String>package/X-Series Signal Analyzers Spectrum Analyzer Commands(A.08.03v1)</String>
+    <String>package/X-Series Signal Analyzers Spectrum Analyzer Commands(A.08.03v2)</String>
+    <String>package/X-Series Signal Analyzers Spectrum Analyzer Commands(v4)</String>
+    <String>package/X-Series Signal Analyzers VMA Commands(A.19.28v2)</String>
+    <String>package/X-Series Signal Analyzers VMA Commands(v2)</String>
+    <String>package/X-Series Signal Analyzers WCDMA or HSPA or HSPA+ Commands(A.06.06v4)</String>
+    <String>package/X-Series Signal Analyzers WCDMA or HSPA or HSPA+ Commands(A.08.03v1)</String>
+    <String>package/X-Series Signal Analyzers WCDMA or HSPA or HSPA+ Commands(A.08.03v2)</String>
+    <String>package/X-Series Signal Analyzers WCDMA or HSPA or HSPA+ Command(v1)</String>
+    <String>package/X-Series Signal Analyzers WLAN Commands(v4)</String>
+    <String>package/Network Analyzers</String>
+    <String>package/E5061 ENA Series Network Analyzers(A.02.00v2)</String>
+    <String>package/E5061 ENA Series Network Analyzers(A.02.00v3)</String>
+    <String>package/E5063 ENA Series Network Analyzers(A.01.02v1)</String>
+    <String>package/E5071 ENA Series Network Analyzers(A.09.50v5)</String>
+    <String>package/E5071 ENA Series Network Analyzers(A.09.50v6)</String>
+    <String>package/E5071 ENA Series Network Analyzers(A.09.50v7)</String>
+    <String>package/E5071 ENA Series Network Analyzers(A.11.22v1)</String>
+    <String>package/E5072 ENA Series Network Analyzers(A.01.03v2)</String>
+    <String>package/E5080A Vector Network Analyzer(A.12.55.09v2)</String>
+    <String>package/E5080B ENA Vector Network Analyzer(A.14.10.08v1)</String>
+    <String>package/E5080 ENA Network Analyzer(A.11.00.04v1)</String>
+    <String>package/FieldFox Handheld RF and Microwave Analyzer Noise Figure mode commands(A.11.26v2)</String>
+    <String>package/FieldFox Handheld RF and Microwave Analyzers Built-in Power Meter mode commands(A.11.26v1)</String>
+    <String>package/FieldFox Handheld RF and Microwave Analyzers CAT mode commands(A.06.23v2)</String>
+    <String>package/FieldFox Handheld RF and Microwave Analyzers CAT mode commands(A.11.26v5)</String>
+    <String>package/FieldFox Handheld RF and Microwave Analyzers Channel Scanner mode commands(A.11.26v1)</String>
+    <String>package/FieldFox Handheld RF and Microwave Analyzers ERTA mode commands(A.11.26v2)</String>
+    <String>package/FieldFox Handheld RF and Microwave Analyzers IQ mode commands(A.11.26v1)</String>
+    <String>package/FieldFox Handheld RF and Microwave Analyzers NA mode commands(A.06.23v3)</String>
+    <String>package/FieldFox Handheld RF and Microwave Analyzers NA mode commands(A.11.26v2)</String>
+    <String>package/FieldFox Handheld RF and Microwave Analyzers OTA mode commands(A.11.26v1)</String>
+    <String>package/FieldFox Handheld RF and Microwave Analyzers Phased Array Antenna mode commands(A.11.26v1)</String>
+    <String>package/FieldFox Handheld RF and Microwave Analyzers Power Meter mode commands(A.06.23v2)</String>
+    <String>package/FieldFox Handheld RF and Microwave Analyzers Power Meter mode commands(A.11.26v4)</String>
+    <String>package/FieldFox Handheld RF and Microwave Analyzers Pulse Measurement mode commands(A.11.26v1)</String>
+    <String>package/FieldFox Handheld RF and Microwave Analyzers Real-time SA mode commands(A.11.26v1)</String>
+    <String>package/FieldFox Handheld RF and Microwave Analyzers SA mode commands(A.06.23v3)</String>
+    <String>package/FieldFox Handheld RF and Microwave Analyzers SA mode commands(A.11.26v3)</String>
+    <String>package/FieldFox Handheld RF and Microwave Analyzers VVM mode commands(A.11.26v3)</String>
+    <String>package/M9485A PXIe Vector Network Analyzer(A.11.60.00v2)</String>
+    <String>package/PNA Microwave Network Analyzers(A.08.55v5)</String>
+    <String>package/PNA Microwave Network Analyzers(A.08.55v6)</String>
+    <String>package/PNA Microwave Network Analyzers(A.09.00v5)</String>
+    <String>package/PNA Microwave Network Analyzers(A.09.00v6)</String>
+    <String>package/PNA Microwave Network Analyzers(A.09.33.07v1)</String>
+    <String>package/PNA Microwave Network Analyzers(A.09.33.07v2)</String>
+    <String>package/PNA Microwave Network Analyzers(A.09.33.07v4)</String>
+    <String>package/PNA Microwave Network Analyzers(A.09.50.13v2)</String>
+    <String>package/PNA Network Analyzers(A.10.20.03v2)</String>
+    <String>package/PNA Network Analyzers(A.10.49.10v4)</String>
+    <String>package/Vector Network Analyzer(v11)</String>
+    <String>package/High-Speed Digitizers</String>
+    <String>package/L453x LXI Digitizers(1.03v2)</String>
+    <String>package/Bit Error Ratio Testers</String>
+    <String>package/M8070A High-Performance BERT(1.5.7.4v2)</String>
+    <String>package/M8070A High-Performance BERT(3.0v7)</String>
+    <String>package/M8070A System Software(S4.0v1)</String>
+    <String>package/M8070A System Software(S4.5v1)</String>
+    <String>package/N4903 J-BERT High-Performance Serial BERT(7.40v1)</String>
+    <String>package/N4906 Serial BERT(3.60v1)</String>
+    <String>package/N4960A BERT(2.2v1)</String>
+    <String>package/Vector Signal Analyzers</String>
+    <String>package/X-Series Signal Analyzers Vector Signal Analyzer Commands(A.06.06v1)</String>
+    <String>package/X-Series Signal Analyzers Vector Signal Analyzer Commands(A.08.03v1)</String>
+    <String>package/X-Series Signal Analyzers Vector Signal Analyzer Commands(A.08.03v2)</String>
+    <String>package/Modular Instruments</String>
+    <String>package/Data Acquisition – DAQ</String>
+    <String>package/3497x Data Acquisition  or  Data Logger Switch Unit(1.13v4)</String>
+    <String>package/34980 Multifunction Switches(2.43v4)</String>
+    <String>package/DAQ970A DAQ973A Data Acquisition System(A.02.01v4)</String>
+    <String>package/DAQ970A Data Acquisition System(A.01.00v5)</String>
+    <String>package/L449x RF or Microwave Switch Platform(2.43v2)</String>
+    <String>package/Software</String>
+    <String>package/Application Software</String>
+    <String>package/89600 VSA Software(15.01.356v2)</String>
+    <String>package/89600 VSA Software(15.01.356v4)</String>
+    <String>package/89600 VSA Software(15.01.356v5)</String>
+    <String>package/89600 VSA Software(20.00.240v7)</String>
+    <String>package/89600 VSA Software(24.20.223v2)</String>
+    <String>package/N1010A FlexDCA Remote Access Software(A.01.60v3)</String>
+    <String>package/N1010A FlexDCA Remote Access Software(A.02.02.32v2)</String>
+    <String>package/N1010A FlexDCA Remote Access Software(A.05.00v4)</String>
+    <String>package/N1010A FlexDCA Remote Access Software(A.05.60v2)</String>
+    <String>package/Signal Studio for Global Navigation Satellite Systems(B.01.70v1)</String>
+    <String>package/Others</String>
+    <String>package/Complete Regression Test(9.9.9.9v2)</String>
+    <String>package/Generic SCPI-99 Instrument No Error Checking(1.0v1)</String>
+    <String>package/M9506 Integrated Controller(v1)</String>
+    <String>package/E364x Dual Output DC Power Supplies</String>
+  </PropGridCategories>
+  <PropGridCategoryStates>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+    <Boolean>false</Boolean>
+  </PropGridCategoryStates>
   <Package.Dependencies />
 </PackageManagerGuiSettings>

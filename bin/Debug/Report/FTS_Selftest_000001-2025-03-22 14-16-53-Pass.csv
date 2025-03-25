@@ -1,0 +1,2 @@
+Name,StepDuration,PlanName,ResultType,ProductName,ProductNumber,SerialNumber,StepName,Parameter,Value,LowerLimit,UpperLimit,Units,Status
+DAC,0.5042761,Untitled,FTS_Selftest_000001,FTS_Selftest,500-1010,000001,DAC,DAC SetDefault,2,2,2,Volts,PASS
