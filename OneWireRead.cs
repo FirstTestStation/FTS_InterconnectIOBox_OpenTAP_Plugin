@@ -16,8 +16,8 @@ using static System.Net.Mime.MediaTypeNames;
 namespace InterconnectIOBox // DUT Validation
 {
  
-    [Display(Groups: new[] { "InterconnectIO", "1-Wire" }, Name: "1-Wire Check", Description: "Check and validate the quantity of 1-Wire devices on the DUT. The quantity and contents are both verified.")]
-    public class OneWireGen : ResultTestStep
+    [Display(Groups: new[] { "InterconnectIO", "1-Wire" }, Name: "1-Wire Read", Description: "Read and validate the quantity of 1-Wire devices on the DUT. The quantity and contents are both verified.")]
+    public class OneWireRead : ResultTestStep
     {
 
 
@@ -32,14 +32,14 @@ namespace InterconnectIOBox // DUT Validation
         public Wmode WAct { get; set; }
 
 
-        [Display("Number of 1-Wire devices", Group: "1-Wire Test", Order: 1, Description: "Number of 1-Wire devices expected on the DUT.")]
+        [Display("Number of 1-Wire devices", Group: "1-Wire Read", Order: 1, Description: "Number of 1-Wire devices expected on the DUT.")]
         public int NbWire { get; set; } = 1;
 
-        [Display("Check String #1", Order: 1.2)]
-        public Enabled<string> CheckStra { get; set; }
+        [Display("Check String device #1", Order: 1.2)]
+        public Enabled<string> ReadStra { get; set; }
 
-        [Display("Check String #2", Order: 1.3)]
-        public Enabled<string> CheckStrb { get; set; }
+        [Display("Check String device #2", Order: 1.3)]
+        public Enabled<string> ReadStrb { get; set; }
 
 
 
@@ -51,7 +51,7 @@ namespace InterconnectIOBox // DUT Validation
     public string ReadOneWires(int qty)
         {
 
-            string command = $"COM:OWIRE:CHECK? {qty}";
+            string command = $"COM:OWIRE:READ? {qty}";
             Log.Info($"Sending SCPI command: {command}");
 
             // Use ScpiQuery to read back from the device.
@@ -66,7 +66,8 @@ namespace InterconnectIOBox // DUT Validation
         /// </summary>
         /// <param name="actual">The actual data read from the 1-Wire interface.</param>
         /// <param name="expected">The expected data to compare against.</param>
-        public void CheckOneWireData(string actual, string expected)
+        /// <param name="index">A number to add on ParamName.</param>
+        public void CheckOneWireData(string actual, string expected, int index)
         {
             string test = "";
             bool valid = actual.Contains(expected.ToString());
@@ -75,18 +76,35 @@ namespace InterconnectIOBox // DUT Validation
                 Log.Info($"1-Wire data is valid for string: {expected}");
                 UpgradeVerdict(Verdict.Pass);
                 test = "PASS";
+                // Split by spaces or commas (modify as needed)
+                string[] parts = actual.Split(new char[] { ']' }, StringSplitOptions.RemoveEmptyEntries);
+
+                // Loop through each part to check for the expected string
+                for (int i = 0; i < parts.Length; i++)
+                {
+                    if (parts[i].Contains(expected))
+                    {
+                        string rst = parts[i].Replace("\"", "").Replace("[", "");
+                        actual = rst; // Set actual to the result for publishing better information
+                        break;
+                    }
+                }
+
+
             }
             else
             {
-                Log.Error($"1-Wire data is not valid on check string: {expected}.");
+                Log.Warning($"1-Wire data is not valid on read string: {expected}.");
                 UpgradeVerdict(Verdict.Fail);
                 test = "FAIL";
             }
 
+
+
             // Publish final result
             var result = new TestResult<string>
             {
-                ParamName = "1-Wire Check data",
+                ParamName = $"1-Wire Read data #{index}",
                 StepName = Name,
                 Value = actual,
                 LowerLimit = expected,
@@ -98,11 +116,11 @@ namespace InterconnectIOBox // DUT Validation
             PublishResult(result);
         }
 
-    public OneWireGen()
+    public OneWireRead()
         {
             // ToDo: Set default values for properties / settings.
-            CheckStra = new Enabled<string> { Value = "VALID" };
-            CheckStrb = new Enabled<string> { Value = "NEXT" };
+            ReadStra = new Enabled<string> { Value = "J1" };
+            ReadStrb = new Enabled<string> { Value = "J2" };
         }
 
         public override void PrePlanRun()
@@ -115,10 +133,10 @@ namespace InterconnectIOBox // DUT Validation
         public override void Run()
         {
   
-            string test = "FAIL";
+            string test = "";
 
             string sdata = ReadOneWires(NbWire);
-            int count = Regex.Matches(sdata, "OWID").Count;
+            int count = Regex.Matches(sdata, "2D").Count;
 
             if (WAct == Wmode.read_only)
             {
@@ -135,7 +153,7 @@ namespace InterconnectIOBox // DUT Validation
             }
             else
             {
-                Log.Error($"Number of 1-Wire devices detected is wrong, expected: {NbWire}, count: {count}");
+                Log.Warning($"Number of 1-Wire devices detected is wrong, expected: {NbWire}, count: {count}");
                 UpgradeVerdict(Verdict.Fail);
                 test = "FAIL";
             }
@@ -144,7 +162,7 @@ namespace InterconnectIOBox // DUT Validation
             // Publish final result
             var result = new TestResult<double>
             {
-                ParamName = "Number of 1-Wire",
+                ParamName = "Number of 1-Wire read",
                 StepName = Name,
                 Value = count,
                 LowerLimit = NbWire,
@@ -157,14 +175,14 @@ namespace InterconnectIOBox // DUT Validation
 
             // From data read on 1-Wire device, validate the contents
 
-            if (CheckStra.IsEnabled)
+            if (ReadStra.IsEnabled)
             {
-                CheckOneWireData(sdata, CheckStra.ToString());
+                CheckOneWireData(sdata, ReadStra.ToString(), 1);
             }
 
-            if (CheckStrb.IsEnabled)
+            if (ReadStrb.IsEnabled)
             {
-                CheckOneWireData(sdata, CheckStrb.ToString());
+                CheckOneWireData(sdata, ReadStrb.ToString(), 2);
             }
 
         

@@ -1,0 +1,4 @@
+Name,StepDuration,PlanName,ResultType,ProductName,ProductNumber,SerialNumber,StepName,Parameter,Value,LowerLimit,UpperLimit,Units,Status
+1-Wire Check,0.8107029,Untitled,FTS_Selftest_000001,FTS_Selftest,500-1010,000001,1-Wire Check,Number of 1-Wire Check,2,1,1,digcmp,FAIL
+1-Wire Check,0.8107029,Untitled,FTS_Selftest_000001,FTS_Selftest,500-1010,000001,1-Wire Check,1-Wire Check data #1,"""VALID_OWID: 2D4CE282200000CC, NEXT_OWID: 2DC1C38220000059""",VALID,VALID,strcmp,PASS
+1-Wire Check,0.8107029,Untitled,FTS_Selftest_000001,FTS_Selftest,500-1010,000001,1-Wire Check,1-Wire Check data #2,"""VALID_OWID: 2D4CE282200000CC, NEXT_OWID: 2DC1C38220000059""",NEXT,NEXT,strcmp,PASS
