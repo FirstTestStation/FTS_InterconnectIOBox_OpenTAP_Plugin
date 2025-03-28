@@ -1,52 +1,69 @@
-# Prerequisites
-*.d
+# Ignore Visual Studio temporary files, build results, and
+# user-specific files
+.vscode/
+.vs/
+*.user
+*.userosscache
+*.suo
+*.sln.docstates
 
-# Object files
-*.o
-*.ko
-*.obj
-*.elf
+# Include .TapPackage files in the ReleasePackages directory
+!bin/Release/*.TapPackage
 
-# Linker output
-*.ilk
-*.map
-*.exp
+# Ignore build results, except the release directory
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+bld/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
 
-# Precompiled Headers
-*.gch
-*.pch
+# Ignore NuGet packages
+*.nupkg
+*.snupkg
+.nuget/
+packages/
+*.nuget.props
+*.nuget.targets
 
-# Libraries
-*.lib
-*.a
-*.la
-*.lo
+# Ignore NPM packages
+node_modules/
 
-# Shared objects (inc. Windows DLLs)
-*.dll
-*.so
-*.so.*
-*.dylib
+# Ignore by OpenTAP
+.tap/
 
-# Executables
-*.exe
-*.out
-*.app
-*.i*86
-*.x86_64
-*.hex
+# Ignore JetBrains Rider temp files
+.idea/
 
-# Debug files
-*.dSYM/
-*.su
-*.idb
-*.pdb
+# Ignore Resharper directories
+_ReSharper*/
+*.[Rr]e[Ss]harper
 
-# Kernel Module Compile Results
-*.mod*
-*.cmd
-.tmp_versions/
-modules.order
-Module.symvers
-Mkfile.old
-dkms.conf
+# Ignore Rider directories
+.idea/
+
+# Ignore Code coverage results
+*.coverage
+*.coveragexml
+*.cov
+*.covd
+*.covr
+*.cshtml.g.cs
+*.dotCover
+coverage/
+TestResults/
+
+# Ignore other files
+*.DS_Store
+*.pyc
+*.pyo
+
+
+
