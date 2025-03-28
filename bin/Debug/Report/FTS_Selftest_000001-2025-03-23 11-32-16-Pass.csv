@@ -1,6 +1,0 @@
-Name,StepDuration,PlanName,ResultType,ProductName,ProductNumber,SerialNumber,StepName,Parameter,Value,LowerLimit,UpperLimit,Units,Status
-SPI Config,2.0098236,Untitled,FTS_Selftest_000001,FTS_Selftest,500-1010,000001,SPI Config,SPI Baudrate,100000,100000,100000,digcmp,PASS
-SPI Config,2.0098236,Untitled,FTS_Selftest_000001,FTS_Selftest,500-1010,000001,SPI Config,SPI Mode,0,0,0,digcmp,PASS
-SPI Config,2.0098236,Untitled,FTS_Selftest_000001,FTS_Selftest,500-1010,000001,SPI Config,SPI Databits,8,8,8,digcmp,PASS
-SPI Config,2.0098236,Untitled,FTS_Selftest_000001,FTS_Selftest,500-1010,000001,SPI Config,SPI ChipSelect,5,5,5,digcmp,PASS
-SPI Config,2.0098236,Untitled,FTS_Selftest_000001,FTS_Selftest,500-1010,000001,SPI Config,SPI Status,1,1,1,digcmp,PASS
