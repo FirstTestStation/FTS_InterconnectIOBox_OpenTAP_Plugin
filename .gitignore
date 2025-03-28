@@ -7,8 +7,6 @@
 *.suo
 *.sln.docstates
 
-# Include .TapPackage files in the ReleasePackages directory
-!bin/Release/*.TapPackage
 
 # Ignore build results, except the release directory
 [Dd]ebug/
@@ -33,37 +31,8 @@ packages/
 *.nuget.props
 *.nuget.targets
 
-# Ignore NPM packages
-node_modules/
-
-# Ignore by OpenTAP
-.tap/
-
-# Ignore JetBrains Rider temp files
-.idea/
-
-# Ignore Resharper directories
-_ReSharper*/
-*.[Rr]e[Ss]harper
-
-# Ignore Rider directories
-.idea/
-
-# Ignore Code coverage results
-*.coverage
-*.coveragexml
-*.cov
-*.covd
-*.covr
-*.cshtml.g.cs
-*.dotCover
-coverage/
-TestResults/
-
-# Ignore other files
-*.DS_Store
-*.pyc
-*.pyo
+# Include .TapPackage files in the ReleasePackages directory
+!bin/Release/*.TapPackage
 
 
 
