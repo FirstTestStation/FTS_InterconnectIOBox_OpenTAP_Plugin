@@ -2,11 +2,6 @@
 # user-specific files
 .vscode/
 .vs/
-*.user
-*.userosscache
-*.suo
-*.sln.docstates
-
 
 # Ignore build results, except the release directory
 [Dd]ebug/
