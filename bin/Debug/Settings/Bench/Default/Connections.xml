@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<ConnectionSettings type="OpenTap.ConnectionSettings">
-  <Package.Dependencies>
-    <Package Name="OpenTAP" Version="^9.27.0+11e5348d" />
-  </Package.Dependencies>
-</ConnectionSettings>

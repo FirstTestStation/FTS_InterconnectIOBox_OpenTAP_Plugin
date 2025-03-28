@@ -1,3 +1,0 @@
-Name,StepDuration,PlanName,ResultType,ProductName,ProductNumber,SerialNumber,StepName,Parameter,Value,LowerLimit,UpperLimit,Units,Status
-1-Wire Read,0.3767673,Untitled,FTS_Selftest_000001,FTS_Selftest,500-1010,000001,1-Wire Read,1-Wire Read data," 2D4CE282200000CC, FTS_Selftest, 500-1010-021, 000001, J1 ",J1,J1,strcmp,PASS
-1-Wire Read,0.3767673,Untitled,FTS_Selftest_000001,FTS_Selftest,500-1010,000001,1-Wire Read,1-Wire Read data,"  2DC1C38220000059, FTS_Selftest, 500-1010-021, 000001, J2 ",J2,J2,strcmp,PASS

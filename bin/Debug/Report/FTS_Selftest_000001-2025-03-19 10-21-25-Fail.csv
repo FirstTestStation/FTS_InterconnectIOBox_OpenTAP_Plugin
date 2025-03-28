@@ -1,6 +1,0 @@
-Name,StepDuration,PlanName,ResultType,ProductName,ProductNumber,SerialNumber,StepName,Parameter,Value,LowerLimit,UpperLimit,Units,Status
-1-Wire DUT read,0.385587,Selftest,FTS_Selftest_000001,FTS_Selftest,500-1020,000001,1-Wire DUT read,1-Wire Check,500-1010-021,J1,500-1020,1,FAIL
-Close relay 5V_PWR,0.3634446,Selftest,FTS_Selftest_000001,FTS_Selftest,500-1020,000001,Close relay 5V_PWR,5V_DUT,1,1,1,bit,Pass
-Test 1.1: 5VDC Check with ADC0,0.1122697,Selftest,FTS_Selftest_000001,FTS_Selftest,500-1020,000001,Test 1.1: 5VDC Check with ADC0,ADC0,2.56128,2.35,2.65,Volt,PASS
-"Close K7,K8,K14",0.4058076,Selftest,FTS_Selftest_000001,FTS_Selftest,500-1020,000001,"Close K7,K8,K14",Port0 Data,11,11,11,cmp,PASS
-Test 10.0 Relay BK1-BK2 CH0-H Close Test,0.1531341,Selftest,FTS_Selftest_000001,FTS_Selftest,500-1020,000001,Test 10.0 Relay BK1-BK2 CH0-H Close Test,Current,63,45,70,mA,PASS

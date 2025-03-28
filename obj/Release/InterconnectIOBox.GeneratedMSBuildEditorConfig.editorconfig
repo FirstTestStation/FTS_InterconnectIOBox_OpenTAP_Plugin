@@ -1,8 +1,0 @@
-is_global = true
-build_property.RootNamespace = InterconnectIOBox
-build_property.ProjectDir = C:\Station_de_test\Github\FTS_InterconnectIOBox\FTS_InterconnectIOBox\
-build_property.EnableComHosting = 
-build_property.EnableGeneratedComInterfaceComImportInterop = 
-build_property.CsWinRTUseWindowsUIXamlProjections = false
-build_property.EffectiveAnalysisLevelStyle = 
-build_property.EnableCodeStyleSeverity = 
