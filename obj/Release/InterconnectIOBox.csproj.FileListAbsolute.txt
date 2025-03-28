@@ -20,3 +20,14 @@ C:\Station_de_test\FTS_InterconnectIOBox\FTS_InterconnectIOBox\obj\Release\Inter
 C:\Station_de_test\FTS_InterconnectIOBox\FTS_InterconnectIOBox\obj\Release\Intercon.0FCCDC59.Up2Date
 C:\Station_de_test\FTS_InterconnectIOBox\FTS_InterconnectIOBox\obj\Release\InterconnectIOBox.dll
 C:\Station_de_test\FTS_InterconnectIOBox\FTS_InterconnectIOBox\obj\Release\InterconnectIOBox.pdb
+C:\Station_de_test\Github\FTS_InterconnectIOBox_OpenTAP_Plugin\bin\Release\InterconnectIOBox.deps.json
+C:\Station_de_test\Github\FTS_InterconnectIOBox_OpenTAP_Plugin\bin\Release\InterconnectIOBox.dll
+C:\Station_de_test\Github\FTS_InterconnectIOBox_OpenTAP_Plugin\bin\Release\InterconnectIOBox.pdb
+C:\Station_de_test\Github\FTS_InterconnectIOBox_OpenTAP_Plugin\bin\Release\OpenTap.dll
+C:\Station_de_test\Github\FTS_InterconnectIOBox_OpenTAP_Plugin\obj\Release\InterconnectIOBox.csproj.AssemblyReference.cache
+C:\Station_de_test\Github\FTS_InterconnectIOBox_OpenTAP_Plugin\obj\Release\InterconnectIOBox.GeneratedMSBuildEditorConfig.editorconfig
+C:\Station_de_test\Github\FTS_InterconnectIOBox_OpenTAP_Plugin\obj\Release\InterconnectIOBox.csproj.CoreCompileInputs.cache
+C:\Station_de_test\Github\FTS_InterconnectIOBox_OpenTAP_Plugin\obj\Release\InterconnectIOBox.sourcelink.json
+C:\Station_de_test\Github\FTS_InterconnectIOBox_OpenTAP_Plugin\obj\Release\Intercon.0FCCDC59.Up2Date
+C:\Station_de_test\Github\FTS_InterconnectIOBox_OpenTAP_Plugin\obj\Release\InterconnectIOBox.dll
+C:\Station_de_test\Github\FTS_InterconnectIOBox_OpenTAP_Plugin\obj\Release\InterconnectIOBox.pdb

@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Package InfoLink="" Date="03/25/2025 14:00:49" Name="FTS_InterconnectIOBox" Version="0.0.1-beta.3+db15abb6" Architecture="AnyCPU" OS="Windows,Linux" xmlns="http://opentap.io/schemas/package">
-  <Hash>GsTbtgCSLQAe1kNushZeKTL_cnY</Hash>
-  <Description>This is my OpenTAP plugin package for the First TestStation InterconnectIOBox.</Description>
+<Package InfoLink="" Date="03/28/2025 15:37:17" Name="FTS_InterconnectIOBox" Version="0.0.1-beta.4+44fbecde" Architecture="AnyCPU" OS="Windows,Linux" xmlns="http://opentap.io/schemas/package">
+  <Hash>5mn8-0lWQ2Yf1jC0fVQWl1sxicA</Hash>
+  <Description>OpenTAP plugin package for the First TestStation InterconnectIOBox.</Description>
   <Dependencies>
     <PackageDependency Package="OpenTAP" Version="^9.27.0+11e5348d" />
   </Dependencies>
+  <SourceLicense>MIT</SourceLicense>
   <Files>
     <File Path="Packages/OpenTAP_IOBox/InterconnectIOBox.dll">
       <Plugins>
@@ -503,7 +504,7 @@
           </Groups>
         </Plugin>
       </Plugins>
-      <Hash>787C4B710610D82A7D993FE9A84786ED58D96034</Hash>
+      <Hash>498BCC22A48027D00FBE2725619CBBC942D2E282</Hash>
     </File>
   </Files>
 </Package>

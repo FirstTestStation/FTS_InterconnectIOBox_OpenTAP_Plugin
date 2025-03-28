@@ -7,7 +7,8 @@ For Version the following macro is available (Only works if the project director
 $(GitVersion) - Gets the version from Git in the recommended format Major.Minor.Build-PreRelease+CommitHash.BranchName.
 -->
 <Package Name="FTS_InterconnectIOBox" xmlns="http://opentap.io/schemas/package" InfoLink="" Version="$(GitVersion)" OS="Windows,Linux">
-  <Description>This is my OpenTAP plugin package for the First TestStation InterconnectIOBox.</Description>
+  <Description>OpenTAP plugin package for the First TestStation InterconnectIOBox.</Description>
+  <SourceLicense>MIT</SourceLicense>
   <Files>
     <File Path="Packages/OpenTAP_IOBox/InterconnectIOBox.dll" SourcePath="InterconnectIOBox.dll">
         <SetAssemblyInfo Attributes="Version"/>
