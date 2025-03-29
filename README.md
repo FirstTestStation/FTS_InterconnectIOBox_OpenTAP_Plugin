@@ -19,7 +19,9 @@ All the Test Steps required to control the **FTS_InterconnectIOBox** have been g
 
 ## Installation
 
-To install the `FTS_InterconnectIOBox` plugin, follow these steps:
+To install the `FTS_InterconnectIOBox` plugin, two methods are available: you can directly use the TapPackage available in the repository, or if modifications are required, you can clone and build it.
+
+If clone methos is selected, Follow these steps:
 
 1. **Clone the Repository**:
     ```sh
@@ -34,7 +36,6 @@ To install the `FTS_InterconnectIOBox` plugin, follow these steps:
     - Launch the OpenTAP Package Manager.
     - Click on the **`+`** button to open the file explorer, navigate to the cloned directory, and select the **TapPackage** to install.
     - Once the installation is complete, close the Package Manager.
-
 
 
 ## Contributing
