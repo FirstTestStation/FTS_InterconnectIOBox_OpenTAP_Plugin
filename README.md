@@ -1,4 +1,4 @@
-# FTS_InterconnectIOBox OpenTAP Plugin
+# FTS_InterconnectIOBox OpenTAP Plugin 800-1020-xx
 
 The `FTS_InterconnectIOBox` is a plugin for OpenTAP, designed to facilitate the testing and validation of interconnect IO boxes within the **First Test Station (FTS)** project. This plugin provides a set of sequences and tools to automate the testing process, ensuring the functionality and reliability of the interconnect IO boxes.
 
@@ -21,50 +21,23 @@ All the Test Steps required to control the **FTS_InterconnectIOBox** have been g
 
 To install the `FTS_InterconnectIOBox` plugin, two methods are available: you can directly use the TapPackage available in the repository, or if modifications are required, you can clone and build it.
 
-If clone methos is selected, Follow these steps:
+If clone method is selected, Follow these steps:
 
 1. **Clone the Repository**:
     ```sh
-    git clone https://github.com/FirstTestStation-Project/FTS_InterconnectIOBox_OpenTAP_Plugin
+    git clone  https://github.com/FirstTestStation/FTS_InterconnectIOBox_OpenTAP_Plugin.git<br>
     ```
 
-2. **Build the Plugin**:
-    - Open the solution file in your preferred IDE (e.g., Visual Studio).
-    - Build the solution to generate the TapPackage.
-
-3. **Install the Package using the OpenTAP Package Manager**:
+2. **Install the Package using the OpenTAP Package Manager**:
     - Launch the OpenTAP Package Manager.
-    - Click on the **`+`** button to open the file explorer, navigate to the cloned directory, and select the **TapPackage** to install.
+    - Click on the **`+`** button to open the file explorer, navigate to the cloned directory (bin/release/*.TapPackage), and select the **TapPackage** to install.
     - Once the installation is complete, close the Package Manager.
 
+## Plugin Modification
+- If modifications are required, follow the instructions from the [OpenTAP SDK YouTube tutorial](https://www.youtube.com/watch?v=BXTiCLEXcwI&list=PLdeXOCgDt7jhuDA_tVp3joJG0cV3Lzvo2&index=1) to set up the necessary environment.
+- Clone the plugin repository.
+- Load the `.csproj` file from the GitHub repository.
 
-## Contributing
-
-Contributions to the `FTS_InterconnectIOBox` plugin are welcome! To contribute, follow these steps:
-
-1. **Fork the Repository**:
-    - Fork the repository on GitHub to your own account.
-
-2. **Create a New Branch**:
-    - Create a new branch for your feature or bugfix.
-    ```sh
-    git checkout -b your-feature-branch
-    ```
-
-3. **Commit Your Changes**:
-    - Commit your changes with a descriptive message.
-    ```sh
-    git commit -m "Description of your changes"
-    ```
-
-4. **Push to Your Branch**:
-    - Push your changes to your forked repository.
-    ```sh
-    git push origin your-feature-branch
-    ```
-
-5. **Open a Pull Request**:
-    - Open a pull request on the original repository to merge your changes.
 
 ## License
 
