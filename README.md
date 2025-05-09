@@ -38,10 +38,10 @@ If clone method is selected, Follow these steps:
 - Clone the plugin repository.
 - Load the `.csproj` file from the GitHub repository.
 
-
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+This project is licensed under the [Mozilla Public License 2.0](https://www.mozilla.org/MPL/2.0/).
+
 
 ## Support
 
