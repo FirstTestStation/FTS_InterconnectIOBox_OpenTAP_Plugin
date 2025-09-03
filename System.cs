@@ -199,7 +199,7 @@ namespace InterconnectIOBox
 
         public override void Run()
         {
-            string command = "";
+            string command;
             UpgradeVerdict(Verdict.Pass);  // Default Verdict
 
             if (RedLedOn)
@@ -308,7 +308,7 @@ namespace InterconnectIOBox
 
         public override void Run() 
         {
-            string command = "";
+            string command;
 
             if (SlavesOff)
             {

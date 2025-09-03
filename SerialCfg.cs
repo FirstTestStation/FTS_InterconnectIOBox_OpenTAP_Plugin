@@ -153,7 +153,7 @@ namespace InterconnectIOBox
 
         public override void Run()
         {
-            string test = "";
+            string test;
             if (Enable)
             {
                 Log.Info("Serial Communication Enabled");
@@ -252,7 +252,7 @@ namespace InterconnectIOBox
         {
             string WriteCmd = "";
             string ReadCmd = "";
-            string test = "";
+            string test;
             double LowerLimit = 0;
             double UpperLimit = 1;
             string SUnits = "";
@@ -362,8 +362,8 @@ namespace InterconnectIOBox
         /// 
         public void ConfigureSerialProtocol(Action selectedAct)
         {
-            string Wp = "";
-            string test = "";
+            string Wp;
+            string test;
 
             Wp = ((byte)SelectD).ToString(); // Extract the databit number from the enum
             Wp += (char)SelectP; // add parity

@@ -16,7 +16,7 @@ using static System.Net.Mime.MediaTypeNames;
 namespace InterconnectIOBox // DUT Validation
 {
  
-    [Display(Groups: new[] { "InterconnectIO", "1-Wire" }, Name: "1-Wire Check", Description: "Check and validate the quantity of 1-Wire devices on the DUT. The quantity and contents are both verified.")]
+    [Display(Groups: new[] { "InterconnectIO", "1-Wire" }, Name: "1-Wire Check", Description: "Check and validate the quantity of 1-Wire devices on the Fixture. The quantity and contents are both verified.")]
     public class OneWireGen : ResultTestStep
     {
 
@@ -32,7 +32,7 @@ namespace InterconnectIOBox // DUT Validation
         public Wmode WAct { get; set; }
 
 
-        [Display("Number of 1-Wire devices", Group: "1-Wire Test", Order: 1, Description: "Number of 1-Wire devices expected on the DUT.")]
+        [Display("Number of 1-Wire devices", Group: "1-Wire Test", Order: 1, Description: "Number of 1-Wire devices expected on the Fixture.")]
         public int NbWire { get; set; } = 1;
 
         [Display("Check String #1", Order: 1.2)]
@@ -69,7 +69,7 @@ namespace InterconnectIOBox // DUT Validation
         /// <param name="index">A number to add on ParamName.</param>
         public void CheckOneWireData(string actual, string expected, int idx)
         {
-            string test = "";
+            string test;
             bool valid = actual.Contains(expected.ToString());
             if (valid)
             {
@@ -115,8 +115,8 @@ namespace InterconnectIOBox // DUT Validation
 
         public override void Run()
         {
-  
-            string test = "FAIL";
+
+            string test;
 
             string sdata = ReadOneWires(NbWire);
             int count = Regex.Matches(sdata, "OWID").Count;

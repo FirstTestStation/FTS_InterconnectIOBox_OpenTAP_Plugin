@@ -268,14 +268,14 @@ namespace InterconnectIOBox
         public void ConfigureBasicGpio(string name,byte gpio,byte value, bool check, bool publish)
         {
             byte   Writereg = 0;
-            string WriteCmd = "";
-            string ReadCmd = "";
+            string WriteCmd;
+            string ReadCmd;
             byte   Readreg = 0;
-            string test = "";
+            string test;
             string pname = "";
             byte mvalue = 0;
             byte mask = 0xff;  
-            string unit = "read";
+            string unit;
             byte response;
 
 

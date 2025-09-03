@@ -33,7 +33,7 @@ namespace InterconnectIOBox // DUT Validation
             bool j1 = false;
             bool j2 = false;
 
-            string OwireID = OWire_Dut.ID;  // Get 1-Wire ID from DUT
+         //   string OwireID = OWire_Dut.ID;  // Get 1-Wire ID from DUT
 
             // Check if Enable1WireJ1 is true, then increment nbWire
             if (OWire_Dut.Enable1WireJ1) { nbWire++; j1 = true; }
@@ -44,8 +44,8 @@ namespace InterconnectIOBox // DUT Validation
             return (nbWire, j1, j2);
         }
     }
-    [Display(Groups: new[] { "InterconnectIO", "1-Wire" }, Name: "1-Wire DUT validation", Description: "Validate the part number of the DUT by reading data from its 1-Wire " +
-        "device. If the test FAILS, the Testplan must be aborted to prevent potential damage to an unknown DUT.In the TestStep," +
+    [Display(Groups: new[] { "InterconnectIO", "1-Wire" }, Name: "1-Wire validation", Description: "Validate the part number of the Fixture or DUT by reading data from its 1-Wire " +
+        "device. If the test FAILS, the Testplan must be aborted to prevent potential damage to an unknown Fixture .In the TestStep," +
         "enable the break condition when the TestStep encounters an error or failure.")]
     public class OneWireDUTRead : OneWireReadWrite
     {
@@ -85,13 +85,17 @@ namespace InterconnectIOBox // DUT Validation
             string test = "FAIL"; // default test result
             bool valid, vconn;
             bool verdict1, verdict2;
+            string WireSerialNumber = null;
+            string WireName = null;
+            string WirePartNumber = null;
+            string ReportValue = null;
 
             var dutwire = NumberofOneWires();
             int nbWire = dutwire.nbWire;
             bool j1 = dutwire.j1;
             bool j2 = dutwire.j2;
 
-            string OwireID = OWire_Dut.ID;  // Get 1-Wire ID from DUT
+            string OwireID = OWire_Dut.CheckID;  // Get 1-Wire ID from DUT
 
             if (j1) { scid = "J1"; }
 
@@ -99,13 +103,11 @@ namespace InterconnectIOBox // DUT Validation
             {
                 sdata = ReadOneWires(nbWire); // read 1-Wires value
                 string[] field = sdata.Split(new string[] { "," }, StringSplitOptions.None);
-                string SerialNumber = field[3].Trim(); // get serial number from 1-Wire data
+                WireSerialNumber = field[3].Trim(); // get serial number from 1-Wire data
+                WirePartNumber = field[2].Trim(); // get PartNumber from 1-Wire data
+                WireName = field[1].Trim(); // get Name from 1-Wire data
 
-                OWire_Dut.Serial = SerialNumber;  // Get 1-Wire ID from DUT
-                OWire_Dut.PartNumber = field[2].Trim();
-                OWire_Dut.ProductName = field[1].Trim();
 
-                Log.Info("Serialnumber: " + SerialNumber);
                 Log.Info("1-Wire Data: " + sdata);
 
                 if (sdata.Length < 16) // if answer is not valid
@@ -115,8 +117,10 @@ namespace InterconnectIOBox // DUT Validation
                     {
                         Log.Info("No 1-Wire device was detected. Check DUT setup");
                         UpgradeVerdict(Verdict.Error);
-                    } else { 
-                        Log.Info("1-Wire data is too short, retry with number of 1-Wire = 1, value: " + sdata); 
+                    }
+                    else
+                    {
+                        Log.Info("1-Wire data is too short, retry with number of 1-Wire = 1, value: " + sdata);
                     }
 
                 }
@@ -129,7 +133,7 @@ namespace InterconnectIOBox // DUT Validation
                     vconn = sdata.Contains(scid);// check if connector  ID is valid
                     if (valid && vconn)
                     {
-                        Log.Info("1-Wire Board partnumber is valid for: " + scid);
+                        Log.Info("1-Wire Fixture partnumber is valid for: " + scid);
                         UpgradeVerdict(Verdict.Pass);
                         test = "PASS";
                     }
@@ -142,7 +146,7 @@ namespace InterconnectIOBox // DUT Validation
                         }
                         if (!valid)  // if 1-wire board ID not valid
                         {
-                            Log.Error("1-Wire Board partnumber is not valid for: " + scid + " - does not contains BoardID: " + OwireID);
+                            Log.Error("1-Wire Fixture partnumber is not valid for: " + scid + " - does not contains ID: " + OwireID);
 
                         }
                         UpgradeVerdict(Verdict.Fail);
@@ -164,12 +168,12 @@ namespace InterconnectIOBox // DUT Validation
                         valid = parts[0].Contains(OwireID); // check if 1-Wire ID is vali
                         if (valid)
                         {
-                            Log.Info("1-Wire Board partnumber and connector ID is valid for:" + scid);
+                            Log.Info("1-Wire partnumber and connector ID is valid for:" + scid);
                             verdict1 = true;
                         }
                         else
                         {
-                            Log.Error("1-Wire Board partnumber is not valid for:" + scid + " - does not contains BoardID: " + OwireID);
+                            Log.Error("1-Wire PartNumber is not valid for:" + scid + " - does not contains ID: " + OwireID);
                             verdict1 = false;
                         }
                     }
@@ -182,12 +186,12 @@ namespace InterconnectIOBox // DUT Validation
                             valid = parts[0].Contains(OwireID); // check if 1-Wire ID is vali
                             if (valid)
                             {
-                                Log.Info("1-Wire Board partnumber and connector ID is valid for:" + scid);
+                                Log.Info("1-Wire PartNumber and connector ID is valid for:" + scid);
                                 verdict1 = true;
                             }
                             else
                             {
-                                Log.Error("1-Wire Board partnumber is not valid for:" + scid + " - does not contains BoardID: " + OwireID);
+                                Log.Error("1-Wire PartNumber is not valid for:" + scid + " - does not contains ID: " + OwireID);
                                 verdict1 = false;
                             }
                         }
@@ -199,12 +203,12 @@ namespace InterconnectIOBox // DUT Validation
                         valid = parts[1].Contains(OwireID); // check if 1-Wire ID is valid
                         if (valid)
                         {
-                            Log.Info("1-Wire Board partnumber is valid for: " + scid);
+                            Log.Info("1-Wire PartNumber is valid for: " + scid);
                             verdict2 = true;
                         }
                         else
                         {
-                            Log.Error("1-Wire Board partnumber is not valid for: " + scid + " - does not contains BoardID: " + OwireID);
+                            Log.Error("1-Wire PartNumber is not valid for: " + scid + " - does not contains ID: " + OwireID);
                             verdict2 = false;
                         }
                     }
@@ -217,12 +221,12 @@ namespace InterconnectIOBox // DUT Validation
                             valid = parts[1].Contains(OwireID); // check if 1-Wire ID is vali
                             if (valid)
                             {
-                                Log.Info("1-Wire Board partnumber is valid for: " + scid);
+                                Log.Info("1-Wire PartNumber is valid for: " + scid);
                                 verdict2 = true;
                             }
                             else
                             {
-                                Log.Error("1-Wire Board partnumber is not valid for: " + scid + " - does not contains BoardID: " + OwireID);
+                                Log.Error("1-Wire PartNumber is not valid for: " + scid + " - does not contains ID: " + OwireID);
                                 verdict2 = false;
                             }
 
@@ -233,18 +237,18 @@ namespace InterconnectIOBox // DUT Validation
                         }
                     }
 
-                    
+
                     if (verdict1 && verdict2)
                     {
                         UpgradeVerdict(Verdict.Pass);
                         test = "PASS";
                         scid = "J1-J2";
-    
+
                     }
                     else
                     {
                         UpgradeVerdict(Verdict.Fail);
-                        test= "FAIL";
+                        test = "FAIL";
                         scid = "J1-J2";
 
                     }
@@ -254,7 +258,26 @@ namespace InterconnectIOBox // DUT Validation
             else // if nb_wires ==0 
             {
                 Log.Warning("No 1-Wire device to check.");
+                UpgradeVerdict(Verdict.Fail);
                 nbWire = 0;
+            }
+
+            if (nbWire > 0) // if 1-Wire device present, set DUT or Fixture information from 1-Wire data
+            {
+                if (OWire_Dut.Dut1Wire)
+                {
+                    OWire_Dut.SerialNumber = WireSerialNumber;  // Set SerialNumber from 1-Wire ID from DUT
+                    OWire_Dut.PartNumber = WirePartNumber;
+                    OWire_Dut.ProductName = WireName;
+                    ReportValue = OWire_Dut.PartNumber;
+                }
+                else
+                {
+                    OWire_Dut.FixtSerial = WireSerialNumber;  // Set SerialNumber from 1-Wire ID from DUT
+                    OWire_Dut.FixtNumber = WirePartNumber;
+                    OWire_Dut.FixtName = WireName;
+                    ReportValue = OWire_Dut.FixtNumber;
+                }
             }
 
             // Publish final result
@@ -262,7 +285,7 @@ namespace InterconnectIOBox // DUT Validation
             {
                 ParamName = "1-Wire Check",
                 StepName = Name,
-                Value = OWire_Dut.PartNumber,
+                Value = ReportValue,
                 LowerLimit = scid,
                 UpperLimit = OwireID,
                 Verdict = test,
@@ -282,7 +305,7 @@ namespace InterconnectIOBox // DUT Validation
     }
 
 
-    [Display(Groups: new[] { "InterconnectIO", "1-Wire" }, Name: "1-Wire DUT Write Data", Description: "Write data (partnumber,serialnumber and connector refdes) on 1-Wire DUT device")]
+    [Display(Groups: new[] { "InterconnectIO", "1-Wire" }, Name: "1-Wire Write Data", Description: "Write data (partnumber,serialnumber and connector refdes) on 1-Wire DUT device")]
 
     public class OneWireDUTWrite : OneWireReadWrite
     {
@@ -318,17 +341,17 @@ namespace InterconnectIOBox // DUT Validation
 
 
 
-        [Display("ProductName", Group: "Data Write Field:")]
-        [Description("DUT ProductName to write to the 1-Wire device, used during DUT validation")]
+        [Display("Fixture Name", Group: "Fixture Data Write Field:")]
+        [Description("ProductName to write to the 1-Wire device, used during Fixture validation")]
         public string ProductName { get; set; }
 
 
-        [Display("PartNumber", Group: "Data Write Field:")]
-        [Description("DUT part number to write to the 1-Wire device, used during DUT validation")]
+        [Display("Fixture PartNumber", Group: "Fixture Data Write Field:")]
+        [Description("Fixture part number to write to the 1-Wire device, used during Fixture validation")]
         public string PartNumber { get; set; }
 
-        [Display("SerialNumber", Group: "Data Write Field:")]
-        [Description("DUT serial number  to write to the 1-Wire device, read during DUT validation")]
+        [Display("Fixture SerialNumber", Group: "Fixture Data Write Field:")]
+        [Description("Fixture serial number  to write to the 1-Wire device, read during Fixture validation")]
         public string SerialNumber { get; set; }
 
         #endregion
@@ -373,14 +396,14 @@ namespace InterconnectIOBox // DUT Validation
         public override void Run()
         {
             string scid = "";
-           
+
             string sdata;
             sdata = CheckOneWires(1); // read 1-Wires value
             int count = sdata.Count(c => c == 'O');
 
             if (count == 0)
             {
-                Log.Warning("No 1-Wire device detected on the DUT. Verify that a single 1-Wire device is present on J1 or J2 of the DUT");
+                Log.Warning("No 1-Wire device detected on the Fixture. Verify that a single 1-Wire device is present on J1 or J2 of the Fixture");
                 UpgradeVerdict(Verdict.Error);
                 return;
             }

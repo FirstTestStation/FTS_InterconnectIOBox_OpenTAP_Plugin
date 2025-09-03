@@ -43,8 +43,14 @@ namespace InterconnectIOBox
             }
 
             string DUTName = OWire_Dut.ProductName;
-            string DUTNumber = OWire_Dut.ID;
-            string DUTSerial = OWire_Dut.Serial;
+            string DUTNumber = OWire_Dut.PartNumber;
+            string DUTSerial = OWire_Dut.SerialNumber;
+            string FixtName = OWire_Dut.FixtName;
+            string FixtNumber = OWire_Dut.FixtNumber;
+            string FixtSerial = OWire_Dut.FixtSerial;
+            string DutID = OWire_Dut.ID;
+
+
 
             string TableName = DUTName + "_" + DUTSerial;
 
@@ -54,7 +60,11 @@ namespace InterconnectIOBox
 
             Results.Publish(
                 TableName,
-                new List<string> { "ProductName", "ProductNumber", "SerialNumber","StepName", "Parameter", "Value", "LowerLimit", "UpperLimit", "Units", "Status" },
+                new List<string> { "FixtureName", "FixtureNumber", "FixtureSerial","ID", "ProductName", "ProductNumber", "SerialNumber","StepName", "Parameter", "Value", "LowerLimit", "UpperLimit", "Units", "Status" },
+                FixtName,
+                FixtNumber,
+                FixtSerial,
+                DutID,
                 DUTName,
                 DUTNumber,
                 DUTSerial,

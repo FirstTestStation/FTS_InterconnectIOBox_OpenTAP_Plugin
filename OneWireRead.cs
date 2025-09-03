@@ -32,7 +32,7 @@ namespace InterconnectIOBox // DUT Validation
         public Wmode WAct { get; set; }
 
 
-        [Display("Number of 1-Wire devices", Group: "1-Wire Read", Order: 1, Description: "Number of 1-Wire devices expected on the DUT.")]
+        [Display("Number of 1-Wire devices", Group: "1-Wire Read", Order: 1, Description: "Number of 1-Wire devices expected on the Fixture.")]
         public int NbWire { get; set; } = 1;
 
         [Display("Check String device #1", Order: 1.2)]
