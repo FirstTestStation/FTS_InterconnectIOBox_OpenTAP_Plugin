@@ -10,7 +10,7 @@ $(GitVersion) - Gets the version from Git in the recommended format Major.Minor.
   <Description>OpenTAP plugin package for the First TestStation InterconnectIOBox.</Description>
   <SourceLicense>MIT</SourceLicense>
   <Files>
-    <File Path="Packages/OpenTAP_IOBox/InterconnectIOBox.dll" SourcePath="InterconnectIOBox.dll">
+    <File Path="Packages/FTS_InterconnectIOBox/InterconnectIOBox.dll" SourcePath="InterconnectIOBox.dll">
         <SetAssemblyInfo Attributes="Version"/>
     </File>
   </Files>

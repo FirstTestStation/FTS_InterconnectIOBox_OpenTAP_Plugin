@@ -19,6 +19,7 @@ namespace InterconnectIOBox
     public class ItcCfg : ResultTestStep
     {
         #region Settings
+      
         // ToDo: Add property here for each parameter the end user should be able to change
         #endregion
 
@@ -91,7 +92,7 @@ namespace InterconnectIOBox
         public ItcCfg()
         {
             // ToDo: Set default values for properties / settings.
-            Address = OWire_Dut.I2CSelftestaddress;  // Get I2C address from DUT
+            Address = Dut.I2CSelftestaddress;  // Get I2C address from DUT
         }
 
         public override void PrePlanRun()

@@ -18,6 +18,7 @@ namespace InterconnectIOBox // DUT Validation
         #region Settings
         public InterconnectIO IO_Instrument { get; set; }
 
+      
         #endregion
 
 
@@ -36,10 +37,10 @@ namespace InterconnectIOBox // DUT Validation
          //   string OwireID = OWire_Dut.ID;  // Get 1-Wire ID from DUT
 
             // Check if Enable1WireJ1 is true, then increment nbWire
-            if (OWire_Dut.Enable1WireJ1) { nbWire++; j1 = true; }
+            if (Dut.Enable1WireJ1) { nbWire++; j1 = true; }
 
             // Check if Enable1WireJ1 is true, then increment nbWire
-            if (OWire_Dut.Enable1WireJ2) { nbWire++; j2 = true; }
+            if (Dut.Enable1WireJ2) { nbWire++; j2 = true; }
             // Common logic
             return (nbWire, j1, j2);
         }
@@ -95,7 +96,7 @@ namespace InterconnectIOBox // DUT Validation
             bool j1 = dutwire.j1;
             bool j2 = dutwire.j2;
 
-            string OwireID = OWire_Dut.CheckID;  // Get 1-Wire ID from DUT
+            string OwireID = Dut.CheckID;  // Get 1-Wire ID from DUT
 
             if (j1) { scid = "J1"; }
 
@@ -264,19 +265,20 @@ namespace InterconnectIOBox // DUT Validation
 
             if (nbWire > 0) // if 1-Wire device present, set DUT or Fixture information from 1-Wire data
             {
-                if (OWire_Dut.Dut1Wire)
+                if (Dut.Dut1Wire)
                 {
-                    OWire_Dut.SerialNumber = WireSerialNumber;  // Set SerialNumber from 1-Wire ID from DUT
-                    OWire_Dut.PartNumber = WirePartNumber;
-                    OWire_Dut.ProductName = WireName;
-                    ReportValue = OWire_Dut.PartNumber;
+                    Dut.SerialNumber = WireSerialNumber;  // Set SerialNumber from 1-Wire ID from DUT
+                    Dut.PartNumber = WirePartNumber;
+                    Dut.ProductName = WireName;
+                    ReportValue = Dut.PartNumber;
+                    Log.Info($"[KEY] DUTSerialNumber: {Dut.SerialNumber}");
                 }
                 else
                 {
-                    OWire_Dut.FixtSerial = WireSerialNumber;  // Set SerialNumber from 1-Wire ID from DUT
-                    OWire_Dut.FixtNumber = WirePartNumber;
-                    OWire_Dut.FixtName = WireName;
-                    ReportValue = OWire_Dut.FixtNumber;
+                    Dut.FixtSerial = WireSerialNumber;  // Set SerialNumber from 1-Wire ID from DUT
+                    Dut.FixtNumber = WirePartNumber;
+                    Dut.FixtName = WireName;
+                    ReportValue = Dut.FixtNumber;
                 }
             }
 
@@ -363,7 +365,7 @@ namespace InterconnectIOBox // DUT Validation
             ProductName = "FTS";
             PartNumber = "610-1010-020";
             // Default settings can be configured in the constructor.
-            SerialNumber = "000001";
+            SerialNumber = "";
             EWireJ1 = true;  // Default to J1
             EWireJ2 = false; // Ensure J2 is off by default
 

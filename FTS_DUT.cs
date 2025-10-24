@@ -18,10 +18,12 @@ namespace InterconnectIOBox
         private bool smart1Wire;
         private bool enable1WireJ1;
         private bool enable1WireJ2;
+        private bool dut1Wire;
+
 
         private const string Fixt = "Fixture Information Options";
 
-        [Display("Fixture use 1-Wire Device?", Group: Fixt, Order: 1, Description: "Checked = 1-Wire device is connected on J1 and/or J2 connectors")]
+        [Display("A- Fixture use 1-Wire Device (Smart1Wire) ?", Group: Fixt, Order: 1, Description: "Checked = 1-Wire device is connected on J1 and/or J2 connectors")]
         public bool Smart1Wire {
             get => smart1Wire;
             set
@@ -30,23 +32,61 @@ namespace InterconnectIOBox
 
                 if (!smart1Wire)
                 {
+                    Dut1Wire = false;
                     Enable1WireJ1 = false;
                     Enable1WireJ2 = false;
 
+                    NotifyPropertyChanged(nameof(Dut1Wire));
                     NotifyPropertyChanged(nameof(Enable1WireJ1));
                     NotifyPropertyChanged(nameof(Enable1WireJ2));
                 }
+                else
+                {
+                    // When turning ON Smart1Wire → clear manual fixture info
+                    FixtName = string.Empty;
+                    FixtNumber = string.Empty;
+                    FixtSerial = string.Empty;
+
+                    NotifyPropertyChanged(nameof(FixtName));
+                    NotifyPropertyChanged(nameof(FixtNumber));
+                    NotifyPropertyChanged(nameof(FixtSerial));
+                }
 
                 NotifyPropertyChanged(nameof(Smart1Wire));
+                NotifyPropertyChanged(nameof(EnableFixt));
             }
         }
 
 
-        [Display("1-Wire contains DUT information?", Group: Fixt, Order: 1.1, Description: "Unchecked = 1-Wire device Contains fixture information, Checked = 1-Wire device content DUT information")]
+        [Display("B- Fixture contains DUT information (Dut1Wire) ?", Group: Fixt, Order: 1.1, Description: "Unchecked = 1-Wire device Contains fixture information, Checked = 1-Wire device content DUT information: PartNumber and SerialNumber")]
         [EnabledIf("Smart1Wire", true)]
-        public bool Dut1Wire { get; set; } = false;
+        public bool Dut1Wire
+        {
+            get => dut1Wire;
+            set
+            {
+                dut1Wire = value;
 
-        [Display("1-Wire device present on J1?", Order: 2, Group: Fixt, Description: "Get Fixture or DUT information from 1-wire connected on J1.")]
+                if (dut1Wire)
+                {
+                    // When B is checked → clear manual DUT info
+                    ProductName = string.Empty;
+                    PartNumber = string.Empty;
+                    SerialNumber = string.Empty;
+
+                    NotifyPropertyChanged(nameof(ProductName));
+                    NotifyPropertyChanged(nameof(PartNumber));
+                    NotifyPropertyChanged(nameof(SerialNumber));
+                }
+
+                NotifyPropertyChanged(nameof(Dut1Wire));
+                NotifyPropertyChanged(nameof(EnableFixt));
+            }
+        }
+
+
+
+        [Display("C- 1-Wire device present on J1?", Order: 2, Group: Fixt, Description: "Get Fixture or DUT information from 1-wire connected on J1.")]
         [EnabledIf(nameof(Smart1Wire), true)]
         public bool Enable1WireJ1
         {
@@ -56,7 +96,7 @@ namespace InterconnectIOBox
 
 
 
-        [Display("1-Wire device present on J2", Order: 2.1, Group: Fixt, Description: "Get Fixture or DUT information from 1-wire connected on J2.")]
+        [Display("D- 1-Wire device present on J2", Order: 2.1, Group: Fixt, Description: "Get Fixture or DUT information from 1-wire connected on J2.")]
         [EnabledIf(nameof(Smart1Wire), true)]
         public bool Enable1WireJ2
         {
@@ -67,22 +107,25 @@ namespace InterconnectIOBox
         // Add this event to the FTS_DUT class to support property change notifications
         public new event PropertyChangedEventHandler PropertyChanged;
 
-        [Display("1-Wire String Check ID", Group: Fixt, Order: 2.2, Description: "Expected ID string for 1-Wire device on J1 or/and J2 to validate correct fixture.")]
+        [Display("E- 1-Wire String Check ID", Group: Fixt, Order: 2.2, Description: "Expected ID string for 1-Wire device on J1 or/and J2 to validate correct fixture.")]
         [EnabledIf("Smart1Wire", true)]
         public string CheckID { get; set; }
 
-        private const string PFixt = "Fixture Information when no 1-Wire is present";
+        private const string PFixt = "Fixture Information when data is not coming from 1-Wire device";
 
-        [Display("Fixture Name", Group: PFixt, Order: 3.0, Collapsed: true, Description: "Fixture Name to be used when no 1-Wire is present.")]
-        [EnabledIf("Smart1Wire", false)]
+        [Browsable(false)]
+        public bool EnableFixt => !Smart1Wire || Dut1Wire;
+
+        [Display("Fixture Name", Group: PFixt, Order: 3.0, Description: "Fixture Name to be used when no 1-Wire is present.")]
+        [EnabledIf("EnableFixt", true)]
         public string FixtName { get; set; }
 
-        [Display("Fixture Number", Group: PFixt, Order: 3.1, Collapsed: true, Description: "Fixture Number to be used when no 1-Wire is present.")]
-        [EnabledIf("Smart1Wire", false)]
+        [Display("Fixture Number", Group: PFixt, Order: 3.1,  Description: "Fixture Number to be used when no 1-Wire is present.")]
+        [EnabledIf("EnableFixt", true)]
         public string FixtNumber { get; set; }
 
         [Display("Fixture Serial", Order: 3.3, Group: PFixt, Description: "Optionnal Serial Number of the Fixture ")]
-        [EnabledIf("Smart1Wire", false)]
+        [EnabledIf("EnableFixt", true)]
         public string FixtSerial { get; set; }
 
 
@@ -98,15 +141,19 @@ namespace InterconnectIOBox
         [EnabledIf("Dut1Wire", false)]
         public string PartNumber { get; set; }
 
-        [Display("SerialNumber", Order: 4.3, Group: DFixt, Description: "SerialNumber of the Device Under Test (DUT)")]
-        [EnabledIf("Dut1Wire", false)]
+
+        [Display("DUT SerialNumber", Order: 5, Group: "Status", Description: "Actual SerialNumber of the Device Under Test (DUT)")]
+        [Output]
         public string SerialNumber { get; set; }
 
 
 
      
-        [Display("I2C Address:", Group: "DUT I2C Address ", Order: 5, Description: "I2C address to use to communicate with DUT (mainly selftest board)")]
+        [Display("I2C Address:", Group: "DUT I2C Address ", Order: 6, Description: "I2C address to use to communicate with DUT (mainly selftest board)")]
         public byte I2CSelftestaddress { get; set; } = 0x20;
+
+
+      
 
 
         /// <summary>
@@ -114,6 +161,30 @@ namespace InterconnectIOBox
         /// </summary>
         public FTS_DUT()
         {
+            // 1. Define the desired error message
+            const string errorMessage = "The 'Check ID' cannot be empty when '1-Wire contains DUT information?' is set to True.";
+
+            // 2. DEFINE THE LOGIC USING THE OPEN TAP DELEGATE TYPE
+            // This explicitly converts the Lambda function into the required delegate type.
+            OpenTap.IsValidDelegateDefinition validationLogic = () =>
+            {
+                // If Dut1Wire is False, validation passes (True).
+                if (Dut1Wire == false)
+                {
+                    return true;
+                }
+
+                // If Dut1Wire is True, validation passes (True) ONLY if CheckID is NOT empty.
+                return !string.IsNullOrWhiteSpace(CheckID);
+            };
+
+            // 3. Add the rule using the Rules.Add overload.
+            // The explicit delegate definition should now satisfy the first argument.
+            Rules.Add(validationLogic,
+                      errorMessage,
+                      nameof(Dut1Wire),
+                      nameof(CheckID));
+
             // ToDo: Set default values for properties / settings.
             Name = "FTS_DUT";
             // Default settings can be configured in the constructor.
@@ -128,69 +199,96 @@ namespace InterconnectIOBox
         {
             Log.Info("Open FTS_DUT.");
             base.Open();
-            bool AutoInfo = false;
 
-            // Implement logic to handle 1-Wire interface based on properties
+            bool AutoInfo = false;
+            bool error = false;
+
+            // --- Enable 1-Wire interfaces ---
             if (Enable1WireJ1)
             {
-                // Code to enable 1-Wire on J1
                 Log.Info("1-Wire J1 enabled.");
                 AutoInfo = true;
             }
+
             if (Enable1WireJ2)
             {
-                // Code to enable 1-Wire on J2
                 Log.Info("1-Wire J2 enabled.");
                 AutoInfo = true;
             }
 
-
-            if (!AutoInfo) // If no 1-Wire interface is enabled, check if required fields are filled in
+            // --- Validate Smart1Wire dependencies ---
+            if (Smart1Wire)
             {
-                bool error = false;
-                if (Dut1Wire)
+                // Must have at least one 1-Wire interface enabled
+                if (!Enable1WireJ1 && !Enable1WireJ2)
                 {
-                    if (string.IsNullOrEmpty(ProductName))
-                    {
-                        Log.Warning("ProductName Field is empty. ProductName is Required");
-                        error = true;
-                    }
-                }
-                else
-                { // Fixture information 
-                    if (string.IsNullOrEmpty(FixtName))
-                    {
-                        Log.Warning("Fixture Name Field is empty. Fixture Name is Required");
-                        error = true;
-                    }
+                    Log.Error("Smart1Wire is enabled, but neither 1-Wire J1 nor J2 is enabled. Please enable at least one.");
+                    error = true;
                 }
 
-                if (Dut1Wire)
+                // CheckID must also be defined
+                if (string.IsNullOrWhiteSpace(CheckID))
                 {
-                    if (string.IsNullOrEmpty(PartNumber))
-                    {
-                        Log.Warning("PartNumber Field is empty. PartNumber is Required");
-                        error = true;
-                    }
-                }
-                else
-                { // Fixture information 
-                    if (string.IsNullOrEmpty(FixtNumber))
-                    {
-                        Log.Warning("Fixture Number Field is empty. Fixture Number is Required");
-                        error = true;
-                    }
-                }
-
-
-                if (error)
-                {
-                    Log.Error("Some informations are missing. Please fill in the required fields.");
-                    throw new ArgumentException("Information are missing. Please fill in the required fields.");
+                    Log.Error("1-Wire CheckID field is empty. CheckID is required when Smart1Wire is enabled.");
+                    error = true;
                 }
             }
+
+            // --- If no 1-Wire automatic info is used ---
+            if (!AutoInfo)
+            {
+                if (Dut1Wire)
+                {
+                    // DUT information expected from 1-Wire or provided manually
+                    if (string.IsNullOrEmpty(ProductName))
+                    {
+                        Log.Warning("ProductName field is empty. ProductName is required.");
+                        error = true;
+                    }
+
+                    if (string.IsNullOrEmpty(PartNumber))
+                    {
+                        Log.Warning("PartNumber field is empty. PartNumber is required.");
+                        error = true;
+                    }
+                }
+                else
+                {
+                    // Fixture information
+                    if (string.IsNullOrEmpty(FixtName))
+                    {
+                        Log.Warning("Fixture Name field is empty. Fixture Name is required.");
+                        error = true;
+                    }
+
+                    if (string.IsNullOrEmpty(FixtNumber))
+                    {
+                        Log.Warning("Fixture Number field is empty. Fixture Number is required.");
+                        error = true;
+                    }
+                }
+            }
+
+            // --- New Rule ---
+            // If Dut1Wire is NOT checked, operator must manually fill ProductName and PartNumber
+            if (!Dut1Wire)
+            {
+                if (string.IsNullOrEmpty(ProductName) || string.IsNullOrEmpty(PartNumber))
+                {
+                    Log.Error("Dut1Wire is unchecked. You must manually provide ProductName and PartNumber.");
+                    error = true;
+                }
+            }
+
+            // --- Final error check ---
+            if (error)
+            {
+                Log.Error("Some information is missing. Please fill in the required fields.");
+                throw new ArgumentException("Information is missing. Please fill in the required fields.");
+            }
         }
-        
+
+
 
 
         /// <summary>

@@ -18,6 +18,8 @@ namespace InterconnectIOBox
 
         public InterconnectIO IO_Instrument { get; set; }
 
+      
+
 
         [Display("I2C Address:", Order: 0.5, Description: "I2C address to use to communicate with selftest board. When Checked, the new I2C Address will be used for the TestStep duration.")]
         public Enabled<byte> I2Caddress { get; set; }
@@ -145,7 +147,7 @@ namespace InterconnectIOBox
             Getfct = new Enabled<byte>() { IsEnabled = false, Value = 5 };
             Setgpout = new Enabled<Setgpio> { IsEnabled = false, Value = Setgpio.Low };
             Getgpin = new Enabled<Setgpio> { IsEnabled = false, Value = Setgpio.Low };
-            I2Caddress = new Enabled<byte>() { IsEnabled = false, Value = OWire_Dut.I2CSelftestaddress };  // Get I2C address from DUT
+            I2Caddress = new Enabled<byte>() { IsEnabled = false, Value = Dut.I2CSelftestaddress };  // Get I2C address from DUT
 
         }
 
@@ -221,7 +223,7 @@ namespace InterconnectIOBox
             // Check if the I2C address is enabled and valid
             if ((I2Caddress.IsEnabled == true) && I2Caddress.Value != 0)
             {
-                SetAddress(OWire_Dut.I2CSelftestaddress); // replace the address to the original one
+                SetAddress(Dut.I2CSelftestaddress); // replace the address to the original one
             }
 
 
