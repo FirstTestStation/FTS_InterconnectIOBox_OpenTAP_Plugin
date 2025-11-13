@@ -3,101 +3,111 @@ using OpenTap;
 
 namespace InterconnectIOBox
 {
-    [OpenTap.Display("TAP Settings", Groups: new[] { "InterconnectIO", "System" },
-        Description: "Selects which TAP Settings file to use, so the Production GUI can read it and operator will not need to select it.")]
+    [OpenTap.Display("TAP Settings Selector", Groups: new[] { "InterconnectIO", "System" },
+        Description: "Selects which TAP Settings file to use, so the Production GUI can read it and the operator will not need to select it.")]
     public class SelectSettingsStep : ResultTestStep
     {
+        // Initialized to prevent NRE if null is passed during deserialization
         private string _settingsFile = "DefaultSettings.TapSettings";
-        private string _AltPath;
-
+        private string _AltPath = string.Empty; // Also initialized to string.Empty
 
         [Display("Settings File", Order: 1, Group: "File Settings Path", Description: "Select the TAP settings file to use (filename only).")]
         [FilePath(FilePathAttribute.BehaviorChoice.Open, "TapSettings")]
         public string SettingsFile
         {
             get => _settingsFile;
-            set => _settingsFile = value;
+            // Simplest possible setter: just assign the value.
+            set => _settingsFile = value ?? string.Empty;
         }
 
-
-        [Display("Alternative Path", Order: 1.1, Group: "File Path", Description: "Select an alternative path (Development or Production) to look for the TapSettings")]
+        [Display("Alt Folder Path", Order: 1.1, Group: "File Settings Path", Description: "Select an alternative base path (e.g., Development or Production) to look for the TapSettings file.")]
         [DirectoryPath]
         public string AltPath
         {
             get => _AltPath;
             set
             {
-                // La correction : Normaliser immédiatement le chemin vers sa forme absolue dans le setter.
-                // Si la valeur est nulle ou vide, on stocke une chaîne vide, sinon on normalise.
-                _AltPath = string.IsNullOrEmpty(value) ? "" : Path.GetFullPath(value);
+                // Assign the value directly, falling back to empty string if null.
+                _AltPath = value ?? string.Empty;
             }
         }
 
         public override void Run()
         {
-            // 1. Initialise the local verdict to the lowest possible state (Pass)
+            // Initialize the local verdict to the lowest possible state.
             OpenTap.Verdict fileCheckVerdict = Verdict.Pass;
-
-            // --- VALIDATION LOGIC (File Extension & Existence) ---
-
+            string rawFilePath = SettingsFile;
+            string resolvedFileName = string.Empty;
             const string expectedExtension = ".TapSettings";
-            string currentExtension = System.IO.Path.GetExtension(SettingsFile);
 
-            // 1. Check file extension
-            if (!currentExtension.Equals(expectedExtension, System.StringComparison.OrdinalIgnoreCase))
+            // --- 1. CONFIGURATION AND EXTENSION CHECK ---
+
+            // Check if the primary configuration string is empty.
+            if (string.IsNullOrEmpty(SettingsFile))
             {
-                Log.Error($"Configuration Error: Incorrect file extension '{currentExtension}'. Expected '{expectedExtension}'.");
-                // Upgrade the step's overall verdict
+                Log.Error("Configuration Error: Settings File path cannot be empty.");
                 UpgradeVerdict(Verdict.Fail);
-                // Set the local result variable
                 fileCheckVerdict = Verdict.Fail;
+            }
+            else
+            {
+                // Check the extension on the filename provided in SettingsFile.
+                string currentExtension = System.IO.Path.GetExtension(SettingsFile);
 
-                // Uncomment the throw line if you want the test plan to halt immediately.
-                // throw new System.ArgumentException($"The selected file '{SettingsFile}' must have the '{expectedExtension}' extension.");
+                if (!currentExtension.Equals(expectedExtension, System.StringComparison.OrdinalIgnoreCase))
+                {
+                    Log.Error($"Configuration Error: Incorrect file extension '{currentExtension}' in '{SettingsFile}'. Expected '{expectedExtension}'.");
+                    UpgradeVerdict(Verdict.Fail);
+                    fileCheckVerdict = Verdict.Fail;
+                }
             }
 
 
-            // 2. Check file existence (Only check if the file extension was correct, or check unconditionally)
-            if (fileCheckVerdict == Verdict.Pass && !System.IO.File.Exists(SettingsFile))
-            {
-                Log.Error($"Configuration Error: Settings file not found at path: '{SettingsFile}'.");
-                // Upgrade the step's overall verdict
-                UpgradeVerdict(Verdict.Fail);
-                // Set the local result variable
-                fileCheckVerdict = Verdict.Fail;
+            // --- 2. PATH REPORTING (NO RESOLUTION/FILE SYSTEM ACCESS) ---
 
-                // Uncomment the throw line if you want the test plan to halt immediately.
-                // throw new System.IO.FileNotFoundException($"Required settings file not found: {SettingsFile}", SettingsFile);
-            }
-
-            // --- LOGGING AND RESULT PUBLISHING ---
-
-            // The 'fileCheckVerdict' will be Fail if either check above failed, otherwise it remains Pass.
             if (fileCheckVerdict == Verdict.Pass)
             {
-                Log.Info($"Successfully verified TAP Settings file: {SettingsFile}");
+                // Primary Path Reporting: Report the raw, validated SettingsFile string.
+                // We rely on the downstream system (GUI) to handle path resolution.
+                resolvedFileName = System.IO.Path.GetFileName(rawFilePath);
+
+                Log.Debug($"Configuration successfully read. Primary settings file (raw string): {resolvedFileName}");
+
+                // Alternative Path Reporting (Check only for non-empty AltPath)
+                if (!string.IsNullOrEmpty(AltPath))
+                {
+                    // Report the combined path using AltPath and the filename part of SettingsFile.
+                    // We must use Path.GetFileName to ensure we only get the file name, not subdirectories.
+                    string settingsFileName = System.IO.Path.GetFileName(SettingsFile);
+
+                    // We can safely use Path.Combine here since AltPath is a DirectoryPath and SettingsFileName is just a name.
+                    string combinedPath = System.IO.Path.Combine(AltPath, settingsFileName);
+
+                    Log.Debug($"Alternative path provided (combined for reference): {combinedPath}");
+                }
+
+                // If we reach here, the configuration strings are valid and non-empty.
+                Log.Info("Successfully verified TAP Settings configuration strings.");
                 UpgradeVerdict(Verdict.Pass);
             }
 
-            // Define the local variables needed for your TestResult object
-            // Note: The 'expected' string is now descriptive, as the true limits are used for the verdict.
-            string expectedResultString = fileCheckVerdict == Verdict.Pass ? expectedExtension : "File not valid";
+            // --- 3. FINAL VERDICT AND RESULT PUBLICATION ---
 
-            // Publish the result record
+            // Publish the result record containing the final file path (the raw SettingsFile if successful).
             var result = new TestResult<string>
             {
-                ParamName = $"TapSettings Load",
+                ParamName = "TapSettings File Path",
                 StepName = Name,
-                Value = System.IO.Path.GetFileNameWithoutExtension(SettingsFile),
+                // Publish the raw path string.
+                Value = resolvedFileName,
+                // Using the expected extension for descriptive purposes
                 LowerLimit = expectedExtension,
                 UpperLimit = expectedExtension,
                 Verdict = fileCheckVerdict.ToString(),
-                Units = "Check"
+                Units = "Config String Check"
             };
 
-            // This line publishes the result to OpenTAP's log and database
             PublishResult(result);
         }
-
     }
 }
