@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Net.Security;
 using System.Numerics;
+using System.Security.Cryptography;
 using System.Text.RegularExpressions;
 using System.Threading;
 using System.Xml.Linq;
@@ -46,7 +47,7 @@ namespace InterconnectIOBox // DUT Validation
         }
     }
     [Display(Groups: new[] { "InterconnectIO", "1-Wire" }, Name: "1-Wire validation", Description: "Validate the part number of the Fixture or DUT by reading data from its 1-Wire " +
-        "device. If the test FAILS, the Testplan must be aborted to prevent potential damage to an unknown Fixture .In the TestStep," +
+        "device. Compare Value is defined on DUT (Step E).  If the test FAILS, the Testplan must be aborted to prevent potential damage to an unknown Fixture .In the TestStep," +
         "enable the break condition when the TestStep encounters an error or failure.")]
     public class OneWireDUTRead : OneWireReadWrite
     {
@@ -363,7 +364,7 @@ namespace InterconnectIOBox // DUT Validation
         {
             // ToDo: Set default values for properties / settings.
             ProductName = "FTS";
-            PartNumber = "610-1010-020";
+            PartNumber = "550-XXXX-XXX";
             // Default settings can be configured in the constructor.
             SerialNumber = "";
             EWireJ1 = true;  // Default to J1
@@ -399,80 +400,97 @@ namespace InterconnectIOBox // DUT Validation
         {
             string scid = "";
 
-            string sdata;
-            sdata = CheckOneWires(1); // read 1-Wires value
+            string sdata = CheckOneWires(1); // read 1-Wires value
             int count = sdata.Count(c => c == 'O');
 
             if (count == 0)
             {
-                Log.Warning("No 1-Wire device detected on the Fixture. Verify that a single 1-Wire device is present on J1 or J2 of the Fixture");
+                Log.Warning("No 1-Wire device detected on the Fixture. Verify that a single 1-Wire device is present on J1 or J2.");
                 UpgradeVerdict(Verdict.Error);
                 return;
             }
 
             if (count > 1)
             {
-                Log.Warning("Only a single 1-Wire device can be programmed at a time. Number of 1-Wire devices detected: " + count);
+                Log.Warning("Only a single 1-Wire device can be programmed at a time. Detected: " + count);
                 UpgradeVerdict(Verdict.Fail);
                 return;
             }
 
-
             if (sdata.Length > 64)
             {
-
-                Log.Error("1-Wire Read Info is too long. expected 64 chars maximum, counted:  " + sdata.Length);
-                UpgradeVerdict(Verdict.Error);
-
-            }
-
-            // Split string by ":"
-            string[] parts = sdata.Split(new string[] { ":" }, StringSplitOptions.None);
-
-            string owid = parts[1].Replace(" ", ""); // remove space before owid number
-            string owide = owid.Replace("\"", ""); // remove /" at the end of owid number
-
-            int owl = owide.Length;  // get length to verify number
-
-            if (owl != 16) // if not valid OWID
-            {
-                Log.Info("1-Wire ID is wrong, expect 16 digits, number of digit read: " + owl);
+                Log.Error("1-Wire Read Info is too long. Max 64 chars, got: " + sdata.Length);
                 UpgradeVerdict(Verdict.Error);
                 return;
-
             }
 
-            if (EWireJ1) { scid = "J1"; } // if J1 1-wire device is present
-            if (EWireJ2) { scid = "J2"; } // if J2 1-wire device is present
+            // Extract OWID
+            string[] parts = sdata.Split(new[] { ":" }, StringSplitOptions.None);
+            string owid = parts[1].Trim().Replace("\"", "");
 
+            if (owid.Length != 16)
+            {
+                Log.Info("Invalid 1-Wire ID length (expected 16 digits): " + owid.Length);
+                UpgradeVerdict(Verdict.Error);
+                return;
+            }
 
-            string wdata = "\"" + owide + ", " + ProductName + ", " + PartNumber + ", " + SerialNumber + ", " + scid + "\"";
+            scid = EWireJ1 ? "J1" : "J2";
+
+            // CREATE WRITE STRING (WITHOUT EXTRA QUOTES)
+         //   string wdata = $"{owid}, {ProductName}, {PartNumber}, {SerialNumber}, {scid}";
+        //    Log.Info("1-Wire Write string: \"" + wdata + "\"");
+
+            string wdata = "\"" + owid + ", " + ProductName + ", " + PartNumber + ", " + SerialNumber + ", " + scid +"\"";
             Log.Info("1-Wire Write string: " + wdata);
 
-            int lw = wdata.Length;
-            if (lw > 64) // if string is too long
+
+            if (wdata.Length > 64)
             {
-                Log.Error("1-Wire Write Info is too long. expected 64 chars maximum, counted:  " + lw);
+                Log.Error("1-Wire Write Info too long. Max 64 chars, got: " + wdata.Length);
                 UpgradeVerdict(Verdict.Error);
+                return;
             }
 
+            // SEND WRITE
             IO_Instrument.ScpiCommand("COM:OWIRE:WRITE " + wdata); // write data on 1-wire
 
-            string rdata = IO_Instrument.ScpiQuery<string>("COM:OWIRE:READ? 1");  // readback data from 1-wire
-            Log.Info("1-Wire readback: " + rdata);
-            string rdatas = rdata.Replace("[ ", "").Replace(" ]", "");   // remove bracket from answer
+//            IO_Instrument.ScpiCommand("COM:OWIRE:WRITE \"" + wdata + "\"");
 
-            if (wdata.Equals(rdatas, StringComparison.Ordinal)) // check if write = readback
+            // READBACK
+            string rdata = IO_Instrument.ScpiQuery<string>("COM:OWIRE:READ? 1");
+            Log.Info("1-Wire raw readback: " + rdata);
+
+            // NORMALIZE READBACK
+            string rdatas = rdata
+                .Replace("[", "")
+                .Replace("]", "")
+                .Replace("\"", "")
+                .Replace("\r", "")
+                .Replace("\n", "")
+                .Trim();
+
+            // NORMALIZE WRITE
+            string wdatas = wdata
+                .Replace("\"", "")
+                .Trim();
+
+            Log.Info($"WRITE normalized: \"{wdatas}\"");
+            Log.Info($"READ  normalized: \"{rdatas}\"");
+
+            // COMPARE
+            if (string.Equals(wdatas, rdatas, StringComparison.Ordinal))
             {
+                Log.Info("1-Wire write/read match.");
                 UpgradeVerdict(Verdict.Pass);
-                return;
             }
             else
             {
-                Log.Error("1-Wire Write Info and Readback Info are different: WRITE: " + wdata + " , ====> READ: " + rdatas);
-                UpgradeVerdict(Verdict.Error);
+                Log.Error($"1-Wire mismatch: WRITE: \"{wdatas}\" !== READ: \"{rdatas}\"");
+                UpgradeVerdict(Verdict.Fail);
             }
         }
+
 
         public override void PostPlanRun()
         {

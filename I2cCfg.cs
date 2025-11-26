@@ -12,7 +12,7 @@ using static InterconnectIOBox.SerialCfg;
 
 namespace InterconnectIOBox
 {
-    [Display(Groups: new[] { "InterconnectIO", "Communication", "I2C" }, Name: "I2C Config", Description: "Enable and configure I2C communication, including baudrate, Mode, ChipSelect and Databits." +
+    [Display(Groups: new[] { "InterconnectIO", "Communication" }, Name: "I2C Config", Description: "Enable and configure I2C communication, including baudrate, Mode, ChipSelect and Databits." +
 "I2C must be enabled for operation as a I2C port. When disabled, the I2C pins function as normal GPIOs.")]
 
 

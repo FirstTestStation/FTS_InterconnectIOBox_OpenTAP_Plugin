@@ -12,7 +12,7 @@ using static InterconnectIOBox.SerialCfg;
 
 namespace InterconnectIOBox
 {
-    [Display(Groups: new[] { "InterconnectIO", "Communication", "SPI" }, Name: "SPI Config", Description: "Enable and configure SPI communication, including baudrate, Mode, ChipSelect and Databits." +
+    [Display(Groups: new[] { "InterconnectIO", "Communication"}, Name: "SPI Config", Description: "Enable and configure SPI communication, including baudrate, Mode, ChipSelect and Databits." +
 "SPI must be enabled for operation as a SPI port. When disabled, the SPI pins function as normal GPIOs.")]
 
 

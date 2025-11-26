@@ -12,7 +12,7 @@ using static InterconnectIOBox.SpiCfg;
 
 namespace InterconnectIOBox
 {
-    [Display(Groups: new[] { "InterconnectIO", "Communication", "Serial" }, Name: "Serial Config", Description: "Enable and configure serial communication, including baud rate, protocol, handshake, and timeout." +
+    [Display(Groups: new[] { "InterconnectIO", "Communication" }, Name: "Serial Config", Description: "Enable and configure serial communication, including baud rate, protocol, handshake, and timeout." +
 "Serial must be enabled for operation as a serial port. When disabled, the serial pins function as normal GPIOs.")]
 
 
@@ -69,11 +69,11 @@ namespace InterconnectIOBox
         private const string GROUPD = "Serial Communication Config";
 
         [Display("Baudrate:", Group: GROUPD, Order: 2, Description: "Set Baudrate value")]
-        [EnabledIf("Enable", true, Flags = false)]
+        [EnabledIf("Enable", true)]
         public double Baud { get; set; } = 115200;
 
         [Display("Timeout:", Group: GROUPD, Order: 2, Description: "Set Timeout in mS")]
-        [EnabledIf("Enable", true, Flags = false)]
+        [EnabledIf("Enable", true)]
         [Unit("mS", UseEngineeringPrefix: false)]
         public double Stimeout { get; set; } = 2000;
 
@@ -85,7 +85,7 @@ namespace InterconnectIOBox
         }
 
         [Display("Parity:", Group: GROUPD, Order: 3, Description: "Set Parity value")]
-        [EnabledIf("Enable", true, Flags = false)]
+        [EnabledIf("Enable", true)]
         public Parity SelectP { get; set; } = Parity.None;
 
         public enum Databit : byte
@@ -97,7 +97,7 @@ namespace InterconnectIOBox
         }
 
         [Display("Databit:", Group: GROUPD, Order: 3.1, Description: "Set Number of Data Bits")]
-        [EnabledIf("Enable", true, Flags = false)]
+        [EnabledIf("Enable", true)]
         public Databit SelectD { get; set; } = Databit._8;
 
         public enum Stopbit : byte
@@ -107,7 +107,7 @@ namespace InterconnectIOBox
         }
 
         [Display("Stop Bits:", Group: GROUPD, Order: 3.2, Description: "Set Number of Stop Bits")]
-        [EnabledIf("Enable", true, Flags = false)]
+        [EnabledIf("Enable", true)]
         public Stopbit SelectS { get; set; } = Stopbit._1;
 
 
@@ -121,7 +121,7 @@ namespace InterconnectIOBox
         }
 
         [Display("EOL Sequence:", Group: GROUPD, Order: 3.3, Description: "Define the EOL characters sequence to use for write and detect during read")]
-        [EnabledIf("Enable", true, Flags = false)]
+        [EnabledIf("Enable", true)]
         public Eol SelectE{ get; set; } = Eol.LF;
 
 
@@ -132,7 +132,7 @@ namespace InterconnectIOBox
         }
 
         [Display("RTS/CTS HandShake:", Group: GROUPD, Order: 3.4, Description: "Set or Not the RTS/CTS Handshake")]
-        [EnabledIf("Enable", true, Flags = false)]
+        [EnabledIf("Enable", true)]
         public HandShake SelectH { get; set; } = HandShake.OFF;
 
 

@@ -27,10 +27,27 @@ namespace InterconnectIOBox
             get => _AltPath;
             set
             {
-                // Assign the value directly, falling back to empty string if null.
-                _AltPath = value ?? string.Empty;
+                // 1. Assign the value, falling back to empty string if null.
+                string path = value ?? string.Empty;
+
+                // 2. Check if the path is non-empty and not already absolute.
+                if (!string.IsNullOrEmpty(path))
+                {
+                    try
+                    {
+                        path = System.IO.Path.GetFullPath(path);
+                    }
+                    catch (System.Exception ex)
+                    {
+                        Log.Warning($"Could not resolve AltPath to an absolute path: '{path}'. Error: {ex.Message}");
+                    }
+                }
+
+                _AltPath = path;
             }
         }
+        
+   
 
         public override void Run()
         {

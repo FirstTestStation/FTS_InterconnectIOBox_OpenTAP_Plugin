@@ -11,7 +11,7 @@ using static System.Net.Mime.MediaTypeNames;
 
 namespace InterconnectIOBox
 {
-    [Display(Groups: new[] { "InterconnectIO", "Communication", "Serial" }, Name: "Serial Data Write/Read", Description: "Write/read data on Serial port." +
+    [Display(Groups: new[] { "InterconnectIO", "Communication"}, Name: "Serial Data Write/Read", Description: "Write/read data on Serial port." +
 "Serial must be enabled for operation as a serial port.")]
 
     public class SerialCom : ResultTestStep
@@ -42,17 +42,6 @@ namespace InterconnectIOBox
      
         public Action SerialAct { get; set; }
 
-        public enum Eol // End of line character
-        {
-            LF,
-            CR,
-            LFCR
-        }
-
-        [Display("End-Of-Line Character:", Group: "Serial string EOL", Order: 0.2, Description: "Set the end character to be added on string to write.")]
-        public Eol Lchar { get; set; }
-
-
         private const string GROUPD = "Serial Communication Transfer";
 
         [Display("Serial Data Write:", Group: GROUPD, Order: 2, Description: "Send String on serial Port")]
@@ -60,7 +49,7 @@ namespace InterconnectIOBox
         public string wdata { get; set; }
 
 
-        [Display("Serial Data Read:", Group: GROUPD, Order: 3, Description: "Expected Data String on read serial Port. Data will be compared and published")]
+        [Display("Serial Data Read:", Group: GROUPD, Order: 3, Description: "The specific substring or pattern expected to be contained within the serial read data. Data will be compared and published")]
         [EnabledIf(nameof(SerialAct), new object[] { Action.Write_read, Action.read_only, Action.Write_read }, HideIfDisabled = false)]
         public string rdata { get; set; }
 
@@ -125,7 +114,7 @@ namespace InterconnectIOBox
 
             if (SerialAct != Action.read_only)
             {
-                if (readP == rdata) // compare String
+                if (readP.Contains(rdata)) // compare String
                 {
                     test = "PASS";
                 }
