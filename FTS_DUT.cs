@@ -96,7 +96,7 @@ namespace InterconnectIOBox
 
 
 
-        [Display("D- 1-Wire device present on J2", Order: 2.1, Group: Fixt, Description: "Get Fixture or DUT information from 1-wire connected on J2.")]
+        [Display("D- 1-Wire device present on J2?", Order: 2.1, Group: Fixt, Description: "Get Fixture or DUT information from 1-wire connected on J2.")]
         [EnabledIf(nameof(Smart1Wire), true)]
         public bool Enable1WireJ2
         {

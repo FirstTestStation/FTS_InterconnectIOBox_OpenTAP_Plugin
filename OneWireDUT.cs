@@ -441,7 +441,7 @@ namespace InterconnectIOBox // DUT Validation
          //   string wdata = $"{owid}, {ProductName}, {PartNumber}, {SerialNumber}, {scid}";
         //    Log.Info("1-Wire Write string: \"" + wdata + "\"");
 
-            string wdata = "\"" + owid + ", " + ProductName + ", " + PartNumber + ", " + SerialNumber + ", " + scid +"\"";
+            string wdata = "\"" + owid + ", " + ProductName + ", " + PartNumber + ", " + SerialNumber + ", " + scid + "\""; ;
             Log.Info("1-Wire Write string: " + wdata);
 
 
@@ -452,6 +452,7 @@ namespace InterconnectIOBox // DUT Validation
                 return;
             }
 
+
             // SEND WRITE
             IO_Instrument.ScpiCommand("COM:OWIRE:WRITE " + wdata); // write data on 1-wire
 
@@ -461,22 +462,25 @@ namespace InterconnectIOBox // DUT Validation
             string rdata = IO_Instrument.ScpiQuery<string>("COM:OWIRE:READ? 1");
             Log.Info("1-Wire raw readback: " + rdata);
 
+            Log.Info($"READ ORI  length: {rdata.Length}");
             // NORMALIZE READBACK
             string rdatas = rdata
-                .Replace("[", "")
-                .Replace("]", "")
-                .Replace("\"", "")
-                .Replace("\r", "")
-                .Replace("\n", "")
-                .Trim();
+               .Replace("[", "")
+               .Replace("]", "")
+               .Replace("\"", "")
+               .Replace("\r", "")
+              .Replace("\n", "")
+              .Replace("\0", "")
+             .Trim();
 
             // NORMALIZE WRITE
             string wdatas = wdata
                 .Replace("\"", "")
+                .Replace("\0", "")
                 .Trim();
 
-            Log.Info($"WRITE normalized: \"{wdatas}\"");
-            Log.Info($"READ  normalized: \"{rdatas}\"");
+          //  Log.Info($"WRITE normalized: \"{wdatas}\"");
+          //  Log.Info($"READ  normalized: \"{rdatas}\"");
 
             // COMPARE
             if (string.Equals(wdatas, rdatas, StringComparison.Ordinal))
@@ -487,6 +491,11 @@ namespace InterconnectIOBox // DUT Validation
             else
             {
                 Log.Error($"1-Wire mismatch: WRITE: \"{wdatas}\" !== READ: \"{rdatas}\"");
+
+                // Show hex to see all characters including invisible ones
+                Log.Info($"WRITE Data hex: {BitConverter.ToString(System.Text.Encoding.UTF8.GetBytes(wdatas))}");
+                Log.Info($"READ  Data hex: {BitConverter.ToString(System.Text.Encoding.UTF8.GetBytes(rdatas))}");
+
                 UpgradeVerdict(Verdict.Fail);
             }
         }
