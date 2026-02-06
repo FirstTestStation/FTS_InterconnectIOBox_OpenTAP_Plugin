@@ -19,7 +19,7 @@ namespace InterconnectIOBox // DUT Validation
         #region Settings
         public InterconnectIO IO_Instrument { get; set; }
 
-      
+
         #endregion
 
 
@@ -35,7 +35,7 @@ namespace InterconnectIOBox // DUT Validation
             bool j1 = false;
             bool j2 = false;
 
-         //   string OwireID = OWire_Dut.ID;  // Get 1-Wire ID from DUT
+            //   string OwireID = OWire_Dut.ID;  // Get 1-Wire ID from DUT
 
             // Check if Enable1WireJ1 is true, then increment nbWire
             if (Dut.Enable1WireJ1) { nbWire++; j1 = true; }
@@ -438,8 +438,8 @@ namespace InterconnectIOBox // DUT Validation
             scid = EWireJ1 ? "J1" : "J2";
 
             // CREATE WRITE STRING (WITHOUT EXTRA QUOTES)
-         //   string wdata = $"{owid}, {ProductName}, {PartNumber}, {SerialNumber}, {scid}";
-        //    Log.Info("1-Wire Write string: \"" + wdata + "\"");
+            //   string wdata = $"{owid}, {ProductName}, {PartNumber}, {SerialNumber}, {scid}";
+            //    Log.Info("1-Wire Write string: \"" + wdata + "\"");
 
             string wdata = "\"" + owid + ", " + ProductName + ", " + PartNumber + ", " + SerialNumber + ", " + scid + "\""; ;
             Log.Info("1-Wire Write string: " + wdata);
@@ -456,13 +456,13 @@ namespace InterconnectIOBox // DUT Validation
             // SEND WRITE
             IO_Instrument.ScpiCommand("COM:OWIRE:WRITE " + wdata); // write data on 1-wire
 
-//            IO_Instrument.ScpiCommand("COM:OWIRE:WRITE \"" + wdata + "\"");
+            //            IO_Instrument.ScpiCommand("COM:OWIRE:WRITE \"" + wdata + "\"");
 
             // READBACK
             string rdata = IO_Instrument.ScpiQuery<string>("COM:OWIRE:READ? 1");
             Log.Info("1-Wire raw readback: " + rdata);
 
-            Log.Info($"READ ORI  length: {rdata.Length}");
+            //  Log.Info($"READ ORI  length: {rdata.Length}");
             // NORMALIZE READBACK
             string rdatas = rdata
                .Replace("[", "")
@@ -479,8 +479,8 @@ namespace InterconnectIOBox // DUT Validation
                 .Replace("\0", "")
                 .Trim();
 
-          //  Log.Info($"WRITE normalized: \"{wdatas}\"");
-          //  Log.Info($"READ  normalized: \"{rdatas}\"");
+            //  Log.Info($"WRITE normalized: \"{wdatas}\"");
+            //  Log.Info($"READ  normalized: \"{rdatas}\"");
 
             // COMPARE
             if (string.Equals(wdatas, rdatas, StringComparison.Ordinal))
