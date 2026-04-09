@@ -274,7 +274,9 @@ namespace InterconnectIOBox.OneWire // DUT Validation
                     Dut.PartNumber = WirePartNumber;
                     Dut.ProductName = WireName;
                     ReportValue = Dut.PartNumber;
-                    Log.Info($"[KEY] DUTSerialNumber: {Dut.SerialNumber}");
+                    Log.Info($"[META]:SerialNumber:{Dut.SerialNumber ?? ""}");
+                    Log.Info($"[META]:ProductName:{Dut.ProductName ?? ""}");
+                    Log.Info($"[META]:PartNumber:{Dut.PartNumber ?? ""}");
                 }
                 else
                 {
@@ -282,6 +284,10 @@ namespace InterconnectIOBox.OneWire // DUT Validation
                     Dut.FixtNumber = WirePartNumber;
                     Dut.FixtName = WireName;
                     ReportValue = Dut.FixtNumber;
+                    Log.Info($"[META]:FixtureName:{Dut.FixtName ?? ""}");
+                    Log.Info($"[META]:FixtureNumber:{Dut.FixtNumber ?? ""}");
+                    Log.Info($"[META]:FixtureSerial:{Dut.FixtSerial ?? ""}");
+
                 }
             }
 
