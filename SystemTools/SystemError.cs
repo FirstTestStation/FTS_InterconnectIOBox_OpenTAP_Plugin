@@ -1,12 +1,12 @@
 using InterconnectIOBox.Analysis;
 using InterconnectIOBox.Instruments;
 using OpenTap;
-using System.Xml.Linq;
+using System.Text;
 
 namespace InterconnectIOBox.SystemTools
 {
 
-    [Display(Groups: new[] { "InterconnectIO", "System" }, Name: "System Error", Description: "read number of Errors. Read List Errors. Empty List of Errors. Publish is value Expected")]
+    [Display(Groups: new[] { "FTS_Interconnect", "System" }, Name: "System Error", Description: "Reads the number of system errors, reads the error list, and/or clears the error list. The error count can optionally be validated and published.")]
 
     public class SysErr : ResultTestStep
     {
@@ -16,26 +16,30 @@ namespace InterconnectIOBox.SystemTools
         public InterconnectIO IO_Instrument { get; set; }
 
         [Output]
-        [Display("System Error Found:")]
+        [Display("System Error Found:", Description: "The last error and/or full error list read, shown after the step has run.")]
         public string SysError { get; private set; }
 
         private const string GROUPD = "System Error Count";
 
-        [Display("System Error Count?", Order: 1, Group: GROUPD, Collapsed: true, Description: "Read number of system error on the instruments.")]
+        [Display("System Error Count?", Order: 1, Group: GROUPD, Collapsed: true, Description: "Read the number of system errors on the instrument.")]
         public bool EnableCnt { get; set; }
 
-        [Display("Expected Errors Count:", Group: GROUPD, Order: 2, Collapsed: true,Description: "Expected number of Errors. Result is published")]
+        [Display("Expected Errors Count:", Group: GROUPD, Order: 2, Collapsed: true, Description: "Expected number of errors. The result is published.")]
         [EnabledIf(nameof(EnableCnt), true, Flags = false)]
-        public double expectedCount { get; set; } = 0;
+        public double ExpectedCount { get; set; } = 0;
 
 
         private const string GROUPE = "System Error List";
 
-        [Display("List Last Error?", Order: 3, Group: GROUPE, Collapsed: true, Description: "Read the last errors in the fifo.Result will be placed on output")]
+        [Display("List Last Error?", Order: 3, Group: GROUPE, Collapsed: true, Description: "Read the last error in the FIFO. The result is placed in the output.")]
         public bool EnableLast { get; set; }
 
-        [Display("List All Errors?", Order: 4, Group: GROUPE, Collapsed: true, Description: "Read All the errors in the fifo. Result will be placed on output")]
+        [Display("List All Errors?", Order: 4, Group: GROUPE, Collapsed: true, Description: "Read all errors in the FIFO, until empty. The result is placed in the output.")]
         public bool EnableAll { get; set; }
+
+        // Safety limit to avoid an infinite loop if the instrument never
+        // reports an empty error queue (e.g. malfunctioning FIFO).
+        private const int MaxErrorReads = 100;
 
 
         public SysErr()
@@ -52,28 +56,28 @@ namespace InterconnectIOBox.SystemTools
         public override void Run()
         {
             string test = "";
-            string value = "";
-            double vvalue;
+            var outputLines = new StringBuilder();
 
-            if (EnableCnt) {
+            if (EnableCnt)
+            {
                 string command = "SYST:ERR:COUN?";
-                
-                // Use ScpiQuery to read back from the device.
-                value = IO_Instrument.ScpiQuery<string>(command);
-                Log.Info($"Sending SCPI command: {command} ,response: {value}  ");
 
-                vvalue = double.Parse(value);
-                if (expectedCount == vvalue)
+                // Use ScpiQuery to read back from the device.
+                string value = IO_Instrument.ScpiQuery<string>(command);
+                Log.Info($"Sending SCPI command: {command}, response: {value}");
+
+                double vvalue = double.Parse(value);
+                if (ExpectedCount == vvalue)
                 {
                     UpgradeVerdict(Verdict.Pass);
                     test = "PASS";
-                    Log.Info($"System Error Match Count: {vvalue}, expected: {expectedCount}");
+                    Log.Info($"System Error Count matches: {vvalue}, expected: {ExpectedCount}");
                 }
                 else
                 {
                     UpgradeVerdict(Verdict.Fail);
                     test = "FAIL";
-                    Log.Warning($"Invalid System Error Count: {vvalue}, expected: {expectedCount}");
+                    Log.Warning($"Invalid System Error Count: {vvalue}, expected: {ExpectedCount}");
                 }
 
                 // Publish final result
@@ -82,47 +86,61 @@ namespace InterconnectIOBox.SystemTools
                     ParamName = "Syst Err Count",
                     StepName = Name,
                     Value = vvalue,
-                    LowerLimit = expectedCount,
-                    UpperLimit = expectedCount,
+                    LowerLimit = ExpectedCount,
+                    UpperLimit = ExpectedCount,
                     Verdict = test,
                     Units = "digcmp"
                 };
 
                 PublishResult(result);
-
             }
 
             if (EnableLast)
             {
                 string command = "SYST:ERR?";
                 // Use ScpiQuery to read back from the device.
-                value = IO_Instrument.ScpiQuery<string>(command);
-                Log.Warning($"Sending SCPI command: {command} ,response: {value}  ");
-                SysError = value;
-
+                string value = IO_Instrument.ScpiQuery<string>(command);
+                Log.Info($"Sending SCPI command: {command}, response: {value}");
+                outputLines.AppendLine(value);
             }
 
             if (EnableAll)
             {
-                bool bt;
+                bool empty;
+                int reads = 0;
+
                 do
                 {
                     string command = "SYST:ERR:NEXT?";
-                    value = IO_Instrument.ScpiQuery<string>(command);
-                    bt = value.Contains("0,");
-                    if (!bt)
+                    string value = IO_Instrument.ScpiQuery<string>(command);
+                    empty = value.Contains("0,");
+
+                    if (!empty)
+                    {
                         Log.Warning($"SCPI command: {command}, response: {value}");
-                    
+                        outputLines.AppendLine(value);
+                    }
+
+                    reads++;
                 }
-                while (!bt);
+                while (!empty && reads < MaxErrorReads);
+
+                if (!empty)
+                {
+                    Log.Error($"Stopped reading the error FIFO after {MaxErrorReads} reads without reaching an empty queue. There may be more errors left unread.");
+                }
             }
 
-            // if test is not defined , set the verdict
+            if (outputLines.Length > 0)
+            {
+                SysError = outputLines.ToString().TrimEnd();
+            }
+
+            // if test is not defined, set the verdict
             if (test.Length == 0)
             {
                 UpgradeVerdict(Verdict.Pass);
             }
-    
         }
 
         public override void PostPlanRun()

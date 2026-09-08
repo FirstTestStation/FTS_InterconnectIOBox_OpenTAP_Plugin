@@ -9,9 +9,9 @@ using System.Xml.Linq;
 
 namespace InterconnectIOBox.Digital
 {
-        [Display(Groups: new[] { "InterconnectIO", "Digital" }, Name: "Dual Ports 8-bits  Write/Read", Description: "Write or Read data of Port0 and/or Port1 configured as Input or Output. Set or Read data can be specified using a byte value in decimal, hexadecimal, or binary, " +
-        "or by setting individual bits for each port. Enabling byte or bit Write/Read is done by checking the enable checkbox and selecting a binary value. The read function operates similarly—enable the byte or bit" +
-        " to verify and set the value.The read result is then published.")]
+    [Display(Groups: new[] { "FTS_Interconnect", "Digital" }, Name: "Dual Ports 8-bits  Write/Read", Description: "Write or Read data of Port0 and/or Port1 configured as Input or Output. Set or Read data can be specified using a byte value in decimal, hexadecimal, or binary, " +
+    "or by setting individual bits for each port. Enabling byte or bit Write/Read is done by checking the enable checkbox and selecting a binary value. The read function operates similarly—enable the byte or bit" +
+    " to verify and set the value.The read result is then published.")]
 
     public class PortsIO : ResultTestStep
     {
@@ -33,13 +33,16 @@ namespace InterconnectIOBox.Digital
         }
 
 
-        [Display("Action to Execute:", Group: "Ports byte Write/Read ",Order: 0.5, Description: "Write and/or read byte on selected ports, read data will be published.")]
+        [Display("Action to Execute:", Group: "Ports byte Write/Read ", Order: 0.5, Description: "Write and/or read byte on selected ports, read data will be published.")]
         public DigAct SelectedAct { get; set; }
+
+        [Display("Publish Results", Order: 6, Group: "Options", Description: "If checked, publish the read-back verification results. If unchecked, verification still runs and affects verdict, but no result is published.")]
+        public bool PublishResults { get; set; } = true;
 
         [Display("Port0 Byte:", Group: "Port I/O Write/Read using Byte value", Order: 2, Collapsed: true, Description: "Write/Read Port0 byte value using decimal, hexadecimal, or binary values.(0: Input, 1: Output)")]
         public Enabled<byte> P0byte { get; set; }
 
-        [Display("Port1 Byte:", Group: "Port I/O Write/Read using Byte value", Order: 2.1, Collapsed: true, Description: "Write/Read Port0 byte value using decimal, hexadecimal, or binary values.(0: Input, 1: Output)")]
+        [Display("Port1 Byte:", Group: "Port I/O Write/Read using Byte value", Order: 2.1, Collapsed: true, Description: "Write/Read Port1 byte value using decimal, hexadecimal, or binary values.(0: Input, 1: Output)")]
         public Enabled<byte> P1byte { get; set; }
 
         public enum Bit
@@ -49,9 +52,9 @@ namespace InterconnectIOBox.Digital
         }
 
         [Display("Port0 Bit7 State:", Group: "Port0 I/O using Bit value", Order: 2, Collapsed: true, Description: "Write/Read of Port0 by selecting bits (0:Low, 1: High)")]
-        public Enabled<Bit> P0B7 { get; set; } 
+        public Enabled<Bit> P0B7 { get; set; }
 
-        [Display("Port0 Bit6 State:", Group: "Port0 I/O using Bit value", Order: 2.1,Collapsed: true, Description: "Write/Read of Port0 by selecting bits (0:Low, 1: High)")]
+        [Display("Port0 Bit6 State:", Group: "Port0 I/O using Bit value", Order: 2.1, Collapsed: true, Description: "Write/Read of Port0 by selecting bits (0:Low, 1: High)")]
         public Enabled<Bit> P0B6 { get; set; }
 
         [Display("Port0 Bit5 State:", Group: "Port0 I/O using Bit value", Order: 2.2, Collapsed: true, Description: "Write/Read of Port0 by selecting bits (0:Low, 1: High)")]
@@ -72,28 +75,28 @@ namespace InterconnectIOBox.Digital
         [Display("Port0 Bit0 State:", Group: "Port0 I/O using Bit value", Order: 2.7, Collapsed: true, Description: "Write / Read of Port0 by selecting bits(0:Low, 1: High)")]
         public Enabled<Bit> P0B0 { get; set; }
 
-        [Display("Port1 Bit7 State:", Group: "Port1 I/O using Bit value", Order: 3, Collapsed: true, Description: "Write/Read of Port0 by selecting bits (0:Low, 1: High)")]
+        [Display("Port1 Bit7 State:", Group: "Port1 I/O using Bit value", Order: 3, Collapsed: true, Description: "Write/Read of Port1 by selecting bits (0:Low, 1: High)")]
         public Enabled<Bit> P1B7 { get; set; }
 
-        [Display("Port1 Bit6 State:", Group: "Port1 I/O using Bit value", Order: 3.1, Collapsed: true, Description: "Write/Read of Port0 by selecting bits (0:Low, 1: High)")]
+        [Display("Port1 Bit6 State:", Group: "Port1 I/O using Bit value", Order: 3.1, Collapsed: true, Description: "Write/Read of Port1 by selecting bits (0:Low, 1: High)")]
         public Enabled<Bit> P1B6 { get; set; }
 
-        [Display("Port1 Bit5 State:", Group: "Port1 I/O using Bit value", Order: 3.2, Collapsed: true, Description: "Write/Read of Port0 by selecting bits (0:Low, 1: High)")]
+        [Display("Port1 Bit5 State:", Group: "Port1 I/O using Bit value", Order: 3.2, Collapsed: true, Description: "Write/Read of Port1 by selecting bits (0:Low, 1: High)")]
         public Enabled<Bit> P1B5 { get; set; }
 
-        [Display("Port1 Bit4 State:", Group: "Port1 I/O using Bit value", Order: 3.3, Collapsed: true, Description: "Write/Read of Port0 by selecting bits (0:Low, 1: High)")]
+        [Display("Port1 Bit4 State:", Group: "Port1 I/O using Bit value", Order: 3.3, Collapsed: true, Description: "Write/Read of Port1 by selecting bits (0:Low, 1: High)")]
         public Enabled<Bit> P1B4 { get; set; }
 
-        [Display("Port1 Bit3 State:", Group: "Port1 I/O using Bit value", Order: 3.4, Collapsed: true, Description: "Write/Read of Port0 by selecting bits (0:Low, 1: High)")]
+        [Display("Port1 Bit3 State:", Group: "Port1 I/O using Bit value", Order: 3.4, Collapsed: true, Description: "Write/Read of Port1 by selecting bits (0:Low, 1: High)")]
         public Enabled<Bit> P1B3 { get; set; }
 
-        [Display("Port1 Bit2 State:", Group: "Port1 I/O using Bit value", Order: 3.5, Collapsed: true, Description: "Write/Read of Port0 by selecting bits (0:Low, 1: High)")]
+        [Display("Port1 Bit2 State:", Group: "Port1 I/O using Bit value", Order: 3.5, Collapsed: true, Description: "Write/Read of Port1 by selecting bits (0:Low, 1: High)")]
         public Enabled<Bit> P1B2 { get; set; }
 
-        [Display("Port1 Bit1 State:", Group: "Port1 I/O using Bit value", Order: 3.6, Collapsed: true, Description: "Write/Read of Port0 by selecting bits (0:Low, 1: High)")]
+        [Display("Port1 Bit1 State:", Group: "Port1 I/O using Bit value", Order: 3.6, Collapsed: true, Description: "Write/Read of Port1 by selecting bits (0:Low, 1: High)")]
         public Enabled<Bit> P1B1 { get; set; }
 
-        [Display("Port1 Bit0 State:", Group: "Port1 I/O using Bit value", Order: 3.7, Collapsed: true, Description: "Write/Read of Port0 by selecting bits (0:Low, 1: High)")]
+        [Display("Port1 Bit0 State:", Group: "Port1 I/O using Bit value", Order: 3.7, Collapsed: true, Description: "Write/Read of Port1 by selecting bits (0:Low, 1: High)")]
         public Enabled<Bit> P1B0 { get; set; }
 
         public PortsIO()
@@ -128,29 +131,27 @@ namespace InterconnectIOBox.Digital
 
         public override void Run()
         {
-            if (P0byte.IsEnabled == true || P1byte.IsEnabled == true)
+            // Byte vs. bit is decided independently PER PORT, not globally — same
+            // fix as Portscfg.Run(). Previously, enabling P0byte skipped the ENTIRE
+            // bit branch below, including P1's bits (and even P0's own bits).
+            if (P0byte.IsEnabled)
             {
-                // Check Port0 if enabled
-                if (P0byte.IsEnabled)
-                {
-                    WriteReadPortByte(0, P0byte.Value, SelectedAct);
-                }
+                WriteReadPortByte(0, P0byte.Value, SelectedAct);
+            }
+            else if (P0B7.IsEnabled || P0B6.IsEnabled || P0B5.IsEnabled || P0B4.IsEnabled
+                  || P0B3.IsEnabled || P0B2.IsEnabled || P0B1.IsEnabled || P0B0.IsEnabled)
+            {
+                WriteReadPortBits(0, SelectedAct);
+            }
 
-                // Configure Port1 if enabled
-                if (P1byte.IsEnabled)
-                {
-                    WriteReadPortByte(1, P1byte.Value, SelectedAct);
-                }
-            } else
+            if (P1byte.IsEnabled)
             {
-                if (P0B7.IsEnabled == true || P0B6.IsEnabled == true || P0B5.IsEnabled == true || P0B4.IsEnabled == true || P0B3.IsEnabled == true || P0B2.IsEnabled == true || P0B1.IsEnabled == true || P0B0.IsEnabled == true)
-                {
-                    WriteReadPortBits(0, SelectedAct);
-                }
-                if (P1B7.IsEnabled == true || P1B6.IsEnabled == true || P1B5.IsEnabled == true || P1B4.IsEnabled == true || P1B3.IsEnabled == true || P1B2.IsEnabled == true || P1B1.IsEnabled == true || P1B0.IsEnabled == true)
-                {
-                    WriteReadPortBits(1, SelectedAct);
-                }
+                WriteReadPortByte(1, P1byte.Value, SelectedAct);
+            }
+            else if (P1B7.IsEnabled || P1B6.IsEnabled || P1B5.IsEnabled || P1B4.IsEnabled
+                  || P1B3.IsEnabled || P1B2.IsEnabled || P1B1.IsEnabled || P1B0.IsEnabled)
+            {
+                WriteReadPortBits(1, SelectedAct);
             }
         }
 
@@ -181,7 +182,7 @@ namespace InterconnectIOBox.Digital
                 string test = "FAIL";
 
                 if (selectedFunction == DigAct.read_test || selectedFunction == DigAct.Write_read)
-                { 
+                {
                     if (value == portValue)
                     {
                         Log.Info($"Port{portNumber} Input value match as {portValue}");
@@ -202,29 +203,32 @@ namespace InterconnectIOBox.Digital
 
                 }
 
-                // Basic publish parameters for read only
-                TestResult<double> result = new TestResult<double>
+                if (PublishResults)
                 {
-                    ParamName = $"Port{portNumber} Data",
-                    StepName = Name,
-                    Value = value,
-                    Verdict = test,
-                    Units = "read"
+                    // Basic publish parameters for read only
+                    TestResult<double> result = new TestResult<double>
+                    {
+                        ParamName = $"Port{portNumber} Data",
+                        StepName = Name,
+                        Value = value,
+                        Verdict = test,
+                        Units = "read"
 
-                };
+                    };
 
-                // limit are added only for write_read function
-                if (selectedFunction == DigAct.Write_read || selectedFunction == DigAct.read_test)
-                {
-                    result.LowerLimit = portValue;
-                    result.UpperLimit = portValue;
-                    result.Units= "cmp";
+                    // limit are added only for write_read function
+                    if (selectedFunction == DigAct.Write_read || selectedFunction == DigAct.read_test)
+                    {
+                        result.LowerLimit = portValue;
+                        result.UpperLimit = portValue;
+                        result.Units = "cmp";
+                    }
+
+                    PublishResult(result);
                 }
 
-                PublishResult(result);
-
             }
-           
+
         }
 
         // <summary>
@@ -269,29 +273,31 @@ namespace InterconnectIOBox.Digital
                         test = "PASS"; // No verdict on read only
                     }
 
-                   // Create test result object
-                   TestResult<double> result = new TestResult<double>
-                     {
-                       ParamName = $"Port{portNumber} Bit{bit} Data",
-                       StepName = Name,
-                       Value = value,
-                       Verdict = test,
-                       Units= "read"
-                     };
-
                     if (test == "PASS") UpgradeVerdict(Verdict.Pass);
                     else UpgradeVerdict(Verdict.Fail);
 
-
-                    // Add limits for Write_Read function
-                    if (selectedFunction == DigAct.Write_read || selectedFunction == DigAct.read_test)
+                    if (PublishResults)
                     {
-                        result.LowerLimit = bitValue;
-                        result.UpperLimit = bitValue;
-                        result.Units = "digcmp";
-                    }
+                        // Create test result object
+                        TestResult<double> result = new TestResult<double>
+                        {
+                            ParamName = $"Port{portNumber} Bit{bit} Data",
+                            StepName = Name,
+                            Value = value,
+                            Verdict = test,
+                            Units = "read"
+                        };
 
-                    PublishResult(result);
+                        // Add limits for Write_Read function
+                        if (selectedFunction == DigAct.Write_read || selectedFunction == DigAct.read_test)
+                        {
+                            result.LowerLimit = bitValue;
+                            result.UpperLimit = bitValue;
+                            result.Units = "digcmp";
+                        }
+
+                        PublishResult(result);
+                    }
                 }
             }
         }

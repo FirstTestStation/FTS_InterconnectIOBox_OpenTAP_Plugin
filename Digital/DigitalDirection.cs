@@ -8,9 +8,9 @@ using System.Xml.Linq;
 
 namespace InterconnectIOBox.Digital
 {
-        [Display(Groups: new[] { "InterconnectIO", "Digital" }, Name: "Dual Ports 8-bits Direction Write/Read", Description: "Configure direction of Port0 and/or Port1 as Input or Output. Configuration can be specified using a byte value in decimal, hexadecimal, or binary, " +
-        "or by setting individual bits for each port.Enabling byte or bit configuration is done by checking the enable checkbox and selecting a value(0 for Input, 1 for Output). The read function operates similarly—enable the byte or bit" +
-        " to verify and set the value.The read result is then published.")]
+    [Display(Groups: new[] { "FTS_Interconnect", "Digital" }, Name: "Dual Ports 8-bits Direction Write/Read", Description: "Configure direction of Port0 and/or Port1 as Input or Output. Configuration can be specified using a byte value in decimal, hexadecimal, or binary, " +
+    "or by setting individual bits for each port.Enabling byte or bit configuration is done by checking the enable checkbox and selecting a value(0 for Input, 1 for Output). The read function operates similarly—enable the byte or bit" +
+    " to verify and set the value.The read result is then published.")]
 
     public class Portscfg : ResultTestStep
     {
@@ -27,8 +27,11 @@ namespace InterconnectIOBox.Digital
         }
 
 
-        [Display("Configuration Action:", Group: "Cfg Control",Order: 0.1, Description: "Action to perform on selected ports, read data will be published.")]
+        [Display("Configuration Action:", Group: "Cfg Control", Order: 0.1, Description: "Action to perform on selected ports, read data will be published.")]
         public DigFct Selectedfct { get; set; }
+
+        [Display("Publish Results", Order: 6, Group: "Options", Description: "If checked, publish the read-back verification results. If unchecked, verification still runs and affects verdict, but no result is published.")]
+        public bool PublishResults { get; set; } = true;
 
         [Display("Port0 I/O Byte Cfg:", Group: "Port I/O Direction Read/Write using Byte value", Order: 2, Collapsed: true, Description: "Set/Read Port0 direction using decimal, hexadecimal, or binary values.(0: Input, 1: Output)")]
         public Enabled<byte> P0Byte { get; set; }
@@ -43,9 +46,9 @@ namespace InterconnectIOBox.Digital
         }
 
         [Display("Port0 Bit7 Cfg:", Group: "Port0 I/O Settings using Bit value", Order: 2, Collapsed: true, Description: "Set/Read Direction of Port0 by selecting bits(0: Input, 1: Output)")]
-        public Enabled<BitDir> P0b7 { get; set; } 
+        public Enabled<BitDir> P0b7 { get; set; }
 
-        [Display("Port0 Bit6 Cfg:", Group: "Port0 I/O Settings using Bit value", Order: 2.1,Collapsed: true, Description: "Set/Read Direction of Port0 by selecting bits(0: Input, 1: Output)")]
+        [Display("Port0 Bit6 Cfg:", Group: "Port0 I/O Settings using Bit value", Order: 2.1, Collapsed: true, Description: "Set/Read Direction of Port0 by selecting bits(0: Input, 1: Output)")]
         public Enabled<BitDir> P0b6 { get; set; }
 
         [Display("Port0 Bit5 Cfg:", Group: "Port0 I/O Settings using Bit value", Order: 2.2, Collapsed: true, Description: "Set/Read Direction of Port0 by selecting bits(0: Input, 1: Output)")]
@@ -69,7 +72,7 @@ namespace InterconnectIOBox.Digital
         [Display("Port1 Bit7 Cfg:", Group: "Port1 I/O Settings using Bit value", Order: 3, Collapsed: true, Description: "Set/Read Direction of Port1 by selecting bits(0: Input, 1: Output)")]
         public Enabled<BitDir> P1b7 { get; set; }
 
-        [Display("Port1 Bit6 Cfg:", Group: "Port1 I/O Settings using Bit value", Order: 3.1, Collapsed: true, Description: "Set/Read Direction ofPort1 by selecting bits(0: Input, 1: Output)")]
+        [Display("Port1 Bit6 Cfg:", Group: "Port1 I/O Settings using Bit value", Order: 3.1, Collapsed: true, Description: "Set/Read Direction of Port1 by selecting bits(0: Input, 1: Output)")]
         public Enabled<BitDir> P1b6 { get; set; }
 
         [Display("Port1 Bit5 Cfg:", Group: "Port1 I/O Settings using Bit value", Order: 3.2, Collapsed: true, Description: "Set/Read Direction of Port1 by selecting bits(0: Input, 1: Output)")]
@@ -122,29 +125,31 @@ namespace InterconnectIOBox.Digital
 
         public override void Run()
         {
-            if (P0Byte.IsEnabled == true || P1Byte.IsEnabled == true)
+            // Byte vs. bit configuration is decided independently PER PORT, not
+            // globally: previously, enabling P0Byte skipped the ENTIRE bit-config
+            // branch below (including P1's bits, and even P0's own bits), because
+            // the top-level if/else only checked whether ANY byte config was
+            // enabled on EITHER port. A port's byte and bit config remain mutually
+            // exclusive with each other (doesn't make sense to apply both to the
+            // same port at once), but Port0 and Port1 are otherwise independent.
+            if (P0Byte.IsEnabled)
             {
-                // Configure Port0 if enabled
-                if (P0Byte.IsEnabled)
-                {
-                    ConfigurePortByte(0, P0Byte.Value, Selectedfct);
-                }
+                ConfigurePortByte(0, P0Byte.Value, Selectedfct);
+            }
+            else if (P0b7.IsEnabled || P0b6.IsEnabled || P0b5.IsEnabled || P0b4.IsEnabled
+                  || P0b3.IsEnabled || P0b2.IsEnabled || P0b1.IsEnabled || P0b0.IsEnabled)
+            {
+                ConfigurePortBits(0, Selectedfct);
+            }
 
-                // Configure Port1 if enabled
-                if (P1Byte.IsEnabled)
-                {
-                    ConfigurePortByte(1, P1Byte.Value, Selectedfct);
-                }
-            } else
+            if (P1Byte.IsEnabled)
             {
-                if (P0b7.IsEnabled == true || P0b6.IsEnabled == true || P0b5.IsEnabled == true || P0b4.IsEnabled == true || P0b3.IsEnabled == true || P0b2.IsEnabled == true || P0b1.IsEnabled == true || P0b0.IsEnabled == true)
-                {
-                    ConfigurePortBits(0, Selectedfct);
-                }
-                if (P1b7.IsEnabled == true || P1b6.IsEnabled == true || P1b5.IsEnabled == true || P1b4.IsEnabled == true || P1b3.IsEnabled == true || P1b2.IsEnabled == true || P1b1.IsEnabled == true || P1b0.IsEnabled == true)
-                {
-                    ConfigurePortBits(1, Selectedfct);
-                }
+                ConfigurePortByte(1, P1Byte.Value, Selectedfct);
+            }
+            else if (P1b7.IsEnabled || P1b6.IsEnabled || P1b5.IsEnabled || P1b4.IsEnabled
+                  || P1b3.IsEnabled || P1b2.IsEnabled || P1b1.IsEnabled || P1b0.IsEnabled)
+            {
+                ConfigurePortBits(1, Selectedfct);
             }
         }
 
@@ -172,43 +177,57 @@ namespace InterconnectIOBox.Digital
                 string response = IO_Instrument.ScpiQuery<string>(Command);
                 Log.Info($"Sending SCPI command: {Command}, Answer: {response}");
                 double.TryParse(response, out double value);
-                string test = "FAIL";
+                string test;
 
-                if (value == portValue)
+                if (selectedFunction == DigFct.Write_read)
                 {
-                    Log.Info($"Port{portNumber} Direction configured as {portValue}");
-                    UpgradeVerdict(Verdict.Pass);
-                    test = "PASS";
+                    if (value == portValue)
+                    {
+                        Log.Info($"Port{portNumber} Direction configured as {portValue}");
+                        UpgradeVerdict(Verdict.Pass);
+                        test = "PASS";
+                    }
+                    else
+                    {
+                        Log.Error($"Port{portNumber} Direction configuration failed. Expected: {portValue}, Actual: {value}");
+                        UpgradeVerdict(Verdict.Fail);
+                        test = "FAIL";
+                    }
                 }
                 else
                 {
-                    Log.Error($"Port{portNumber} Direction configuration failed. Expected: {portValue}, Actual: {value}");
-                    UpgradeVerdict(Verdict.Fail);
+                    // read_only: nothing was written this run, so there's nothing to
+                    // compare the reading against - just report it.
+                    UpgradeVerdict(Verdict.Pass);
+                    test = "PASS";
                 }
 
-                // Basic publish parameters for read only
-                TestResult<double> result = new TestResult<double>
+                if (PublishResults)
                 {
-                    ParamName = $"Port{portNumber} Direction",
-                    StepName = Name,
-                    Value = value,
-                    Verdict = test,
-                    Units = "read"
+                    // Basic publish parameters for read only
+                    TestResult<double> result = new TestResult<double>
+                    {
+                        ParamName = $"Port{portNumber} Direction",
+                        StepName = Name,
+                        Value = value,
+                        Verdict = test,
+                        Units = "read"
 
-                };
+                    };
 
-                // limit are added only for write_read function
-                if (selectedFunction == DigFct.Write_read)
-                {
-                    result.LowerLimit = portValue;
-                    result.UpperLimit = portValue;
-                    result.Units= "digcmp";
+                    // limit are added only for write_read function
+                    if (selectedFunction == DigFct.Write_read)
+                    {
+                        result.LowerLimit = portValue;
+                        result.UpperLimit = portValue;
+                        result.Units = "digcmp";
+                    }
+
+                    PublishResult(result);
                 }
-
-                PublishResult(result);
 
             }
-           
+
         }
 
         // <summary>
@@ -245,30 +264,35 @@ namespace InterconnectIOBox.Digital
                     Log.Info($"Sending SCPI command: {Command}, Answer: {response}");
 
                     double.TryParse(response, out double value);
-                    string test = value == Convert.ToDouble(bitState) ? "PASS" : "FAIL";
+                    string test = selectedFunction == DigFct.Write_read
+                        ? (value == Convert.ToDouble(bitState) ? "PASS" : "FAIL")
+                        : "PASS"; // read_only: nothing was written this run, nothing to compare against.
 
                     if (test == "PASS") UpgradeVerdict(Verdict.Pass);
                     else UpgradeVerdict(Verdict.Fail);
 
-                    // Create test result object
-                    TestResult<double> result = new TestResult<double>
+                    if (PublishResults)
                     {
-                        ParamName = $"Port{portNumber} Bit{bit} Direction",
-                        StepName = Name,
-                        Value = value,
-                        Verdict = test,
-                        Units = "read"
-                    };
+                        // Create test result object
+                        TestResult<double> result = new TestResult<double>
+                        {
+                            ParamName = $"Port{portNumber} Bit{bit} Direction",
+                            StepName = Name,
+                            Value = value,
+                            Verdict = test,
+                            Units = "read"
+                        };
 
-                    // Add limits for Write_Read function
-                    if (selectedFunction == DigFct.Write_read)
-                    {
-                        result.LowerLimit = bitValue;
-                        result.UpperLimit = bitValue;
-                        result.Units = "digcmp";
+                        // Add limits for Write_Read function
+                        if (selectedFunction == DigFct.Write_read)
+                        {
+                            result.LowerLimit = bitValue;
+                            result.UpperLimit = bitValue;
+                            result.Units = "digcmp";
+                        }
+
+                        PublishResult(result);
                     }
-
-                    PublishResult(result);
                 }
             }
         }

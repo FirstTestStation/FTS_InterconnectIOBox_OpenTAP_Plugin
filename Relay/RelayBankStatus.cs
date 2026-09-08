@@ -2,12 +2,11 @@ using InterconnectIOBox.Analysis;
 using InterconnectIOBox.Instruments;
 using OpenTap;
 using System;
-using static InterconnectIOBox.Relay.SBank;
 
 namespace InterconnectIOBox.Relay
 {
 
-    [Display(Groups: new[] { "InterconnectIO", "Route" }, Name: "Relays Banks validation", Description: "Read Bank Relay Status for one or many Bank (1: Close, 0:Open). Optionnal Status validation is available ")]
+    [Display(Groups: new[] { "FTS_Interconnect", "Route" }, Name: "Relays Banks validation", Description: "Read Bank Relay Status for one or many Bank (1: Close, 0:Open). Optionnal Status validation is available ")]
 
 
     public class SBRelay : ResultTestStep
@@ -72,7 +71,7 @@ namespace InterconnectIOBox.Relay
                     StepName = Name,
                     Value = measured,
                     LowerLimit = expected,
-                    UpperLimit =expected,
+                    UpperLimit = expected,
                     Verdict = status,
                     Units = "relays"
                 };
@@ -101,11 +100,12 @@ namespace InterconnectIOBox.Relay
 
             int endlg = command.Length;
 
+            string Cmd = "";
 
             if (endlg > openlg)  // if command as at least one Bank
             {
-                string Cmd = command.Substring(0, command.Length - 1); // Remove the last comma
-                Log.Info($"Sending SCPI command: {command}");
+                Cmd = command.Substring(0, command.Length - 1); // Remove the last comma
+                Log.Info($"Sending SCPI command: {Cmd}");
                 // Use ScpiQuery to read back from the device.
                 readvalue = IO_Instrument.ScpiQuery<string>(Cmd);
 
@@ -125,25 +125,41 @@ namespace InterconnectIOBox.Relay
                 // Section who validate the results of the test
                 if (!string.IsNullOrEmpty(readvalue))
                 {
-                    
+                    // idx advances for every bank that was included in the query (i.e. selected),
+                    // regardless of whether a validation is performed for it. This keeps readparts
+                    // indices aligned with the actual banks queried.
                     int idx = 0;
-                    if (idx < readparts.Length && StatusBank1 && testBank1 != null)
+                    if (StatusBank1)
                     {
-                        ValidateAndPublishResult(readparts[idx++], testBank1, "Bank1");
+                        if (idx < readparts.Length && testBank1 != null)
+                        {
+                            ValidateAndPublishResult(readparts[idx], testBank1, "Bank1");
+                        }
+                        idx++;
                     }
-                    if (idx < readparts.Length && StatusBank2 && testBank2 != null)
+                    if (StatusBank2)
                     {
-                        ValidateAndPublishResult(readparts[idx++], testBank2, "Bank2");
-
+                        if (idx < readparts.Length && testBank2 != null)
+                        {
+                            ValidateAndPublishResult(readparts[idx], testBank2, "Bank2");
+                        }
+                        idx++;
                     }
-                    if (idx < readparts.Length && StatusBank3 && testBank3 != null)
+                    if (StatusBank3)
                     {
-                        ValidateAndPublishResult(readparts[idx++], testBank3, "Bank3");
+                        if (idx < readparts.Length && testBank3 != null)
+                        {
+                            ValidateAndPublishResult(readparts[idx], testBank3, "Bank3");
+                        }
+                        idx++;
                     }
-                    if (idx < readparts.Length && StatusBank4 && testBank4 != null)
+                    if (StatusBank4)
                     {
-                        ValidateAndPublishResult(readparts[idx++], testBank4, "Bank4");
-
+                        if (idx < readparts.Length && testBank4 != null)
+                        {
+                            ValidateAndPublishResult(readparts[idx], testBank4, "Bank4");
+                        }
+                        idx++;
                     }
                 }
             }

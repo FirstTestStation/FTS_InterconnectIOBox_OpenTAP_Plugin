@@ -1,9 +1,7 @@
 using OpenTap;
-using static InterconnectIOBox.Relay.Bank;
 using System.Collections.Generic;
 using System.Linq;
 using static InterconnectIOBox.Relay.SBank;
-using System.Xml.Linq;
 using System;
 using InterconnectIOBox.Instruments;
 using InterconnectIOBox.Analysis;
@@ -72,7 +70,7 @@ namespace InterconnectIOBox.Relay
 
 
 
-    [Display(Groups: new[] { "InterconnectIO", "Route" }, Name: "Single Bank Multiple Relay Validation", Description: "Read Relay Channel state (1: Close, 0:Open)")]
+    [Display(Groups: new[] { "FTS_Interconnect", "Route" }, Name: "Single Bank Multiple Relay Validation", Description: "Read Relay Channel state (1: Close, 0:Open)")]
 
     public class Cstatus : SBank
     {
@@ -94,7 +92,7 @@ namespace InterconnectIOBox.Relay
         /// <summary>
         /// Validates and publishes the test result.
         /// </summary>
-        void ValidateAndPublishResult(string measuredValue,string expected, BankSelection bank, string channel)
+        void ValidateAndPublishResult(string measuredValue, string expected, BankSelection bank, string channel)
         {
             //Log.Info($"Validating result for {bank}-{channel}: {measuredValue}");
 
@@ -152,7 +150,7 @@ namespace InterconnectIOBox.Relay
                     {
                         case RelayStatus.VerifyIsOpen:
                             bool isOpen = parts[i] == "0";
-                            ValidateAndPublishResult(parts[i],"0", SelectedBank, channel);
+                            ValidateAndPublishResult(parts[i], "0", SelectedBank, channel);
                             Log.Info($"{(isOpen ? "Pass" : "Fail")} Verify Open Status for {SelectedBank}-{channel}: {parts[i]}");
                             UpgradeVerdict(isOpen ? Verdict.Pass : Verdict.Fail);
                             i++;
@@ -160,12 +158,12 @@ namespace InterconnectIOBox.Relay
 
                         case RelayStatus.VerifyIsClosed:
                             bool isClosed = parts[i] == "1";
-                            ValidateAndPublishResult(parts[i],"1",SelectedBank, channel);
+                            ValidateAndPublishResult(parts[i], "1", SelectedBank, channel);
                             Log.Info($"{(isClosed ? "Pass" : "Fail")} Verify Closed Status for {SelectedBank}-{channel}: {parts[i]}");
                             UpgradeVerdict(isClosed ? Verdict.Pass : Verdict.Fail);
                             i++;
                             break;
-                    }   
+                    }
                 }
             }
 
@@ -179,19 +177,19 @@ namespace InterconnectIOBox.Relay
 
                 switch (COM)
                 {
-             
+
                     case RelayStatus.VerifyIsOpen:
                         bool isOpen = statusCOM == "0";
-                        ValidateAndPublishResult(statusCOM,"1", SelectedBank, "COM");
-                        Log.Info($"{(statusCOM == "0" ? "Pass" : "Fail")} Verify Open Status for {SelectedBank}-COM: {statusCOM}");
-                        UpgradeVerdict(statusCOM == "0" ? Verdict.Pass : Verdict.Fail);
+                        ValidateAndPublishResult(statusCOM, "0", SelectedBank, "COM");
+                        Log.Info($"{(isOpen ? "Pass" : "Fail")} Verify Open Status for {SelectedBank}-COM: {statusCOM}");
+                        UpgradeVerdict(isOpen ? Verdict.Pass : Verdict.Fail);
                         break;
 
                     case RelayStatus.VerifyIsClosed:
                         bool isClosed = statusCOM == "1";
-                        ValidateAndPublishResult(statusCOM,"1", SelectedBank, "COM");
-                        Log.Info($"{(statusCOM == "1" ? "Pass" : "Fail")} Verify Closed Status for {SelectedBank}-COM: {statusCOM}");
-                        UpgradeVerdict(statusCOM == "1" ? Verdict.Pass : Verdict.Fail);
+                        ValidateAndPublishResult(statusCOM, "1", SelectedBank, "COM");
+                        Log.Info($"{(isClosed ? "Pass" : "Fail")} Verify Closed Status for {SelectedBank}-COM: {statusCOM}");
+                        UpgradeVerdict(isClosed ? Verdict.Pass : Verdict.Fail);
                         break;
                 }
 

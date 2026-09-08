@@ -15,7 +15,7 @@ using InterconnectIOBox.Analysis;
 namespace InterconnectIOBox.SystemTools
 
 {
-    [Display(Groups: new[] { "InterconnectIO", "System" }, Name: "Beeper", Description: "Generate short (100mS) beep pulse")]
+    [Display(Groups: new[] { "FTS_Interconnect", "System" }, Name: "Beeper", Description: "Generate short (100mS) beep pulse")]
 
     public class Beeper : TestStep
     {
@@ -55,7 +55,7 @@ namespace InterconnectIOBox.SystemTools
         }
     }
 
-    [Display(Groups: new[] { "InterconnectIO", "System" }, Name: "Pico Firmware Version", Description: "Read Firmware version for Pico Master, Slave1, Slave2, Slave3 devices ")]
+    [Display(Groups: new[] { "FTS_Interconnect", "System" }, Name: "Pico Firmware Version", Description: "Read Firmware version for Pico Master, Slave1, Slave2, Slave3 devices ")]
 
     public class Firmware : ResultTestStep
     {
@@ -63,7 +63,7 @@ namespace InterconnectIOBox.SystemTools
 
         public InterconnectIO IO_Instrument { get; set; }
 
- 
+
         [Display("Master", Order: 2, Group: "Version Check", Description: "Pico Master Version expected to set verdict = Pass.")]
         public string Master { get; set; }
 
@@ -112,8 +112,9 @@ namespace InterconnectIOBox.SystemTools
             // Validate Master firmware
             PublishFirmwareVersion("Master", versions[0], Master);
 
-            // Validate Slave firmware (any match among Slave1, Slave2, Slave3)
-            string expSlave = $"{Slave}, {Slave}, {Slave }";
+            // Validate Slave firmware: all three slaves (Slave1, Slave2, Slave3)
+            // must report the exact same expected version.
+            string expSlave = $"{Slave}, {Slave}, {Slave}";
             PublishFirmwareVersion("Slave1_2_3", string.Join(", ", versions.Skip(1)), expSlave);
         }
 
@@ -149,7 +150,7 @@ namespace InterconnectIOBox.SystemTools
                 StepName = Name,
                 Value = actualVersion,
                 LowerLimit = expectedVersion,
-                Verdict = match ? "PASS":"FAIL",
+                Verdict = match ? "PASS" : "FAIL",
                 Units = "string"
             };
 
@@ -164,7 +165,7 @@ namespace InterconnectIOBox.SystemTools
         }
     }
 
-    [Display(Groups: new[] { "InterconnectIO", "System" }, Name: "Error Led", Description: "Set or read the status of the Red Error LED. Each line of the test control is processed sequentially. " +
+    [Display(Groups: new[] { "FTS_Interconnect", "System" }, Name: "Error Led", Description: "Set or read the status of the Red Error LED. Each line of the test control is processed sequentially. " +
       "If you first select 'ON' and then 'OFF,' the LED will briefly flash")]
 
     public class ErrorLed : ResultTestStep
@@ -213,7 +214,7 @@ namespace InterconnectIOBox.SystemTools
                 IO_Instrument.ScpiCommand(command);
             }
 
-            if (LedCheckOn) { ValidateLedStatus(1); }  
+            if (LedCheckOn) { ValidateLedStatus(1); }
 
             if (RedLedOff)
             {
@@ -265,7 +266,7 @@ namespace InterconnectIOBox.SystemTools
             PublishResult(result);
         }
 
-       
+
 
         public override void PostPlanRun()
         {
@@ -274,7 +275,7 @@ namespace InterconnectIOBox.SystemTools
         }
     }
 
-    [Display(Groups: new[] { "InterconnectIO", "System" }, Name: "Pico Slaves", Description: "Enable, Disable (to reset the Pico Slave)  or Read Pico Slave Status.Each line of the test control is processed sequentially." +
+    [Display(Groups: new[] { "FTS_Interconnect", "System" }, Name: "Pico Slaves", Description: "Enable, Disable (to reset the Pico Slave)  or Read Pico Slave Status.Each line of the test control is processed sequentially." +
         "If you first select 'OFF' and then 'ON,' the Slaves will be reset to default configuration.")]
     public class Slaves : ResultTestStep
     {
@@ -297,7 +298,7 @@ namespace InterconnectIOBox.SystemTools
         public bool SlCheckOn { get; set; }
         #endregion
 
-      
+
         public Slaves()
         {
             // ToDo: Set default values for properties / settings.
@@ -309,9 +310,10 @@ namespace InterconnectIOBox.SystemTools
             // ToDo: Optionally add any setup code this step needs to run before the testplan starts
         }
 
-        public override void Run() 
+        public override void Run()
         {
             string command;
+            UpgradeVerdict(Verdict.Pass);  // Default Verdict — ensures write-only actions (no read-back check selected) still report Pass
 
             if (SlavesOff)
             {
@@ -380,8 +382,8 @@ namespace InterconnectIOBox.SystemTools
         }
     }
 
- 
-    [Display(Groups: new[] { "InterconnectIO", "System" }, Name: "System Version", Description: "Read SCPI version used, Version could be validated and result publish")]
+
+    [Display(Groups: new[] { "FTS_Interconnect", "System" }, Name: "System Version", Description: "Read SCPI version used, Version could be validated and result publish")]
 
     public class SystemVersion : ResultTestStep
     {
@@ -425,7 +427,7 @@ namespace InterconnectIOBox.SystemTools
                 Log.Info($"System Version not validated: {value}");
                 UpgradeVerdict(Verdict.Pass);
                 Limit = ""; // erase limit string to indicate no limit (read only)
-            } 
+            }
             else
             if (value == SystemV)
             {
@@ -462,9 +464,6 @@ namespace InterconnectIOBox.SystemTools
             base.PostPlanRun();
         }
 
-  
-        }
+
     }
-
-
-
+}

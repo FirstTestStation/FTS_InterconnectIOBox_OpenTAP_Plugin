@@ -1,4 +1,4 @@
-# FTS_InterconnectIOBox OpenTAP Plugin 800-1020-xx
+# FTS_InterconnectIOBox OpenTAP Plugin 800-1100-xxx
 
 The `FTS_InterconnectIOBox` is a plugin for OpenTAP, designed to facilitate the testing and validation of interconnect IO boxes within the **First Test Station (FTS)** project. This plugin provides a set of sequences and tools to automate the testing process, ensuring the functionality and reliability of the interconnect IO boxes.
 

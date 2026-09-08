@@ -11,7 +11,7 @@ using static InterconnectIOBox.GPIO.GpioIO;
 namespace InterconnectIOBox.Selftest
 {
 
-    [Display(Groups: new[] { "InterconnectIO", "ZModule", "Selftest DUT" }, Name: "Selftest GPIO command", Description: "Group of I2C command used to communicate with Selftest Board")]
+    [Display(Groups: new[] { "FTS_Interconnect", "Z_Selftest", "Selftest DUT" }, Name: "Selftest GPIO command", Description: "Group of I2C command used to communicate with Selftest Board")]
 
     public class Selftest_gpio : ResultTestStep
     {

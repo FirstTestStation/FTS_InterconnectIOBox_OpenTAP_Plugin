@@ -1,21 +1,19 @@
 using OpenTap;
 using static InterconnectIOBox.GPIO.GpioIO;
 using static InterconnectIOBox.Digital.PortsIO;
-using System.Windows.Input;
 using System;
 using System.Xml.Linq;
 using static InterconnectIOBox.GPIO.GpioPAD;
 using System.Collections.Generic;
 using System.Threading;
 using static System.Net.Mime.MediaTypeNames;
-using static InterconnectIOBox.Communication.SerialCfg;
 using InterconnectIOBox.Instruments;
 using InterconnectIOBox.Analysis;
 
 namespace InterconnectIOBox.Communication
 {
-    [Display(Groups: new[] { "InterconnectIO", "Communication"}, Name: "SPI Config", Description: "Enable and configure SPI communication, including baudrate, Mode, ChipSelect and Databits." +
-"SPI must be enabled for operation as a SPI port. When disabled, the SPI pins function as normal GPIOs.")]
+    [Display(Groups: new[] { "FTS_Interconnect", "Communication" }, Name: "SPI Config", Description: "Enable and configure SPI communication, including baud rate, mode, chip select, and data bits." +
+    " SPI must be enabled for operation as an SPI port. When disabled, the SPI pins function as normal GPIOs.")]
 
 
     public class SpiCfg : ResultTestStep
@@ -25,7 +23,9 @@ namespace InterconnectIOBox.Communication
         #endregion
 
         public InterconnectIO IO_Instrument { get; set; }
-        public enum Action
+
+        // Renamed from "Action" to avoid ambiguity with the built-in System.Action delegate type.
+        public enum SpiAction
         {
             Write_read,
             Write_only,
@@ -33,11 +33,14 @@ namespace InterconnectIOBox.Communication
             read_test
         }
 
-        [Display("Action to Execute:", Group: "SPI Configuration", Order: 0.1, Description: "Action to perform on the Data, result will be published.")]
-        public Action SpiAct { get; set; }
+        [Display("Action to Execute:", Group: "SPI Configuration", Order: 0.1, Description: "Action to perform on the data; the result will be published.")]
+        public SpiAction SpiAct { get; set; }
+
+        [Display("Publish Results", Order: 0.2, Group: "Options", Description: "If checked, publish the read-back verification results. If unchecked, verification still runs and affects verdict, but no result is published.")]
+        public bool PublishResults { get; set; } = false;
 
 
-        [Display("Enable SPI Com:", Order: 1, Group: "SPI Port Enable/Disable", Description: "Check to enable or disable SPI communication. ")]
+        [Display("Enable SPI Com:", Order: 1, Group: "SPI Port Enable/Disable", Description: "Check to enable SPI communication on this port.")]
 
         public bool Enable
         {
@@ -52,7 +55,7 @@ namespace InterconnectIOBox.Communication
         }
         private bool _Enable;
 
-        [Display("Disable SPI Com:", Order: 1.1, Group: "SPI Port Enable/Disable", Description: "Disable SPI. The pins used for SPI communication become normal GPIOs set as inputs.")]
+        [Display("Disable SPI Com:", Order: 1.1, Group: "SPI Port Enable/Disable", Description: "Check to disable SPI. The pins used for SPI communication become normal GPIOs set as inputs.")]
         public bool Disable
         {
             get => _Disable;
@@ -70,7 +73,7 @@ namespace InterconnectIOBox.Communication
 
         private const string GROUPD = "SPI Communication Config";
 
-        [Display("SPI Speed:", Group: GROUPD, Order: 2, Description: "Set Clock frequency to use on SPI communication")]
+        [Display("SPI Speed:", Group: GROUPD, Order: 2, Description: "Set the clock frequency to use for SPI communication.")]
         [EnabledIf("Enable", true, Flags = false)]
         [Unit("Hz", UseEngineeringPrefix: true)]
         public double Baud { get; set; } = 100000;
@@ -78,14 +81,14 @@ namespace InterconnectIOBox.Communication
 
         public enum Mode : byte
         {
-            Mode0_CS0_CPOL0_CPHA0 =0,
-            Mode1_CS0_CPOL0_CPHA1 =1,
-            Mode2_CS0_CPOL1_CPHA0 =2,
-            Mode3_CS0_CPOL1_CPHA1 =3,
-            Mode4_CS1_CPOL0_CPHA0 =4,
-            Mode5_CS1_CPOL0_CPHA1 =5,
-            Mode6_CS1_CPOL1_CPHA0 =6,
-            Mode7_CS1_CPOL1_CPHA1 =7
+            Mode0_CS0_CPOL0_CPHA0 = 0,
+            Mode1_CS0_CPOL0_CPHA1 = 1,
+            Mode2_CS0_CPOL1_CPHA0 = 2,
+            Mode3_CS0_CPOL1_CPHA1 = 3,
+            Mode4_CS1_CPOL0_CPHA0 = 4,
+            Mode5_CS1_CPOL0_CPHA1 = 5,
+            Mode6_CS1_CPOL1_CPHA0 = 6,
+            Mode7_CS1_CPOL1_CPHA1 = 7
         }
 
 
@@ -95,7 +98,7 @@ namespace InterconnectIOBox.Communication
 
         public enum Cs : byte
         {
-            _0 =0,
+            _0 = 0,
             _1 = 1,
             _5 = 5,
             _6 = 6,
@@ -109,17 +112,17 @@ namespace InterconnectIOBox.Communication
 
         }
 
-        [Display("SPI ChipSelect:", Group: GROUPD, Order: 3.1, Description: "Set ChipSelect pin, SPIO_CS (Gpio5) is CS default")]
+        [Display("SPI Chip Select:", Group: GROUPD, Order: 3.1, Description: "Set the Chip Select pin. SPI0_CS (GPIO5) is the default.")]
         [EnabledIf("Enable", true, Flags = false)]
         public Cs SelectCs { get; set; } = Cs._5;
 
-        public enum Databit :byte
+        public enum Databit : byte
         {
             _8 = 8,
             _16 = 16,
         }
 
-        [Display("SPI Databits:", Group: GROUPD, Order: 3.2, Description: "Set Size of data to read or write")]
+        [Display("SPI Databits:", Group: GROUPD, Order: 3.2, Description: "Set the size of the data to read or write.")]
         [EnabledIf("Enable", true, Flags = false)]
         public Databit SelectD { get; set; } = Databit._8;
 
@@ -136,24 +139,13 @@ namespace InterconnectIOBox.Communication
 
         public override void Run()
         {
-            // Process Spi Parameters before enabling 
-            if (Enable)
-            {
-                Log.Info("SPI Communication Parameters");
-                ConfigureSpiParam("Baudrate", SpiAct);
-                ConfigureSpiParam("Mode", SpiAct);
-                ConfigureSpiParam("Databits", SpiAct);
-                ConfigureSpiParam("ChipSelect", SpiAct);
-
-            }
-
             string test = "";
             if (Enable)
             {
                 Log.Info("SPI Communication Enabled");
 
                 // Write command
-                if (SpiAct == Action.Write_read || SpiAct == Action.Write_only)
+                if (SpiAct == SpiAction.Write_read || SpiAct == SpiAction.Write_only)
                 {
                     string Command = $"COM:INITIALIZE:ENABLE SPI";
                     Log.Info($"Sending SCPI command: {Command}");
@@ -163,7 +155,7 @@ namespace InterconnectIOBox.Communication
             }
             else if (Disable)
             {
-                if (SpiAct == Action.Write_read || SpiAct == Action.Write_only)
+                if (SpiAct == SpiAction.Write_read || SpiAct == SpiAction.Write_only)
                 {
                     string Command = $"COM:INITIALIZE:DISABLE SPI";
                     Log.Info($"Sending SCPI command: {Command}");
@@ -173,20 +165,34 @@ namespace InterconnectIOBox.Communication
             }
 
             // Read Command
-            if (SpiAct == Action.read_only || SpiAct == Action.Write_read || SpiAct == Action.read_test)
+            if (SpiAct == SpiAction.read_only || SpiAct == SpiAction.Write_read || SpiAct == SpiAction.read_test)
             {
                 string Command = $"COM:INITIALIZE:STATUS? SPI";
                 string response = IO_Instrument.ScpiQuery<string>(Command);
-                Log.Info($"Sending SCPI command: {Command}, Answer: {response}");
+                Log.Info($"SCPI query: {Command}, Answer: {response}");
 
                 double expected = Enable ? 1 : 0;
 
-                double.TryParse(response, out double value);
-                test = value == expected ? "PASS" : "FAIL";
+                // Sanitize before parsing: without Trim(), a trailing newline/whitespace or
+                // stray quotes from the instrument can make TryParse silently fail, leaving
+                // value at its default 0 — which would coincidentally match expected==0
+                // (Disable case) and report a false PASS even though the real status differs.
+                string cleaned = response?.Trim();
+                bool parsed = double.TryParse(cleaned, out double value);
 
-                if (SpiAct == Action.read_only)
+                if (!parsed)
                 {
-                    test = "PASS"; // No verdict on read only }
+                    Log.Warning($"Could not parse SPI status response: '{response}'.");
+                    test = "FAIL";
+                }
+                else
+                {
+                    test = value == expected ? "PASS" : "FAIL";
+                }
+
+                if (SpiAct == SpiAction.read_only)
+                {
+                    test = "PASS"; // No verdict on read only
                 }
 
                 if (test == "PASS")
@@ -199,7 +205,7 @@ namespace InterconnectIOBox.Communication
                     Log.Warning($"SPI Communication Status Error, expected: {expected}, Answer: {response}");
                 }
 
-                if (SpiAct != Action.read_only) // if publish required
+                if (SpiAct != SpiAction.read_only && PublishResults) // if publish required
                 {
                     // Create test result object
                     TestResult<double> result = new TestResult<double>
@@ -212,7 +218,7 @@ namespace InterconnectIOBox.Communication
                     };
 
                     // Add limits for Write_Read function
-                    if (SpiAct == Action.Write_read || SpiAct == Action.read_test)
+                    if (SpiAct == SpiAction.Write_read || SpiAct == SpiAction.read_test)
                     {
                         result.LowerLimit = expected;
                         result.UpperLimit = expected;
@@ -224,15 +230,25 @@ namespace InterconnectIOBox.Communication
 
             }
 
+            // Process SPI Parameters
+            if (Enable)
+            {
+                Log.Info("SPI Communication Parameters");
+                ConfigureSpiParam("Baudrate", SpiAct);
+                ConfigureSpiParam("Mode", SpiAct);
+                ConfigureSpiParam("Databits", SpiAct);
+                ConfigureSpiParam("ChipSelect", SpiAct);
+            }
+
         }
 
 
-        // <summary>
-        /// Write or Read Spi parameter
-        ///  <param name="<"name of the parameter">
-        /// <param Action=<"selectedAct">Selected function for action.</param>
-        /// 
-        public void ConfigureSpiParam(string name,Action selectedAct)
+        /// <summary>
+        /// Writes and/or reads back an SPI configuration parameter.
+        /// </summary>
+        /// <param name="name">Name of the parameter to configure ("Baudrate", "Mode", "Databits", or "ChipSelect").</param>
+        /// <param name="selectedAct">Selected action (write, read, or both) to perform.</param>
+        public void ConfigureSpiParam(string name, SpiAction selectedAct)
         {
             string WriteCmd = "";
             string ReadCmd = "";
@@ -255,8 +271,8 @@ namespace InterconnectIOBox.Communication
                 case "Mode":
                     mode = (byte)SelectM; // Extract the number from the enum
                     WriteCmd = $"COM:SPI:MODE {mode}";
-                    LowerLimit = mode; // Expect to read the sane value
-                    UpperLimit = mode; 
+                    LowerLimit = mode; // Expect to read the same value
+                    UpperLimit = mode;
                     ReadCmd = "COM:SPI:MODE?";
                     SUnits = "digcmp";
                     break;
@@ -279,66 +295,73 @@ namespace InterconnectIOBox.Communication
                     SUnits = "digcmp";
                     break;
             }
-                // Write Command
-                if (selectedAct == Action.Write_read || selectedAct == Action.Write_only)
+            // Write Command
+            if (selectedAct == SpiAction.Write_read || selectedAct == SpiAction.Write_only)
+            {
+                Log.Info($"Sending SCPI command: {WriteCmd}");
+                IO_Instrument.ScpiCommand(WriteCmd);
+                UpgradeVerdict(Verdict.Pass);
+            }
+
+            // Read Command
+            if (selectedAct == SpiAction.read_only || selectedAct == SpiAction.Write_read || selectedAct == SpiAction.read_test)
+            {
+                string response = IO_Instrument.ScpiQuery<string>(ReadCmd);
+                Log.Info($"SCPI query: {ReadCmd}, Answer: {response}");
+
+                // Sanitize before parsing — see note in Run(): an unparsed response must
+                // not silently pass as a coincidental in-range match.
+                string cleaned = response?.Trim();
+                bool parsed = double.TryParse(cleaned, out double value);
+
+                if (!parsed)
                 {
-                    Log.Info($"Sending SCPI command: {WriteCmd}");
-                    IO_Instrument.ScpiCommand(WriteCmd);
-                    UpgradeVerdict(Verdict.Pass);
+                    Log.Warning($"Could not parse SPI {name} response: '{response}'.");
+                    test = "FAIL";
+                }
+                else if (value >= LowerLimit && value <= UpperLimit)
+                {
+                    test = "PASS";
+                }
+                else
+                {
+                    Log.Warning($"Invalid SCPI response: {response}, expected between: {LowerLimit} and {UpperLimit}");
+                    test = "FAIL";
                 }
 
-                // Read Command
-                if (selectedAct == Action.read_only || selectedAct == Action.Write_read || selectedAct == Action.read_test)
+                if (selectedAct == SpiAction.read_only)
                 {
-                    string response = IO_Instrument.ScpiQuery<string>(ReadCmd);
-                    Log.Info($"Sending SCPI command: {ReadCmd}, Answer: {response}");
+                    test = "PASS"; // No verdict on read only
+                }
+
+                if (test == "PASS") UpgradeVerdict(Verdict.Pass);
+                else UpgradeVerdict(Verdict.Fail);
 
 
-                    double.TryParse(response, out double value);
-
-                    if (value >= LowerLimit && value <= UpperLimit)
+                if (selectedAct != SpiAction.read_only && PublishResults) // if publish required
+                {
+                    // Create test result object
+                    TestResult<double> result = new TestResult<double>
                     {
-                        test = "PASS";
-                    }
-                    else
+                        ParamName = $"SPI {name}",
+                        StepName = Name,
+                        Value = value,
+                        Verdict = test,
+                        Units = "read"
+                    };
+
+                    // Add limits for Write_Read function
+                    if (selectedAct == SpiAction.Write_read || selectedAct == SpiAction.read_test)
                     {
-                        Log.Warning($"Invalid SCPI response: {response}, expected between: {LowerLimit} and {UpperLimit}");
-                        test = "FAIL";
+                        result.LowerLimit = LowerLimit;
+                        result.UpperLimit = UpperLimit;
+                        result.Units = SUnits;
                     }
 
-                    if (selectedAct == Action.read_only)
-                    {
-                        test = "PASS"; // No verdict on read only
-                    }
-
-                    if (test == "PASS") UpgradeVerdict(Verdict.Pass);
-                    else UpgradeVerdict(Verdict.Fail);
-
-
-                    if (selectedAct != Action.read_only) // if publish required
-                    {
-                        // Create test result object
-                        TestResult<double> result = new TestResult<double>
-                        {
-                            ParamName = $"SPI {name}",
-                            StepName = Name,
-                            Value = value,
-                            Verdict = test,
-                            Units = "read"
-                        };
-
-                        // Add limits for Write_Read function
-                        if (selectedAct == Action.Write_read || selectedAct == Action.read_test)
-                        {
-                            result.LowerLimit = LowerLimit;
-                            result.UpperLimit = UpperLimit;
-                            result.Units = SUnits;
-                        }
-
-                        PublishResult(result);
-                    }
+                    PublishResult(result);
                 }
             }
+        }
 
         public override void PostPlanRun()
         {

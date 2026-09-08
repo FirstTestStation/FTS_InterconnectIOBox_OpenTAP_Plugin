@@ -4,10 +4,15 @@ using OpenTap;
 
 namespace InterconnectIOBox.Configuration
 {
-    [Display("TAP Settings Selector", Groups: new[] { "InterconnectIO", "System" },
-        Description: "Selects which TAP Settings file to use, so the Production GUI can read it and the operator will not need to select it.")]
+    [Display("TAP Settings Selector", Groups: new[] { "FTS_Interconnect", "System" },
+        Description: "Selects which TAP settings file to use, so the production GUI can read it and the operator does not need to select it.")]
     public class SelectSettingsStep : ResultTestStep
     {
+        // This step is independent of the DUT — it doesn't need one assigned to run.
+        // Its result is still published through the normal SerialNumber-gated
+        // pipeline, so it lands in the same single report as every other step.
+        protected override bool RequiresDut => false;
+
         // Initialized to prevent NRE if null is passed during deserialization
         private string _settingsFile = "DefaultSettings.TapSettings";
         private string _AltPath = string.Empty; // Also initialized to string.Empty
@@ -31,7 +36,7 @@ namespace InterconnectIOBox.Configuration
                 // 1. Assign the value, falling back to empty string if null.
                 string path = value ?? string.Empty;
 
-                // 2. Check if the path is non-empty and not already absolute.
+                // 2. Resolve to an absolute path, if non-empty.
                 if (!string.IsNullOrEmpty(path))
                 {
                     try
@@ -47,15 +52,14 @@ namespace InterconnectIOBox.Configuration
                 _AltPath = path;
             }
         }
-        
-   
+
+
 
         public override void Run()
         {
             // Initialize the local verdict to the lowest possible state.
             Verdict fileCheckVerdict = Verdict.Pass;
             string rawFilePath = SettingsFile;
-            string resolvedFileName = string.Empty;
             const string expectedExtension = ".TapSettings";
 
             // --- 1. CONFIGURATION AND EXTENSION CHECK ---
@@ -64,7 +68,6 @@ namespace InterconnectIOBox.Configuration
             if (string.IsNullOrEmpty(SettingsFile))
             {
                 Log.Error("Configuration Error: Settings File path cannot be empty.");
-                UpgradeVerdict(Verdict.Fail);
                 fileCheckVerdict = Verdict.Fail;
             }
             else
@@ -75,11 +78,13 @@ namespace InterconnectIOBox.Configuration
                 if (!currentExtension.Equals(expectedExtension, System.StringComparison.OrdinalIgnoreCase))
                 {
                     Log.Error($"Configuration Error: Incorrect file extension '{currentExtension}' in '{SettingsFile}'. Expected '{expectedExtension}'.");
-                    UpgradeVerdict(Verdict.Fail);
                     fileCheckVerdict = Verdict.Fail;
                 }
             }
 
+            // Always report the raw file name for the result, whether or not validation passed,
+            // so a failed run still shows what was actually configured.
+            string reportedFileName = Path.GetFileName(rawFilePath);
 
             // --- 2. PATH REPORTING (NO RESOLUTION/FILE SYSTEM ACCESS) ---
 
@@ -87,9 +92,7 @@ namespace InterconnectIOBox.Configuration
             {
                 // Primary Path Reporting: Report the raw, validated SettingsFile string.
                 // We rely on the downstream system (GUI) to handle path resolution.
-                resolvedFileName = Path.GetFileName(rawFilePath);
-
-                Log.Debug($"Configuration successfully read. Primary settings file (raw string): {resolvedFileName}");
+                Log.Debug($"Configuration successfully read. Primary settings file (raw string): {reportedFileName}");
 
                 // Alternative Path Reporting (Check only for non-empty AltPath)
                 if (!string.IsNullOrEmpty(AltPath))
@@ -98,30 +101,33 @@ namespace InterconnectIOBox.Configuration
                     // We must use Path.GetFileName to ensure we only get the file name, not subdirectories.
                     string settingsFileName = Path.GetFileName(SettingsFile);
 
-                    // We can safely use Path.Combine here since AltPath is a DirectoryPath and SettingsFileName is just a name.
+                    // We can safely use Path.Combine here since AltPath is a DirectoryPath and settingsFileName is just a name.
                     string combinedPath = Path.Combine(AltPath, settingsFileName);
 
                     Log.Debug($"Alternative path provided (combined for reference): {combinedPath}");
                 }
 
                 // If we reach here, the configuration strings are valid and non-empty.
-                Log.Info("Successfully verified TAP Settings configuration strings.");
-                UpgradeVerdict(Verdict.Pass);
+                Log.Info("Successfully verified TAP settings configuration strings.");
             }
 
-            // --- 3. FINAL VERDICT AND RESULT PUBLICATION ---
+            UpgradeVerdict(fileCheckVerdict);
 
-            // Publish the result record containing the final file path (the raw SettingsFile if successful).
+            // --- 3. RESULT PUBLICATION ---
+            // Published through ResultTestStep.PublishResult: if the SerialNumber
+            // isn't known yet (or Dut isn't assigned), this result is queued and
+            // flushed alongside every other step's result once it is — ending up
+            // in a single, unified report.
             var result = new TestResult<string>
             {
                 ParamName = "TapSettings File Path",
                 StepName = Name,
-                // Publish the raw path string.
-                Value = resolvedFileName,
+                // Publish the raw file name.
+                Value = reportedFileName,
                 // Using the expected extension for descriptive purposes
                 LowerLimit = expectedExtension,
                 UpperLimit = expectedExtension,
-                Verdict = fileCheckVerdict.ToString(),
+                Verdict = fileCheckVerdict == Verdict.Pass ? "PASS" : "FAIL",
                 Units = "Config String Check"
             };
 

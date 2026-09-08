@@ -1,21 +1,12 @@
 using InterconnectIOBox.Analysis;
 using InterconnectIOBox.Instruments;
 using OpenTap;
-using System;
-using System.Net;
-using System.Text.RegularExpressions;
-using System.Threading;
-using System.Threading.Tasks;
-using System.Xml.Linq;
-using static InterconnectIOBox.GPIO.Gpiocfg;
-using static InterconnectIOBox.GPIO.GpioIO;
-using static InterconnectIOBox.SCPI.RegCmd;
-using static System.Net.Mime.MediaTypeNames;
+using System.Globalization;
 
 namespace InterconnectIOBox.Selftest
 {
 
-    [Display(Groups: new[] { "InterconnectIO", "ZModule", "Selftest DUT" }, Name: "Selftest COM command", Description: "Group of I2C command used to communicate with Selftest Board")]
+    [Display(Groups: new[] { "FTS_Interconnect", "Z_Selftest", "Selftest DUT" }, Name: "Selftest COM command", Description: "Group of I2C command used to communicate with Selftest Board. Warning: The Interconnect I2C need to be configured before luanch this teststep")]
 
     public class Selftest_com : ResultTestStep
     {
@@ -31,7 +22,7 @@ namespace InterconnectIOBox.Selftest
 
         private const string STG = "General Command";
 
-        [Display("DUT Version:", Order: 1,Group:STG, Collapsed: true, Description: "Send I2C command to selftest board to read major and minor version")]
+        [Display("DUT Version:", Order: 1, Group: STG, Collapsed: true, Description: "Send I2C command to selftest board to read major and minor version")]
         public Enabled<double> Sversion { get; set; }
 
         [Display("DUT Status:", Order: 1, Group: STG, Collapsed: true, Description: "Send I2C command to selftest board to read status byte.")]
@@ -57,7 +48,7 @@ namespace InterconnectIOBox.Selftest
 
 
         [Display("PWM Disable:", Group: STP, Order: 1.3, Collapsed: true, Description: "Send I2C command to selftest board to disable the on board PWM")]
- 
+
 
         public bool DiPwm
         {
@@ -119,7 +110,7 @@ namespace InterconnectIOBox.Selftest
         }
 
         [Display("Baudrate:", Group: STU, Collapsed: true, Order: 3, Description: "Set Baudrate speed")]
-        [EnabledIf("Enable", true, Flags = false)]
+        [EnabledIf(nameof(Enable), true, Flags = false)]
         public Baud SelectB { get; set; } = Baud._38400;
 
 
@@ -131,7 +122,7 @@ namespace InterconnectIOBox.Selftest
         }
 
         [Display("Parity:", Group: STU, Collapsed: true, Order: 3, Description: "Set Parity value")]
-        [EnabledIf("Enable", true, Flags = false)]
+        [EnabledIf(nameof(Enable), true, Flags = false)]
         public Parity SelectP { get; set; } = Parity.None;
 
         public enum Databit : byte
@@ -143,7 +134,7 @@ namespace InterconnectIOBox.Selftest
         }
 
         [Display("Databit:", Group: STU, Collapsed: true, Order: 3.1, Description: "Set Number of Data Bits")]
-        [EnabledIf("Enable", true, Flags = false)]
+        [EnabledIf(nameof(Enable), true, Flags = false)]
         public Databit SelectD { get; set; } = Databit._8;
 
         public enum Stopbit : byte
@@ -153,7 +144,7 @@ namespace InterconnectIOBox.Selftest
         }
 
         [Display("Stop Bits:", Group: STU, Collapsed: true, Order: 3.2, Description: "Set Number of Stop Bits")]
-        [EnabledIf("Enable", true, Flags = false)]
+        [EnabledIf(nameof(Enable), true, Flags = false)]
         public Stopbit SelectS { get; set; } = Stopbit._1;
 
         public enum HandShake : byte
@@ -163,7 +154,7 @@ namespace InterconnectIOBox.Selftest
         }
 
         [Display("RTS/CTS HandShake:", Group: STU, Collapsed: true, Order: 3.4, Description: "Set or Not the RTS/CTS Handshake")]
-        [EnabledIf("Enable", true, Flags = false)]
+        [EnabledIf(nameof(Enable), true, Flags = false)]
         public HandShake SelectH { get; set; } = HandShake.OFF;
 
         [Display("Get Serial Config:", Group: STU, Order: 3.5, Collapsed: true, Description: "Send I2C command to selftest board to read the actual Serial config")]
@@ -201,7 +192,7 @@ namespace InterconnectIOBox.Selftest
         }
         private bool _DiSPI;
 
-         // Not valid for a slave SPI.  Slave do not control the clock
+        // Not valid for a slave SPI.  Slave do not control the clock
         public enum Speed : byte
         {
             _100KHz = 1,
@@ -215,9 +206,9 @@ namespace InterconnectIOBox.Selftest
 
 
         [Display("SPI Speed:", Group: SPI, Order: 4.1, Description: "Set Clock frequency to use on SPI communication")]
-        [EnabledIf("EnSPI", true, Flags = false)]
+        [EnabledIf(nameof(EnSPI), true, Flags = false)]
         public Speed SelectSpeed { get; set; } = Speed._100KHz;
-   
+
 
 
 
@@ -231,7 +222,7 @@ namespace InterconnectIOBox.Selftest
 
 
         [Display("Set SPI Mode:", Group: SPI, Order: 4.2, Description: "Select the SPI protocol")]
-        [EnabledIf("EnSPI", true, Flags = false)]
+        [EnabledIf(nameof(EnSPI), true, Flags = false)]
         public Mode SelectM { get; set; } = Mode.Mode0_CPOL0_CPHA0;
 
         public enum SpiData : byte
@@ -241,7 +232,7 @@ namespace InterconnectIOBox.Selftest
         }
 
         [Display("SPI Databits:", Group: SPI, Collapsed: true, Order: 4.3, Description: "Set the databits number for SPI communication")]
-        [EnabledIf("EnSPI", true, Flags = false)]
+        [EnabledIf(nameof(EnSPI), true, Flags = false)]
         public SpiData SelectSD { get; set; } = SpiData._8;
 
 
@@ -272,7 +263,7 @@ namespace InterconnectIOBox.Selftest
             // public void CommandExecute(string name, byte value, bool check, bool publish)
             if (Sversion.IsEnabled == true)
             {
-               CommandExecute("Version", Sversion.Value, true,Validate);
+                CommandExecute("Version", Sversion.Value, true, Validate);
             }
 
             if (Status.IsEnabled == true)
@@ -287,11 +278,11 @@ namespace InterconnectIOBox.Selftest
 
             if (EnPwm == true)
             {
-                CommandExecute("EnPwm",1, true, false);
+                CommandExecute("EnPwm", 1, true, false);
             }
             if (DiPwm == true)
             {
-               CommandExecute("DiPwm", 0, true, false);
+                CommandExecute("DiPwm", 0, true, false);
             }
 
 
@@ -299,7 +290,7 @@ namespace InterconnectIOBox.Selftest
             {
                 byte value = (byte)((byte)SelectB << 6 | (byte)SelectP << 4 | (byte)SelectD << 2 | (byte)SelectS << 1 | (byte)SelectH); // Build protocol value
                 CommandExecute("Sercfg", value, true, Validate);
-               //GetSer.Value = value;
+                //GetSer.Value = value;
             }
 
             if (GetSer.IsEnabled == true)
@@ -318,7 +309,7 @@ namespace InterconnectIOBox.Selftest
                 CommandExecute("DisSerial", 0, false, false);
             }
 
-           
+
 
             // SPI Communication, write protocol before enable
             if (EnSPI == true)  // Set SPI protocol
@@ -355,11 +346,11 @@ namespace InterconnectIOBox.Selftest
         /// <param name="value">The value to write on gpio number.</param>
         /// <param name="check">A flag indicating whether the validation test should be executed.</param>
         /// <param name="publish">A flag indicating whether the result should be published.</param>
-        public void CommandExecute(string name,double value, bool check, bool publish)
+        public void CommandExecute(string name, double value, bool check, bool publish)
         {
-            byte   Writereg = 0;
+            byte Writereg = 0;
             string WriteCmd = "";
-            byte   Readreg = 0;
+            byte Readreg = 0;
             string test = "";
             string pname = "";
             double mvalue = 0;
@@ -372,9 +363,14 @@ namespace InterconnectIOBox.Selftest
             switch (name)
             {
                 case "Version":
-                    string vrs = Selfreadcmd(01, 0);
-                    vrs += "." + Selfreadcmd(02, 0);
-                    mvalue = double.Parse(vrs);
+                    string vrs = Selfreadcmd(1, 0);
+                    vrs += "." + Selfreadcmd(2, 0);
+                    if (!double.TryParse(vrs, NumberStyles.Any, CultureInfo.InvariantCulture, out mvalue))
+                    {
+                        Log.Error($"Selftest Version response is not a valid numeric value: {vrs}");
+                        UpgradeVerdict(Verdict.Error);
+                        return;
+                    }
                     Log.Info($"Selftest Version: {mvalue}");
                     pname = "Selftest firm version";
                     Readreg = 0;
@@ -397,7 +393,7 @@ namespace InterconnectIOBox.Selftest
                     read = false;
                     break;
 
-                case "DisPwm":
+                case "DiPwm":
                     pname = "Disable PWM";
                     Readreg = 0;
                     Writereg = 80;
@@ -440,7 +436,7 @@ namespace InterconnectIOBox.Selftest
                     Readreg = 105;
                     Writereg = 0;
                     read = true;
-                    break; ;
+                    break;
 
                 case "EnSPI":
                     pname = "Enable SPI";
@@ -470,7 +466,12 @@ namespace InterconnectIOBox.Selftest
                     Readreg = 115;
                     Writereg = 0;
                     read = true;
-                    break; ;
+                    break;
+
+                default:
+                    Log.Error($"Unknown selftest command name: {name}");
+                    UpgradeVerdict(Verdict.Error);
+                    return;
             }
 
             if (Writereg != 0)
@@ -483,15 +484,20 @@ namespace InterconnectIOBox.Selftest
 
             if (Readreg != 0)
             {
-               string rsp = Selfreadcmd(Readreg, (byte) value);
-               mvalue = byte.Parse(rsp);
-
+             
+                string rsp = Selfreadcmd(Readreg, (byte) value);
+                if (!double.TryParse(rsp, NumberStyles.Any, CultureInfo.InvariantCulture, out mvalue))
+                {
+                    Log.Error($"{pname} response is not a valid numeric value: {rsp}");
+                    UpgradeVerdict(Verdict.Error);
+                    return;
+                }
             }
 
             if (check && read == true)
             {
                 unit = "digcmp";
-                if (mvalue == value) 
+                if (mvalue == value)
                 {
                     test = "PASS";
                 }
@@ -534,7 +540,7 @@ namespace InterconnectIOBox.Selftest
             string Rd = $"COM:I2C:READ:LEN1? {reg},{value}";
             string response = IO_Instrument.ScpiQuery<string>(Rd);
             Log.Info($"Sending SCPI command: {Rd}, Answer: {response}");
-            return response;
+            return response?.Trim() ?? "";
         }
 
 
@@ -544,7 +550,7 @@ namespace InterconnectIOBox.Selftest
             base.PostPlanRun();
         }
     }
- 
+
 
 
 }

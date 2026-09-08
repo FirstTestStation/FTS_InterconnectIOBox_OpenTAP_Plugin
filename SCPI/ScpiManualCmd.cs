@@ -2,14 +2,11 @@ using InterconnectIOBox.Analysis;
 using InterconnectIOBox.Instruments;
 using OpenTap;
 using System;
-using System.Data;
-using System.Threading;
-using static InterconnectIOBox.Communication.SpiCfg;
-using static System.Net.Mime.MediaTypeNames;
+using System.Globalization;
 
 namespace InterconnectIOBox.SCPI
 {
-    [Display(Groups: new[] { "InterconnectIO", "SCPI " }, Name: "Manual Command", Description: "SCPI command enter manually.")]
+    [Display(Groups: new[] { "FTS_Interconnect", "SCPI " }, Name: "Manual Command", Description: "SCPI command enter manually.")]
 
     public class Manual : ResultTestStep
     {
@@ -57,17 +54,17 @@ namespace InterconnectIOBox.SCPI
         }
         private bool _Str;
 
-  
+
         [Display("Expected Answer:", Group: "SCPI QUERY ", Order: 4, Description: "Expected partial or full answer to validate query, result is published.")]
-        [EnabledIf("Str", true, Flags = false)]
+        [EnabledIf(nameof(Str), true, Flags = false)]
         public string Eanswer { get; set; }
 
         [Display(">= Low Limit:", Group: "SCPI QUERY ", Order: 5, Description: "Numeric Answer need to be greater or equal Low Limit.result is published")]
-        [EnabledIf("Num", true, Flags = false)]
+        [EnabledIf(nameof(Num), true, Flags = false)]
         public double LowL { get; set; }
 
         [Display("<= High Limit:", Group: "SCPI QUERY ", Order: 6, Description: "Numeric Answer need to be lower or equal High Limit.result is published")]
-        [EnabledIf("Num", true, Flags = false)]
+        [EnabledIf(nameof(Num), true, Flags = false)]
         public double HighL { get; set; }
 
 
@@ -91,7 +88,7 @@ namespace InterconnectIOBox.SCPI
                 UpgradeVerdict(Verdict.Pass);
             }
 
-            if (WQuery !=null)
+            if (WQuery != null)
             {
                 if (WQuery.Length > 0) // if Wquery is not empty
                 {
@@ -109,49 +106,62 @@ namespace InterconnectIOBox.SCPI
                         return;
                     }
 
+                    if (string.IsNullOrEmpty(response) && (Num || Str))
+                    {
+                        Log.Error($"SCPI query: {WQuery} returned an empty or null response, cannot validate.");
+                        UpgradeVerdict(Verdict.Error);
+                        return;
+                    }
+
                     if (Num)
                     {
-                        double answer = double.Parse(response);
-
-                        if (answer >= LowL && answer <= HighL)
+                        if (!double.TryParse(response, NumberStyles.Any, CultureInfo.InvariantCulture, out double answer))
                         {
-                            Log.Info($"Response is in range: {LowL} <= {answer} <= {HighL}");
-                            UpgradeVerdict(Verdict.Pass);
-                            test = "PASS";
+                            Log.Error($"Response:{response} is not a valid numeric value.");
+                            UpgradeVerdict(Verdict.Error);
                         }
                         else
                         {
-                            Log.Error($"Response:{answer} is not in range: {LowL} <= {answer} <= {HighL}");
-                            UpgradeVerdict(Verdict.Fail);
-                            test = "FAIL";
+                            if (answer >= LowL && answer <= HighL)
+                            {
+                                Log.Info($"Response is in range: {LowL} <= {answer} <= {HighL}");
+                                UpgradeVerdict(Verdict.Pass);
+                                test = "PASS";
+                            }
+                            else
+                            {
+                                Log.Error($"Response:{answer} is not in range: {LowL} <= {answer} <= {HighL}");
+                                UpgradeVerdict(Verdict.Fail);
+                                test = "FAIL";
+                            }
+                            var result = new TestResult<double>
+                            {
+                                ParamName = WQuery,
+                                StepName = Name,
+                                Value = answer,
+                                LowerLimit = LowL,
+                                UpperLimit = HighL,
+                                Verdict = test,
+                                Units = "num"
+                            };
+                            PublishResult(result);
                         }
-                        var result = new TestResult<double>
-                        {
-                            ParamName = WQuery,
-                            StepName = Name,
-                            Value = answer,
-                            LowerLimit = LowL,
-                            UpperLimit = HighL,
-                            Verdict = test,
-                            Units = "num"
-                        };
-                        PublishResult(result);
                     }
 
                     if (Str)
                     {
-
                         string answer = response.Replace("\"", "").Trim();
+                        string expected = Eanswer ?? "";
 
-                        if (answer.Contains(Eanswer))
+                        if (answer.Contains(expected))
                         {
-                            Log.Info($"Response contains expected string: {Eanswer}");
+                            Log.Info($"Response contains expected string: {expected}");
                             UpgradeVerdict(Verdict.Pass);
                             test = "PASS";
                         }
                         else
                         {
-                            Log.Error($"Response:{answer} does not contain expected string: {Eanswer}");
+                            Log.Error($"Response:{answer} does not contain expected string: {expected}");
                             UpgradeVerdict(Verdict.Fail);
                             test = "FAIL";
                         }
@@ -161,8 +171,8 @@ namespace InterconnectIOBox.SCPI
                             ParamName = WQuery,
                             StepName = Name,
                             Value = answer,
-                            LowerLimit = Eanswer,
-                            UpperLimit = Eanswer,
+                            LowerLimit = expected,
+                            UpperLimit = expected,
                             Verdict = test,
                             Units = "strcmp"
                         };

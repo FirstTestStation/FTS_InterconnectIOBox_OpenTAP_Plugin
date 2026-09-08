@@ -2,13 +2,11 @@ using InterconnectIOBox.Analysis;
 using InterconnectIOBox.Instruments;
 using OpenTap;
 using System.Globalization;
-using System.Text.RegularExpressions;
-using System.Xml.Linq;
 
 namespace InterconnectIOBox.SCPI
 {
 
-    [Display(Groups: new[] { "InterconnectIO", "SCPI " }, Name: "Register Command", Description: "Group of command used to read or SCPI Register.")]
+    [Display(Groups: new[] { "FTS_Interconnect", "SCPI " }, Name: "Register Command", Description: "Group of command used to read or SCPI Register.")]
 
 
     public class RegCmd : ResultTestStep
@@ -74,28 +72,6 @@ namespace InterconnectIOBox.SCPI
             base.PrePlanRun();
             // ToDo: Optionally add any setup code this step needs to run before the testplan starts
         }
-
-        /// <summary>
-        /// Instantiate an OpenTAP picture with some default picture
-        /// These can be controlled by other test step properties if they should be configurable, or they can be hardcoded values
-        /// </summary>
-        public Picture Picture { get; } = new Picture()
-        {
-            Source = "Register.jpg",
-            Description = "A Diagram of the SCPI Register to help understand."
-        };
-
-        /// <summary>
-        /// Control the source of the picture with a regular test step property
-        /// </summary>
-        [Display("Source", "The source of the picture. This can be a URL or a file path.", "Register Diagram Picture", Order: 0.1, Collapsed: true)]
-        [FilePath(FilePathAttribute.BehaviorChoice.Open)]
-        public string PictureSource
-        {
-            get => Picture.Source;
-            set => Picture.Source = value;
-        }
-
 
         public override void Run()
         {
@@ -180,7 +156,7 @@ namespace InterconnectIOBox.SCPI
             {
                 if (WriteCmd != "") // if command exist
                 {
-                    string cmd = WriteCmd + " " + wvalue;
+                    string cmd = string.IsNullOrEmpty(wvalue) ? WriteCmd : WriteCmd + " " + wvalue;
                     Log.Info($"Sending write SCPI command: {cmd}");
                     IO_Instrument.ScpiCommand(cmd);
                 }
@@ -197,15 +173,22 @@ namespace InterconnectIOBox.SCPI
                 Log.Info($"Sending read SCPI command: {ReadCmd}");
                 string response = IO_Instrument.ScpiQuery<string>(ReadCmd);
                 Log.Info($"{regname} read: " + response);
-                if (RegAct == Action.read_only)
+
+                if (!double.TryParse(response, NumberStyles.Any, CultureInfo.InvariantCulture, out double value))
                 {
-                    UpgradeVerdict(Verdict.Pass);
+                    Log.Error($"{regname} response:{response} is not a valid numeric value.");
+                    UpgradeVerdict(Verdict.Error);
                     return;
                 }
 
                 string test = "";
-                double value = double.Parse(response);
-                if (value == edata)
+
+                if (RegAct == Action.read_only)
+                {
+                    UpgradeVerdict(Verdict.Pass);
+                    test = "PASS";
+                }
+                else if (value == edata)
                 {
                     UpgradeVerdict(Verdict.Pass);
                     test = "PASS";

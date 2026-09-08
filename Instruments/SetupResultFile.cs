@@ -1,15 +1,13 @@
-﻿using OpenTap;
-using System;
+﻿using System;
 using System.ComponentModel;
-using System.IO;
-using System.Linq;
+using OpenTap;
 
 namespace InterconnectIOBox.Instruments
 {
-    [Display("Setup Results Data", Groups: new[] { "InterconnectIO", "Fixture/DUT" },
+    [Display("Setup Results Data", Groups: new[] { "FTS_Interconnect", "Fixture/DUT" },
     Description: "Defines additional columns in CSV result tables and configures the file name and save location. " +
-"Settings are processed by FTS OperatorGUI. " +
-"This step must be placed first in the Test Plan.")]
+    "Settings are processed by the FTS OperatorGUI. " +
+    "This step must be placed first in the test plan.")]
     public class SetupResultFile : TestStep
     {
         #region DUT
@@ -18,20 +16,22 @@ namespace InterconnectIOBox.Instruments
         #endregion
 
         #region Metadata Toggles
-        private const string MetaGroup = "Columns to add on CSV";
+        private const string MetaGroup = "Columns to Add on CSV";
 
+        // Always included; not exposed as a toggle since the serial number
+        // is considered mandatory metadata for every result row.
         [Browsable(false)]
         public bool AddSerialNumber { get; set; } = true;
 
-        [Display("Product Name", Group: MetaGroup, Order: 2, Description: "Product Name defined in FTS_DUT.")]
+        [Display("Product Name", Group: MetaGroup, Order: 2, Description: "Product name defined in FTS_DUT.")]
         public bool AddProductName { get; set; } = true;
-        [Display("Product Number", Group: MetaGroup, Order: 3, Description: "Product Number defined in FTS_DUT.")]
+        [Display("Product Number", Group: MetaGroup, Order: 3, Description: "Product number defined in FTS_DUT.")]
         public bool AddProductNumber { get; set; } = true;
-        [Display("Fixture Name", Group: MetaGroup, Order: 4, Description: "Fixture Name defined in FTS_DUT.")]
+        [Display("Fixture Name", Group: MetaGroup, Order: 4, Description: "Fixture name defined in FTS_DUT.")]
         public bool AddFixtureName { get; set; } = true;
-        [Display("Fixture Number", Group: MetaGroup, Order: 5, Description: "Fixture Number defined in FTS_DUT.")]
+        [Display("Fixture Number", Group: MetaGroup, Order: 5, Description: "Fixture number defined in FTS_DUT.")]
         public bool AddFixtureNumber { get; set; } = true;
-        [Display("Fixture Serial", Group: MetaGroup, Order: 6, Description: "Fixture Serial Number defined in FTS_DUT.")]
+        [Display("Fixture Serial", Group: MetaGroup, Order: 6, Description: "Fixture serial number defined in FTS_DUT.")]
         public bool AddFixtureSerial { get; set; } = true;
         #endregion
 
@@ -51,7 +51,7 @@ namespace InterconnectIOBox.Instruments
         }
 
         [Display("File Name Mode", Group: CsvNameGroup, Order: 10,
-            Description: "Defines the <ResultName> part of: <ResultName>-<Date>-<Verdict>.csv.  ResultName will be replaced by new selected name." )]
+            Description: "Defines the <ResultName> part of: <ResultName>-<Date>-<Verdict>.csv. <ResultName> will be replaced by the selected naming scheme.")]
         public CsvFileNameMode FileNameMode { get; set; } = CsvFileNameMode.ProductName_SerialNumber;
 
         [Display("Fixed Name", Group: CsvNameGroup, Order: 11,
@@ -73,17 +73,17 @@ namespace InterconnectIOBox.Instruments
 
 
         [Display("Save Mode", Group: CsvSaveGroup, Order: 20,
-            Description: "Where FTS OperatorGUI will save the CSV result files using selected CSV file Name.")]
+            Description: "Where the FTS OperatorGUI will save the CSV result files, using the selected CSV file name.")]
         public SaveLocationMode SaveMode { get; set; } = SaveLocationMode.Default;
 
         [Display("Local Folder", Group: CsvSaveGroup, Order: 21,
-            Description: "Local folder where CSV result files will be saved. If network selected, local folder will be used as temporary location if network down.")]
+            Description: "Local folder where CSV result files will be saved. If Network is also selected, this local folder is used as a temporary location if the network is down.")]
         [EnabledIf(nameof(SaveMode), SaveLocationMode.Local, SaveLocationMode.LocalAndNetwork)]
         [DirectoryPath]
         public string LocalFolder { get; set; } = @"C:\TestResults";
 
         [Display("Network Folder", Group: CsvSaveGroup, Order: 22,
-            Description: "Network folder where OperatorGUI will copy the CSV using new CSV File Name after each run.")]
+            Description: "Network folder where the OperatorGUI will copy the CSV file, using the configured CSV file name, after each run.")]
         [EnabledIf(nameof(SaveMode), SaveLocationMode.Network, SaveLocationMode.LocalAndNetwork)]
         [DirectoryPath]
         public string NetworkFolder { get; set; } = @"\\Server\TestResults";
@@ -131,8 +131,7 @@ namespace InterconnectIOBox.Instruments
             if (AddFixtureSerial) SetPlanParam("FixtureSerial", Dut.FixtSerial ?? "");
             SetPlanParam("ID", Dut.ID ?? "");
 
-            // --- Pass all info to OperatorGUI via log ---
-            // DUT info
+            // --- Pass all info to the OperatorGUI via log ---
             Log.Info($"[META]:SerialNumber:{Dut.SerialNumber ?? ""}");
             Log.Info($"[META]:ProductName:{Dut.ProductName ?? ""}");
             Log.Info($"[META]:PartNumber:{Dut.PartNumber ?? ""}");
@@ -144,13 +143,13 @@ namespace InterconnectIOBox.Instruments
             Log.Info($"[META]:CsvName:{BuildFileNameTemplate()}");
             Log.Info($"[META]:SaveMode:{SaveMode}");
 
-            if (SaveMode != SaveLocationMode.Default)
-            {
+            // Only report the folder(s) that are actually relevant to the selected save mode.
+            if (SaveMode == SaveLocationMode.Local || SaveMode == SaveLocationMode.LocalAndNetwork)
                 Log.Info($"[META]:LocalFolder:{LocalFolder}");
 
-                if (SaveMode != SaveLocationMode.Local)
-                    Log.Info($"[META]:NetworkFolder:{NetworkFolder}");
-            }
+            if (SaveMode == SaveLocationMode.Network || SaveMode == SaveLocationMode.LocalAndNetwork)
+                Log.Info($"[META]:NetworkFolder:{NetworkFolder}");
+
             UpgradeVerdict(Verdict.Pass);
         }
     }

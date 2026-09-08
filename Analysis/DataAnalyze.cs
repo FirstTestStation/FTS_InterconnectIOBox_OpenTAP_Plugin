@@ -7,9 +7,23 @@ using static System.Net.Mime.MediaTypeNames;
 
 namespace InterconnectIOBox.Analysis
 {
-    [Display(Groups: new[] { "InterconnectIO", "Communication" },
+    [Display(Groups: new[] { "FTS_Interconnect", "Communication" },
              Name: "Data Analyze",
-             Description: "Analyze Data from Device to be tested between Low and High limit")]
+             Description:
+                "Reads raw bytes from a device register over I2C or SPI, extracts a bitfield, converts it to an " +
+                "engineering value, and validates it against limits.\n\n" +
+                "Pipeline:\n" +
+                "  1. Read    - Reads 'Read Length' bytes starting at 'Register Address', over I2C or SPI.\n" +
+                "  2. Extract - Pulls 'Bit Length' bits starting at 'Bit Start' out of the raw bytes " +
+                "(bit 0 = LSB of the first byte read). Interpreted as two's complement if 'Signed Value' is checked.\n" +
+                "  3. Convert - Applies 'Equation' to the extracted raw integer, using {R} as a placeholder " +
+                "for the raw value (e.g. ({R}/16)*0.01). If left as '{R}', the raw value is used unchanged.\n" +
+                "  4. Verdict - Compares the resulting engineering value against 'Low Limit'/'High Limit'; " +
+                "Pass if within range (inclusive), otherwise Fail.\n" +
+                "  5. Publish - If 'Publish Results' is checked, publishes the engineering value with its limits. " +
+                "Raw Bytes, Raw Value, and Engineering Value are always available as step outputs regardless.\n\n" +
+                "Use this to decode any register-based sensor or status field (e.g. a temperature or voltage " +
+                "reading packed into a subset of bits of a multi-byte I2C/SPI response) without writing custom code.")]
     public class DataAnalyse : ResultTestStep
     {
         // ===========================================
@@ -22,42 +36,45 @@ namespace InterconnectIOBox.Analysis
             SPI,
         }
 
-        [Display( "Com Protocol",Order: 0.4,Description: "Select the communication protocol used to read data from the device. The acquired data will be published.")]
+        [Display("Com Protocol", Order: 0.4, Description: "Select the communication protocol used to read data from the device. The acquired data will be published.")]
         public Com SelectedCom { get; set; }
 
 
         private const string Rg = "Read Data";
-        [Display("Register Address:", Group: Rg ,Description: "Starting Register to where the data will be read", Order: 1)]
+        [Display("Register Address:", Group: Rg, Description: "Starting register address from which the data will be read.", Order: 1)]
         public int Register { get; set; }
 
-        [Display("Read Length:", Group: Rg, Description: "Starting Register to where the data will be read", Order: 3)]
+        [Display("Read Length:", Group: Rg, Description: "Number of bytes to read starting from the register address.", Order: 3)]
         public int ReadLength { get; set; } = 1;
 
         // ---------------- ANALYZE -------------------
 
         private const string Rt = "Calculate Value";
-        [Display("Bit Start",Order: 4.1, Group: Rt, Description: "Index of the first bit inside the raw I2C/SPI data. Bit 0 = LSB of byte[0].")]
+        [Display("Bit Start", Order: 4.1, Group: Rt, Description: "Index of the first bit inside the raw I2C/SPI data. Bit 0 = LSB of byte[0].")]
         public int BitStart { get; set; } = 0;
 
-        [Display("Bit Length",Order: 4.2, Group: Rt, Description: "Number of bits to extract starting from Bit Start.")]
+        [Display("Bit Length", Order: 4.2, Group: Rt, Description: "Number of bits to extract starting from Bit Start.")]
         public int BitLength { get; set; } = 16;
 
-        [Display("Signed Value",Order: 4.3, Group: Rt, Description: "Enable if the extracted value uses two’s complement format.")]
+        [Display("Signed Value", Order: 4.3, Group: Rt, Description: "Enable if the extracted value uses two's complement format.")]
         public bool Signed { get; set; } = false;
 
         [Display("Equation (use {R})", Order: 4.4, Group: Rt, Description: "Math expression applied to the raw value. Example: ({R}/16)*0.01")]
         public string Equation { get; set; } = "{R}";
 
-        [Display("Units", Order: 4.5, Group: Rt, Description: "Engineering units for the computed value. ")]
+        [Display("Units", Order: 4.5, Group: Rt, Description: "Engineering units for the computed value.")]
         public string EngineeringUnits { get; set; } = "";
 
 
         private const string Rv = "Validate Eng Value";
-        [Display("Low Limit", Order: 4.5, Group: Rv, Description: "Minimum allowed engineering value after applying the equation.")]
+        [Display("Low Limit", Order: 4.6, Group: Rv, Description: "Minimum allowed engineering value after applying the equation.")]
         public double LowLimit { get; set; }
 
-        [Display("High Limit", Order: 4.6, Group: Rv, Description: "Maximum allowed engineering value after applying the equation.")]
+        [Display("High Limit", Order: 4.7, Group: Rv, Description: "Maximum allowed engineering value after applying the equation.")]
         public double HighLimit { get; set; }
+
+        [Display("Publish Results", Order: 4.8, Group: "Options", Description: "If checked, publish the computed engineering value. If unchecked, the analysis still runs and affects verdict, but no result is published.")]
+        public bool PublishResults { get; set; } = true;
 
         // ===========================================
         // OUTPUTS
@@ -70,7 +87,7 @@ namespace InterconnectIOBox.Analysis
         public byte[] RawBytes { get; private set; }
 
         [Output]
-        [Display("Raw Value", Order: 10.2, Group: Rdo, Description: "Extracted bitfield converted to integer.")]
+        [Display("Raw Value", Order: 10.2, Group: Rdo, Description: "Extracted bitfield converted to an integer.")]
         public long RawValue { get; private set; }
 
         [Output]
@@ -99,7 +116,7 @@ namespace InterconnectIOBox.Analysis
 
                 case Com.SPI:
                     byte wreg = (byte)(Register | 0x80);
-                    Log.Info($"SPI register: {Register} become: {wreg} with bit 7 added");
+                    Log.Info($"SPI register: {Register} becomes: {wreg} with bit 7 added");
                     readCmd = $"COM:SPI:READ:LEN{ReadLength}? {wreg}";
                     break;
 
@@ -139,7 +156,17 @@ namespace InterconnectIOBox.Analysis
 
 
             // ---------------- PARSE BYTES ----------------
-            RawBytes = ParseResponse(response);
+            try
+            {
+                RawBytes = ParseResponse(response);
+            }
+            catch (Exception ex)
+            {
+                Log.Error($"Failed to parse response '{response}': {ex.Message}");
+                UpgradeVerdict(Verdict.Fail);
+                return;
+            }
+
             Log.Info($"Parsed Hexadecimal Bytes → {BitConverter.ToString(RawBytes)}");
 
             RawValue = ExtractBits(RawBytes, BitStart, BitLength, Signed);
@@ -151,31 +178,27 @@ namespace InterconnectIOBox.Analysis
             Log.Info($"Raw={RawValue}, EngValue={EngValue}, Limits[{LowLimit},{HighLimit}] → {(ok ? "PASS" : "FAIL")}");
             UpgradeVerdict(ok ? Verdict.Pass : Verdict.Fail);
 
-
-            var result = new TestResult<double>
+            if (PublishResults)
             {
-                ParamName = $"Register 0x{Register:X2} Value",
-                StepName = Name,
-                Value = EngValue,
-                Verdict = ok ? "PASS" : "FAIL",
-                Units = EngineeringUnits, 
-                LowerLimit = LowLimit,
-                UpperLimit = HighLimit
-            };
+                var result = new TestResult<double>
+                {
+                    ParamName = $"Register 0x{Register:X2} Value",
+                    StepName = Name,
+                    Value = EngValue,
+                    Verdict = ok ? "PASS" : "FAIL",
+                    Units = EngineeringUnits,
+                    LowerLimit = LowLimit,
+                    UpperLimit = HighLimit
+                };
 
-            PublishResult(result);
-            return;
-
-
-
-
-
+                PublishResult(result);
+            }
         }
 
         // ===========================================
         // UTILITIES
         // ===========================================
-     
+
         private byte[] ParseResponse(string s)
         {
             if (string.IsNullOrWhiteSpace(s)) return Array.Empty<byte>();

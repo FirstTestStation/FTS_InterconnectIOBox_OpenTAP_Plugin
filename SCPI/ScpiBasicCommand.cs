@@ -2,13 +2,11 @@ using InterconnectIOBox.Analysis;
 using InterconnectIOBox.Instruments;
 using OpenTap;
 using System;
-using System.Data;
 using System.Threading;
-using static InterconnectIOBox.Communication.SpiCfg;
 
 namespace InterconnectIOBox.SCPI
 {
-    [Display(Groups: new[] { "InterconnectIO", "SCPI " }, Name: "Basic Command", Description: "Required SCPI Basic command.")]
+    [Display(Groups: new[] { "FTS_Interconnect", "SCPI " }, Name: "Basic Command", Description: "Required SCPI Basic command.")]
 
     public class Basic : ResultTestStep
     {
@@ -29,7 +27,7 @@ namespace InterconnectIOBox.SCPI
 
         [Display("Validation subString:", Order: 1.3, Group: GROUPD, Collapsed: true, Description: "partial string expected to be part of the response to the command *IDN?.")]
         [EnabledIf(nameof(IDNp), true, Flags = false)]
-        public string ExpectedIdn { get; set; } = "InterconnectIO";
+        public string ExpectedIdn { get; set; } = "FTS_Interconnect";
 
         private const string GROUPE = "*TST? (Internal Basic Selftest)";
 
@@ -46,13 +44,13 @@ namespace InterconnectIOBox.SCPI
 
         private const string GROUPF = "*OPC and *OPC? (Operation Complete)";
 
-        [Display("Sent Command *OPC", Order: 2, Group: GROUPF, Collapsed: true, Description: "Send command *OPC to know of all previous commad have finished executing.")]
+        [Display("Sent Command *OPC", Order: 2.1, Group: GROUPF, Collapsed: true, Description: "Send command *OPC to know of all previous commad have finished executing.")]
         public bool OpcCmd { get; set; }
 
-        [Display("Sent Query *OPC?", Order: 2, Group: GROUPF, Collapsed: true, Description: "Send command *OPC? to wait the previous command finish.")]
+        [Display("Sent Query *OPC?", Order: 2.2, Group: GROUPF, Collapsed: true, Description: "Send command *OPC? to wait the previous command finish.")]
         public bool OpcQuery { get; set; }
 
- 
+
 
 
         private const string GROUPG = "Single Function Command";
@@ -60,10 +58,14 @@ namespace InterconnectIOBox.SCPI
         [Display("Sent Command *RST", Order: 3, Group: GROUPG, Collapsed: true, Description: "Send command *RST (Reset) to the instrument.")]
         public bool EnableRST { get; set; }
 
+        [Display("Reset Delay (ms)", Order: 3.05, Group: GROUPG, Collapsed: true, Description: "Time to wait after *RST for the instrument to finish rebooting before sending further commands.")]
+        [EnabledIf(nameof(EnableRST), true, Flags = false)]
+        public int ResetDelayMs { get; set; } = 3000;
+
         [Display("Sent Command *CLS", Order: 3.1, Group: GROUPG, Collapsed: true, Description: "Send command *CLS (Clear Status) to the instrument.")]
         public bool EnableCLS { get; set; }
 
-        [Display("Sent Command *WAI", Order: 3.1, Group: GROUPG, Collapsed: true, Description: "Send command *WAI (Wait) wait for all pending operation to complete.")]
+        [Display("Sent Command *WAI", Order: 3.2, Group: GROUPG, Collapsed: true, Description: "Send command *WAI (Wait) wait for all pending operation to complete.")]
         public bool EnableWai { get; set; }
 
 
@@ -82,15 +84,15 @@ namespace InterconnectIOBox.SCPI
         {
 
             UpgradeVerdict(Verdict.Pass); // PASS by default
-            if (EnableIdn) { TstCommand("*IDN?", IDNp, ExpectedIdn);}
+            if (EnableIdn) { TstCommand("*IDN?", IDNp, ExpectedIdn); }
             if (EnableTst) { TstCommand("*TST?", TSTp, ExpectedTst); }
-            if (OpcCmd)    { SendCommand("*OPC"); }
+            if (OpcCmd) { SendCommand("*OPC"); }
             if (OpcQuery) { TstCommand("*OPC?", false, "1"); }
 
             if (EnableCLS) { SendCommand("*CLS"); }
             if (EnableWai) { SendCommand("*WAI"); }
 
-            if (EnableRST) 
+            if (EnableRST)
             {
                 //SendCommand("*RST");
                 ResetAndReconnect();
@@ -105,21 +107,22 @@ namespace InterconnectIOBox.SCPI
             try
             {
                 IO_Instrument.ScpiCommand("*RST");
-                Log.Info("Instrument reset. Waiting for reboot...");
+                Log.Info("Instrument reset sent. Closing connection...");
 
-                // Wait some time for the instrument to reboot
-             //   Thread.Sleep(5000); // 5 seconds, adjust as needed
+                IO_Instrument.Close();
 
-            //    Log.Info("Reconnecting to instrument...");
-            //    IO_Instrument.Close();
-           //     Thread.Sleep(1000); // small pause before reopen
-           //     IO_Instrument.Open();
+                Log.Info($"Waiting {ResetDelayMs} ms for reboot...");
+                Thread.Sleep(ResetDelayMs);
+
+                Log.Info("Reopening connection...");
+                IO_Instrument.Open();
 
                 Log.Info("Reconnection successful.");
             }
             catch (Exception ex)
             {
                 Log.Error($"Failed to reset and reconnect: {ex.Message}");
+                UpgradeVerdict(Verdict.Fail);
             }
         }
 
@@ -149,7 +152,7 @@ namespace InterconnectIOBox.SCPI
             string response = IO_Instrument.ScpiQuery(command);
             Log.Info($"Response: {response}");
             UpgradeVerdict(Verdict.Pass); // PASS by default
- 
+
             string answer = response.Replace("\"", "").Trim();
 
             if (publish)
@@ -158,7 +161,7 @@ namespace InterconnectIOBox.SCPI
                 {
                     Log.Info($"Response contains expected string: {expectedstr}");
                     UpgradeVerdict(Verdict.Pass);
-                    test="PASS";
+                    test = "PASS";
                 }
                 else
                 {
@@ -180,7 +183,7 @@ namespace InterconnectIOBox.SCPI
 
                 PublishResult(result);
             }
-     }
+        }
 
 
 
