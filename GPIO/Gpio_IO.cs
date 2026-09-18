@@ -98,6 +98,7 @@ namespace InterconnectIOBox.GPIO
 
         public override void Run()
         {
+            UpgradeVerdict(Verdict.Pass);
             if (M1IO0.IsEnabled || M1IO1.IsEnabled || S1IO8.IsEnabled || S1IO9.IsEnabled || FLAG.IsEnabled || CTRL.IsEnabled)
             {
                 ConfigureDefGpio(SelectedgAct);
